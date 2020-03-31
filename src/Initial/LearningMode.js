@@ -20,58 +20,37 @@ class LearningMode extends React.Component {
         })
     }
 
-    handleOpen3 = () => {
-        this.setState({
-            isM2: false,
-            isM3: true
-        })
-    }
-
     handleClose1 = () => {
         this.setState({
             isM1: false
         })
     }
 
-    handleClose3 = () => {
+    handleClose2 = () => {
         this.setState({
-            isM3: false
+            isM2: false
         })
     }
 
     render() {
         return (
             <div>
-                <Modal id="menu" open={this.state.isM1}>
-                    <div style={{ top: 475, left: 25}} className="speech-bubble">
-                        <div>
-                            <h2>Menu Button</h2>
-                            <IconButton style={{ position: 'absolute', right: 52, top: 20 }} onClick={this.handleOpen2}>
-                                <ArrowForwardIcon/>
-                            </IconButton>
-                            <IconButton style={{ position: 'absolute', right: 2, top: 20}} onClick={this.handleClose1}>
-                                <CloseIcon/>
-                            </IconButton>
-                        </div>
-                        <p>Click this button to see your menu options, such as turning off learning mode.</p>
-                    </div>
-                </Modal>
-                <Modal id="check" open={this.state.isM2}>
+                <Modal id="check" open={this.state.isM1}>
                     <div style={{ top: 475, left: 550}} className="speech-bubble">
                         <div>
                             <h2>Check Button</h2>
-                            <IconButton style={{ position: 'absolute', right: 2, top: 20 }} onClick={this.handleOpen3}>
+                            <IconButton style={{ position: 'absolute', right: 2, top: 20 }} onClick={this.handleOpen2}>
                                 <ArrowForwardIcon/>
                             </IconButton>
                         </div>
                         <p>Click this button to enter a new level.</p>
                     </div>
                 </Modal>
-                <Modal id="phone" open={this.state.isM3}>
+                <Modal id="phone" open={this.state.isM2}>
                     <div style={{ top: 475, left: 1075}} className="speech-bubble">
                         <div>
                             <h2>Phone</h2>
-                            <IconButton style={{ position: 'absolute', right: 2, top: 20 }} onClick={this.handleClose3}>
+                            <IconButton style={{ position: 'absolute', right: 2, top: 20 }} onClick={this.handleClose2}>
                                 <CloseIcon/>
                             </IconButton>
                         </div>

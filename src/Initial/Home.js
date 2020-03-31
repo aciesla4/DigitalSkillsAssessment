@@ -8,7 +8,7 @@ class Home extends React.Component {
         super(props)
         this.state = {
             isPhoneClicked: false,
-            learningMode: true,
+            learningMode: false,
             messages : [
                 {
                     text: "Welcome Agent. You are now a part of an elite academy of spies dedicated to understanding computers. " +
@@ -20,7 +20,7 @@ class Home extends React.Component {
                     }
                 },
                 {
-                    text: "Your mission is to find the jewel on the next page by closing the pop up. " +
+                    text: "Your mission is to find the jewel on the next page by scrolling down. " +
                         "Click the check mark to begin. ",
                     member: {
                         color: "black",

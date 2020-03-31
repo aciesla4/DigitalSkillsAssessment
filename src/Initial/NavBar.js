@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link as RouterLink } from 'react-router-dom';
-import { AppBar, BottomNavigation, BottomNavigationAction, Drawer, FormControlLabel, Switch } from '@material-ui/core';
+import { AppBar, Toolbar, BottomNavigation, BottomNavigationAction, Drawer, FormControlLabel, Switch } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
 import MenuIcon from '@material-ui/icons/Menu';
 import PhoneIcon from '@material-ui/icons/Phone';
@@ -39,24 +39,14 @@ class NavBar extends React.Component {
 
     }
 
-    openMenu = () => {
-        this.setState({
-            isMenuOpen: true
-        })
-    }
-
-    closeMenu = () => {
-        this.setState({
-            isMenuOpen: false
-        })
-    }
-
     render() {
         const currentPath = window.location.pathname
         return (
             <AppBar position="fixed" style={{ backgroundColor: '#fff', top: 'auto', bottom: 0}}>
                 <BottomNavigation>
-                    <BottomNavigationAction style={{ position: 'absolute', left: 0 }} id="menu" icon={ <MenuIcon/>} onClick={this.openMenu} />
+                    <FormControlLabel style={{ position: 'absolute', left: 20, color: 'black', top: 10 }} control={
+                        <Switch checked={this.props.learningMode} onChange={this.props.getModeSwitch} />
+                    } label="Learning Mode" />
                     {currentPath.includes("page") ?
                         <BottomNavigationAction id="home" icon={<HomeIcon/>} component={RouterLink} to="/home" onClick={this.logClick} /> :
                         <BottomNavigationAction id="accept" icon={<CheckCircleIcon/>} component={RouterLink} to="/page" onClick={this.logClick} />
@@ -68,12 +58,6 @@ class NavBar extends React.Component {
                         </div>
                     }
                 </BottomNavigation>
-                <Drawer style={{ width: '200px'}} open={this.state.isMenuOpen} anchor='left' onClose={this.closeMenu}>
-                    <p>Main Menu </p>
-                    <FormControlLabel control={
-                        <Switch checked={this.props.learningMode} onChange={this.props.getModeSwitch} />
-                    } label="Learning Mode" />
-                </Drawer>
             </AppBar>
         );
     }
