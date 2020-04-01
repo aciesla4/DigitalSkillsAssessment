@@ -1,6 +1,7 @@
 import React from 'react';
 import SpyLogo from './spyLogo.jpg';
 import $ from 'jquery';
+import "../css/Welcome.css";
 
 class Welcome extends React.Component {
     componentDidMount() {

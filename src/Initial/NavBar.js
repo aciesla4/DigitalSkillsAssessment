@@ -1,13 +1,17 @@
 import React from 'react';
 import axios from 'axios';
 import { Link as RouterLink } from 'react-router-dom';
-import { AppBar, Toolbar, BottomNavigation, BottomNavigationAction, Drawer, FormControlLabel, Switch } from '@material-ui/core';
+import {
+    FormControlLabel,
+    Switch,
+    IconButton,
+} from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
-import MenuIcon from '@material-ui/icons/Menu';
 import PhoneIcon from '@material-ui/icons/Phone';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import HelpIcon from '@material-ui/icons/Help';
 import $ from "jquery";
+import "../css/NavBar.css";
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -42,25 +46,25 @@ class NavBar extends React.Component {
     render() {
         const currentPath = window.location.pathname
         return (
-            <AppBar position="fixed" style={{ backgroundColor: '#fff', top: 'auto', bottom: 0}}>
-                <BottomNavigation>
-                    <FormControlLabel style={{ position: 'absolute', left: 20, color: 'black', top: 10 }} control={
-                        <Switch checked={this.props.learningMode} onChange={this.props.getModeSwitch} />
-                    } label="Learning Mode" />
-                    {currentPath.includes("page") ?
-                        <BottomNavigationAction id="home" icon={<HomeIcon/>} component={RouterLink} to="/home" onClick={this.logClick} /> :
-                        <BottomNavigationAction id="accept" icon={<CheckCircleIcon/>} component={RouterLink} to="/page" onClick={this.logClick} />
-                    }
-                    {currentPath.includes("page") ?
-                        <BottomNavigationAction style={{ position: 'absolute', right: 0 }} id="question" icon={<HelpIcon/>} /> :
-                        <div className="animated">
-                            <BottomNavigationAction className={"stop-animation"} id="phone" icon={<PhoneIcon/>} onClick={this.props.getPhoneClick}/>
-                        </div>
-                    }
-                </BottomNavigation>
-            </AppBar>
+            <div className="navbar">
+                <FormControlLabel style={{ position: 'absolute', left: 20, color: 'black', bottom: 10, }} control={
+                    <Switch checked={this.props.academicMode} onChange={this.props.getModeSwitch} />
+                } label="Learning Mode" />
+                {currentPath.includes("level") ?
+                    <IconButton style={{ position: 'absolute', left: '50%', bottom: 0 }} component={RouterLink} to="/home" onClick={this.logClick}><HomeIcon fontSize="large"/></IconButton> :
+                    <IconButton style={{ position: 'absolute', left: '50%', bottom: 0 }} component={RouterLink} to={`/level${this.props.level}`} onClick={this.logClick}><CheckCircleIcon fontSize="large"/></IconButton>
+                }
+                {currentPath.includes("level") ?
+                    <IconButton style={{ position: 'absolute', right: 0, bottom: 0 }}><HelpIcon fontSize="large"/></IconButton> :
+                    <div className="animated">
+                        <IconButton className={"stop-animation"}  onClick={this.props.getPhoneClick}><PhoneIcon fontSize="large"/></IconButton>
+                    </div>
+                }
+            </div>
         );
     }
 }
 
 export default NavBar;
+
+

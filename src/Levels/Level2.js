@@ -2,10 +2,11 @@ import React from 'react';
 import '../App.css';
 import NavBar from '../Initial/NavBar';
 import Header from './Header';
-import { Container, Box, Dialog, DialogContent, DialogTitle, IconButton, SvgIcon} from '@material-ui/core';
+import { Container, Dialog, DialogContent, DialogTitle, IconButton, SvgIcon} from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
 import $ from "jquery";
+import "../css/Jewel.css";
 
 class Level2 extends React.Component {
     constructor(props) {
@@ -41,6 +42,7 @@ class Level2 extends React.Component {
         this.setState({
             isJewelFound: false
         })
+        this.props.getLevelChange()
     }
 
     render() {
@@ -49,16 +51,6 @@ class Level2 extends React.Component {
                 <Header mission="find the jewel on the page by closing the pop up."/>
                 <NavBar/><br /><br />
                 <Container>
-                    <Box my={2}>
-                        {[...new Array(15)]
-                            .map(
-                                () => `Cras mattis consectetur purus sit amet fermentum.
-                                                Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                                                Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-                                                Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
-                            )
-                            .join('\n')}
-                    </Box>
                     <Dialog open={this.state.isDialogOpen} onClose={this.handleClose} disableBackdropClick={true}>
                         <DialogTitle>Lorem ipsum dolor sit amet.
                             <IconButton style={{ position: 'absolute', right: 2, top: 2 }} onClick={this.handleClose} color="primary">
@@ -76,7 +68,7 @@ class Level2 extends React.Component {
                         </DialogContent>
                     </Dialog>
                     {this.state.isJewelShown &&
-                            <IconButton style={{ margin: 'auto', width: '100%' }} color="inherit" onClick={this.handleFound}>
+                            <IconButton className="jewel" style={{ margin: 0, position: 'absolute', top: '50%', left: '50%' }} color="inherit" onClick={this.handleFound}>
                                 <SvgIcon className="animates" viewBox="0 0 576 512">
                                     <path fill="currentColor" d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z" />
                                 </SvgIcon>

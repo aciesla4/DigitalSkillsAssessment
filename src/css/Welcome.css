@@ -1,0 +1,36 @@
+.app-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    height: 25%;
+}
+
+.begin-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    height: 25%;
+    border: 1px solid lightgray;
+    background: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    font-family: 'Oxanium';
+    font-size: 20px;
+}
+
+.begin-button:hover{
+    background-color: lightgray;
+}
+
+.welcome {
+    animation: fadeIn ease 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    0%    {opacity: 0;}
+    100%  {opacity: 1;}
+}

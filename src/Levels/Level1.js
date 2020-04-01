@@ -6,8 +6,9 @@ import { Container, Box, Dialog, DialogContent, DialogTitle, IconButton, SvgIcon
 import { Link as RouterLink } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
 import $ from "jquery";
+import "../css/Jewel.css";
 
-class Level2 extends React.Component {
+class Level1 extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -23,13 +24,6 @@ class Level2 extends React.Component {
         });
     }
 
-    handleClose = () => {
-        this.setState({
-            isDialogOpen: false,
-            isJewelShown: true
-        })
-    }
-
     handleFound = () => {
         this.setState({
             isJewelFound: true,
@@ -41,12 +35,13 @@ class Level2 extends React.Component {
         this.setState({
             isJewelFound: false
         })
+        this.props.getLevelChange()
     }
 
     render() {
         return (
             <div>
-                <Header mission="find the jewel on the page by scrolling down."/>
+                <Header mission="find the jewel on the page by scrolling down." />
                 <Container>
                     <Box my={2}>
                         {[...new Array(45)]
@@ -58,14 +53,14 @@ class Level2 extends React.Component {
                             )
                             .join('\n')}
                     </Box>
-                    <IconButton className={"jewel"} color="inherit" onClick={this.handleFound}>
+                    <IconButton className={"jewel"} style={{ margin: 0, position: 'absolute', left: '50%' }} color="inherit" onClick={this.handleFound}>
                         <SvgIcon className="animates" viewBox="0 0 576 512">
                             <path fill="currentColor" d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z" />
                         </SvgIcon>
                     </IconButton>
                     <br /><br /><br /><br /><br /><br />
-                    <NavBar/>
                 </Container>
+                <NavBar/>
                 <Dialog open={this.state.isJewelFound} onClose={this.handleCloseEnd} disableBackdropClick={true}>
                     <DialogTitle>Congratulations Agent!
                         <IconButton style={{ position: 'absolute', right: 2, top: 2 }} component={RouterLink} to="/home" onClick={this.handleCloseEnd} color="primary">
@@ -81,4 +76,4 @@ class Level2 extends React.Component {
     }
 }
 
-export default Level2;
+export default Level1;
