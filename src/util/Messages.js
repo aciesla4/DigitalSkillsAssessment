@@ -10,7 +10,7 @@ class Messages extends React.Component {
         const className = messageFromMe ?
             "Messages-message currentMember" : "Messages-message";
         return (
-            <li className={className}>
+            <li key={text} className={className}>
                 <span
                     className="avatar"
                     style={{backgroundColor: member.color}}

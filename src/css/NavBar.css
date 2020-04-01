@@ -10,7 +10,7 @@
     position: absolute;
     right: 0px;
     bottom: 0px;
-    animation: phone-ring 1s infinite;
+    animation: phone-ring 1s 3s infinite;
 }
 
 @keyframes phone-ring {

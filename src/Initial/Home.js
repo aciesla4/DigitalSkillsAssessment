@@ -1,14 +1,14 @@
 import React from 'react';
-import NavBar from '../Initial/NavBar';
-import Messages from '../Initial/Messages';
-import LearningMode from "./LearningMode";
+import NavBar from '../util/NavBar';
+import Messages from '../util/Messages';
+import LearningMode from './LearningMode';
 
 class Home extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             isPhoneClicked: false,
-            academicMode: false,
+            academicmode: this.props.academicmode,
             messages : [
                 {
                     level: 1,
@@ -54,17 +54,17 @@ class Home extends React.Component {
         };
     }
 
+    getModeSwitch = () => {
+        let oldValue = this.state.academicmode
+        this.setState({
+            academicmode: !oldValue
+        })
+        this.props.getModeSwitch()
+    }
+
     getPhoneClick = () => {
         this.setState({
             isPhoneClicked: true
-        })
-    }
-
-    getModeSwitch = () => {
-        console.log("mode switch")
-        let oldValue = this.state.academicMode
-        this.setState({
-            academicMode: !oldValue
         })
     }
 
@@ -80,16 +80,17 @@ class Home extends React.Component {
     }
 
     render() {
+        console.log(this.state.academicmode)
         let messages = this.getMessages();
         return (
             <div>
                 {this.state.isPhoneClicked &&
                     <Messages messages={messages} currentMember={this.state.member}/>
                 }
-                {this.state.academicMode &&
-                    <LearningMode academicMode={this.state.academicMode}/>
+                {this.state.academicmode &&
+                    <LearningMode academicmode={this.state.academicmode}/>
                 }
-                <NavBar level={this.props.level} getPhoneClick={this.getPhoneClick} clicked={this.state.isPhoneClicked} learningMode={this.state.academicMode} getModeSwitch={this.getModeSwitch}/>
+                <NavBar level={this.props.level} getPhoneClick={this.getPhoneClick} clicked={this.state.isPhoneClicked} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} getLevelChange={this.props.getLevelChange}/>
             </div>
         );
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
-import NavBar from '../Initial/NavBar';
-import Header from './Header';
+import NavBar from '../util/NavBar';
+import Header from '../util/Header';
 import { Container, Box, Dialog, DialogContent, DialogTitle, IconButton, SvgIcon} from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
@@ -39,6 +39,7 @@ class Level1 extends React.Component {
     }
 
     render() {
+        console.log(this.props.academicmode)
         return (
             <div>
                 <Header mission="find the jewel on the page by scrolling down." />
@@ -60,15 +61,15 @@ class Level1 extends React.Component {
                     </IconButton>
                     <br /><br /><br /><br /><br /><br />
                 </Container>
-                <NavBar/>
+                <NavBar academicmode={this.props.academicmode} />
                 <Dialog open={this.state.isJewelFound} onClose={this.handleCloseEnd} disableBackdropClick={true}>
                     <DialogTitle>Congratulations Agent!
-                        <IconButton style={{ position: 'absolute', right: 2, top: 2 }} component={RouterLink} to="/home" onClick={this.handleCloseEnd} color="primary">
+                        <IconButton style={{ position: 'absolute', right: 2, top: 2 }} component={RouterLink} to="/home" onClick={this.handleCloseEnd} color="inherit">
                             <CloseIcon/>
                         </IconButton>
                     </DialogTitle>
                     <DialogContent dividers>
-                        Your first mission is complete! We'll take you back to the home page to explain your next mission.
+                        Your first mission is complete! Click the X to return to home page and get your next mission.
                     </DialogContent>
                 </Dialog>
             </div>

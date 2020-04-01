@@ -6,7 +6,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 export default class Modal extends React.Component {
     render () {
-        const { x, y } = this.props;
+        const { x, y, modalStyle } = this.props;
         const styles = {
             modal: {
                 left: x,
@@ -15,7 +15,7 @@ export default class Modal extends React.Component {
         }
         return (
             (this.props.show &&
-                <div className="modal" style={styles.modal}>
+                <div className={modalStyle} style={styles.modal}>
                     <div>
                         <h2 className="modal-title">{this.props.heading}</h2>
                         {this.props.last ?

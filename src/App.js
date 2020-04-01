@@ -11,9 +11,16 @@ class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            academicMode: true,
-            level: 1
+            level: 1,
+            academicmode: true,
         }
+    }
+
+    getModeSwitch = () => {
+        let oldValue = this.state.academicmode
+        this.setState({
+            academicmode: !oldValue
+        })
     }
 
     getLevelChange = () => {
@@ -26,9 +33,9 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route path="/home" render={(props) => <Home {...props} level={this.state.level} />} />
-                    <Route path="/level1" render={(props) => <Level1 {...props} level={this.state.level} getLevelChange={this.getLevelChange} />} />
-                    <Route path="/level2" render={(props) => <Level2 {...props} level={this.state.level} getLevelChange={this.getLevelChange} />} />
+                    <Route path="/home" render={(props) => <Home {...props} level={this.state.level} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} />} />
+                    <Route path="/level1" render={(props) => <Level1 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} />} />
+                    <Route path="/level2" render={(props) => <Level2 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} />} />
                     <Route path="/" component={Welcome} exact />
                 </Switch>
             </BrowserRouter>

@@ -1,11 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link as RouterLink } from 'react-router-dom';
-import {
-    FormControlLabel,
-    Switch,
-    IconButton,
-} from '@material-ui/core';
+import { FormControlLabel, Switch, IconButton,} from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
 import PhoneIcon from '@material-ui/icons/Phone';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
@@ -25,9 +21,11 @@ class NavBar extends React.Component {
     }
 
     componentDidMount() {
-        $("div").click(function() {
-            $(".animated").css("animation-play-state", "paused");
-        });
+        $(document).ready(function() {
+            $(".stop-animation").click(function() {
+                $(".animated").css("animation-play-state", "paused");
+            })
+        })
     }
 
     logClick = (e) => {
@@ -48,7 +46,7 @@ class NavBar extends React.Component {
         return (
             <div className="navbar">
                 <FormControlLabel style={{ position: 'absolute', left: 20, color: 'black', bottom: 10, }} control={
-                    <Switch checked={this.props.academicMode} onChange={this.props.getModeSwitch} />
+                    <Switch checked={this.props.academicmode} onChange={this.props.getModeSwitch} />
                 } label="Learning Mode" />
                 {currentPath.includes("level") ?
                     <IconButton style={{ position: 'absolute', left: '50%', bottom: 0 }} component={RouterLink} to="/home" onClick={this.logClick}><HomeIcon fontSize="large"/></IconButton> :

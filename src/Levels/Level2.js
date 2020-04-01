@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
-import NavBar from '../Initial/NavBar';
-import Header from './Header';
+import NavBar from '../util/NavBar';
+import Header from '../util/Header';
 import { Container, Dialog, DialogContent, DialogTitle, IconButton, SvgIcon} from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
@@ -46,14 +46,15 @@ class Level2 extends React.Component {
     }
 
     render() {
+        console.log(this.props.academicmode)
         return (
             <div>
                 <Header mission="find the jewel on the page by closing the pop up."/>
-                <NavBar/><br /><br />
+                <NavBar academicmode={this.props.academicmode} /><br /><br />
                 <Container>
                     <Dialog open={this.state.isDialogOpen} onClose={this.handleClose} disableBackdropClick={true}>
                         <DialogTitle>Lorem ipsum dolor sit amet.
-                            <IconButton style={{ position: 'absolute', right: 2, top: 2 }} onClick={this.handleClose} color="primary">
+                            <IconButton style={{ position: 'absolute', right: 2, top: 2 }} onClick={this.handleClose} color="inherit">
                                 <CloseIcon/>
                             </IconButton>
                         </DialogTitle>
@@ -76,12 +77,12 @@ class Level2 extends React.Component {
                     }
                     <Dialog open={this.state.isJewelFound} onClose={this.handleCloseEnd} disableBackdropClick={true}>
                         <DialogTitle>Congratulations Agent!
-                            <IconButton style={{ position: 'absolute', right: 2, top: 2 }} component={RouterLink} to="/home" onClick={this.handleCloseEnd} color="primary">
+                            <IconButton style={{ position: 'absolute', right: 2, top: 2 }} component={RouterLink} to="/home" onClick={this.handleCloseEnd} color="inherit">
                                 <CloseIcon/>
                             </IconButton>
                         </DialogTitle>
                         <DialogContent dividers>
-                            Your first mission is complete! We'll take you back to the home page to explain your next mission.
+                            Your mission is complete! Click the X to return to home page and get your next mission.
                         </DialogContent>
                     </Dialog>
                 </Container>
