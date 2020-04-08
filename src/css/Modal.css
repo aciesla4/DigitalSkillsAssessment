@@ -1,5 +1,5 @@
 .modal {
-    position: absolute;
+    position: fixed;
     border-radius: .4em;
     width: 350px;
     background: white;
@@ -12,8 +12,8 @@
 }
 
 .modal:after{
+    position: fixed;
     content: '';
-    position: absolute;
     bottom: 0;
     left: 50%;
     width: 0;
@@ -25,7 +25,7 @@
 }
 
 .modalL {
-    position: absolute;
+    position: fixed;
     border-radius: .4em;
     width: 350px;
     background: white;
@@ -39,7 +39,7 @@
 
 .modalL:after{
     content: '';
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 10%;
     width: 0;
@@ -51,7 +51,7 @@
 }
 
 .modalR {
-    position: absolute;
+    position: fixed;
     border-radius: .4em;
     width: 350px;
     background: white;
@@ -65,7 +65,7 @@
 
 .modalR:after{
     content: '';
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 90%;
     width: 0;

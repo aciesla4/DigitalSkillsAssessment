@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from '../util/NavBar';
 import Messages from '../util/Messages';
-import LearningMode from './LearningMode';
+import LearningMode from '../util/LearningMode';
 
 class Home extends React.Component {
     constructor(props) {
@@ -80,7 +80,6 @@ class Home extends React.Component {
     }
 
     render() {
-        console.log(this.state.academicmode)
         let messages = this.getMessages();
         return (
             <div>

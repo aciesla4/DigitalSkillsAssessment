@@ -8,6 +8,7 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import HelpIcon from '@material-ui/icons/Help';
 import $ from "jquery";
 import "../css/NavBar.css";
+import Modal from '../util/Modal';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class NavBar extends React.Component {
         this.state = {
             start: dt,
             lastClickTime: dt,
-            isMenuOpen: false
+            isMenuOpen: false,
         }
     }
 
@@ -53,7 +54,7 @@ class NavBar extends React.Component {
                     <IconButton style={{ position: 'absolute', left: '50%', bottom: 0 }} component={RouterLink} to={`/level${this.props.level}`} onClick={this.logClick}><CheckCircleIcon fontSize="large"/></IconButton>
                 }
                 {currentPath.includes("level") ?
-                    <IconButton style={{ position: 'absolute', right: 0, bottom: 0 }}><HelpIcon fontSize="large"/></IconButton> :
+                    <IconButton style={{ position: 'absolute', right: 0, bottom: 0 }} onClick={this.props.openHint}><HelpIcon fontSize="large"/></IconButton> :
                     <div className="animated">
                         <IconButton className={"stop-animation"}  onClick={this.props.getPhoneClick}><PhoneIcon fontSize="large"/></IconButton>
                     </div>

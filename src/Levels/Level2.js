@@ -7,6 +7,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
 import $ from "jquery";
 import "../css/Jewel.css";
+import LearningMode from "../util/LearningMode";
 
 class Level2 extends React.Component {
     constructor(props) {
@@ -19,9 +20,11 @@ class Level2 extends React.Component {
     }
 
     componentDidMount() {
-        $("svg").click(function() {
-            $(".animates").css("animation-play-state", "paused");
-        });
+        $(document).ready(function() {
+            $(".jewel").click(function() {
+                $(".animates").css("animation-play-state", "paused");
+            });
+        })
     }
 
     handleClose = () => {
@@ -50,9 +53,9 @@ class Level2 extends React.Component {
         return (
             <div>
                 <Header mission="find the jewel on the page by closing the pop up."/>
-                <NavBar academicmode={this.props.academicmode} /><br /><br />
+                <NavBar academicmode={this.props.academicmode} openHint={this.props.openHint} hint={this.props.hint} getModeSwitch={this.getModeSwitch}/><br /><br />
                 <Container>
-                    <Dialog open={this.state.isDialogOpen} onClose={this.handleClose} disableBackdropClick={true}>
+                    <Dialog open={this.state.isDialogOpen} onClose={this.handleClose} disableBackdropClick={true} disableEscapeKeyDown={true} hideBackdrop={true}>
                         <DialogTitle>Lorem ipsum dolor sit amet.
                             <IconButton style={{ position: 'absolute', right: 2, top: 2 }} onClick={this.handleClose} color="inherit">
                                 <CloseIcon/>
@@ -75,15 +78,24 @@ class Level2 extends React.Component {
                                 </SvgIcon>
                             </IconButton>
                     }
+                    {this.props.academicmode &&
+                        <LearningMode academicmode={this.props.academicmode}/>
+                    }
                     <Dialog open={this.state.isJewelFound} onClose={this.handleCloseEnd} disableBackdropClick={true}>
                         <DialogTitle>Congratulations Agent!
                             <IconButton style={{ position: 'absolute', right: 2, top: 2 }} component={RouterLink} to="/home" onClick={this.handleCloseEnd} color="inherit">
                                 <CloseIcon/>
                             </IconButton>
                         </DialogTitle>
-                        <DialogContent dividers>
-                            Your mission is complete! Click the X to return to home page and get your next mission.
-                        </DialogContent>
+                        {this.props.academicmode ?
+                            <DialogContent dividers>
+                                Your mission is complete! Pop ups can always be closed by clicking the X, but some sites also let you click anywhere else on the page to get rid of them. Click the X to return to the home page and receive your next mission.
+                            </DialogContent>
+                            :
+                            <DialogContent dividers>
+                                Your mission is complete! Click the X to return to home page and get your next mission.
+                            </DialogContent>
+                        }
                     </Dialog>
                 </Container>
             </div>

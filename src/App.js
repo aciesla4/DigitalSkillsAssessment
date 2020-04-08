@@ -13,6 +13,7 @@ class App extends React.Component {
         this.state = {
             level: 1,
             academicmode: true,
+            hint: false
         }
     }
 
@@ -29,12 +30,26 @@ class App extends React.Component {
         })
     }
 
+    openHint = () => {
+        console.log("getting hint")
+        this.setState({
+            hint: true
+        })
+    }
+
+    closeHint = () => {
+        console.log("closing hint")
+        this.setState({
+            hint: false
+        })
+    }
+
     render() {
         return (
             <BrowserRouter>
                 <Switch>
                     <Route path="/home" render={(props) => <Home {...props} level={this.state.level} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} />} />
-                    <Route path="/level1" render={(props) => <Level1 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} />} />
+                    <Route path="/level1" render={(props) => <Level1 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} hint={this.state.hint} closeHint={this.closeHint}/>} />
                     <Route path="/level2" render={(props) => <Level2 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} />} />
                     <Route path="/" component={Welcome} exact />
                 </Switch>
