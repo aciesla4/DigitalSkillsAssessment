@@ -6,7 +6,6 @@ import { Container, Dialog, DialogContent, DialogTitle, IconButton } from '@mate
 import { Link as RouterLink } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
 import $ from "jquery";
-import "../css/Jewel.css";
 import LearningMode from "../util/LearningMode";
 import Jewel from '../util/Jewel';
 
@@ -72,7 +71,7 @@ class Level2 extends React.Component {
                         </DialogContent>
                     </Dialog>
                     {this.state.isJewelShown &&
-                            <Jewel top='50%' handleFound={this.handleFound} />
+                            <Jewel top='50%' left='50%' handleFound={this.handleFound} />
                     }
                     {this.props.academicmode &&
                         <LearningMode academicmode={this.props.academicmode}/>

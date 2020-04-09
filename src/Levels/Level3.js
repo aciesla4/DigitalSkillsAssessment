@@ -9,13 +9,18 @@ import $ from "jquery";
 import "../css/Jewel.css";
 import LearningMode from "../util/LearningMode";
 import Card from "../util/Card";
+import "../css/Level3.css";
+import Dog from '../Initial/dog.jpg';
+import Cat from '../Initial/cat.jpg';
+import Jewel from '../util/Jewel';
 
 class Level3 extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             isJewelShown: false,
-            isJewelFound: false
+            isJewelFound: false,
+            elements: this.renderCards(),
         }
     }
 
@@ -41,6 +46,28 @@ class Level3 extends React.Component {
         this.props.getLevelChange()
     }
 
+    showJewel = () => {
+        let update = this.state.elements;
+        update[22] = (<div><Jewel handleFound={this.handleFound} /></div>)
+        console.log(update)
+        this.setState({
+            elements: update
+        })
+    }
+
+    renderCards = () => {
+        const items = []
+        for (var i = 0; i < 40; i++) {
+            if (i == 22) {
+                items.push(<Card key={i} id={i} pic={Cat} showJewel={this.showJewel}/>)
+            }
+            else {
+                items.push(<Card key={i} id={i} pic={Dog} />)
+            }
+        }
+        return items;
+    }
+
     render() {
         return (
             <div>
@@ -50,8 +77,9 @@ class Level3 extends React.Component {
                     <LearningMode academicmode={this.props.academicmode}/>
                 }
                 <br /><br /><br />
-                <Card />
-
+                <div className="grid-container">
+                    {this.state.elements}
+                </div>
                 <Dialog open={this.state.isJewelFound} onClose={this.handleCloseEnd} disableBackdropClick={true}>
                     <DialogTitle>Congratulations Agent!
                         <IconButton style={{ position: 'absolute', right: 2, top: 2 }} component={RouterLink} to="/home" onClick={this.handleCloseEnd} color="inherit">
@@ -60,7 +88,7 @@ class Level3 extends React.Component {
                     </DialogTitle>
                     {this.props.academicmode ?
                         <DialogContent dividers>
-                            Your mission is complete! Pop ups can always be closed by clicking the X, but some sites also let you click anywhere else on the page to get rid of them. Click the X to return to the home page and receive your next mission.
+                            Your mission is complete! Click the X to return to the home page and receive your next mission.
                         </DialogContent>
                         :
                         <DialogContent dividers>

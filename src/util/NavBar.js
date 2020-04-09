@@ -8,7 +8,6 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import HelpIcon from '@material-ui/icons/Help';
 import $ from "jquery";
 import "../css/NavBar.css";
-import Modal from '../util/Modal';
 
 class NavBar extends React.Component {
     constructor(props) {

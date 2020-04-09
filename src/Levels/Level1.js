@@ -6,7 +6,6 @@ import { Container, Box, Dialog, DialogContent, DialogTitle, IconButton } from '
 import { Link as RouterLink } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
 import $ from "jquery";
-import "../css/Jewel.css";
 import LearningMode from '../util/LearningMode';
 import Modal from '../util/Modal';
 import Jewel from '../util/Jewel';
@@ -68,7 +67,7 @@ class Level1 extends React.Component {
                             )
                             .join('\n')}
                     </Box>
-                    <Jewel top='' handleFound={this.handleFound} />
+                    <Jewel top='' left='50%' handleFound={this.handleFound} />
                     <br /><br /><br /><br /><br /><br />
                 </Container>
                 <NavBar academicmode={this.props.academicmode} openHint={this.props.openHint} hint={this.props.hint} getModeSwitch={this.getModeSwitch}/>

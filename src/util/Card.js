@@ -1,10 +1,12 @@
 import React from 'react';
+import "../css/Card.css";
 
 class Card extends React.Component {
     render() {
+        const { id, pic } = this.props
         return (
             <div>
-                <input style={{ width: '50px', height: '50px', position: 'absolute', top: '50%', left: '50%' }} type="image" alt="pic" src={require ("../Initial/spyLogo.jpg")} onClick={() => console.log("click")}/>
+                <input className="card" type="image" alt="pic" src={pic} onClick={this.props.showJewel}/>
             </div>
         )
     }
