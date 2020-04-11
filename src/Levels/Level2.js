@@ -15,7 +15,8 @@ class Level2 extends React.Component {
         this.state = {
             isDialogOpen: true,
             isJewelShown: false,
-            isJewelFound: false
+            isJewelFound: false,
+            academicmode: this.props.academicmode,
         }
     }
 
@@ -46,6 +47,14 @@ class Level2 extends React.Component {
             isJewelFound: false
         })
         this.props.getLevelChange()
+    }
+
+    getModeSwitch = () => {
+        let oldValue = this.state.academicmode
+        this.setState({
+            academicmode: !oldValue
+        })
+        this.props.getModeSwitch()
     }
 
     render() {

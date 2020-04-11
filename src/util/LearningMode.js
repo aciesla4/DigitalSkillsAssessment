@@ -26,6 +26,7 @@ class LearningMode extends React.Component {
         let update = this.state.home
         let length = this.state.home.length
         update[length-1] = false
+        this.props.doOnce()
         this.setState({
             home: update
         })

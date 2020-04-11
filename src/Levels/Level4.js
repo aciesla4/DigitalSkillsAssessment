@@ -2,15 +2,30 @@ import React from 'react';
 import '../App.css';
 import NavBar from '../util/NavBar';
 import Header from '../util/Header';
-import { Container, Box, Dialog, DialogContent, DialogTitle, IconButton } from '@material-ui/core';
+import { Dialog, DialogContent, DialogTitle, IconButton } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
 import $ from "jquery";
 import LearningMode from '../util/LearningMode';
 import Modal from '../util/Modal';
 import Jewel from '../util/Jewel';
+import FavCard from "../util/FavCard";
+import "../css/Level4.css";
+import nature1 from '../images/nature1.jpg';
+import nature2 from '../images/nature2.jpg';
+import nature3 from '../images/nature3.jpeg';
+import nature4 from '../images/nature4.jpg';
+import nature5 from '../images/nature5.jpg';
+import nature6 from '../images/nature6.jpg';
+import nature7 from '../images/nature7.jpg';
+import nature8 from '../images/nature8.jpg';
+import nature9 from '../images/nature9.jpg';
+import nature10 from '../images/nature10.jpg';
+import nature11 from '../images/nature11.jpg';
+import nature12 from '../images/nature12.jpg';
 
-class Level1 extends React.Component {
+
+class Level4 extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -18,6 +33,7 @@ class Level1 extends React.Component {
             isJewelShown: false,
             isJewelFound: false,
             academicmode: this.props.academicmode,
+            elements: this.renderCards(),
         }
     }
 
@@ -51,30 +67,40 @@ class Level1 extends React.Component {
         this.props.getModeSwitch()
     }
 
+    handleClick = (i, picture) => {
+        console.log(i);
+        console.log(this.state.elements[i]);
+        let update = this.state.elements;
+        update[i] = (<FavCard pic={picture} color="red" onClick={(e) => this.handleClick(i)}/>)
+        this.setState({
+            elements: update
+        })
+    }
+
+    renderCards = () => {
+        let pictures = [ nature1, nature2, nature3, nature4, nature5, nature6, nature7, nature8, nature9, nature10, nature11, nature12 ]
+        const items = []
+        for (var i = 0; i < 12; i++) {
+            let index = i
+            items.push(<FavCard key={i} id={i} pic={pictures[i]} color="" onClick={(e) => this.handleClick(index, pictures[i])}/>)
+        }
+        return items;
+    }
+
     render() {
         return (
             <div>
-                <Header mission="find the jewel on the page by scrolling down." />
-                <Container>
-                    <Box my={2}>
-                        {[...new Array(45)]
-                            .map(
-                                () => `Cras mattis consectetur purus sit amet fermentum.
-                                                Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                                                Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-                                                Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
-                            )
-                            .join('\n')}
-                    </Box>
-                    <Jewel top='' left='50%' handleFound={this.handleFound} />
-                    <br /><br /><br /><br /><br /><br />
-                </Container>
+                <Header mission="favorite something." />
                 <NavBar academicmode={this.props.academicmode} openHint={this.props.openHint} hint={this.props.hint} getModeSwitch={this.getModeSwitch}/>
                 {this.props.academicmode &&
-                    <LearningMode academicmode={this.props.academicmode}/>
+                <LearningMode academicmode={this.props.academicmode}/>
                 }
+                <br /><br /><br />
+                <div className="grid-container">
+                    {this.state.elements}
+                </div>
                 <Modal show={this.props.hint} last={true} heading="Hint" closeModal={this.props.closeHint} x="75%" y="15%" modalStyle="modalR">
-                    Scrolling down means moving the screen down by pressing the down arrow key or by clicking and dragging the scroll bar (on the right) down.
+                    hinty hint
                 </Modal>
                 <Dialog open={this.state.isJewelFound} onClose={this.handleCloseEnd} disableBackdropClick={true}>
                     <DialogTitle>Congratulations Agent!
@@ -84,11 +110,11 @@ class Level1 extends React.Component {
                     </DialogTitle>
                     {this.props.academicmode ?
                         <DialogContent dividers>
-                            Your first mission is complete! Sometimes there is a lot of information on one page, so you must scroll down or up to view it all. Click the X to return to the home page and receive your next mission.
+                            Your mission is complete! Click the X to return to the home page and receive your next mission.
                         </DialogContent>
                         :
                         <DialogContent dividers>
-                            Your first mission is complete! Click the X to return to the home page and receive your next mission.
+                            Your mission is complete! Click the X to return to the home page and receive your next mission.
                         </DialogContent>
                     }
                 </Dialog>
@@ -97,4 +123,4 @@ class Level1 extends React.Component {
     }
 }
 
-export default Level1;
+export default Level4;

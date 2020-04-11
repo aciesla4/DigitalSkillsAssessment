@@ -6,7 +6,8 @@ import Welcome from './Initial/Welcome';
 import Home from './Initial/Home';
 import Level1 from './Levels/Level1';
 import Level2 from './Levels/Level2';
-import Level3 from './Levels/Level3'; 
+import Level3 from './Levels/Level3';
+import Level4 from './Levels/Level4';
 
 class App extends React.Component {
     constructor(props) {
@@ -50,9 +51,10 @@ class App extends React.Component {
             <BrowserRouter>
                 <Switch>
                     <Route path="/home" render={(props) => <Home {...props} level={this.state.level} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} />} />
-                    <Route path="/level1" render={(props) => <Level1 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} hint={this.state.hint} closeHint={this.closeHint}/>} />
+                    <Route path="/level1" render={(props) => <Level1 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} hint={this.state.hint} closeHint={this.closeHint} />} />
                     <Route path="/level2" render={(props) => <Level2 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} />} />
-                    <Route path="/level3" render={(props) => <Level3 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} />} />
+                    <Route path="/level3" render={(props) => <Level3 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} hint={this.state.hint} closeHint={this.closeHint} />} />
+                    <Route path="/level4" render={(props) => <Level4 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} hint={this.state.hint} closeHint={this.closeHint} />} />
                     <Route path="/" component={Welcome} exact />
                 </Switch>
             </BrowserRouter>

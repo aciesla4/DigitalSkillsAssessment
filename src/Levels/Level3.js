@@ -10,9 +10,10 @@ import "../css/Jewel.css";
 import LearningMode from "../util/LearningMode";
 import Card from "../util/Card";
 import "../css/Level3.css";
-import Dog from '../Initial/dog.jpg';
-import Cat from '../Initial/cat.jpg';
+import Dog from '../images/dog.jpg';
+import Cat from '../images/cat.jpg';
 import Jewel from '../util/Jewel';
+import Modal from "../util/Modal";
 
 class Level3 extends React.Component {
     constructor(props) {
@@ -21,6 +22,7 @@ class Level3 extends React.Component {
             isJewelShown: false,
             isJewelFound: false,
             elements: this.renderCards(),
+            academicmode: this.props.academicmode,
         }
     }
 
@@ -49,7 +51,6 @@ class Level3 extends React.Component {
     showJewel = () => {
         let update = this.state.elements;
         update[22] = (<div><Jewel handleFound={this.handleFound} /></div>)
-        console.log(update)
         this.setState({
             elements: update
         })
@@ -58,7 +59,7 @@ class Level3 extends React.Component {
     renderCards = () => {
         const items = []
         for (var i = 0; i < 40; i++) {
-            if (i == 22) {
+            if (i === 22) {
                 items.push(<Card key={i} id={i} pic={Cat} showJewel={this.showJewel}/>)
             }
             else {
@@ -66,6 +67,14 @@ class Level3 extends React.Component {
             }
         }
         return items;
+    }
+
+    getModeSwitch = () => {
+        let oldValue = this.state.academicmode
+        this.setState({
+            academicmode: !oldValue
+        })
+        this.props.getModeSwitch()
     }
 
     render() {
@@ -80,6 +89,9 @@ class Level3 extends React.Component {
                 <div className="grid-container">
                     {this.state.elements}
                 </div>
+                <Modal show={this.props.hint} last={true} heading="Hint" closeModal={this.props.closeHint} x="75%" y="15%" modalStyle="modalR">
+                    TODO: hint
+                </Modal>
                 <Dialog open={this.state.isJewelFound} onClose={this.handleCloseEnd} disableBackdropClick={true}>
                     <DialogTitle>Congratulations Agent!
                         <IconButton style={{ position: 'absolute', right: 2, top: 2 }} component={RouterLink} to="/home" onClick={this.handleCloseEnd} color="inherit">
@@ -88,7 +100,7 @@ class Level3 extends React.Component {
                     </DialogTitle>
                     {this.props.academicmode ?
                         <DialogContent dividers>
-                            Your mission is complete! Click the X to return to the home page and receive your next mission.
+                            Your mission is complete! Changing the view when searching for an image can help you find the one you are looking for. Click the X to return to the home page and receive your next mission.
                         </DialogContent>
                         :
                         <DialogContent dividers>

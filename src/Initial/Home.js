@@ -81,13 +81,14 @@ class Home extends React.Component {
 
     render() {
         let messages = this.getMessages();
+        console.log(this.state.visited);
         return (
             <div>
                 {this.state.isPhoneClicked &&
                     <Messages messages={messages} currentMember={this.state.member}/>
                 }
                 {this.state.academicmode &&
-                    <LearningMode academicmode={this.state.academicmode}/>
+                    <LearningMode academicmode={this.state.academicmode} />
                 }
                 <NavBar level={this.props.level} getPhoneClick={this.getPhoneClick} clicked={this.state.isPhoneClicked} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} getLevelChange={this.props.getLevelChange}/>
             </div>
