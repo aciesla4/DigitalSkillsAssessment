@@ -1,7 +1,23 @@
-.grid-container {
+.container {
     display: grid;
     grid-template-columns: 225px 225px 225px 225px 225px 225px;
     padding: 20px;
     grid-column-gap: 20px;
     grid-row-gap: 10px;
+    position: relative;
+    top: 60px;
+}
+
+.favcard {
+    height: 260px;
+    width: 215px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    box-shadow: -1px 1px 1px lightgray, -2px 2px 2px lightgray;
+}
+
+.picture {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
 }

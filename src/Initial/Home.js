@@ -45,7 +45,58 @@ class Home extends React.Component {
                         color: "black",
                         username: "Mission Control"
                     }
-                }
+                },
+                {
+                    level: 3,
+                    text: "Well done agent, we knew that we could count on you. ",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
+                {
+                    level: 3,
+                    text: "Your next mission is to find the jewel on the next page by clicking on the cat image. " +
+                        "Click the check mark to begin. ",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
+                {
+                    level: 4,
+                    text: "Good job agent, time for another mission.",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
+                {
+                    level: 4,
+                    text: "Your next mission is to find the jewel by favoriting an item on the next page. " +
+                        "Click the check mark to begin. ",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
+                {
+                    level: 5,
+                    text: "Well done agent, you are halfway to becoming an elite agent.",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
+                {
+                    level: 5,
+                    text: "Your next mission is to find the jewel by resizing the box. " +
+                        "Click the check mark to begin. ",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
             ],
             member: {
                 username: 'spy',
