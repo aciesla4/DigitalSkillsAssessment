@@ -7,9 +7,9 @@ import CloseIcon from '@material-ui/icons/Close';
 class Level1 extends React.Component {
     render() {
         return (
-            <Dialog open={this.props.open} onClose={this.props.handleCloseDialog} disableBackdropClick={true}>
+            <Dialog open={this.props.open} disableBackdropClick={true}>
                 <DialogTitle>Congratulations Agent!
-                    <IconButton style={{ position: 'absolute', right: 2, top: 2 }} component={RouterLink} to="/home" onClick={this.handleCloseDialog} color="inherit">
+                    <IconButton style={{ position: 'absolute', right: 2, top: 2 }} component={RouterLink} to="/home" onClick={this.props.handleCloseDialog} color="inherit">
                         <CloseIcon/>
                     </IconButton>
                 </DialogTitle>

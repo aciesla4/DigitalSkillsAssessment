@@ -46,7 +46,7 @@ class Level2 extends React.Component {
                 dialogMessage='Your mission is complete! Pop ups can always be closed by clicking the X, but some sites also let you click anywhere else on the page to get rid of them. Click the X to return to the home page and receive your next mission.'
             >
                 <Container>
-                    <Dialog open={this.state.isDialogOpen} onClose={this.handleClose} disableBackdropClick={true} disableEscapeKeyDown={true} hideBackdrop={true}>
+                    <Dialog open={this.state.isDialogOpen} disableBackdropClick={true} disableEscapeKeyDown={true} hideBackdrop={true}>
                         <DialogTitle>Lorem ipsum dolor sit amet.
                             <IconButton style={{ position: 'absolute', right: 2, top: 2 }} onClick={this.handleClose} color="inherit">
                                 <CloseIcon/>

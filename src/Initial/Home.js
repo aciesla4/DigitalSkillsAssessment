@@ -97,6 +97,23 @@ class Home extends React.Component {
                         username: "Mission Control"
                     }
                 },
+                {
+                    level: 6,
+                    text: "Good job agent! You've come a long way since your first mission. ",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
+                {
+                    level: 6,
+                    text: "Your next mission is to find the jewel by clicking on the sort icons to see their effect. ",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
+
             ],
             member: {
                 username: 'spy',
@@ -132,7 +149,6 @@ class Home extends React.Component {
 
     render() {
         let messages = this.getMessages();
-        console.log(this.state.visited);
         return (
             <div>
                 {this.state.isPhoneClicked &&

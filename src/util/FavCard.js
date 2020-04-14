@@ -1,5 +1,4 @@
 import React from 'react';
-import "../css/Card.css";
 import { IconButton } from "@material-ui/core";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Jewel from '../util/Jewel';

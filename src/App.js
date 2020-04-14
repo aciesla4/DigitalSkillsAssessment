@@ -9,13 +9,15 @@ import Level2 from './Levels/Level2';
 import Level3 from './Levels/Level3';
 import Level4 from './Levels/Level4';
 import Level5 from './Levels/Level5';
+import Level6 from './Levels/Level6';
+import Level7 from './Levels/Level7';
 
 class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             level: 1,
-            academicmode: true,
+            academicmode: false,
             isHintShown: false
         }
     }
@@ -55,6 +57,8 @@ class App extends React.Component {
                     <Route path="/level3" render={(props) => <Level3 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
                     <Route path="/level4" render={(props) => <Level4 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
                     <Route path="/level5" render={(props) => <Level5 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
+                    <Route path="/level6" render={(props) => <Level6 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
+                    <Route path="/level7" render={(props) => <Level7 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
                     <Route path="/" component={Welcome} exact />
                 </Switch>
             </BrowserRouter>

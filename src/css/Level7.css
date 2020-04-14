@@ -1,0 +1,41 @@
+.container {
+    display: grid;
+    grid-template-columns: 225px 225px 225px 225px 225px 225px;
+    padding: 20px;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    top: 60px;
+    position: relative;
+}
+
+.card {
+    height: 320px;
+    width: 215px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    box-shadow: -1px 1px 1px lightgray, -2px 2px 2px lightgray;
+}
+
+.picture {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: 0.5s ease;
+    opacity: 0;
+}
+
+.card:hover .picture {
+    opacity: 0.3;
+}
+
+.card:hover .middle{
+    opacity: 1;
+}
+
+
