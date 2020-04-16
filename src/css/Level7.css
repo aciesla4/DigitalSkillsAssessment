@@ -1,26 +1,36 @@
-.container {
+.bar {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    height: 8%;
+    background-color: white;
+}
+
+.product-container {
     display: grid;
     grid-template-columns: 225px 225px 225px 225px 225px 225px;
     padding: 20px;
     grid-column-gap: 20px;
     grid-row-gap: 10px;
-    top: 60px;
+    top: 105px;
     position: relative;
 }
 
-.card {
-    height: 320px;
+.product-card {
+    position: relative;
+    height: 265px;
     width: 215px;
     padding: 10px;
     border: 1px solid lightgray;
     box-shadow: -1px 1px 1px lightgray, -2px 2px 2px lightgray;
 }
 
-.picture {
+.image {
     width: 200px;
     height: 200px;
     padding: 10px;
     opacity: 1;
+    display: block;
     transition: .5s ease;
     backface-visibility: hidden;
 }
@@ -28,14 +38,40 @@
 .middle {
     transition: 0.5s ease;
     opacity: 0;
+    position: absolute;
+    top: 40%;
+    left: 40%;
 }
 
-.card:hover .picture {
-    opacity: 0.3;
+.product-card:hover .image {
+    opacity: 0.1;
 }
 
-.card:hover .middle{
+.product-card:hover .middle{
     opacity: 1;
+}
+
+.button {
+    display: block;
+    height: 50px;
+    width: 50px;
+    border: transparent;
+    background: transparent;
+    cursor: pointer;
+}
+
+.cart {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    border: transparent;
+    background: transparent;
+    cursor: pointer;
+}
+
+.jewel-dialog{
+    height: 125px;
+    width: 125px;
 }
 
 

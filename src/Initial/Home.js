@@ -107,7 +107,25 @@ class Home extends React.Component {
                 },
                 {
                     level: 6,
-                    text: "Your next mission is to find the jewel by clicking on the sort icons to see their effect. ",
+                    text: "Your next mission is to find the jewel by clicking on the sort icons to see their effect. " +
+                        "Click the check mark to begin. ",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
+                {
+                    level: 7,
+                    text: "Well done agent! We think it's time that you get yourself some spy gear. ",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
+                {
+                    level: 7,
+                    text: "Your next mission is to find the jewel by adding spy gear to your cart and then begining to check out. " +
+                        "Click the check mark to begin. ",
                     member: {
                         color: "black",
                         username: "Mission Control"
