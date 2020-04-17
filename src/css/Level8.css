@@ -1,0 +1,50 @@
+.cart-container {
+    display: grid;
+    grid-template-columns: 225px ;
+    padding: 20px;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    top: 60px;
+    position: relative;
+}
+
+.cart-card {
+    position: relative;
+    height: 215px;
+    width: 1000px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    box-shadow: -1px 1px 1px lightgray, -2px 2px 2px lightgray;
+}
+
+.delete-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.check-out {
+    background: white;
+    border: 1px solid lightgray;
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    width: 30%;
+}
+
+.check-out-button {
+    border: 1px solid lightgray;
+    background: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    font-family: 'Oxanium';
+    font-size: 20px;
+}
+
+.check-out-button:hover{
+    background-color: lightgray;
+}

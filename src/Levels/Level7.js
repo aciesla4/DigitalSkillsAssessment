@@ -62,7 +62,7 @@ class Level7 extends React.Component {
         const items = [];
         for (var i = 0; i < 12; i++) {
             let index = i;
-            items.push(<ProductCard key={i} id={i} pic={pictures[i]} desc={descriptions[i]} color="" isJewelShown={false} onClick={() => this.handleAddItem(index)}/>);
+            items.push(<ProductCard key={i} pic={pictures[i]} desc={descriptions[i]} onClick={() => this.handleAddItem(index)}/>);
         }
         return items;
     }
