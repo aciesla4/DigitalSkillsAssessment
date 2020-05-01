@@ -4,18 +4,6 @@ import '../css/Level8.css';
 import Jewel from '../util/Jewel';
 import Level from '../util/Level';
 import CartCard from '../util/CartCard';
-import gear1 from '../images/gear1.jpg';
-import gear2 from '../images/gear2.jpg';
-import gear3 from '../images/gear3.jpg';
-import gear4 from '../images/gear4.jpg';
-import gear5 from '../images/gear5.jpg';
-import gear6 from '../images/gear6.jpg';
-import gear7 from '../images/gear7.jpg';
-import gear8 from '../images/gear8.png';
-import gear9 from '../images/gear9.jpg';
-import gear10 from '../images/gear10.jpg';
-import gear11 from '../images/gear11.jpg';
-import gear12 from '../images/gear12.jpeg';
 
 class Level8 extends React.Component {
     constructor(props) {
@@ -23,7 +11,10 @@ class Level8 extends React.Component {
         this.state = {
             isJewelFound: false,
             academicmode: this.props.academicmode,
-            elements: this.renderCards()
+            prices: [99.99, 249.99, 64.99, 21.99, 34.99, 69.99, 14.99, 89.99, 67.99, 299.99, 54.99, 31.99],
+            elements: this.props.items,
+            deleted: false,
+            isJewelShown: false,
         }
     }
 
@@ -31,7 +22,6 @@ class Level8 extends React.Component {
         this.setState({
             isJewelFound: true,
         })
-        this.props.getItems(this.state.items)
     }
 
     handleCloseDialog = () => {
@@ -41,52 +31,75 @@ class Level8 extends React.Component {
         this.props.getLevelChange()
     }
 
-    deleteItem = () => {
-        console.log("delete")
+    deleteItem = (id) => {
+        const update = this.state.elements.filter(element => element.id !== id);
+        this.setState({
+            elements: update,
+            deleted: true,
+        })
     }
 
-    renderCards = () => {
-        let pictures = [ gear1, gear2, gear3, gear4, gear5, gear6, gear7, gear8, gear9, gear10, gear11, gear12 ];
-        let descriptions = ["Night Vision Glasses", "Laser Shooting Watch", "Walkie Talkies", "Sweat Absorbing Shirt", "20 Pocket Pants", "Hidden Compartment Shoes",
-            "Sun Blocking Hat", "Bulletproof Briefcase", "Long Range Magnifier", "Satellite Phone", "Audio Recording Pen", "Voice Magnifier"];
-        let prices = [99.99, 249.99, 64.99, 21.99, 34.99, 69.99, 14.99, 89.99, 67.99, 299.99, 54.99, 31.99];
-        const items = [];
-        for (var i = 0; i < 12; i++) {
-            let index = i
-            items.push(<CartCard key={i} pic={pictures[index]} desc={descriptions[index]} price={prices[index]} quantity={1} deleteItem={this.deleteItem}/>);
+    calculateSummary = () => {
+        let subtotal = 0;
+        for (var i = 0; i < this.state.elements.length; i++) {
+            let item = this.state.elements[i];
+            subtotal = subtotal + this.state.prices[item.id];
         }
-        return items;
+        subtotal = parseFloat(subtotal.toFixed(2));
+        let tax = parseFloat((0.06 * subtotal).toFixed(2));
+        let total = parseFloat((subtotal + 5.99 + tax).toFixed(2));
+        return {subtotal, tax, total}
     }
 
+    showJewel = () => {
+        //if (this.state.deleted) {
+            this.setState({
+                isJewelShown: true,
+            })
+       // }
+    }
 
     render() {
         return (
             <Level
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
-                mission=''
+                mission='delete an item from your cart then check out.'
                 openHint={this.props.openHint}
                 closeHint={this.props.closeHint}
                 isHintShown={this.props.isHintShown}
-                hintMessage=''
+                hintMessage='Deleting an item can be done by clicking the X in the right hand corner of the item.'
                 isJewelFound={this.state.isJewelFound}
                 handleCloseDialog={this.handleCloseDialog}
-                dialogMessage='Your mission is complete! Click the X to return to the home page and receive your next mission.'
+                dialogMessage='Your mission is complete! Always double check that the items you want are correct in your cart before checking out. Click the X to return to the home page and receive your next mission.'
             >
                 <div>
                     <div className="cart-container">
-                        {this.state.elements}
+                        {this.state.elements.map(element => (
+                            <CartCard
+                                key={element.id}
+                                id={element.id}
+                                pic={element.pic}
+                                desc={element.desc}
+                                quantity={1}
+                                price={this.state.prices[element.id]}
+                                deleteItem={this.deleteItem}
+                            />
+                            )
+                        )}
                         <br/><br/>
                     </div>
                     <div className="check-out">
                         <h2 style={{ textAlign: 'center' }}>Order Summary</h2>
-                        <h4 style={{ float: 'left' }}>Subtotal: </h4><h4 style={{ float: 'right' }}>$5.99</h4><br/>
+                        <h4 style={{ float: 'left' }}>Subtotal: </h4><h4 style={{ float: 'right' }}>${this.calculateSummary().subtotal}</h4><br/>
                         <h4 style={{ clear: 'both', float: 'left' }}>Estimated Shipping: </h4><h4 style={{ float: 'right' }}>$5.99</h4><br/>
-                        <h4 style={{ clear: 'both', float: 'left' }}>Estimated Tax: </h4><h4 style={{ float: 'right' }}>$5.99</h4><br/>
-                        <h3 style={{ clear: 'both', float: 'left' }}>Total: </h3><h3 style={{ float: 'right' }}>$5.99</h3><br/>
-                        <button className="check-out-button">Check Out</button>
+                        <h4 style={{ clear: 'both', float: 'left' }}>Estimated Tax: </h4><h4 style={{ float: 'right' }}>${this.calculateSummary().tax}</h4><br/>
+                        <h3 style={{ clear: 'both', float: 'left' }}>Total: </h3><h3 style={{ float: 'right' }}>${this.calculateSummary().total}</h3><br/>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <button className="check-out-button" onClick={this.showJewel}>Check Out</button>
                     </div>
                 </div>
+                {this.state.isJewelShown && <Jewel top='70%' left='82%' handleFound={this.handleFound}/>}
             </Level>
         );
     }

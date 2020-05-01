@@ -32,7 +32,7 @@ class Level6 extends React.Component {
         this.setState({
             count: this.state.count + 1
         })
-        if (this.state.count == 4) {
+        if (this.state.count === 4) {
             this.setState({
                 isJewelShown: true,
             })

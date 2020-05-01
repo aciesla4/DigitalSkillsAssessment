@@ -25,10 +25,12 @@ class Level7 extends React.Component {
         this.state = {
             isJewelFound: false,
             academicmode: this.props.academicmode,
-            elements: this.renderCards(),
             numItems: 0,
             items: [],
             isDialogOpen: false,
+            elements: [{id: 0, pic: gear1, desc: "Night Vision Glasses"}, {id: 1, pic: gear2, desc: "Laser Shooting Watch"}, {id: 2, pic: gear3, desc: "Walkie Talkie"}, {id: 3, pic: gear4, desc: "Sweat Absorbing Shirt"},
+                {id: 4, pic: gear5, desc: "20 Pocket Pants"}, {id: 5, pic: gear6, desc: "Hidden Compartment Shoes"},{id: 6, pic: gear7, desc: "Sun Blocking Hat"}, {id: 7, pic: gear8, desc: "Bulletproof Briefcase"},
+                {id: 8, pic: gear9, desc: "Long Range Magnifier"}, {id: 9, pic: gear10, desc: "Satellite Phone"}, {id: 10, pic: gear11, desc: "Audio Recording Pen"}, {id: 11, pic: gear12,desc: "Voice Magnifier"}],
         }
     }
 
@@ -46,25 +48,13 @@ class Level7 extends React.Component {
         this.props.getLevelChange()
     }
 
-    handleAddItem = (index) => {
+    handleAddItem = (element) => {
         let update = this.state.items;
-        update.push(index);
+        update.push(element);
         this.setState({
             numItems: this.state.numItems + 1,
             items: update
         })
-    }
-
-    renderCards = () => {
-        let pictures = [ gear1, gear2, gear3, gear4, gear5, gear6, gear7, gear8, gear9, gear10, gear11, gear12 ];
-        let descriptions = ["Night Vision Glasses", "Laser Shooting Watch", "Walkie Talkies", "Sweat Absorbing Shirt", "20 Pocket Pants", "Hidden Compartment Shoes",
-                            "Sun Blocking Hat", "Bulletproof Briefcase", "Long Range Magnifier", "Satellite Phone", "Audio Recording Pen", "Voice Magnifier"];
-        const items = [];
-        for (var i = 0; i < 12; i++) {
-            let index = i;
-            items.push(<ProductCard key={i} pic={pictures[i]} desc={descriptions[i]} onClick={() => this.handleAddItem(index)}/>);
-        }
-        return items;
     }
 
     showJewel = () => {
@@ -98,7 +88,14 @@ class Level7 extends React.Component {
                         </button>
                     </div>
                     <div className="product-container">
-                        {this.state.elements}
+                        {this.state.elements.map(element => (
+                            <ProductCard
+                                key={element.id}
+                                element={element}
+                                onClick={() => {this.handleAddItem(element)}}
+                            />
+                            )
+                        )}
                         <br/><br/>
                     </div>
                     <Dialog classes={{ paper: 'jewel-dialog' }} open={this.state.isDialogOpen} disableBackdropClick={true} disableEscapeKeyDown={true} hideBackdrop={true}>

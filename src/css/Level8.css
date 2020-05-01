@@ -29,6 +29,7 @@
 .check-out {
     background: white;
     border: 1px solid lightgray;
+    border-radius: 8px;
     position: absolute;
     top: 80px;
     right: 10px;
@@ -37,14 +38,15 @@
 
 .check-out-button {
     border: 1px solid lightgray;
-    background: white;
+    background: lightgray;
     padding: 12px 28px;
     border-radius: 8px;
     transition-duration: 0.4s;
     font-family: 'Oxanium';
     font-size: 20px;
+    width: 100%;
 }
 
 .check-out-button:hover{
-    background-color: lightgray;
+    background-color: darkgray;
 }

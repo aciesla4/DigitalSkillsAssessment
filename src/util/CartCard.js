@@ -3,7 +3,7 @@ import CloseIcon from '@material-ui/icons/Close';
 
 class CartCard extends React.Component {
     render() {
-        const { pic, desc, quantity, price } = this.props
+        const { pic, desc, quantity, price, id } = this.props
         return (
             <div className="cart-card">
                 <img className="image" alt="pic" src={pic} onClick={this.props.showJewel}/>
@@ -12,7 +12,7 @@ class CartCard extends React.Component {
                     <h4>Quantity: {quantity}</h4>
                     <h4>${price}</h4>
                 </div>
-                <button className="delete-button" onClick={this.props.deleteItem}><CloseIcon style={{ height: '30px', width: '30px' }}/></button>
+                <button className="delete-button" onClick={() => this.props.deleteItem(id)}><CloseIcon style={{ height: '30px', width: '30px' }}/></button>
             </div>
         )
     }

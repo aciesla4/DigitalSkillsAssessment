@@ -40,8 +40,6 @@ class Level4 extends React.Component {
     }
 
     handleClick = (i) => {
-        console.log(i);
-        console.log(this.state.elements[i]);
         let update = this.state.elements;
         update[i] = (<FavCard key={i} id={i} color="red" handleFound={this.handleFound} isJewelShown={true}/>)
         this.setState({
