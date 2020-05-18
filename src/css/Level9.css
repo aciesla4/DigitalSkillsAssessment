@@ -1,0 +1,21 @@
+.certificate {
+    border: double black;
+    position: absolute;
+    top: 10%;
+    left: 1%;
+    height: 60%;
+    width: 98%;
+    text-align: center;
+}
+
+.cert-logo {
+    padding-top: 5px;
+    height: 125px;
+    width: 125px;
+}
+
+.share {
+    position: absolute;
+    bottom: 15%;
+    left: 42.5%;
+}

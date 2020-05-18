@@ -1,0 +1,39 @@
+.share-modal {
+    position: fixed;
+    width: 550px;
+    background: white;
+    box-shadow: 0 0 4px 4px lightgray;
+}
+
+.share-modal-title {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    margin: 0;
+    background-color: #4267b2;
+    color: white;
+}
+
+.share-button {
+    width: 100%;
+    background-color: #4267b2;
+    color: white;
+    height: 30px;
+    border: none;
+}
+
+.share-button:hover {
+    background-color: #3b5998;
+    cursor: pointer;
+}
+
+.content {
+    padding: 1rem;
+}
+
+.avatar {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 10px -10px;
+}

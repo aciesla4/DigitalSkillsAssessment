@@ -82,7 +82,7 @@ class Home extends React.Component {
                 },
                 {
                     level: 5,
-                    text: "Well done agent, you are halfway to becoming an elite agent.",
+                    text: "Well done agent, you are a quarter of the way to becoming an elite agent.",
                     member: {
                         color: "black",
                         username: "Mission Control"
@@ -142,6 +142,23 @@ class Home extends React.Component {
                 {
                     level: 8,
                     text: "Your next mission is to find the jewel by deleting an item from your cart and then checking out. " +
+                        "Click the check mark to begin. ",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
+                {
+                    level: 9,
+                    text: "Congratulations agent! You are halfway there to becoming an elite spy. How about you share your progress with your friends?",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
+                {
+                    level: 9,
+                    text: "Your next mission is to find the jewel by sharing your certificate of progress on Facebook. " +
                         "Click the check mark to begin. ",
                     member: {
                         color: "black",
