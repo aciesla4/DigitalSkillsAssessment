@@ -1,0 +1,43 @@
+.settings-container {
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    display: grid;
+    grid-column-gap: 65px;
+    grid-row-gap: 40px;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.item {
+    display: inline;
+    font-size: 20px;
+}
+
+.settings-grid {
+    padding: 10px;
+    border-radius: 1em;
+}
+
+.settings-grid:hover {
+    background-color: #F0F0F0;
+}
+
+.privacy-container {
+    position: absolute;
+    top: 57px;
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: auto auto;
+}
+
+.privacy-drawer{
+    padding: 5px;
+    background-color: #F0F0F0;
+    width: 300px;
+    height: 600px;
+    overflow-y: auto;
+}
+
+.privacy-grid:hover {
+    background-color: lightgray;
+}
