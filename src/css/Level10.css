@@ -38,6 +38,10 @@
     overflow-y: auto;
 }
 
+.privacy-grid {
+
+}
+
 .privacy-grid:hover {
     background-color: lightgray;
 }

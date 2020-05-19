@@ -67,7 +67,7 @@ class Level10 extends React.Component {
                 openHint={this.props.openHint}
                 closeHint={this.props.closeHint}
                 isHintShown={this.props.isHintShown}
-                hintMessage='Click on the button labeled privacy.'
+                hintMessage='Click on the button labeled Privacy.'
                 isJewelFound={this.state.isJewelFound}
                 handleCloseDialog={this.handleCloseDialog}
                 dialogMessage='Your mission is complete! Sometimes it is easier to search for a setting than clicking around to find it. Click the X to return to the home page and receive your next mission.'
