@@ -16,6 +16,8 @@ import Level9 from './Levels/Level9';
 import Level10 from './Levels/Level10';
 import Level11 from './Levels/Level11';
 import Level12 from './Levels/Level12';
+import Level13 from './Levels/Level13';
+import Level14 from './Levels/Level14';
 
 class App extends React.Component {
     constructor(props) {
@@ -77,6 +79,8 @@ class App extends React.Component {
                     <Route path="/level10" render={(props) => <Level10 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
                     <Route path="/level11" render={(props) => <Level11 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
                     <Route path="/level12" render={(props) => <Level12 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
+                    <Route path="/level13" render={(props) => <Level13 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
+                    <Route path="/level14" render={(props) => <Level14 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
                     <Route path="/" component={Welcome} exact />
                 </Switch>
             </BrowserRouter>

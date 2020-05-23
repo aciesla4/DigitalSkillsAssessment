@@ -216,6 +216,40 @@ class Home extends React.Component {
                         username: "Mission Control"
                     }
                 },
+                {
+                    level: 13,
+                    text: "Well done agent! It's time you check in with a representative at Mission Control.",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
+                {
+                    level: 13,
+                    text: "Your next mission is to find the jewel by chatting with Mission Control." +
+                        "Click the check mark to begin. ",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
+                {
+                    level: 14,
+                    text: "",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
+                {
+                    level: 14,
+                    text: "Your next mission is to find the jewel by ..." +
+                        "Click the check mark to begin. ",
+                    member: {
+                        color: "black",
+                        username: "Mission Control"
+                    }
+                },
             ],
             member: {
                 username: 'spy',

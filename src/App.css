@@ -11,3 +11,10 @@
     padding: 1rem;
     font-size: 20px;
 }
+
+.chat-window {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    z-index: -5;
+}
