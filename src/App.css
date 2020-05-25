@@ -18,3 +18,11 @@
     width: 100%;
     z-index: -5;
 }
+
+.drive-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+    width: 1145px;
+}
