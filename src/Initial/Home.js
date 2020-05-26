@@ -175,7 +175,7 @@ class Home extends React.Component {
                 },
                 {
                     level: 10,
-                    text: "Your next mission is to find the jewel by finding the privacy settings." +
+                    text: "Your next mission is to find the jewel by finding the privacy settings. " +
                         "Click the check mark to begin. ",
                     member: {
                         color: "black",
@@ -192,7 +192,7 @@ class Home extends React.Component {
                 },
                 {
                     level: 11,
-                    text: "Your next mission is to find the jewel by stopping your Notes from being saved in your Cloud." +
+                    text: "Your next mission is to find the jewel by stopping your Notes from being saved in your Cloud. " +
                         "Click the check mark to begin. ",
                     member: {
                         color: "black",
@@ -209,7 +209,7 @@ class Home extends React.Component {
                 },
                 {
                     level: 12,
-                    text: "Your next mission is to find the jewel by finding Copper Harbor on the map." +
+                    text: "Your next mission is to find the jewel by finding Copper Harbor on the map. " +
                         "Click the check mark to begin. ",
                     member: {
                         color: "black",
@@ -226,7 +226,7 @@ class Home extends React.Component {
                 },
                 {
                     level: 13,
-                    text: "Your next mission is to find the jewel by chatting with Mission Control." +
+                    text: "Your next mission is to find the jewel by chatting with Mission Control. " +
                         "Click the check mark to begin. ",
                     member: {
                         color: "black",
@@ -243,7 +243,7 @@ class Home extends React.Component {
                 },
                 {
                     level: 14,
-                    text: "Your next mission is to find the jewel by finding information about Google Drive." +
+                    text: "Your next mission is to find the jewel by finding information about Google Drive. " +
                         "Click the check mark to begin. ",
                     member: {
                         color: "black",

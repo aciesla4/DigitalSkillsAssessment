@@ -5,105 +5,105 @@ class Menu extends React.Component {
     render() {
         return (
             <nav id="main_nav">
-                <ul>
+                <ul className="dropdown">
                     <li>
-                        <button>Career</button>
-                        <ul>
-                            <li><button>Resume</button>
-                                <ul>
-                                    <li><button>Writing</button></li>
-                                    <li><button>Formatting</button></li>
+                        <button className="drop-button">Career</button>
+                        <ul className="dropdown">
+                            <li><button className="drop-button">Resume</button>
+                                <ul className="dropdown">
+                                    <li><button className="drop-button">Writing</button></li>
+                                    <li><button className="drop-button">Formatting</button></li>
                                 </ul>
                             </li>
-                            <li><button>Cover Letter</button>
-                                <ul>
-                                    <li><button>Writing</button></li>
-                                    <li><button>Formatting</button></li>
+                            <li><button className="drop-button">Cover Letter</button>
+                                <ul className="dropdown">
+                                    <li><button className="drop-button">Writing</button></li>
+                                    <li><button className="drop-button">Formatting</button></li>
                                 </ul>
                             </li>
-                            <li><button>Interviews</button>
-                                <ul>
-                                    <li><button>Preparing</button></li>
-                                    <li><button>Star Method</button></li>
-                                    <li><button>Following up</button></li>
+                            <li><button className="drop-button">Interviews</button>
+                                <ul className="dropdown">
+                                    <li><button className="drop-button">Preparing</button></li>
+                                    <li><button className="drop-button">Star Method</button></li>
+                                    <li><button className="drop-button">Following up</button></li>
                                 </ul>
                             </li>
-                            <li><button>Mentorship</button>
-                                <ul>
-                                    <li><button>Finding a mentor</button></li>
-                                    <li><button>Being a mentor</button></li>
+                            <li><button className="drop-button">Mentorship</button>
+                                <ul className="dropdown">
+                                    <li><button className="drop-button">Finding a mentor</button></li>
+                                    <li><button className="drop-button">Being a mentor</button></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <button>Soft Skills</button>
-                        <ul>
+                        <button className="drop-button">Soft Skills</button>
+                        <ul className="dropdown">
                             <li>
-                                <button>Problem Solving</button>
-                                <ul>
-                                    <li><button>Analysis</button></li>
-                                    <li><button>Brainstorming</button></li>
+                                <button className="drop-button">Problem Solving</button>
+                                <ul className="dropdown">
+                                    <li><button className="drop-button">Analysis</button></li>
+                                    <li><button className="drop-button">Brainstorming</button></li>
                                 </ul>
                             </li>
                             <li>
-                                <button>Goals</button>
-                                <ul>
-                                    <li><button>Setting Goals</button></li>
-                                    <li><button>Making Progress</button></li>
-                                    <li><button>Evaluating Goals</button></li>
-                                    <li><button>Creating New Goals</button></li>
+                                <button className="drop-button">Goals</button>
+                                <ul className="dropdown">
+                                    <li><button className="drop-button">Setting Goals</button></li>
+                                    <li><button className="drop-button">Making Progress</button></li>
+                                    <li><button className="drop-button">Evaluating Goals</button></li>
+                                    <li><button className="drop-button">Creating New Goals</button></li>
                                 </ul>
                             </li>
                             <li>
-                                <button>Time Management</button>
-                                <ul>
-                                    <li><button>Evaluating Time</button></li>
-                                    <li><button>Staying Focused</button></li>
-                                    <li><button>Organizing Your Time</button></li>
+                                <button className="drop-button">Time Management</button>
+                                <ul className="dropdown">
+                                    <li><button className="drop-button">Evaluating Time</button></li>
+                                    <li><button className="drop-button">Staying Focused</button></li>
+                                    <li><button className="drop-button">Organizing Your Time</button></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <button>Technical</button>
-                        <ul>
-                            <li><button>Software</button>
-                                <ul>
-                                    <li><button>Microsoft Office</button>
-                                        <ul>
-                                            <li><button>Excel</button></li>
-                                            <li><button>Word</button></li>
-                                            <li><button>Powerpoint</button></li>
-                                            <li><button>One Drive</button></li>
+                        <button className="drop-button">Technical</button>
+                        <ul className="dropdown">
+                            <li><button className="drop-button">Software</button>
+                                <ul className="dropdown">
+                                    <li><button className="drop-button">Microsoft Office</button>
+                                        <ul className="dropdown">
+                                            <li><button className="drop-button">Excel</button></li>
+                                            <li><button className="drop-button">Word</button></li>
+                                            <li><button className="drop-button">Powerpoint</button></li>
+                                            <li><button className="drop-button">One Drive</button></li>
                                         </ul>
                                     </li>
-                                    <li><button>Google Suite</button>
-                                        <ul>
-                                            <li><button>Sheets</button></li>
-                                            <li><button>Docs</button></li>
-                                            <li><button>Slides</button></li>
-                                            <li><button onClick={this.props.handleClick}>Drive</button></li>
+                                    <li><button className="drop-button">Google Suite</button>
+                                        <ul className="dropdown">
+                                            <li><button className="drop-button">Sheets</button></li>
+                                            <li><button className="drop-button">Docs</button></li>
+                                            <li><button className="drop-button">Slides</button></li>
+                                            <li><button className="drop-button" onClick={this.props.handleClick}>Drive</button></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
-                            <li><button>Hardware</button>
-                                <ul>
-                                    <li><button>Computer</button></li>
-                                    <li><button>Router</button></li>
-                                    <li><button>Printer</button></li>
+                            <li><button className="drop-button">Hardware</button>
+                                <ul className="dropdown">
+                                    <li><button className="drop-button">Computer</button></li>
+                                    <li><button className="drop-button">Router</button></li>
+                                    <li><button className="drop-button">Printer</button></li>
                                 </ul>
                             </li>
-                            <li><button>IT Management</button></li>
+                            <li><button className="drop-button">IT Management</button></li>
                         </ul>
                     </li>
                     <li>
-                        <button>Leadership</button>
-                        <ul>
-                            <li><button>Decision</button></li>
-                            <li><button>Vision</button></li>
-                            <li><button>Culture</button></li>
+                        <button className="drop-button">Leadership</button>
+                        <ul className="dropdown">
+                            <li><button className="drop-button">Decision</button></li>
+                            <li><button className="drop-button">Vision</button></li>
+                            <li><button className="drop-button">Culture</button></li>
                         </ul>
                     </li>
                 </ul>

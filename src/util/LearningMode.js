@@ -60,6 +60,7 @@ class LearningMode extends React.Component {
 
     render() {
         const currentPath = window.location.pathname
+        const len = currentPath.length
         return (
             <div>
                 {currentPath.includes("home") &&
@@ -75,7 +76,7 @@ class LearningMode extends React.Component {
                         </Modal>
                     </div>
                 }
-                {currentPath.includes("level1") &&
+                {currentPath.substring(len - 6) == 'level1' &&
                     <div id="level1">
                         <Modal show={this.state.level1[0]} heading="Home Button" openNext={() => this.openNextLevel1(0)} x="40%" y="15%" modalStyle="modal">
                             Click this button to return to the home page.

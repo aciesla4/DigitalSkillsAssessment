@@ -1,9 +1,9 @@
-* {
+.dropdown {
     margin: 0;
     padding: 0;
 }
 
-button {
+.drop-button {
     border: none;
     background: inherit;
     font-size: 20px;
