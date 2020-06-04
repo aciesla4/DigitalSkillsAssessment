@@ -3,6 +3,11 @@ import '../App.css';
 import Level from '../util/Level';
 import Jewel from '../util/Jewel';
 import SignIn from '../util/SignIn';
+import { Router } from 'react-router-dom';
+import { history } from '../util/PasswordReset/_helpers';
+import { App } from '../util/PasswordReset/app';
+import { configureFakeBackend } from "../util/PasswordReset/_helpers";
+import "../css/SignIn.css";
 
 class Level14 extends React.Component {
     constructor(props) {
@@ -28,6 +33,7 @@ class Level14 extends React.Component {
 
 
     render() {
+        configureFakeBackend();
         return (
             <Level
                 academicmode={this.props.academicmode}
@@ -42,8 +48,10 @@ class Level14 extends React.Component {
                 dialogMessage='Your mission is complete! <TODO> Click the X to return to the home page and receive your next mission.'
             >
                 <div>
-                    <br/><br/><br/>
-                    <SignIn />
+                    <Router history={history}>
+                        <br/><br/><br/>
+                        <App />
+                    </Router>
                 </div>
             </Level>
         );

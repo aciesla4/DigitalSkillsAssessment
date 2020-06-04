@@ -21,3 +21,33 @@
     font-size: 16px;
     box-shadow: 0 0 2px 2px #E8E8E8;
 }
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group::after {
+    box-sizing: border-box;
+}
+
+.form-control {
+    width: 100%;
+    margin-top: 8px;
+    display: inline-flex;
+    position: relative;
+    min-width: 0;
+    flex-direction: column;
+    vertical-align: top;
+}
+
+.invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #dc3545
+}
+
+.invalid-feedback::after {
+    box-sizing: border-box;
+}
