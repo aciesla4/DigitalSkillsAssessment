@@ -1,7 +1,15 @@
 import { alertService } from '../_services';
 
 // array in local storage for registered users
+var oldUsers = JSON.parse(localStorage.getItem('users')) || [];
+var agent = {
+    'email': 'agent203@spyacademy.org',
+    'password': 'original',
+}
+oldUsers.push(agent);
+localStorage.setItem('users', JSON.stringify(oldUsers));
 let users = JSON.parse(localStorage.getItem('users')) || [];
+console.log(users)
 
 export function configureFakeBackend() {
     let realFetch = window.fetch;

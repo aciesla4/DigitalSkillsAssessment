@@ -98,8 +98,8 @@ function Alert({ id, fade }) {
     if (!alerts.length) return null;
 
     return (
-        <div className="container">
-            <div className="m-3">
+        <div className="">
+            <div style={{ width: '80%', margin: 'auto' }}>
                 {alerts.map((alert, index) =>
                     <div key={index} className={cssClasses(alert)}>
                         <a className="close" onClick={() => removeAlert(alert)}>&times;</a>
