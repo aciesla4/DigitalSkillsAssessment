@@ -1,15 +1,13 @@
 import React from 'react';
 import '../App.css';
 import Level from '../util/Level';
-import Jewel from '../util/Jewel';
-import SignIn from '../util/SignIn';
 import { Router } from 'react-router-dom';
 import { history } from '../util/PasswordReset/_helpers';
 import { App } from '../util/PasswordReset/app';
 import { configureFakeBackend } from "../util/PasswordReset/_helpers";
 import "../css/SignIn.css";
 
-class Level14 extends React.Component {
+class Level15 extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -19,6 +17,7 @@ class Level14 extends React.Component {
     }
 
     handleFound = () => {
+        console.log("handle found")
         this.setState({
             isJewelFound: true,
         })
@@ -30,7 +29,6 @@ class Level14 extends React.Component {
         })
         this.props.getLevelChange()
     }
-
 
     render() {
         configureFakeBackend();
@@ -50,7 +48,7 @@ class Level14 extends React.Component {
                 <div>
                     <Router history={history}>
                         <br/><br/><br/>
-                        <App />
+                        <App handleFound={this.handleFound}/>
                     </Router>
                 </div>
             </Level>
@@ -58,4 +56,4 @@ class Level14 extends React.Component {
     }
 }
 
-export default Level14;
+export default Level15;

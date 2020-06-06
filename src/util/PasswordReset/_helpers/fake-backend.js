@@ -1,15 +1,9 @@
 import { alertService } from '../_services';
 
 // array in local storage for registered users
-var oldUsers = JSON.parse(localStorage.getItem('users')) || [];
-var agent = {
-    'email': 'agent203@spyacademy.org',
-    'password': 'original',
-}
-oldUsers.push(agent);
-localStorage.setItem('users', JSON.stringify(oldUsers));
+localStorage.clear();
 let users = JSON.parse(localStorage.getItem('users')) || [];
-console.log(users)
+console.log(users);
 
 export function configureFakeBackend() {
     let realFetch = window.fetch;
@@ -19,6 +13,7 @@ export function configureFakeBackend() {
             setTimeout(handleRoute, 500);
 
             function handleRoute() {
+                addDefaultUser();
                 const { method } = opts;
                 switch (true) {
                     case url.endsWith('/accounts/authenticate') && method === 'POST':
@@ -110,6 +105,20 @@ export function configureFakeBackend() {
                 return ok();
             }
 
+            function addDefaultUser() {
+                const user = {
+                    email: 'agent203@spyacademy.org',
+                    password: 'original'
+                }
+                user.id = newUserId();
+                user.dateCreated = new Date().toISOString();
+                user.verificationToken = new Date().getTime().toString();
+                user.isVerified = true;
+                delete user.confirmPassword;
+                users.push(user);
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+
             function verifyEmail() {
                 const { token } = body();
                 const user = users.find(x => !!x.verificationToken && x.verificationToken === token);
@@ -137,12 +146,11 @@ export function configureFakeBackend() {
 
                 // display password reset email in alert
                 setTimeout(() => {
-                    const resetUrl = `localhost:3000/level15/account/reset-password?token=${user.resetToken}`;
+                    const resetUrl = `/level15/account/reset-password?token=${user.resetToken}`;
                     alertService.info(`
                         <h4>Reset Password Email</h4>
                         <p>Please click the below link to reset your password, the link will be valid for 1 day:</p>
-                        <p><a href="${resetUrl}">${resetUrl}</a></p>
-                        <div><strong>NOTE:</strong> The fake backend displayed this "email" so you can test without an api. A real backend would send a real email.</div>
+                        <p><a href='${resetUrl}'>localhost:3000${resetUrl}</a></p>
                     `, { autoClose: false });
                 }, 1000);
 

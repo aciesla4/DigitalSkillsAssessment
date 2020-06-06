@@ -6,7 +6,7 @@ import { PrivateRoute, Alert } from '../_components';
 import { Home } from '../home';
 import { Account } from '../account';
 
-function App() {
+function App(props) {
     const { pathname } = useLocation();
     const [user, setUser] = useState({});
 
@@ -16,13 +16,13 @@ function App() {
     }, []);
 
     return (
-        <div className="">
+        <div>
             <Alert />
             <Switch>
                 <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
-                <PrivateRoute exact path="/" component={Home} />
+                <PrivateRoute exact path="/level15/home" component={Home} handleFound={props.handleFound}/>
                 <Route path="/level15/account" component={Account} />
-                <Redirect from="/level15" to="/" />
+                <Redirect from="/level15" to="/level15/home" />
             </Switch>
         </div>
     );

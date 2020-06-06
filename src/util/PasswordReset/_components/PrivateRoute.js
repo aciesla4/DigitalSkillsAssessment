@@ -13,7 +13,7 @@ function PrivateRoute({ component: Component, ...rest }) {
             }
 
             // authorized so return component
-            return <Component {...props} />
+            return <Component {...props} handleFound={rest.handleFound}/>
         }} />
     );
 }

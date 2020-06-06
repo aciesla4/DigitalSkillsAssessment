@@ -1,18 +1,9 @@
 import React from 'react';
+import Jewel from '../../Jewel';
 
-import { accountService } from '../_services';
-
-function Home() {
-    const user = accountService.userValue;
-
+function Home(props) {
     return (
-        <div className="">
-            <div className="">
-                <br/><br/><br/>
-                <h1>Hi {user.firstName}!</h1>
-                <p>You're logged in with React & JWT!!</p>
-            </div>
-        </div>
+        <Jewel left='50%' handleFound={props.handleFound}/>
     );
 }
 
