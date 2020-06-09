@@ -1,20 +1,18 @@
 import { alertService } from '../_services';
 
 // array in local storage for registered users
-localStorage.clear();
 let users = JSON.parse(localStorage.getItem('users')) || [];
-console.log(users);
 
 export function configureFakeBackend() {
     let realFetch = window.fetch;
     window.fetch = function (url, opts) {
         return new Promise((resolve, reject) => {
             // wrap in timeout to simulate server api call
+            addDefaultUser();
             setTimeout(handleRoute, 500);
 
             function handleRoute() {
-                addDefaultUser();
-                const { method } = opts;
+                const { method } =  opts || {};
                 switch (true) {
                     case url.endsWith('/accounts/authenticate') && method === 'POST':
                         return authenticate();
@@ -286,10 +284,6 @@ export function configureFakeBackend() {
 
             function isAuthenticated() {
                 return (opts.headers['Authorization'] || '').startsWith('Bearer fake-jwt-token');
-            }
-
-            function isAuthorized(role) {
-                return isAuthenticated() && opts.headers['Authorization'].split('.')[1] === role;
             }
 
             function idFromUrl() {

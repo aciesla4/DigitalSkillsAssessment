@@ -19,7 +19,6 @@ function App(props) {
         <div>
             <Alert />
             <Switch>
-                <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
                 <PrivateRoute exact path="/level15/home" component={Home} handleFound={props.handleFound}/>
                 <Route path="/level15/account" component={Account} />
                 <Redirect from="/level15" to="/level15/home" />

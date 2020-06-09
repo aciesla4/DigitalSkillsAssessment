@@ -13,7 +13,7 @@ function Account({ history, match }) {
     useEffect(() => {
         // redirect to home if already logged in
         if (accountService.userValue) {
-            history.push('/');
+            history.push('/level15/home');
         }
     }, []);
 

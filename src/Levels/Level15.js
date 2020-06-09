@@ -1,11 +1,10 @@
 import React from 'react';
 import '../App.css';
 import Level from '../util/Level';
-import { Router } from 'react-router-dom';
-import { history } from '../util/PasswordReset/_helpers';
 import { App } from '../util/PasswordReset/app';
 import { configureFakeBackend } from "../util/PasswordReset/_helpers";
 import "../css/SignIn.css";
+import { accountService} from "../util/PasswordReset/_services";
 
 class Level15 extends React.Component {
     constructor(props) {
@@ -17,7 +16,6 @@ class Level15 extends React.Component {
     }
 
     handleFound = () => {
-        console.log("handle found")
         this.setState({
             isJewelFound: true,
         })
@@ -27,6 +25,8 @@ class Level15 extends React.Component {
         this.setState({
             isJewelFound: false
         })
+        accountService.logout();
+        localStorage.clear();
         this.props.getLevelChange()
     }
 
@@ -46,10 +46,8 @@ class Level15 extends React.Component {
                 dialogMessage='Your mission is complete! <TODO> Click the X to return to the home page and receive your next mission.'
             >
                 <div>
-                    <Router history={history}>
-                        <br/><br/><br/>
-                        <App handleFound={this.handleFound}/>
-                    </Router>
+                    <br/><br/><br/>
+                    <App handleFound={this.handleFound}/>
                 </div>
             </Level>
         );
