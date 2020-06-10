@@ -19,6 +19,7 @@ import Level12 from './Levels/Level12';
 import Level13 from './Levels/Level13';
 import Level14 from './Levels/Level14';
 import Level15 from './Levels/Level15';
+import Level16 from './Levels/Level16';
 
 class App extends React.Component {
     constructor(props) {
@@ -83,6 +84,7 @@ class App extends React.Component {
                     <Route path="/level13" render={(props) => <Level13 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
                     <Route path="/level14" render={(props) => <Level14 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
                     <Route path="/level15" render={(props) => <Level15 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
+                    <Route path="/level16" render={(props) => <Level16 {...props} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
                     <Route path="/" component={Welcome} exact />
                 </Switch>
             </BrowserRouter>

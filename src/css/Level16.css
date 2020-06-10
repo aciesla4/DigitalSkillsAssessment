@@ -1,0 +1,32 @@
+.drag-container {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.group-header {
+    font-size: 18px;
+    display: block;
+}
+
+.draggable {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.inProgress {
+    position: absolute;
+    width: 48%;
+    left: 0;
+    top: 70px;
+    border: 2px solid black;
+}
+
+.droppable {
+    position: absolute;
+    width: 48%;
+    right: 0;
+    top: 70px;
+    border: 2px solid black;
+}
