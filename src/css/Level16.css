@@ -5,7 +5,23 @@
 
 .group-header {
     font-size: 18px;
-    display: block;
+    background-color: lightgray;
+    width: 100%;
+}
+
+.window-grid {
+    position: absolute;
+    right: 0;
+}
+
+.window-item {
+    padding: 5px;
+}
+
+.file-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 5px;
 }
 
 .draggable {
@@ -15,10 +31,10 @@
     text-align: center;
 }
 
-.inProgress {
+.personal {
     position: absolute;
     width: 48%;
-    left: 0;
+    left: 1%;
     top: 70px;
     border: 2px solid black;
 }
@@ -26,7 +42,7 @@
 .droppable {
     position: absolute;
     width: 48%;
-    right: 0;
+    right: 1%;
     top: 70px;
     border: 2px solid black;
 }

@@ -22,7 +22,7 @@ function Login({ history, location }) {
         alertService.clear();
         accountService.login(email, password)
             .then(() => {
-                const { from } = location.state || { from: { pathname: "/level15/home" } };
+                const { from } = location.state || { from: { pathname: "/level15/jewel" } };
                 history.push(from);
             })
             .catch(error => {

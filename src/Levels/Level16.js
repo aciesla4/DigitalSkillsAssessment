@@ -2,6 +2,10 @@ import React from 'react';
 import Level from '../util/Level';
 import Jewel from '../util/Jewel';
 import "../css/Level16.css";
+import CloseIcon from '@material-ui/icons/Close';
+import FilterNoneIcon from '@material-ui/icons/FilterNone';
+import MinimizeIcon from '@material-ui/icons/Minimize';
+import DescriptionIcon from '@material-ui/icons/Description';
 
 class Level16 extends React.Component {
     constructor(props) {
@@ -10,11 +14,29 @@ class Level16 extends React.Component {
             isJewelFound: false,
             isJewelShown: false,
             academicMode: this.props.academicMode,
-            tasks: [
-                {id: "1", taskName: "Read book", type: "inProgress", backgroundColor: "red" },
-                {id: "2", taskName: "Pay bills", type: "inProgress", backgroundColor: "green" },
-                {id: "3", taskName: "Go to the gym", type: "Done", backgroundColor: "blue" },
-                {id: "4", taskName: "Play baseball", type: "Done", backgroundColor: "green" }
+            files: [
+                {id: "1", name: "Resume", type: "personal" },
+                {id: "2", name: "Cover Letter", type: "personal" },
+                {id: "3", name: "Spy Academy Application", type: "personal" },
+                {id: "4", name: "Spy Academy Acceptance Letter", type: "academy" },
+                {id: "5", name: "Training Notes", type: "personal"},
+                {id: "6", name: "Transcripts", type: "personal"},
+                {id: "7", name: "References", type: "personal"},
+                {id: "8", name: "Practice Interview Questions", type: "personal"},
+                {id: "9", name: "Interview Questions", type: "academy"},
+                {id: "10", name: "Interview Response Form", type: "academy"},
+                {id: "11", name: "Agent Interview Response", type: "academy"},
+                {id: "12", name: "Agent Profile", type: "academy"},
+                {id: "13", name: "Agent Progress Report", type: "academy"},
+                {id: "14", name: "Training Schedule", type: "personal"},
+                {id: "15", name: "Mentor Sign Up", type: "personal"},
+                {id: "16", name: "Training Requirements", type: "personal"},
+                {id: "17", name: "Questions for the Academy", type: "personal"},
+                {id: "18", name: "Mentor and Agent Pairings", type: "academy"},
+                {id: "19", name: "Preliminary Training Schedule", type: "academy"},
+                {id: "20", name: "Training Completion Certificate", type: "academy"},
+                {id: "21", name: "FAQs", type: "academy"},
+                {id: "22", name: "Government Requirements", type: "academy"},
             ],
         }
     }
@@ -32,8 +54,8 @@ class Level16 extends React.Component {
         this.props.getLevelChange()
     }
 
-    onDragStart = (event, taskName) => {
-        event.dataTransfer.setData("taskName", taskName)
+    onDragStart = (event, name) => {
+        event.dataTransfer.setData("name", name)
     }
 
     onDragOver = (event) => {
@@ -41,38 +63,38 @@ class Level16 extends React.Component {
     }
 
     onDrop = (event, cat) => {
-        let taskName = event.dataTransfer.getData("taskName");
+        let name = event.dataTransfer.getData("name");
 
-        let tasks = this.state.tasks.filter((task) => {
-            if (task.taskName === taskName) {
-                task.type = cat;
+        let files = this.state.files.filter((file) => {
+            if (file.name === name) {
+                file.type = cat;
             }
-            return task;
+            return file;
         })
 
         this.setState({
             ...this.state,
-            isJewelShown: true,
-            tasks
+            isJewelShown: name === "Training Completion Certificate",
+            files
         })
     }
 
     render() {
-        var tasks = {
-            inProgress: [],
-            Done: []
+        var files = {
+            personal: [],
+            academy: []
         }
 
-        this.state.tasks.forEach((task) => {
-            tasks[task.type].push(
-                <div key={task.id}
-                     onDragStart={(event) => this.onDragStart(event, task.taskName)}
+        this.state.files.forEach((file) => {
+            files[file.type].push(
+                <grid item key={file.id}
+                     onDragStart={(event) => this.onDragStart(event, file.name)}
                      draggable
                      className="draggable"
-                     style={{ backgroundColor: task.backgroundColor }}
                 >
-                    {task.taskName}
-                </div>
+                    <DescriptionIcon fontSize="large" /><br/>
+                    {file.name}
+                </grid>
             )
         })
 
@@ -80,31 +102,49 @@ class Level16 extends React.Component {
             <Level
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
-                mission=''
+                mission='move the Training Completion Certificate to your files.'
                 openHint={this.props.openHint}
                 closeHint={this.props.closeHint}
                 isHintShown={this.props.isHintShown}
-                hintMessage=''
+                hintMessage='Files can be moved from one place to another by dragging and dropping.'
                 isJewelFound={this.state.isJewelFound}
                 handleCloseDialog={this.handleCloseDialog}
                 dialogMessage='Your mission is complete! <TODO> Click the X to return to the home page and receive your next mission.'
             >
                 <div className="drag-container">
-                    <div className="inProgress"
+                    <div className="personal"
                          onDragOver={(event) => this.onDragOver(event)}
-                         onDrop={(event) => this.onDrop(event, "inProgress")}
+                         onDrop={(event) => this.onDrop(event, "personal")}
                     >
-                        <span className="group-header">In Progress</span>
-                        {tasks.inProgress}
+                        <div className="group-header">
+                            Personal
+                            <grid className="window-grid">
+                                <grid item className="window-item"><MinimizeIcon/></grid>
+                                <grid item className="window-item"><FilterNoneIcon/></grid>
+                                <grid item className="window-item"><CloseIcon/></grid>
+                            </grid>
+                        </div>
+                        <grid className="file-grid">
+                            {files.personal}
+                        </grid>
                     </div>
                     <div className="droppable"
                          onDragOver={(event) => this.onDragOver(event)}
-                         onDrop={(event) => {this.onDrop(event, "Done")}}
+                         onDrop={(event) => {this.onDrop(event, "academy")}}
                     >
-                        <span className="group-header">Done</span>
-                        {tasks.Done}
+                        <div className="group-header">
+                            Academy
+                            <grid className="window-grid">
+                                <grid item className="window-item"><MinimizeIcon/></grid>
+                                <grid item className="window-item"><FilterNoneIcon/></grid>
+                                <grid item className="window-item"><CloseIcon/></grid>
+                            </grid>
+                        </div>
+                        <grid className="file-grid">
+                            {files.academy}
+                        </grid>
                     </div>
-                    {this.state.isJewelShown && <Jewel top="75%" handleFound={this.handleFound} />}
+                    {this.state.isJewelShown && <Jewel top="80%" handleFound={this.handleFound} />}
                 </div>
             </Level>
         );
