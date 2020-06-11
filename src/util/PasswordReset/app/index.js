@@ -19,7 +19,7 @@ function App(props) {
         <div>
             <Alert />
             <Switch>
-                <PrivateRoute exact path="/level15/jewel" component={Profile} handleFound={props.handleFound}/>
+                <PrivateRoute path="/level15/jewel" component={Profile} handleFound={props.handleFound}/>
                 <Route path="/level15/account" component={Account} />
                 <Redirect from="/level15" to="/level15/jewel" />
             </Switch>

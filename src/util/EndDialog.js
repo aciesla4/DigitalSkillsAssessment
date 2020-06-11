@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import { Dialog, DialogContent, DialogTitle, IconButton } from '@material-ui/core';
-import { Link  } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
 
 class Level1 extends React.Component {
@@ -9,7 +9,7 @@ class Level1 extends React.Component {
         return (
             <Dialog open={this.props.open} disableBackdropClick={true}>
                 <DialogTitle>Congratulations Agent!
-                    <IconButton style={{ position: 'absolute', right: 2, top: 2 }} component={Link} to="/home" onClick={this.props.handleCloseDialog} color="inherit">
+                    <IconButton style={{ position: 'absolute', right: 2, top: 2 }} component={RouterLink} to="/home" onClick={this.props.handleCloseDialog} color="inherit">
                         <CloseIcon/>
                     </IconButton>
                 </DialogTitle>

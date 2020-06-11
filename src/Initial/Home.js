@@ -277,7 +277,7 @@ class Home extends React.Component {
                 },
                 {
                     level: 14,
-                    text: "Your next mission is to find the jewel by moving the Training Completion Certificate to your files. " +
+                    text: "Your next mission is to find the jewel by moving the Training Completion Certificate to your files " +
                         "Click the check mark to begin. ",
                     member: {
                         color: "black",
