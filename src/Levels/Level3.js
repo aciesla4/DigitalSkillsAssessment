@@ -9,7 +9,7 @@ import Level from '../util/Level';
 
 class Level3 extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             isJewelFound: false,
             academicmode: this.props.academicmode,
@@ -17,43 +17,51 @@ class Level3 extends React.Component {
         }
     }
 
-    handleFound = () => {
+    handleFound = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: true,
-        })
-    }
+        });
+    };
 
-    handleCloseDialog = () => {
+    handleCloseDialog = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: false
-        })
-        this.props.getLevelChange()
-    }
+        });
+        this.props.getLevelChange();
+    };
 
-    showJewel = () => {
+    showJewel = (e) => {
+        this.props.logClick(e);
         let update = this.state.elements;
-        update[22] = (<div><Jewel handleFound={this.handleFound} /></div>)
+        update[22] = (<div><Jewel handleFound={this.handleFound} /></div>);
         this.setState({
             elements: update
-        })
-    }
+        });
+    };
+
+    handleCardClick = (e) => {
+        this.props.logClick(e);
+    };
 
     renderCards = () => {
-        const items = []
+        const items = [];
         for (var i = 0; i < 40; i++) {
             if (i === 22) {
-                items.push(<Card key={i} id={i} pic={Cat} showJewel={this.showJewel}/>)
+                items.push(<Card key={i} id={i} pic={Cat} onClick={this.showJewel}/>);
             }
             else {
-                items.push(<Card key={i} id={i} pic={Dog} />)
+                items.push(<Card key={i} id={i} pic={Dog} onClick={this.handleCardClick}/>);
             }
         }
         return items;
-    }
+    };
 
     render() {
         return (
             <Level
+                logClick={this.props.logClick}
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
                 mission='find the cat image.'

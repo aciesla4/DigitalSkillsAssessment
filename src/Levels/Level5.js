@@ -7,29 +7,37 @@ import Level from '../util/Level';
 
 class Level5 extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             isJewelFound: false,
             academicmode: this.props.academicmode,
         }
     }
 
-    handleFound = () => {
+    handleFound = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: true,
-        })
-    }
+        });
+    };
 
-    handleCloseDialog = () => {
+    handleCloseDialog = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: false
-        })
-        this.props.getLevelChange()
+        });
+        this.props.getLevelChange();
+    };
+
+    handleResize = (e) => {
+        e.currentTarget.id = "level 5 box resized";
+        this.props.logClick(e);
     }
 
     render() {
         return (
             <Level
+                logClick={this.props.logClick}
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
                 mission='resize the box.'
@@ -43,7 +51,7 @@ class Level5 extends React.Component {
             >
                 <div>
                     <Jewel top='25%' left='25%' handleFound={this.handleFound} />
-                    <ResizableBox width={1500} height={550} minConstraints={[100, 100]} maxConstraints={[1530, 600]} />
+                    <ResizableBox id="level 5 box resized" width={1500} height={550} minConstraints={[100, 100]} maxConstraints={[1530, 600]} onResizeStop={this.handleResize}/>
                 </div>
             </Level>
         );

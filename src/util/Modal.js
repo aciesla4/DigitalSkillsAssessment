@@ -12,7 +12,7 @@ export default class Modal extends React.Component {
                 left: x,
                 bottom: y,
             }
-        }
+        };
         return (
             (this.props.show &&
                 <div className={modalStyle} style={styles.modal}>
@@ -20,8 +20,10 @@ export default class Modal extends React.Component {
                         <h2 className="modal-title">{this.props.heading}</h2>
                         {this.props.last ?
                             <IconButton style={{position: 'absolute', right: 0, top: 0}}
+                                        id="close modal button"
                                         onClick={this.props.closeModal}><CloseIcon/></IconButton> :
                             <IconButton style={{position: 'absolute', right: 0, top: 0}}
+                                        id="open next modal button"
                                         onClick={this.props.openNext}><ArrowForwardIcon/></IconButton>
                         }
                     </div>

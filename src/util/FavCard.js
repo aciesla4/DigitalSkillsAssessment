@@ -11,7 +11,8 @@ class FavCard extends React.Component {
                 <div className="favcard">
                     <Jewel handleFound={this.props.handleFound} />
                     <IconButton style={{color: this.props.color, top: '85%'}}
-                                onClick={this.props.onClick}><FavoriteIcon/></IconButton>
+                                id={"level 4 card" + this.props.id}
+                                onClick={(e) => this.props.onClick(e)}><FavoriteIcon/></IconButton>
                 </div>
             )
         }
@@ -21,7 +22,8 @@ class FavCard extends React.Component {
                     <img className="picture" alt="pic" src={pic}
                          onClick={this.props.showJewel}/>
                     <IconButton style={{color: this.props.color}}
-                                onClick={this.props.onClick}><FavoriteIcon/></IconButton>
+                                id={"level 4 card " + this.props.id}
+                                onClick={(e) => this.props.onClick(e)}><FavoriteIcon/></IconButton>
                 </div>
             )
         }

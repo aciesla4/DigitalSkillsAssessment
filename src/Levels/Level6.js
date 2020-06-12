@@ -6,7 +6,7 @@ import EnhancedTable from "../util/EnhancedTable";
 
 class Level6 extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             isJewelFound: false,
             isJewelShown: false,
@@ -15,33 +15,36 @@ class Level6 extends React.Component {
         }
     }
 
-    handleFound = () => {
+    handleFound = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: true,
-        })
-    }
+        });
+    };
 
-    handleCloseDialog = () => {
+    handleCloseDialog = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: false
-        })
+        });
         this.props.getLevelChange()
-    }
+    };
 
     showJewel = () => {
         this.setState({
             count: this.state.count + 1
-        })
+        });
         if (this.state.count === 4) {
             this.setState({
                 isJewelShown: true,
             })
         }
-    }
+    };
 
     render() {
         return (
             <Level
+                logClick={this.props.logClick}
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
                 mission='click on the sort icons to see their effect.'
@@ -54,7 +57,7 @@ class Level6 extends React.Component {
                 dialogMessage='Your mission is complete! Sorting helps you to find the information you are looking for quicker. Click the X to return to the home page and receive your next mission.'
             >
                 <div>
-                    <EnhancedTable showJewel={this.showJewel}/>
+                    <EnhancedTable showJewel={this.showJewel} logClick={this.props.logClick}/>
                     {this.state.isJewelShown && <Jewel top='55px' left='68%' handleFound={this.handleFound} />}
                 </div>
             </Level>

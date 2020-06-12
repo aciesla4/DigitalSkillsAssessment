@@ -31,7 +31,7 @@ import MovieIcon from '@material-ui/icons/Movie';
 
 class Level10 extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             isJewelFound: false,
             academicmode: this.props.academicmode,
@@ -39,24 +39,27 @@ class Level10 extends React.Component {
         }
     }
 
-    handleFound = () => {
+    handleFound = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: true,
-        })
-    }
+        });
+    };
 
-    handleCloseDialog = () => {
+    handleCloseDialog = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: false
-        })
-        this.props.getLevelChange()
-    }
+        });
+        this.props.getLevelChange();
+    };
 
-    handleClick = () => {
+    handleClick = (e) => {
+        this.props.logClick(e);
         this.setState({
             isPrivacyClicked: true
         })
-    }
+    };
 
     render() {
         return (
@@ -75,33 +78,33 @@ class Level10 extends React.Component {
                 <div>
                     {!this.state.isPrivacyClicked &&
                     <div className="settings-container">
-                        <div className="settings-grid"><IconButton><ComputerIcon fontSize="large"/></IconButton><h4 className="item">System</h4><p>Display, sound, notifications, power</p></div>
-                        <div className="settings-grid"><IconButton><DevicesIcon fontSize="large"/></IconButton><h4 className="item">Devices</h4><p>Bluetooth, printers, mouse</p></div>
-                        <div className="settings-grid"><IconButton><WifiIcon fontSize="large"/></IconButton><h4 className="item">Network</h4><p>Wi-Fi, airplane mode, VPN</p></div>
-                        <div className="settings-grid"><IconButton><AppsIcon fontSize="large"/></IconButton><h4 className="item">Apps</h4><p>Uninstall, defaults, optional features</p></div>
-                        <div className="settings-grid"><IconButton><AccountCircleIcon fontSize="large"/></IconButton><h4 className="item">Accounts</h4><p>Your accounts, email, sync, work, family</p></div>
-                        <div className="settings-grid"><IconButton><AccessibilityIcon fontSize="large"/></IconButton><h4 className="item">Accessibility</h4><p>Narrator, magnifier, high contrast</p></div>
-                        <div className="settings-grid"><IconButton><SearchIcon fontSize="large"/></IconButton><h4 className="item">Search</h4><p>Find my files, permissions</p></div>
-                        <div onClick={this.handleClick} className="settings-grid"><IconButton><LockIcon fontSize="large"/></IconButton><h4 className="item">Privacy</h4><p>Location, camera, microphone</p></div>
-                        <div className="settings-grid"><IconButton><UpdateIcon fontSize="large"/></IconButton><h4 className="item">Updates</h4><p>Windows Update, recovery, backup</p></div>
+                        <div className="settings-grid" id="level 10 system icon" onClick={(e) => this.props.logClick(e)}><IconButton><ComputerIcon fontSize="large"/></IconButton><h4 className="item">System</h4><p>Display, sound, notifications, power</p></div>
+                        <div className="settings-grid" id="level 10 devices icon" onClick={(e) => this.props.logClick(e)}><IconButton><DevicesIcon fontSize="large"/></IconButton><h4 className="item">Devices</h4><p>Bluetooth, printers, mouse</p></div>
+                        <div className="settings-grid" id="level 10 network icon" onClick={(e) => this.props.logClick(e)}><IconButton><WifiIcon fontSize="large"/></IconButton><h4 className="item">Network</h4><p>Wi-Fi, airplane mode, VPN</p></div>
+                        <div className="settings-grid" id="level 10 apps icon" onClick={(e) => this.props.logClick(e)}><IconButton><AppsIcon fontSize="large"/></IconButton><h4 className="item">Apps</h4><p>Uninstall, defaults, optional features</p></div>
+                        <div className="settings-grid" id="level 10 accounts icon" onClick={(e) => this.props.logClick(e)}><IconButton><AccountCircleIcon fontSize="large"/></IconButton><h4 className="item">Accounts</h4><p>Your accounts, email, sync, work, family</p></div>
+                        <div className="settings-grid" id="level 10 accessibility icon" onClick={(e) => this.props.logClick(e)}><IconButton><AccessibilityIcon fontSize="large"/></IconButton><h4 className="item">Accessibility</h4><p>Narrator, magnifier, high contrast</p></div>
+                        <div className="settings-grid" id="level 10 search icon" onClick={(e) => this.props.logClick(e)}><IconButton><SearchIcon fontSize="large"/></IconButton><h4 className="item">Search</h4><p>Find my files, permissions</p></div>
+                        <div className="settings-grid" id="level 10 privacy icon" onClick={(e) => this.handleClick(e)}><IconButton><LockIcon fontSize="large"/></IconButton><h4 className="item">Privacy</h4><p>Location, camera, microphone</p></div>
+                        <div className="settings-grid" id="level 10 updates icon" onClick={(e) => this.props.logClick(e)}><IconButton><UpdateIcon fontSize="large"/></IconButton><h4 className="item">Updates</h4><p>Windows Update, recovery, backup</p></div>
                     </div>}
                     {this.state.isPrivacyClicked &&
                     <div className="privacy-container">
                         <div className="privacy-drawer">
-                            <div className="privacy-grid"><IconButton><LocationOnIcon fontSize="large"/></IconButton><p className="item">Location</p></div>
-                            <div className="privacy-grid"><IconButton><CameraAltIcon fontSize="large"/></IconButton><p className="item">Camera</p></div>
-                            <div className="privacy-grid"><IconButton><MicIcon fontSize="large"/></IconButton><p className="item">Microphone</p></div>
-                            <div className="privacy-grid"><IconButton><NotificationsIcon fontSize="large"/></IconButton><p className="item">Notifications</p></div>
-                            <div className="privacy-grid"><IconButton><RecentActorsIcon fontSize="large"/></IconButton><p className="item">Contacts</p></div>
-                            <div className="privacy-grid"><IconButton><CalendarTodayIcon fontSize="large"/></IconButton><p className="item">Calendar</p></div>
-                            <div className="privacy-grid"><IconButton><EmailIcon fontSize="large"/></IconButton><p className="item">Email</p></div>
-                            <div className="privacy-grid"><IconButton><AssignmentIcon fontSize="large"/></IconButton><p className="item">Tasks</p></div>
-                            <div className="privacy-grid"><IconButton><DevicesOtherIcon fontSize="large"/></IconButton><p className="item">Other Devices</p></div>
-                            <div className="privacy-grid"><IconButton><AssessmentIcon fontSize="large"/></IconButton><p className="item">App Diagnostics</p></div>
-                            <div className="privacy-grid"><IconButton><CloudIcon fontSize="large"/></IconButton><p className="item">Cloud</p></div>
-                            <div className="privacy-grid"><IconButton><InsertDriveFileIcon fontSize="large"/></IconButton><p className="item">Documents</p></div>
-                            <div className="privacy-grid"><IconButton><ImageIcon fontSize="large"/></IconButton><p className="item">Pictures</p></div>
-                            <div className="privacy-grid"><IconButton><MovieIcon fontSize="large"/></IconButton><p className="item">Videos</p></div>
+                            <div className="privacy-grid" id="level 10 location icon" onClick={(e) => this.props.logClick(e)}><IconButton><LocationOnIcon fontSize="large"/></IconButton><p className="item">Location</p></div>
+                            <div className="privacy-grid" id="level 10 camera icon" onClick={(e) => this.props.logClick(e)}><IconButton><CameraAltIcon fontSize="large"/></IconButton><p className="item">Camera</p></div>
+                            <div className="privacy-grid" id="level 10 microphone icon" onClick={(e) => this.props.logClick(e)}><IconButton><MicIcon fontSize="large"/></IconButton><p className="item">Microphone</p></div>
+                            <div className="privacy-grid" id="level 10 notifications icon" onClick={(e) => this.props.logClick(e)}><IconButton><NotificationsIcon fontSize="large"/></IconButton><p className="item">Notifications</p></div>
+                            <div className="privacy-grid" id="level 10 contacts icon" onClick={(e) => this.props.logClick(e)}><IconButton><RecentActorsIcon fontSize="large"/></IconButton><p className="item">Contacts</p></div>
+                            <div className="privacy-grid" id="level 10 calendar icon" onClick={(e) => this.props.logClick(e)}><IconButton><CalendarTodayIcon fontSize="large"/></IconButton><p className="item">Calendar</p></div>
+                            <div className="privacy-grid" id="level 10 email icon" onClick={(e) => this.props.logClick(e)}><IconButton><EmailIcon fontSize="large"/></IconButton><p className="item">Email</p></div>
+                            <div className="privacy-grid" id="level 10 tasks icon" onClick={(e) => this.props.logClick(e)}><IconButton><AssignmentIcon fontSize="large"/></IconButton><p className="item">Tasks</p></div>
+                            <div className="privacy-grid" id="level 10 other devices icon" onClick={(e) => this.props.logClick(e)}><IconButton><DevicesOtherIcon fontSize="large"/></IconButton><p className="item">Other Devices</p></div>
+                            <div className="privacy-grid" id="level 10 app diagnostics icon" onClick={(e) => this.props.logClick(e)}><IconButton><AssessmentIcon fontSize="large"/></IconButton><p className="item">App Diagnostics</p></div>
+                            <div className="privacy-grid" id="level 10 cloud icon" onClick={(e) => this.props.logClick(e)}><IconButton><CloudIcon fontSize="large"/></IconButton><p className="item">Cloud</p></div>
+                            <div className="privacy-grid" id="level 10 documents icon" onClick={(e) => this.props.logClick(e)}><IconButton><InsertDriveFileIcon fontSize="large"/></IconButton><p className="item">Documents</p></div>
+                            <div className="privacy-grid" id="level 10 pictures icon" onClick={(e) => this.props.logClick(e)}><IconButton><ImageIcon fontSize="large"/></IconButton><p className="item">Pictures</p></div>
+                            <div className="privacy-grid" id="level 10 videos icon" onClick={(e) => this.props.logClick(e)}><IconButton><MovieIcon fontSize="large"/></IconButton><p className="item">Videos</p></div>
                         </div>
                         <div>
                             <h1>General</h1>

@@ -13,62 +13,66 @@ class LearningMode extends React.Component {
         }
     }
 
-    openNextHome = (index) => {
-        let update = this.state.home
-        update[index] = false
-        update[index+1] = true
+    openNextHome = (index, e) => {
+        this.props.logClick(e);
+        let update = this.state.home;
+        update[index] = false;
+        update[index+1] = true;
         this.setState({
             home: update
-        })
-    }
+        });
+    };
 
-    closeHome = () => {
-        let update = this.state.home
-        let length = this.state.home.length
-        update[length-1] = false
+    closeHome = (e) => {
+        this.props.logClick(e);
+        let update = this.state.home;
+        let length = this.state.home.length;
+        update[length-1] = false;
         this.setState({
             home: update
-        })
-    }
+        });
+    };
 
-    openNextLevel1 = (index) => {
-        let update = this.state.level1
-        update[index] = false
-        update[index+1] = true
+    openNextLevel1 = (index, e) => {
+        this.props.logClick(e);
+        let update = this.state.level1;
+        update[index] = false;
+        update[index+1] = true;
         this.setState({
             level1: update
-        })
-    }
+        });
+    };
 
-    closeLevel1 = () => {
-        let update = this.state.level1
-        let length = this.state.level1.length
-        update[length-1] = false
+    closeLevel1 = (e) => {
+        this.props.logClick(e);
+        let update = this.state.level1;
+        let length = this.state.level1.length;
+        update[length-1] = false;
         this.setState({
             level1: update
-        })
-    }
+        });
+    };
 
     closeLevel2 = () => {
-        let update = this.state.level2
-        let length = this.state.level2.length
-        update[length-1] = false
+        let update = this.state.level2;
+        let length = this.state.level2.length;
+        update[length-1] = false;
         this.setState({
             level2: update
-        })
-    }
+        });
+    };
 
     render() {
-        const currentPath = window.location.pathname
-        const len = currentPath.length
+        const currentPath = window.location.pathname;
+        const len = currentPath.length;
         return (
             <div>
                 {currentPath.includes("home") &&
                     <div id="home">
-                        <Modal show={this.state.home[0]} heading="Learning Mode" openNext={() => this.openNextHome( 0)} x="0%" y="15%" modalStyle="modalL">
+                        <Modal show={this.state.home[0]} heading="Learning Mode" openNext={(e) => this.openNextHome( 0, e)} x="0%" y="15%" modalStyle="modalL">
                             Click the slider to turn learning mode off or on. Learning mode gives you extra tips on how to use the site and complete levels.
                         </Modal>
-                        <Modal show={this.state.home[1]} heading="Check Button" openNext={() => this.openNextHome(1)} x="40%" y="15%" modalStyle="modal">
+                        <Modal show={this.state.home[1]} heading="Check Button" openNext={(e) => this.openNextHome(1, e)} x="40%" y="15%" modalStyle="my-modal">
                             Click this button to begin a level.
                         </Modal>
                         <Modal show={this.state.home[2]} last={true} heading="Phone Button" closeModal={this.closeHome} x="75%" y="15%" modalStyle="modalR">
@@ -78,7 +82,7 @@ class LearningMode extends React.Component {
                 }
                 {currentPath.substring(len - 6) === 'level1' &&
                     <div id="level1">
-                        <Modal show={this.state.level1[0]} heading="Home Button" openNext={() => this.openNextLevel1(0)} x="40%" y="15%" modalStyle="modal">
+                        <Modal show={this.state.level1[0]} heading="Home Button" openNext={(e) => this.openNextLevel1(0, e)} x="40%" y="15%" modalStyle="my-modal">
                             Click this button to return to the home page.
                         </Modal>
                         <Modal show={this.state.level1[1]} last={true} heading="Question Button" closeModal={this.closeLevel1} x="75%" y="15%" modalStyle="modalR">

@@ -11,12 +11,12 @@ function CustomChatbot(props) {
         botFontColor: "white",
         userBubbleColor: "gray",
         userFontColor: "white",
-    }
+    };
 
     const config = {
         width: "100%",
         height: "605px",
-    }
+    };
 
     const steps = [
         {
@@ -68,7 +68,7 @@ function CustomChatbot(props) {
             message: "Good luck with your remaining missions Agent.",
             end: true
         }
-    ]
+    ];
 
     return (
         <ThemeProvider theme={theme}>

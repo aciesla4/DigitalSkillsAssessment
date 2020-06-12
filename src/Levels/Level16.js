@@ -9,81 +9,83 @@ import DescriptionIcon from '@material-ui/icons/Description';
 
 class Level16 extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             isJewelFound: false,
             isJewelShown: false,
             academicMode: this.props.academicMode,
             files: [
-                {id: "1", name: "Resume", type: "personal" },
-                {id: "2", name: "Cover Letter", type: "personal" },
-                {id: "3", name: "Spy Academy Application", type: "personal" },
-                {id: "4", name: "Spy Academy Acceptance Letter", type: "academy" },
-                {id: "5", name: "Training Notes", type: "personal"},
-                {id: "6", name: "Transcripts", type: "personal"},
-                {id: "7", name: "References", type: "personal"},
-                {id: "8", name: "Practice Interview Questions", type: "personal"},
-                {id: "9", name: "Interview Questions", type: "academy"},
-                {id: "10", name: "Interview Response Form", type: "academy"},
-                {id: "11", name: "Agent Interview Response", type: "academy"},
-                {id: "12", name: "Agent Profile", type: "academy"},
-                {id: "13", name: "Agent Progress Report", type: "academy"},
-                {id: "14", name: "Training Schedule", type: "personal"},
-                {id: "15", name: "Mentor Sign Up", type: "personal"},
-                {id: "16", name: "Training Requirements", type: "personal"},
-                {id: "17", name: "Questions for the Academy", type: "personal"},
-                {id: "18", name: "Mentor and Agent Pairings", type: "academy"},
-                {id: "19", name: "Preliminary Training Schedule", type: "academy"},
-                {id: "20", name: "Training Completion Certificate", type: "academy"},
-                {id: "21", name: "FAQs", type: "academy"},
-                {id: "22", name: "Government Requirements", type: "academy"},
+                {id: "level 16 file 1", name: "Resume", type: "personal" },
+                {id: "level 16 file 2", name: "Cover Letter", type: "personal" },
+                {id: "level 16 file 3", name: "Spy Academy Application", type: "personal" },
+                {id: "level 16 file 4", name: "Spy Academy Acceptance Letter", type: "academy" },
+                {id: "level 16 file 5", name: "Training Notes", type: "personal"},
+                {id: "level 16 file 6", name: "Transcripts", type: "personal"},
+                {id: "level 16 file 7", name: "References", type: "personal"},
+                {id: "level 16 file 8", name: "Practice Interview Questions", type: "personal"},
+                {id: "level 16 file 9", name: "Interview Questions", type: "academy"},
+                {id: "level 16 file 10", name: "Interview Response Form", type: "academy"},
+                {id: "level 16 file 11", name: "Agent Interview Response", type: "academy"},
+                {id: "level 16 file 12", name: "Agent Profile", type: "academy"},
+                {id: "level 16 file 13", name: "Agent Progress Report", type: "academy"},
+                {id: "level 16 file 14", name: "Training Schedule", type: "personal"},
+                {id: "level 16 file 15", name: "Mentor Sign Up", type: "personal"},
+                {id: "level 16 file 16", name: "Training Requirements", type: "personal"},
+                {id: "level 16 file 17", name: "Questions for the Academy", type: "personal"},
+                {id: "level 16 file 18", name: "Mentor and Agent Pairings", type: "academy"},
+                {id: "level 16 file 19", name: "Preliminary Training Schedule", type: "academy"},
+                {id: "level 16 file 20", name: "Training Completion Certificate", type: "academy"},
+                {id: "level 16 file 21", name: "FAQs", type: "academy"},
+                {id: "level 16 file 22", name: "Government Requirements", type: "academy"},
             ],
         }
     }
 
-    handleFound = () => {
+    handleFound = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: true,
-        })
-    }
+        });
+    };
 
-    handleCloseDialog = () => {
+    handleCloseDialog = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: false
-        })
-        this.props.getLevelChange()
-    }
+        });
+        this.props.getLevelChange();
+    };
 
     onDragStart = (event, name) => {
-        event.dataTransfer.setData("name", name)
-    }
+        event.dataTransfer.setData("name", name);
+    };
 
     onDragOver = (event) => {
         event.preventDefault();
-    }
+    };
 
     onDrop = (event, cat) => {
         let name = event.dataTransfer.getData("name");
-
+        event.currentTarget.id = "level 16 " + name + " file dropped";
+        this.props.logClick(event);
         let files = this.state.files.filter((file) => {
             if (file.name === name) {
                 file.type = cat;
             }
             return file;
-        })
-
+        });
         this.setState({
             ...this.state,
             isJewelShown: name === "Training Completion Certificate",
             files
-        })
-    }
+        });
+    };
 
     render() {
         var files = {
             personal: [],
             academy: []
-        }
+        };
 
         this.state.files.forEach((file) => {
             files[file.type].push(
@@ -96,10 +98,11 @@ class Level16 extends React.Component {
                     {file.name}
                 </grid>
             )
-        })
+        });
 
         return (
             <Level
+                logClick={this.props.logClick}
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
                 mission='move the Training Completion Certificate to your files.'

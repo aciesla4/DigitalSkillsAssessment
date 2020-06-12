@@ -7,7 +7,7 @@ import Level from '../util/Level';
 
 class Level2 extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             isJewelFound: false,
             isDialogOpen: true,
@@ -15,28 +15,32 @@ class Level2 extends React.Component {
         }
     }
 
-    handleFound = () => {
+    handleFound = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: true,
-        })
-    }
+        });
+    };
 
-    handleCloseDialog = () => {
+    handleCloseDialog = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: false
-        })
-        this.props.getLevelChange()
-    }
+        });
+        this.props.getLevelChange();
+    };
 
-    handleClose = () => {
+    handleClose = (e) => {
+        this.props.logClick(e);
         this.setState({
             isDialogOpen: false,
-        })
-    }
+        });
+    };
 
     render() {
         return (
             <Level
+                logClick={this.props.logClick}
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
                 mission='find the jewel on the page by closing the pop up.'
@@ -48,7 +52,7 @@ class Level2 extends React.Component {
                 <Container>
                     <Dialog open={this.state.isDialogOpen} disableBackdropClick={true} disableEscapeKeyDown={true} hideBackdrop={true}>
                         <DialogTitle>Lorem ipsum dolor sit amet.
-                            <IconButton style={{ position: 'absolute', right: 2, top: 2 }} onClick={this.handleClose} color="inherit">
+                            <IconButton id="close level 2 dialog button" style={{ position: 'absolute', right: 2, top: 2 }} onClick={this.handleClose} color="inherit">
                                 <CloseIcon/>
                             </IconButton>
                         </DialogTitle>

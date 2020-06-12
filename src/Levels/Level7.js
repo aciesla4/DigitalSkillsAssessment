@@ -21,7 +21,7 @@ import gear12 from '../images/gear12.jpeg';
 
 class Level7 extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             isJewelFound: false,
             academicmode: this.props.academicmode,
@@ -34,40 +34,45 @@ class Level7 extends React.Component {
         }
     }
 
-    handleFound = () => {
+    handleFound = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: true,
-        })
-        this.props.getItems(this.state.items)
-    }
+        });
+        this.props.getItems(this.state.items);
+    };
 
-    handleCloseDialog = () => {
+    handleCloseDialog = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: false
-        })
-        this.props.getLevelChange()
-    }
+        });
+        this.props.getLevelChange();
+    };
 
-    handleAddItem = (element) => {
+    handleAddItem = (element, e) => {
+        this.props.logClick(e);
         let update = this.state.items;
         update.push(element);
         this.setState({
             numItems: this.state.numItems + 1,
             items: update
-        })
-    }
+        });
+    };
 
-    showJewel = () => {
+    showJewel = (e) => {
+        this.props.logClick(e);
         if (this.state.numItems >= 1) {
             this.setState({
                 isDialogOpen: true,
-            })
+            });
         }
-    }
+    };
 
     render() {
         return (
             <Level
+                logClick={this.props.logClick}
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
                 mission='add spy gear to your cart and begin checking out.'
@@ -81,7 +86,7 @@ class Level7 extends React.Component {
             >
                 <div>
                     <div className="bar">
-                        <button className="cart" onClick={this.showJewel}>
+                        <button className="cart" id="level 7 shopping cart button" onClick={this.showJewel}>
                             <Badge badgeContent={this.state.numItems} color="secondary" style={{ zIndex: 0 }}>
                                 <ShoppingCartIcon style={{ height: '40px', width: '40px' }}/>
                             </Badge>
@@ -91,8 +96,9 @@ class Level7 extends React.Component {
                         {this.state.elements.map(element => (
                             <ProductCard
                                 key={element.id}
+                                id={"level 7 card " + element.id}
                                 element={element}
-                                onClick={() => {this.handleAddItem(element)}}
+                                onClick={(e) => {this.handleAddItem(element, e)}}
                             />
                             )
                         )}

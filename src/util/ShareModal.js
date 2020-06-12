@@ -16,7 +16,7 @@ export default class ShareModal extends React.Component {
                         Say something about this...<br/>
                         <img style={{ height: '200px', width: '500px' }} alt="certificate" src={Certificate} />
                     </div>
-                    <button className="share-button" onClick={this.props.onClick}>Post to Facebook</button>
+                    <button className="share-button" id="level 9 close facebook modal button" onClick={(e) => this.props.onClick(e)}>Post to Facebook</button>
                 </div>
             )
         );

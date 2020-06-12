@@ -13,7 +13,7 @@ import SpyLogo from "../Initial/spyLogo.jpg";
 
 class Level9 extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             isJewelFound: false,
             academicmode: this.props.academicmode,
@@ -22,35 +22,40 @@ class Level9 extends React.Component {
         }
     }
 
-    handleFound = () => {
+    handleFound = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: true,
-        })
-    }
+        });
+    };
 
-    handleCloseDialog = () => {
+    handleCloseDialog = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: false
-        })
-        this.props.getLevelChange()
-    }
+        });
+        this.props.getLevelChange();
+    };
 
-    openFacebookDialog = () => {
+    openFacebookDialog = (e) => {
+        this.props.logClick(e);
         this.setState({
             isDialogOpen: true
-        })
-    }
+        });
+    };
 
-    closeFacebookDialog = () => {
+    closeFacebookDialog = (e) => {
+        this.props.logClick(e); 
         this.setState({
             isDialogOpen: false,
             isJewelShown: true
-        })
-    }
+        });
+    };
 
     render() {
         return (
             <Level
+                logClick={this.props.logClick}
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
                 mission='share your certificate on Facebook.'
@@ -78,13 +83,13 @@ class Level9 extends React.Component {
                         <h2 style={{ fontFamily: 'garamond', fontStyle: 'italic' }}>Spy Academy</h2>
                     </div>
                     <div className="share">
-                        <IconButton onClick={this.openFacebookDialog}><FacebookIcon fontSize="large"/></IconButton>
-                        <IconButton><TwitterIcon fontSize="large"/></IconButton>
-                        <IconButton><InstagramIcon fontSize="large"/></IconButton>
-                        <IconButton><EmailIcon fontSize="large"/></IconButton>
+                        <IconButton id="level 9 facebook icon" onClick={(e) => this.openFacebookDialog(e)}><FacebookIcon fontSize="large"/></IconButton>
+                        <IconButton id="level 9 twitter icon" onClick={(e) => this.props.logClick(e)}><TwitterIcon fontSize="large"/></IconButton>
+                        <IconButton id="level 9 instagram icon" onClick={(e) => this.props.logClick(e)}><InstagramIcon fontSize="large"/></IconButton>
+                        <IconButton id="level 9 email icon" onClick={(e) => this.props.logClick(e)}><EmailIcon fontSize="large"/></IconButton>
                         {this.state.isJewelShown && <Jewel handleFound={this.handleFound}/>}
                     </div>
-                    <ShareModal show={this.state.isDialogOpen} onClick={this.closeFacebookDialog}/>
+                    <ShareModal show={this.state.isDialogOpen} onClick={(e) => this.closeFacebookDialog(e)}/>
                 </div>
             </Level>
         );

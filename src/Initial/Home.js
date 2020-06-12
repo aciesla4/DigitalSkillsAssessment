@@ -292,15 +292,16 @@ class Home extends React.Component {
         };
     }
 
-    getModeSwitch = () => {
+    getModeSwitch = (e) => {
         let oldValue = this.state.academicmode
         this.setState({
             academicmode: !oldValue
         })
-        this.props.getModeSwitch()
+        this.props.getModeSwitch(e)
     }
 
-    getPhoneClick = () => {
+    getPhoneClick = (e) => {
+        this.props.logClick(e);
         this.setState({
             isPhoneClicked: true
         })
@@ -325,7 +326,7 @@ class Home extends React.Component {
                     <Messages messages={messages} currentMember={this.state.member}/>
                 }
                 {this.state.academicmode &&
-                    <LearningMode academicmode={this.state.academicmode} />
+                    <LearningMode academicmode={this.state.academicmode} logClick={this.props.logClick}/>
                 }
                 <NavBar level={this.props.level} getPhoneClick={this.getPhoneClick} clicked={this.state.isPhoneClicked} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} getLevelChange={this.props.getLevelChange}/>
             </div>

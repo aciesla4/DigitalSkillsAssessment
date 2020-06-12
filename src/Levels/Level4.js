@@ -18,7 +18,7 @@ import Level from '../util/Level';
 
 class Level4 extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             isJewelFound: false,
             academicmode: this.props.academicmode,
@@ -26,40 +26,44 @@ class Level4 extends React.Component {
         }
     }
 
-    handleFound = () => {
+    handleFound = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: true,
-        })
-    }
+        });
+    };
 
-    handleCloseDialog = () => {
+    handleCloseDialog = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: false
-        })
-        this.props.getLevelChange()
-    }
+        });
+        this.props.getLevelChange();
+    };
 
-    handleClick = (i) => {
+    handleClick = (i, e) => {
+        this.props.logClick(e);
         let update = this.state.elements;
-        update[i] = (<FavCard key={i} id={i} color="red" handleFound={this.handleFound} isJewelShown={true}/>)
+        update[i] = (<FavCard key={i} id={i} color="red" handleFound={(e) => this.handleFound(e)} isJewelShown={true}/>);
         this.setState({
             elements: update,
-        })
-    }
+        });
+    };
 
     renderCards = () => {
-        let pictures = [ nature1, nature2, nature3, nature4, nature5, nature6, nature7, nature8, nature9, nature10, nature11, nature12 ]
-        const items = []
+        let pictures = [ nature1, nature2, nature3, nature4, nature5, nature6, nature7, nature8, nature9, nature10, nature11, nature12 ];
+        const items = [];
         for (var i = 0; i < 12; i++) {
-            let index = i
-            items.push(<FavCard key={i} id={i} pic={pictures[i]} color="" isJewelShown={false} onClick={() => this.handleClick(index)}/>)
+            let index = i;
+            items.push(<FavCard key={i} id={i} pic={pictures[i]} color="" isJewelShown={false} onClick={(e) => this.handleClick(index, e)}/>);
         }
         return items;
-    }
+    };
 
     render() {
         return (
             <Level
+                logClick={this.props.logClick}
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
                 mission='favorite something.'

@@ -7,7 +7,7 @@ import GoogleDrive from '../images/googleDrive.jpg';
 
 class Level14 extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             isJewelFound: false,
             academicMode: this.props.academicMode,
@@ -15,28 +15,32 @@ class Level14 extends React.Component {
         }
     }
 
-    handleFound = () => {
+    handleFound = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: true,
-        })
-    }
+        });
+    };
 
-    handleCloseDialog = () => {
+    handleCloseDialog = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: false
-        })
-        this.props.getLevelChange()
-    }
+        });
+        this.props.getLevelChange();
+    };
 
-    handleDriveClick = () => {
+    handleDriveClick = (e) => {
+        this.props.logClick(e);
         this.setState({
             isDriveClicked: true,
-        })
-    }
+        });
+    };
 
     render() {
         return (
             <Level
+                logClick={this.props.logClick}
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
                 mission='find information about Google Drive.'
@@ -50,7 +54,7 @@ class Level14 extends React.Component {
             >
                 <div>
                     <br/><br/><br/>
-                    <Menu handleClick={this.handleDriveClick}/><br/><br/><br/>
+                    <Menu logClick={this.props.logClick} handleClick={this.handleDriveClick}/><br/><br/><br/>
                     {this.state.isDriveClicked &&
                         <div>
                             <img className="drive-img" alt="pic" src={GoogleDrive}/>

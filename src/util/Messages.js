@@ -23,7 +23,7 @@ class Messages extends React.Component {
                 </div>
             </li>
         )
-    }
+    };
 
     render() {
         const {messages} = this.props;

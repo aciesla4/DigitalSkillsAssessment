@@ -4,12 +4,12 @@ import { Dialog, DialogContent, DialogTitle, IconButton } from '@material-ui/cor
 import { Link as RouterLink } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
 
-class Level1 extends React.Component {
+class EndDialog extends React.Component {
     render() {
         return (
             <Dialog open={this.props.open} disableBackdropClick={true}>
                 <DialogTitle>Congratulations Agent!
-                    <IconButton style={{ position: 'absolute', right: 2, top: 2 }} component={RouterLink} to="/home" onClick={this.props.handleCloseDialog} color="inherit">
+                    <IconButton id="close end dialog button" style={{ position: 'absolute', right: 2, top: 2 }} component={RouterLink} to="/home" onClick={(e) => this.props.handleCloseDialog(e)} color="inherit">
                         <CloseIcon/>
                     </IconButton>
                 </DialogTitle>
@@ -22,4 +22,4 @@ class Level1 extends React.Component {
     }
 }
 
-export default Level1;
+export default EndDialog;

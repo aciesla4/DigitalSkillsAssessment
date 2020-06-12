@@ -9,7 +9,7 @@ import Modal from '../util/Modal';
 
 class Level extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             isDialogOpen: true,
             academicmode: this.props.academicmode,
@@ -24,13 +24,13 @@ class Level extends React.Component {
         })
     }
 
-    getModeSwitch = () => {
-        let oldValue = this.state.academicmode
+    getModeSwitch = (e) => {
+        let oldValue = this.state.academicmode;
         this.setState({
             academicmode: !oldValue
-        })
-        this.props.getModeSwitch()
-    }
+        });
+        this.props.getModeSwitch(e);
+    };
 
     render() {
         return (
@@ -39,9 +39,9 @@ class Level extends React.Component {
                 {this.props.children}
                 <NavBar academicmode={this.props.academicmode} openHint={this.props.openHint} getModeSwitch={this.getModeSwitch}/>
                 {this.props.academicmode &&
-                <LearningMode academicmode={this.props.academicmode}/>
+                <LearningMode academicmode={this.props.academicmode} logClick={this.props.logClick}/>
                 }
-                <Modal show={this.props.isHintShown} last={true} heading="Hint" closeModal={this.props.closeHint} x="75%" y="15%" modalStyle="modalR">
+                <Modal id="hint" show={this.props.isHintShown} last={true} heading="Hint" closeModal={this.props.closeHint} x="75%" y="15%" modalStyle="modalR">
                     {this.props.hintMessage}
                 </Modal>
                 <EndDialog open={this.props.isJewelFound} handleCloseDialog={this.props.handleCloseDialog} academicmode={this.props.academicmode}>

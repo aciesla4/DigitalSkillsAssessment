@@ -7,7 +7,7 @@ import CartCard from '../util/CartCard';
 
 class Level8 extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             isJewelFound: false,
             academicmode: this.props.academicmode,
@@ -18,26 +18,30 @@ class Level8 extends React.Component {
         }
     }
 
-    handleFound = () => {
+    handleFound = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: true,
-        })
-    }
+        });
+    };
 
-    handleCloseDialog = () => {
+    handleCloseDialog = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: false
-        })
-        this.props.getLevelChange()
-    }
+        });
+        this.props.getLevelChange();
+    };
 
-    deleteItem = (id) => {
+    deleteItem = (id, e) => {
+        e.currentTarget.id = "level 8 card " + id;
+        this.props.logClick(e);
         const update = this.state.elements.filter(element => element.id !== id);
         this.setState({
             elements: update,
             deleted: true,
-        })
-    }
+        });
+    };
 
     calculateSummary = () => {
         let subtotal = 0;
@@ -48,20 +52,22 @@ class Level8 extends React.Component {
         subtotal = parseFloat(subtotal.toFixed(2));
         let tax = parseFloat((0.06 * subtotal).toFixed(2));
         let total = parseFloat((subtotal + 5.99 + tax).toFixed(2));
-        return {subtotal, tax, total}
-    }
+        return {subtotal, tax, total};
+    };
 
-    showJewel = () => {
+    showJewel = (e) => {
+        this.props.logClick(e);
         //if (this.state.deleted) {
             this.setState({
                 isJewelShown: true,
             })
        // }
-    }
+    };
 
     render() {
         return (
             <Level
+                logClick={this.props.logClick}
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
                 mission='delete an item from your cart then check out.'
@@ -96,7 +102,7 @@ class Level8 extends React.Component {
                         <h4 style={{ clear: 'both', float: 'left' }}>Estimated Tax: </h4><h4 style={{ float: 'right' }}>${this.calculateSummary().tax}</h4><br/>
                         <h3 style={{ clear: 'both', float: 'left' }}>Total: </h3><h3 style={{ float: 'right' }}>${this.calculateSummary().total}</h3><br/>
                         <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                        <button className="check-out-button" onClick={this.showJewel}>Check Out</button>
+                        <button className="check-out-button" id="level 8 checkout button" onClick={(e) => this.showJewel(e)}>Check Out</button>
                     </div>
                 </div>
                 {this.state.isJewelShown && <Jewel top='70%' left='82%' handleFound={this.handleFound}/>}

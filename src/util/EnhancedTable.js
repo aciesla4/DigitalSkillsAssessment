@@ -66,7 +66,8 @@ function EnhancedTableHead(props) {
     const { classes, order, orderBy, onRequestSort } = props;
     const createSortHandler = (property) => (event) => {
         onRequestSort(event, property);
-        props.showJewel()
+        props.logClick(event);
+        props.showJewel();
     };
 
     return (
@@ -83,6 +84,7 @@ function EnhancedTableHead(props) {
                         <TableSortLabel
                             active={true}
                             direction={orderBy === headCell.id ? order : 'asc'}
+                            id={"level 6 cell " + headCell.id}
                             onClick={createSortHandler(headCell.id)}
                         >
                             {headCell.label}
@@ -148,6 +150,7 @@ export default function EnhancedTable(props) {
                             order={order}
                             orderBy={orderBy}
                             onRequestSort={handleRequestSort}
+                            logClick={props.logClick}
                             showJewel={props.showJewel}
                         />
                         <TableBody>

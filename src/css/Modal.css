@@ -1,4 +1,4 @@
-.modal {
+.my-modal {
     position: fixed;
     border-radius: .4em;
     width: 350px;
@@ -11,7 +11,7 @@
     visibility: visible;
 }
 
-.modal:after{
+.my-modal:after{
     position: fixed;
     content: '';
     bottom: 0;

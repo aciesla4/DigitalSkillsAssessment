@@ -5,29 +5,42 @@ import SimpleMap from '../util/SimpleMap';
 
 class Level12 extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             isJewelFound: false,
             academicmode: this.props.academicmode,
         }
     }
 
-    handleFound = () => {
+    handleFound = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: true,
-        })
-    }
+        });
+    };
 
-    handleCloseDialog = () => {
+    handleCloseDialog = (e) => {
+        this.props.logClick(e);
         this.setState({
             isJewelFound: false
-        })
-        this.props.getLevelChange()
-    }
+        });
+        this.props.getLevelChange();
+    };
+
+    logMapClick = (id) => {
+        let e = {
+            currentTarget: {
+                id: ""
+            }
+        };
+        e.currentTarget.id = id;
+        this.props.logClick(e);
+    };
 
     render() {
         return (
             <Level
+                logClick={this.logClick}
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
                 mission='find Copper Harbor on the map.'
@@ -40,7 +53,7 @@ class Level12 extends React.Component {
                 dialogMessage='Your mission is complete! <Something helpful about maps> Click the X to return to the home page and receive your next mission.'
             >
                 <div>
-                    <SimpleMap handleFound={this.handleFound}/>
+                    <SimpleMap handleFound={this.handleFound} logClick={this.logMapClick}/>
                 </div>
             </Level>
         );
