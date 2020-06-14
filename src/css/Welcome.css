@@ -21,6 +21,10 @@
     font-size: 20px;
 }
 
+.begin-button:focus{
+    outline: none;
+}
+
 .begin-button:hover{
     background-color: lightgray;
 }

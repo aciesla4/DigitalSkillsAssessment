@@ -12,7 +12,7 @@
 }
 
 #main_nav {
-    margin-left: 30%;
+    margin-left: 35%;
 }
 
 #main_nav ul {
@@ -25,7 +25,7 @@
 #main_nav li {
     float: left;
     position: relative;
-    width: 150px;
+    width: 125px;
     list-style: none;
 }
 
@@ -68,4 +68,10 @@
 #main_nav li:hover > ul {
     visibility: visible;
     opacity: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+    [class="main_nav"] {
+        margin-left: 25%;
+    }
 }

@@ -2,6 +2,10 @@
     background-color: inherit !important;
 }
 
+.jewel:focus {
+    outline: none;
+}
+
 .animates {
     color: gold;
     animation: jewel-glow 2s infinite;

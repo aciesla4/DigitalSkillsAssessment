@@ -1,15 +1,36 @@
-.grid-container {
-    display: grid;
-    grid-template-columns: 150px 150px 150px 150px 150px 150px 150px 150px 150px 150px;
-    padding: 30px;
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+.level3-grid {
     position: relative;
-    top: 60px;
+    top: 62px;
+    padding: 10px;
+}
+
+.level3-content {
+    float: left;
+    width: 12.5%;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 .card {
-    width: 100px;
-    height: 100px;
+    width: 135px;
+    height: 135px;
     padding: 10px;
     border: 1px solid lightgray;
     box-shadow: -1px 1px 1px lightgrey, -2px 2px 2px lightgrey;
+}
+
+@media only screen and (max-width: 1000px) {
+    [class="card"] {
+        width: 100px;
+        height: 100px;
+    }
 }

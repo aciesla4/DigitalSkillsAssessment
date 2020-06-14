@@ -75,8 +75,13 @@ class Level4 extends React.Component {
                 handleCloseDialog={this.handleCloseDialog}
                 dialogMessage='Your mission is complete! Favoriting something is a common way to save something to be found later. Click the X to return to the home page and receive your next mission.'
             >
-                <div className="container">
-                    {this.state.elements}
+                <div className="level4-grid">
+                    <div className="level4-content">{this.state.elements.slice(0, 2)}</div>
+                    <div className="level4-content">{this.state.elements.slice(2, 4)}</div>
+                    <div className="level4-content">{this.state.elements.slice(4, 6)}</div>
+                    <div className="level4-content">{this.state.elements.slice(6, 8)}</div>
+                    <div className="level4-content">{this.state.elements.slice(8, 10)}</div>
+                    <div className="level4-content">{this.state.elements.slice(10, 12)}</div>
                 </div>
             </Level>
         );

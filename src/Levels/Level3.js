@@ -33,9 +33,10 @@ class Level3 extends React.Component {
     };
 
     showJewel = (e) => {
+        console.log("show jewel")
         this.props.logClick(e);
         let update = this.state.elements;
-        update[22] = (<div><Jewel handleFound={this.handleFound} /></div>);
+        update[23] = (<div><Jewel handleFound={this.handleFound} /></div>);
         this.setState({
             elements: update
         });
@@ -47,8 +48,8 @@ class Level3 extends React.Component {
 
     renderCards = () => {
         const items = [];
-        for (var i = 0; i < 40; i++) {
-            if (i === 22) {
+        for (var i = 0; i < 32; i++) {
+            if (i === 23) {
                 items.push(<Card key={i} id={i} pic={Cat} onClick={this.showJewel}/>);
             }
             else {
@@ -68,13 +69,20 @@ class Level3 extends React.Component {
                 openHint={this.props.openHint}
                 closeHint={this.props.closeHint}
                 isHintShown={this.props.isHintShown}
-                hintMessage='hinty hint'
+                hintMessage='<TODO>'
                 isJewelFound={this.state.isJewelFound}
                 handleCloseDialog={this.handleCloseDialog}
                 dialogMessage='Your mission is complete! Changing the view when searching for an image can help you find the one you are looking for. Click the X to return to the home page and receive your next mission.'
             >
-                <div className="grid-container">
-                    {this.state.elements}
+                <div className="level3-grid">
+                    <div className="level3-content">{this.state.elements.slice(0, 4)}</div>
+                    <div className="level3-content">{this.state.elements.slice(4, 8)}</div>
+                    <div className="level3-content">{this.state.elements.slice(8, 12)}</div>
+                    <div className="level3-content">{this.state.elements.slice(12, 16)}</div>
+                    <div className="level3-content">{this.state.elements.slice(16, 20)}</div>
+                    <div className="level3-content">{this.state.elements.slice(20, 24)}</div>
+                    <div className="level3-content">{this.state.elements.slice(24, 28)}</div>
+                    <div className="level3-content">{this.state.elements.slice(28, 32)}</div>
                 </div>
             </Level>
         );

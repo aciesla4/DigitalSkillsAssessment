@@ -3,7 +3,7 @@
     position: absolute;
     top: 10%;
     left: 1%;
-    height: 60%;
+    height: 65%;
     width: 98%;
     text-align: center;
 }
@@ -19,3 +19,14 @@
     bottom: 15%;
     left: 42.5%;
 }
+
+@media only screen and (max-width: 875px) {
+    [class="certificate"] {
+        height: 70%;
+    }
+    [class="share"] {
+        bottom: 10%;
+        left: 35%;
+    }
+}
+

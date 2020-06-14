@@ -52,7 +52,7 @@ class Level2 extends React.Component {
                 <Container>
                     <Dialog open={this.state.isDialogOpen} disableBackdropClick={true} disableEscapeKeyDown={true} hideBackdrop={true}>
                         <DialogTitle>Lorem ipsum dolor sit amet.
-                            <IconButton id="close level 2 dialog button" style={{ position: 'absolute', right: 2, top: 2 }} onClick={this.handleClose} color="inherit">
+                            <IconButton id="close level 2 dialog button" style={{ position: 'absolute', right: 2, top: 2, outline: 'none' }} onClick={this.handleClose} color="inherit">
                                 <CloseIcon/>
                             </IconButton>
                         </DialogTitle>

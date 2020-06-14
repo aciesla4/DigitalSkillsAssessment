@@ -68,14 +68,14 @@ class LearningMode extends React.Component {
         return (
             <div>
                 {currentPath.includes("home") &&
-                    <div id="home">
-                        <Modal show={this.state.home[0]} heading="Learning Mode" openNext={(e) => this.openNextHome( 0, e)} x="0%" y="15%" modalStyle="modalL">
+                    <div id="home" style={{ width: '100%' }}>
+                        <Modal show={this.state.home[0]} heading="Learning Mode" openNext={(e) => this.openNextHome( 0, e)} x="0" y="15%" modalStyle="modalL">
                             Click the slider to turn learning mode off or on. Learning mode gives you extra tips on how to use the site and complete levels.
                         </Modal>
                         <Modal show={this.state.home[1]} heading="Check Button" openNext={(e) => this.openNextHome(1, e)} x="40%" y="15%" modalStyle="my-modal">
                             Click this button to begin a level.
                         </Modal>
-                        <Modal show={this.state.home[2]} last={true} heading="Phone Button" closeModal={this.closeHome} x="75%" y="15%" modalStyle="modalR">
+                        <Modal show={this.state.home[2]} last={true} heading="Phone Button" closeModal={this.closeHome} y="15%" modalStyle="modalR">
                             When this rings, HQ is calling. Click to pick it up and receive their message.
                         </Modal>
                     </div>

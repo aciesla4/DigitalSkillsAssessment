@@ -57,11 +57,9 @@ class Level8 extends React.Component {
 
     showJewel = (e) => {
         this.props.logClick(e);
-        //if (this.state.deleted) {
-            this.setState({
-                isJewelShown: true,
-            })
-       // }
+        this.setState({
+            isJewelShown: true,
+        })
     };
 
     render() {

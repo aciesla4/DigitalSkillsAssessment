@@ -1,11 +1,23 @@
-.container {
-    display: grid;
-    grid-template-columns: 225px 225px 225px 225px 225px 225px;
-    padding: 20px;
-    grid-column-gap: 20px;
-    grid-row-gap: 10px;
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+.level4-grid {
     position: relative;
-    top: 60px;
+    top: 62px;
+    padding: 10px;
+}
+
+.level4-content {
+    float: left;
+    width: 16.66%;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 .favcard {
@@ -20,4 +32,15 @@
     width: 200px;
     height: 200px;
     padding: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+    [class="favcard"] {
+        height: 150px;
+        width: 105px;
+    }
+    [class="picture"] {
+        width: 90px;
+        height: 90px;
+    }
 }

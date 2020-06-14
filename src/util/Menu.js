@@ -4,7 +4,7 @@ import '../css/Menu.css';
 class Menu extends React.Component {
     render() {
         return (
-            <nav id="main_nav">
+            <div id="main_nav">
                 <ul className="dropdown">
                     <li>
                         <button className="drop-button" id="level 14 career button" onMouseOver={this.props.logClick}>Career</button>
@@ -107,7 +107,7 @@ class Menu extends React.Component {
                         </ul>
                     </li>
                 </ul>
-            </nav>
+            </div>
         )
     }
 }

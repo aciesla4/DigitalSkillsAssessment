@@ -51,7 +51,7 @@ class Level5 extends React.Component {
             >
                 <div>
                     <Jewel top='25%' left='25%' handleFound={this.handleFound} />
-                    <ResizableBox id="level 5 box resized" width={1500} height={550} minConstraints={[100, 100]} maxConstraints={[1530, 600]} onResizeStop={this.handleResize}/>
+                    <ResizableBox id="level 5 box resized" width={1250} height={450} minConstraints={[100, 100]} maxConstraints={[1530, 600]} onResizeStop={this.handleResize}/>
                 </div>
             </Level>
         );
