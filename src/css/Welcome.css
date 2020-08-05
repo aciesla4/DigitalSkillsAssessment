@@ -29,6 +29,52 @@
     background-color: lightgray;
 }
 
+.congrats-text {
+    margin-top: 20px;
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    transition-duration: 0.4s;
+    font-family: 'Oxanium';
+    font-size: 20px;
+}
+
+.score-text {
+    margin-top: 70px;
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    transition-duration: 0.4s;
+    font-family: 'Oxanium';
+    font-size: 20px;
+}
+
+.learn-btn {
+    display: block;
+    position: absolute;
+    border: 1px solid lightgray;
+    background: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    margin-top: 130px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    transition-duration: 0.4s;
+    font-family: 'Oxanium';
+    font-size: 20px;
+}
+
+.learn-btn:focus{
+    outline: none;
+}
+
+.learn-btn:hover{
+    background-color: lightgray;
+}
+
 .welcome {
     animation: fadeIn ease 5s;
     animation-fill-mode: forwards;

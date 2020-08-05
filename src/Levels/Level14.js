@@ -53,7 +53,7 @@ class Level14 extends React.Component {
                 dialogMessage='Your mission is complete! <TODO> Click the X to return to the home page and receive your next mission.'
             >
                 <div>
-                    <br/><br/><br/>
+
                     <Menu logClick={this.props.logClick} handleClick={this.handleDriveClick}/><br/><br/><br/>
                     {this.state.isDriveClicked &&
                         <div>

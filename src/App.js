@@ -20,6 +20,7 @@ import Level13 from './Levels/Level13';
 import Level14 from './Levels/Level14';
 import Level15 from './Levels/Level15';
 import Level16 from './Levels/Level16';
+import Final from './Initial/Final';
 import { history } from './util/PasswordReset/_helpers';
 import axios from "axios";
 
@@ -57,9 +58,14 @@ class App extends React.Component {
     };
 
     getLevelChange = () => {
-        this.setState( {
-            level: this.state.level + 1
-        });
+        if (this.state.level === 16) {
+            console.log("done")
+        }
+        else {
+            this.setState({
+                level: this.state.level + 1
+            });
+        }
     };
 
     openHint = (e) => {
@@ -103,6 +109,7 @@ class App extends React.Component {
                     <Route path="/level14" render={(props) => <Level14 {...props} logClick={this.logClick} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
                     <Route path="/level15" render={(props) => <Level15 {...props} logClick={this.logClick} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
                     <Route path="/level16" render={(props) => <Level16 {...props} logClick={this.logClick} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
+                    <Route path="/congrats" component={Final} />
                     <Route path="/" component={Welcome} exact />
                 </Switch>
             </BrowserRouter>

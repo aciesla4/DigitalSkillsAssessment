@@ -56,7 +56,7 @@ class Menu extends React.Component {
                                 </ul>
                             </li>
                             <li>
-                                <button className="drop-button" id="level 14 time management button" onMouseOver={this.props.logClick}>Time Management</button>
+                                <button className="drop-button" id="level 14 time management button" onMouseOver={this.props.logClick}>Organizing</button>
                                 <ul className="dropdown">
                                     <li><button className="drop-button" id="level 14 eval time button" onMouseOver={this.props.logClick}>Evaluating Time</button></li>
                                     <li><button className="drop-button" id="level 14 stay focused button" onMouseOver={this.props.logClick}>Staying Focused</button></li>
@@ -95,7 +95,7 @@ class Menu extends React.Component {
                                     <li><button className="drop-button" id="level 14 printer button" onMouseOver={this.props.logClick}>Printer</button></li>
                                 </ul>
                             </li>
-                            <li><button className="drop-button" id="level 14 IT management button" onMouseOver={this.props.logClick}>IT Management</button></li>
+                            <li><button className="drop-button" id="level 14 IT management button" onMouseOver={this.props.logClick}>IT Managing</button></li>
                         </ul>
                     </li>
                     <li>

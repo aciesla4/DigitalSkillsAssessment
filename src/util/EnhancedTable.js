@@ -137,7 +137,7 @@ export default function EnhancedTable(props) {
     };
 
     return (
-        <div className={classes.root} style={{ position: 'absolute', top: '60px' }}>
+        <div className={classes.root}>
             <Paper className={classes.paper}>
                 <TableContainer>
                     <Table

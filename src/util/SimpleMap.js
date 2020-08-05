@@ -15,7 +15,7 @@ export default class SimpleMap extends Component {
             <Map
                 center={position}
                 zoom={this.state.zoom}
-                style={{ width: '100%', height: '600px', position: 'absolute', top: '60px', zIndex: '-1' }}
+                style={{ width: '100%', height: '90%', position: 'absolute', top: '60px', zIndex: '-1' }}
             >
                 <TileLayer
                     attribution='&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

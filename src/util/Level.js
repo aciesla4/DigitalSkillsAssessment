@@ -36,7 +36,7 @@ class Level extends React.Component {
         return (
             <div>
                 <Header mission={this.props.mission} />
-                {this.props.children}
+                <div style={{ marginTop: "5%" }}>{this.props.children}</div>
                 <NavBar academicmode={this.props.academicmode} openHint={this.props.openHint} getModeSwitch={this.getModeSwitch}/>
                 {this.props.academicmode &&
                 <LearningMode academicmode={this.props.academicmode} logClick={this.props.logClick}/>
