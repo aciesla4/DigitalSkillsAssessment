@@ -1,10 +1,18 @@
 import React from 'react';
-import '../App.css';
+import '../css/Level5.css';
 import Level from '../util/Level';
+import MuiAlert from '@material-ui/lab/Alert';
+import Snackbar from '@material-ui/core/Snackbar';
+
 import { App } from '../util/PasswordReset/app';
 import { configureFakeBackend } from "../util/PasswordReset/_helpers";
 import "../css/SignIn.css";
 import { accountService} from "../util/PasswordReset/_services";
+
+
+import Login from "../util/Login";
+import axios from "axios";
+import ForgotPassword from "../util/ForgotPassword";
 
 class Level15 extends React.Component {
     constructor(props) {
@@ -12,6 +20,7 @@ class Level15 extends React.Component {
         this.state = {
             isJewelFound: false,
             academicMode: this.props.academicMode,
+            showForgotPassword: false,
         }
     }
 
@@ -30,6 +39,13 @@ class Level15 extends React.Component {
         this.props.getLevelChange()
     }
 
+    changeView = () => {
+        console.log('change view')
+        this.setState({
+            showForgotPassword: !this.state.showForgotPassword,
+        })
+    }
+
     render() {
         configureFakeBackend();
         return (
@@ -46,8 +62,9 @@ class Level15 extends React.Component {
                 dialogMessage='Your mission is complete! <TODO> Click the X to return to the home page and receive your next mission.'
             >
                 <div>
-                    <br/><br/><br/>
-                    <App handleFound={this.handleFound}/>
+                    {this.state.showForgotPassword ? <ForgotPassword changeView={this.changeView}/> :
+                    <Login error={this.state.error} handleClose={this.handleClose} checkLogin={this.checkLogin} changeView={this.changeView}/>
+                    }
                 </div>
             </Level>
         );
