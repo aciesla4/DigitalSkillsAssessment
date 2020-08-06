@@ -10,14 +10,67 @@
 
 .form-label {
     font-size: 20px;
+    display: block;
 }
 
 .form-control {
     padding: 10px;
     height: 40px;
     font-size: 20px;
+    width: 100%;
 }
 
 .invalid-feedback {
     font-size: 18px;
+    color: red;
+    margin-top: 10px;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #f50057;
+    height: 40px;
+    border-radius: 1em;
+    border-color: #f50057;
+    border-style: solid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #a8003c;
+    border-color: #a8003c;
+    cursor: pointer;
+}
+
+.reset-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.reset-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25%;
+    border: 1px solid lightgray;
+    background: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    font-family: 'Oxanium';
+    font-size: 20px;
+    text-align: center;
+}
+
+.reset-btn:focus{
+    outline: none;
+}
+
+.reset-btn:hover{
+    background-color: lightgray;
+    cursor: pointer;
 }

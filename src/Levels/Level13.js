@@ -52,7 +52,7 @@ class Level13 extends React.Component {
             >
                 <div>
                     <CustomChatbot handleEnd={this.handleEnd}/>
-                    {this.state.isJewelShown && <Jewel top='65%' left='50%' handleFound={this.handleFound} />}
+                    {this.state.isJewelShown && <Jewel top='75%' left='50%' handleFound={this.handleFound} />}
                 </div>
             </Level>
         );

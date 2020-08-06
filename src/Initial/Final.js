@@ -20,7 +20,6 @@ class Final extends React.Component {
         });
         axios.get('http://localhost:8080/logging')
             .then((response) => {
-                console.log(response.data);
                 this.setState({
                     score: response.data
                 })

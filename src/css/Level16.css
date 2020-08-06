@@ -34,7 +34,7 @@
     position: absolute;
     width: 48%;
     left: 1%;
-    top: 70px;
+    top: 100px;
     border: 2px solid black;
 }
 
@@ -42,6 +42,6 @@
     position: absolute;
     width: 48%;
     right: 1%;
-    top: 70px;
+    top: 100px;
     border: 2px solid black;
 }

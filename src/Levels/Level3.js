@@ -33,7 +33,6 @@ class Level3 extends React.Component {
     };
 
     showJewel = (e) => {
-        console.log("show jewel")
         this.props.logClick(e);
         let update = this.state.elements;
         update[23] = (<div><Jewel handleFound={this.handleFound} /></div>);

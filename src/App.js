@@ -21,7 +21,6 @@ import Level14 from './Levels/Level14';
 import Level15 from './Levels/Level15';
 import Level16 from './Levels/Level16';
 import Final from './Initial/Final';
-import { history } from './util/PasswordReset/_helpers';
 import axios from "axios";
 
 class App extends React.Component {
@@ -46,7 +45,6 @@ class App extends React.Component {
                 time: (dt - this.state.start) / 1000
             }
         })
-
     };
 
     getModeSwitch = (e) => {
@@ -59,7 +57,7 @@ class App extends React.Component {
 
     getLevelChange = () => {
         if (this.state.level === 16) {
-            console.log("done")
+            window.location.href='/congrats'
         }
         else {
             this.setState({

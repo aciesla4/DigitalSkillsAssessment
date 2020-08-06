@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import "../css/Level15.css";
@@ -34,7 +33,7 @@ class Login extends React.Component {
         axios.get('http://localhost:5050/user')
             .then((response) => {
                 if (email === response.data.email && password === response.data.password) {
-                    console.log("woohoo")
+                    this.props.changeView('showDone')
                 }
                 else {
                     this.setState({
@@ -42,16 +41,6 @@ class Login extends React.Component {
                     })
                 }
             });
-        // alertService.clear();
-        // accountService.login(email, password)
-        //     .then(() => {
-        //         const { from } = location.state || { from: { pathname: "/level15/jewel" } };
-        //         history.push(from);
-        //     })
-        //     .catch(error => {
-        //         setSubmitting(false);
-        //         alertService.error(error);
-        //     });
     }
 
     render () {
@@ -82,12 +71,12 @@ class Login extends React.Component {
                                 </div>
                                 <div>
                                     <div>
-                                        <button type="submit" className="signin-btn">
+                                        <button type="submit" className="submit-btn">
                                             Login
                                         </button>
                                     </div>
                                     <div>
-                                        <a href='javascript:void(0)' onClick={this.props.changeView}>Forgot Password?</a>
+                                        <a href='javascript:void(0)' onClick={() => this.props.changeView('forgotPassword')}>Forgot Password?</a>
                                     </div>
                                 </div>
                             </div>
