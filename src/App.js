@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Welcome from './Initial/Welcome';
@@ -108,16 +107,11 @@ class App extends React.Component {
                     <Route path="/level15" render={(props) => <Level15 {...props} logClick={this.logClick} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
                     <Route path="/level16" render={(props) => <Level16 {...props} logClick={this.logClick} level={this.state.level} getLevelChange={this.getLevelChange} academicmode={this.state.academicmode} getModeSwitch={this.getModeSwitch} openHint={this.openHint} isHintShown={this.state.isHintShown} closeHint={this.closeHint} />} />
                     <Route path="/congrats" component={Final} />
-                    <Route path="/" component={Welcome} exact />
+                    <Route path="/" component={Welcome} />
                 </Switch>
             </BrowserRouter>
         )
     }
 }
-
-ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-);
 
 export default App;

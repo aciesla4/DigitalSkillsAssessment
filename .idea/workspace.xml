@@ -2,21 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0a8b6bb-64d6-489a-b202-4fbb066e2ed4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/_redirects" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/precache-manifest.50c06f5d063f3a5f85f2b97877152966.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/precache-manifest.fd4198a895963400391660c46fb1a552.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.0dcdc28c.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.0dcdc28c.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.afcaffdc.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.afcaffdc.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.9844ca48.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.9844ca48.chunk.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.9844ca48.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.ac4e9aa2.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.ac4e9aa2.chunk.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/Level13.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/Level13.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/Level14.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/Level14.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/Level15.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/Level15.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/Level16.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/Level16.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/Level3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/Level3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/Level4.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/Level4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Initial/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Initial/Home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +87,7 @@
       <workItem from="1584372899932" duration="3052000" />
       <workItem from="1596641367547" duration="16079000" />
       <workItem from="1596722622883" duration="15788000" />
-      <workItem from="1596804983135" duration="3621000" />
+      <workItem from="1596804983135" duration="8224000" />
     </task>
     <servers />
   </component>
@@ -95,6 +95,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="991" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596823012955">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="991" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1596823012955" />
     <state x="541" y="280" width="598" height="490" key="find.popup" timestamp="1596814385837">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

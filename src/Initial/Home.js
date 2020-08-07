@@ -235,7 +235,7 @@ class Home extends React.Component {
                 },
                 {
                     level: 14,
-                    text: "Nice work agent. You are almost done with your elite spy training. We want you to learn more about our file sharing system here at headquarters.",
+                    text: "It's time for you to do some learning on our internal learning portal.",
                     member: {
                         color: "black",
                         username: "Mission Control"
@@ -243,7 +243,7 @@ class Home extends React.Component {
                 },
                 {
                     level: 14,
-                    text: "Your next mission is to find the jewel by finding information about Google Drive. " +
+                    text: "Your next mission is to find the jewel by logging into the learning portal using the username \"agent203@spyacademy.org\" and password \"password\" " +
                         "Click the check mark to begin. ",
                     member: {
                         color: "black",
@@ -252,7 +252,7 @@ class Home extends React.Component {
                 },
                 {
                     level: 15,
-                    text: "It's time for you to do some learning on our internal learning portal.",
+                    text: "Nice work agent. You are almost done with your elite spy training. We want you to learn more about our file sharing system here at headquarters.",
                     member: {
                         color: "black",
                         username: "Mission Control"
@@ -260,7 +260,7 @@ class Home extends React.Component {
                 },
                 {
                     level: 15,
-                    text: "Your next mission is to find the jewel by logging into the learning portal using the username \"agent203@spyacademy.org\" and password \"password\" " +
+                    text: "Your next mission is to find the jewel by finding information about Google Drive. " +
                         "Click the check mark to begin. ",
                     member: {
                         color: "black",
