@@ -70,7 +70,7 @@ class Level4 extends React.Component {
                 openHint={this.props.openHint}
                 closeHint={this.props.closeHint}
                 isHintShown={this.props.isHintShown}
-                hintMessage='hinty hint'
+                hintMessage='Favoriting an item can be done by clicking the heart icon under an image.'
                 isJewelFound={this.state.isJewelFound}
                 handleCloseDialog={this.handleCloseDialog}
                 dialogMessage='Your mission is complete! Favoriting something is a common way to save something to be found later. Click the X to return to the home page and receive your next mission.'

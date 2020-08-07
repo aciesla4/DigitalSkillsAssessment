@@ -45,10 +45,10 @@ class Level13 extends React.Component {
                 openHint={this.props.openHint}
                 closeHint={this.props.closeHint}
                 isHintShown={this.props.isHintShown}
-                hintMessage='<TODO>'
+                hintMessage='Click on a response option given by HQ and then type a response in the message field if prompted.'
                 isJewelFound={this.state.isJewelFound}
                 handleCloseDialog={this.handleCloseDialog}
-                dialogMessage='Your mission is complete! <TODO> Click the X to return to the home page and receive your next mission.'
+                dialogMessage='Your mission is complete! Chatting can be done on most websites, whether your chatting with a friend or chatting with a customer service representative. Click the X to return to the home page and receive your next mission.'
             >
                 <div>
                     <CustomChatbot handleEnd={this.handleEnd}/>

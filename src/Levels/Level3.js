@@ -68,7 +68,7 @@ class Level3 extends React.Component {
                 openHint={this.props.openHint}
                 closeHint={this.props.closeHint}
                 isHintShown={this.props.isHintShown}
-                hintMessage='<TODO>'
+                hintMessage='Look in the bottom right hand corner for the cat image.'
                 isJewelFound={this.state.isJewelFound}
                 handleCloseDialog={this.handleCloseDialog}
                 dialogMessage='Your mission is complete! Changing the view when searching for an image can help you find the one you are looking for. Click the X to return to the home page and receive your next mission.'

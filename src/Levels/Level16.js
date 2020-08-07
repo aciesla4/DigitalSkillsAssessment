@@ -112,7 +112,7 @@ class Level16 extends React.Component {
                 hintMessage='Files can be moved from one place to another by dragging and dropping.'
                 isJewelFound={this.state.isJewelFound}
                 handleCloseDialog={this.handleCloseDialog}
-                dialogMessage='Your mission is complete! <TODO> Click the X to return to the home page and receive your next mission.'
+                dialogMessage='Your mission is complete! Dragging and dropping items can be an easy way to move them from one place to another. Click the X to return to the home page and receive your next mission.'
             >
                 <div className="drag-container">
                     <div className="personal"
