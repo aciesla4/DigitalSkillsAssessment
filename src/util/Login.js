@@ -30,7 +30,7 @@ class Login extends React.Component {
     }
 
     onSubmit = ({ email, password }) => {
-        axios.get('http://localhost:5050/user')
+        axios.get('https://digital-skills-json-server.herokuapp.com/user')
             .then((response) => {
                 if (email === response.data.email && password === response.data.password) {
                     this.props.changeView('showDone')

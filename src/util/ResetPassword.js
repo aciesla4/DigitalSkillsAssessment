@@ -36,7 +36,7 @@ class ResetPassword extends React.Component {
     }
 
     onSubmit = ({ password, confirmPassword }) => {
-        axios.post('http://localhost:5050/user',
+        axios.post('https://digital-skills-json-server.herokuapp.com/user',
             { id: 1, email: 'agent203@spyacademy.org', password: password})
             .then((response) => {
                 if (response.status == 201) {

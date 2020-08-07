@@ -24,7 +24,7 @@ class ForgotPassword extends React.Component {
     }
 
     onSubmit = ({ email }) => {
-        axios.post('http://localhost:5050/passwordreset', {email: email})
+        axios.post('https://digital-skills-json-server.herokuapp.com/user', {email: email})
             .then((response) => {
                 this.setState({
                     showResetLink: true,
@@ -37,7 +37,7 @@ class ForgotPassword extends React.Component {
     }
 
     handleClickReset = () => {
-        axios.get('http://localhost:5050' + this.state.resetLink).then(response => {
+        axios.get('https://digital-skills-json-server.herokuapp.com/user' + this.state.resetLink).then(response => {
             if (response.status == 200) {
                 this.props.changeView("resetPassword")
             }
