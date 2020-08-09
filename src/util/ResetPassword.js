@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import "../css/Level15.css";
+import "../css/Level14.css";
 import axios from "axios";
 import MuiAlert from "@material-ui/lab/Alert";
 import Snackbar from "@material-ui/core/Snackbar";
@@ -39,7 +39,7 @@ class ResetPassword extends React.Component {
         axios.post('https://digital-skills-json-server.herokuapp.com/user',
             { id: 1, email: 'agent203@spyacademy.org', password: password})
             .then((response) => {
-                if (response.status == 201) {
+                if (response.status === 201) {
                     this.setState({
                         success: true,
                     })
@@ -78,7 +78,7 @@ class ResetPassword extends React.Component {
                                         <button type="submit"  className="submit-btn">
                                             Reset Password
                                         </button>
-                                        <a href='javascript:void(0)' onClick={() => this.props.changeView('resetToLogin')}>Cancel</a>
+                                        <button onClick={() => this.props.changeView('resetToLogin')} className="link-btn">Cancel</button>
                                     </div>
                                 </div>
                             </div>

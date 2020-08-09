@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import "../css/Level15.css";
+import "../css/Level14.css";
 import axios from "axios";
 
 const initialValues = {
@@ -38,7 +38,7 @@ class ForgotPassword extends React.Component {
 
     handleClickReset = () => {
         axios.get('https://digital-skills-json-server.herokuapp.com/user' + this.state.resetLink).then(response => {
-            if (response.status == 200) {
+            if (response.status === 200) {
                 this.props.changeView("resetPassword")
             }
             else {
@@ -70,7 +70,7 @@ class ForgotPassword extends React.Component {
                                         </button>
                                     </div>
                                     <div>
-                                        <a href='javascript:void(0)' onClick={() => this.props.changeView('forgotPassword')}>Cancel</a>
+                                        <button onClick={() => this.props.changeView('forgotPassword')} className="link-btn">Cancel</button>
                                     </div>
                                 </div>
                             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import "../css/Level15.css";
+import "../css/Level14.css";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import axios from "axios";
@@ -76,7 +76,7 @@ class Login extends React.Component {
                                         </button>
                                     </div>
                                     <div>
-                                        <a href='javascript:void(0)' onClick={() => this.props.changeView('forgotPassword')}>Forgot Password?</a>
+                                        <button onClick={() => this.props.changeView('forgotPassword')} className="link-btn">Forgot Password?</button>
                                     </div>
                                 </div>
                             </div>
