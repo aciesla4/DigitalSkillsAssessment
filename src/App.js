@@ -27,7 +27,7 @@ class App extends React.Component {
         super(props)
         this.state = {
             level: 1,
-            academicmode: false,
+            academicmode: true,
             isHintShown: false,
             items: []
         }
