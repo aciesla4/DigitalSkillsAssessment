@@ -38,7 +38,7 @@ class App extends React.Component {
         const dt = new Date();
         axios({
             method: 'post',
-            url: 'http://localhost:8080/logging',
+            url: 'https://digital-skills-server.herokuapp.com/logging',
             data: {
                 id: e.currentTarget.id,
                 time: (dt - this.state.start) / 1000
