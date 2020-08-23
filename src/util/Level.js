@@ -44,7 +44,7 @@ class Level extends React.Component {
                 <Modal id="hint" show={this.props.isHintShown} last={true} heading="Hint" closeModal={this.props.closeHint} x="75%" y="15%" modalStyle="modalR">
                     {this.props.hintMessage}
                 </Modal>
-                <EndDialog open={this.props.isJewelFound} handleCloseDialog={this.props.handleCloseDialog} academicmode={this.props.academicmode}>
+                <EndDialog level={this.props.level} open={this.props.isJewelFound} handleCloseDialog={this.props.handleCloseDialog} academicmode={this.props.academicmode}>
                     {this.props.dialogMessage}
                 </EndDialog>
             </div>

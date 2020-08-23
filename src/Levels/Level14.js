@@ -62,6 +62,7 @@ class Level14 extends React.Component {
     render() {
         return (
             <Level
+                level={14}
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
                 mission='log into the learning portal using the username "agent203@spyacademy.org" and password "password"'

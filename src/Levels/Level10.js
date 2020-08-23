@@ -64,6 +64,7 @@ class Level10 extends React.Component {
     render() {
         return (
             <Level
+                level={10}
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
                 mission='find the privacy settings.'

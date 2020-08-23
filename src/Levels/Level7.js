@@ -72,6 +72,7 @@ class Level7 extends React.Component {
     render() {
         return (
             <Level
+                level={7}
                 logClick={this.props.logClick}
                 academicmode={this.props.academicmode}
                 getModeSwitch={this.props.getModeSwitch}
