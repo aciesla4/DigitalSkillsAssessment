@@ -1,0 +1,13 @@
+.header {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 8%;
+  background-color: lightgray;
+}
+
+.header-content {
+  padding: 1rem;
+  font-size: 20px;
+}

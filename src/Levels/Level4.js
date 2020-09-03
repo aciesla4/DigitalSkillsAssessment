@@ -1,92 +1,133 @@
-import React from 'react';
-import '../App.css';
-import FavCard from "../util/FavCard";
+import React from "react";
 import "../css/Level4.css";
-import nature1 from '../images/nature1.jpg';
-import nature2 from '../images/nature2.jpg';
-import nature3 from '../images/nature3.jpeg';
-import nature4 from '../images/nature4.jpg';
-import nature5 from '../images/nature5.jpg';
-import nature6 from '../images/nature6.jpg';
-import nature7 from '../images/nature7.jpg';
-import nature8 from '../images/nature8.jpg';
-import nature9 from '../images/nature9.jpg';
-import nature10 from '../images/nature10.jpg';
-import nature11 from '../images/nature11.jpg';
-import nature12 from '../images/nature12.jpg';
-import Level from '../util/Level';
+import nature1 from "../images/nature1.jpg";
+import nature2 from "../images/nature2.jpg";
+import nature3 from "../images/nature3.jpeg";
+import nature4 from "../images/nature4.jpg";
+import nature5 from "../images/nature5.jpg";
+import nature6 from "../images/nature6.jpg";
+import nature7 from "../images/nature7.jpg";
+import nature8 from "../images/nature8.jpg";
+import nature9 from "../images/nature9.jpg";
+import nature10 from "../images/nature10.jpg";
+import nature11 from "../images/nature11.jpg";
+import nature12 from "../images/nature12.jpg";
+import FavCard from "../components/level4/FavCard";
+import Level from "../components/common/Level";
 
 class Level4 extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isJewelFound: false,
-            academicmode: this.props.academicmode,
-            elements: this.renderCards(),
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      isJewelFound: false,
+      academicmode: this.props.academicmode,
+      elements: this.renderCards(),
+    };
+  }
+
+  handleFound = (e) => {
+    this.props.logClick(e);
+    this.setState({
+      isJewelFound: true,
+    });
+  };
+
+  handleCloseDialog = (e) => {
+    this.props.logClick(e);
+    this.setState({
+      isJewelFound: false,
+    });
+    this.props.getLevelChange();
+  };
+
+  handleClick = (i, e) => {
+    this.props.logClick(e);
+    let update = this.state.elements;
+    update[i] = (
+      <FavCard
+        key={i}
+        id={i}
+        color="red"
+        handleFound={(e) => this.handleFound(e)}
+        isJewelShown={true}
+      />
+    );
+    this.setState({
+      elements: update,
+    });
+  };
+
+  renderCards = () => {
+    let pictures = [
+      nature1,
+      nature2,
+      nature3,
+      nature4,
+      nature5,
+      nature6,
+      nature7,
+      nature8,
+      nature9,
+      nature10,
+      nature11,
+      nature12,
+    ];
+    const items = [];
+    for (var i = 0; i < 12; i++) {
+      let index = i;
+      items.push(
+        <FavCard
+          key={i}
+          id={i}
+          pic={pictures[i]}
+          color=""
+          isJewelShown={false}
+          onClick={(e) => this.handleClick(index, e)}
+        />
+      );
     }
+    return items;
+  };
 
-    handleFound = (e) => {
-        this.props.logClick(e);
-        this.setState({
-            isJewelFound: true,
-        });
-    };
-
-    handleCloseDialog = (e) => {
-        this.props.logClick(e);
-        this.setState({
-            isJewelFound: false
-        });
-        this.props.getLevelChange();
-    };
-
-    handleClick = (i, e) => {
-        this.props.logClick(e);
-        let update = this.state.elements;
-        update[i] = (<FavCard key={i} id={i} color="red" handleFound={(e) => this.handleFound(e)} isJewelShown={true}/>);
-        this.setState({
-            elements: update,
-        });
-    };
-
-    renderCards = () => {
-        let pictures = [ nature1, nature2, nature3, nature4, nature5, nature6, nature7, nature8, nature9, nature10, nature11, nature12 ];
-        const items = [];
-        for (var i = 0; i < 12; i++) {
-            let index = i;
-            items.push(<FavCard key={i} id={i} pic={pictures[i]} color="" isJewelShown={false} onClick={(e) => this.handleClick(index, e)}/>);
-        }
-        return items;
-    };
-
-    render() {
-        return (
-            <Level
-                level={4}
-                logClick={this.props.logClick}
-                academicmode={this.props.academicmode}
-                getModeSwitch={this.props.getModeSwitch}
-                mission='favorite something.'
-                openHint={this.props.openHint}
-                closeHint={this.props.closeHint}
-                isHintShown={this.props.isHintShown}
-                hintMessage='Favoriting an item can be done by clicking the heart icon under an image.'
-                isJewelFound={this.state.isJewelFound}
-                handleCloseDialog={this.handleCloseDialog}
-                dialogMessage='Your mission is complete! Favoriting something is a common way to save something to be found later. Click the X to return to the home page and receive your next mission.'
-            >
-                <div className="level4-grid">
-                    <div className="level4-content">{this.state.elements.slice(0, 2)}</div>
-                    <div className="level4-content">{this.state.elements.slice(2, 4)}</div>
-                    <div className="level4-content">{this.state.elements.slice(4, 6)}</div>
-                    <div className="level4-content">{this.state.elements.slice(6, 8)}</div>
-                    <div className="level4-content">{this.state.elements.slice(8, 10)}</div>
-                    <div className="level4-content">{this.state.elements.slice(10, 12)}</div>
-                </div>
-            </Level>
-        );
-    }
+  render() {
+    return (
+      <Level
+        level={4}
+        logClick={this.props.logClick}
+        academicmode={this.props.academicmode}
+        getModeSwitch={this.props.getModeSwitch}
+        mission="favorite something."
+        openHint={this.props.openHint}
+        closeHint={this.props.closeHint}
+        isHintShown={this.props.isHintShown}
+        hintMessage="Favoriting an item can be done by clicking the heart icon under an image."
+        isJewelFound={this.state.isJewelFound}
+        handleCloseDialog={this.handleCloseDialog}
+        dialogMessage="Your mission is complete! Favoriting something is a common way to save something to be found later. Click the X to return to the home page and receive your next mission."
+      >
+        <div className="level4-grid">
+          <div className="level4-content">
+            {this.state.elements.slice(0, 2)}
+          </div>
+          <div className="level4-content">
+            {this.state.elements.slice(2, 4)}
+          </div>
+          <div className="level4-content">
+            {this.state.elements.slice(4, 6)}
+          </div>
+          <div className="level4-content">
+            {this.state.elements.slice(6, 8)}
+          </div>
+          <div className="level4-content">
+            {this.state.elements.slice(8, 10)}
+          </div>
+          <div className="level4-content">
+            {this.state.elements.slice(10, 12)}
+          </div>
+        </div>
+      </Level>
+    );
+  }
 }
 
 export default Level4;
