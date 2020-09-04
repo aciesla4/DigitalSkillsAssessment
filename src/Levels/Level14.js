@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/Level5.css";
 import Level from "../components/common/Level";
 import Login from "../components/level14/Login";
@@ -6,93 +6,59 @@ import ForgotPassword from "../components/level14/ForgotPassword";
 import ResetPassword from "../components/level14/ResetPassword";
 import Jewel from "../components/common/Jewel";
 
-class Level14 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isJewelFound: false,
-      academicMode: this.props.academicMode,
-      showLogin: true,
-      showForgotPassword: false,
-      showResetPassword: false,
-      showDone: false,
-    };
+export default function Level14(props) {
+  const [isJewelFound, setIsJewelFound] = useState(false);
+  const [showLogin, setShowLogin] = useState(true);
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const [showResetPassword, setShowResetPassword] = useState(false);
+  const [showDone, setShowDone] = useState(false);
+
+  function handleFound(e) {
+    props.logClick(e);
+    setIsJewelFound(true);
   }
 
-  handleFound = () => {
-    this.setState({
-      isJewelFound: true,
-    });
-  };
+  function handleCloseDialog(e) {
+    props.logClick(e);
+    isJewelFound(false);
+    props.getLevelChange();
+  }
 
-  handleCloseDialog = () => {
-    this.setState({
-      isJewelFound: false,
-    });
-    this.props.getLevelChange();
-  };
-
-  changeView = (view) => {
+  function changeView(view) {
     if (view === "forgotPassword") {
-      this.setState({
-        showLogin: !this.state.showLogin,
-        showForgotPassword: !this.state.showForgotPassword,
-      });
+      setShowLogin(!showLogin);
+      setShowForgotPassword(!showForgotPassword);
     } else if (view === "resetPassword") {
-      this.setState({
-        showForgotPassword: !this.state.showForgotPassword,
-        showResetPassword: !this.state.showResetPassword,
-      });
+      setShowForgotPassword(!showForgotPassword);
+      setShowResetPassword(!showResetPassword);
     } else if (view === "resetToLogin") {
-      this.setState({
-        showResetPassword: !this.state.showResetPassword,
-        showLogin: !this.state.showLogin,
-      });
+      setShowResetPassword(!showResetPassword);
+      setShowLogin(!showLogin);
     } else if (view === "showDone") {
-      this.setState({
-        showLogin: !this.state.showLogin,
-        showDone: !this.state.showDone,
-      });
+      setShowLogin(!showLogin);
+      setShowDone(!showDone);
     }
-  };
-
-  render() {
-    return (
-      <Level
-        level={14}
-        academicmode={this.props.academicmode}
-        getModeSwitch={this.props.getModeSwitch}
-        mission='log into the learning portal using the username "agent203@spyacademy.org" and password "password"'
-        openHint={this.props.openHint}
-        closeHint={this.props.closeHint}
-        isHintShown={this.props.isHintShown}
-        hintMessage="You may not have the right password. Try resetting it."
-        isJewelFound={this.state.isJewelFound}
-        handleCloseDialog={this.handleCloseDialog}
-        dialogMessage="Your mission is complete! It is easy to forget passwords, but also easy to reset them. Most sites will email you a link to reset your password in a similar manner. Click the X to return to the home page and receive your next mission."
-      >
-        <div>
-          {this.state.showLogin && (
-            <Login
-              error={this.state.error}
-              handleClose={this.handleClose}
-              checkLogin={this.checkLogin}
-              changeView={this.changeView}
-            />
-          )}
-          {this.state.showForgotPassword && (
-            <ForgotPassword changeView={this.changeView} />
-          )}
-          {this.state.showResetPassword && (
-            <ResetPassword changeView={this.changeView} />
-          )}
-          {this.state.showDone && (
-            <Jewel left="50%" top="50%" handleFound={this.handleFound} />
-          )}
-        </div>
-      </Level>
-    );
   }
-}
 
-export default Level14;
+  return (
+    <Level
+      level={14}
+      logClick={props.logClick}
+      mission='log into the learning portal using the username "agent203@spyacademy.org" and password "password"'
+      openHint={props.openHint}
+      closeHint={props.closeHint}
+      isHintShown={props.isHintShown}
+      hintMessage="You may not have the right password. Try resetting it."
+      isJewelFound={isJewelFound}
+      handleCloseDialog={handleCloseDialog}
+      dialogMessage="Your mission is complete! It is easy to forget passwords, but also easy to reset them. Most sites will email you a link to reset your password in a similar manner. Click the X to return to the home page and receive your next mission."
+    >
+      <div>
+        {showLogin && <Login changeView={changeView} />}
+        {showForgotPassword && <ForgotPassword changeView={changeView} />}
+        {showResetPassword && <ResetPassword changeView={changeView} />}
+        {showDone && <Jewel left="50%" top="50%" handleFound={handleFound} />}
+      </div>
+    </Level>
+  );
+}

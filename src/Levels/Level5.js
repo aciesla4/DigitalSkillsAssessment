@@ -1,68 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/Level5.css";
 import { ResizableBox } from "react-resizable";
 import Level from "../components/common/Level";
 import Jewel from "../components/common/Jewel";
 
-class Level5 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isJewelFound: false,
-      academicmode: this.props.academicmode,
-    };
+export default function Level5(props) {
+  const [isJewelFound, setIsJewelFound] = useState(false);
+
+  function handleFound(e) {
+    props.logClick(e);
+    setIsJewelFound(true);
   }
 
-  handleFound = (e) => {
-    this.props.logClick(e);
-    this.setState({
-      isJewelFound: true,
-    });
-  };
+  function handleCloseDialog(e) {
+    props.logClick(e);
+    isJewelFound(false);
+    props.getLevelChange();
+  }
 
-  handleCloseDialog = (e) => {
-    this.props.logClick(e);
-    this.setState({
-      isJewelFound: false,
-    });
-    this.props.getLevelChange();
-  };
-
-  handleResize = (e) => {
+  function handleResize(e) {
     e.currentTarget.id = "level 5 box resized";
-    this.props.logClick(e);
-  };
-
-  render() {
-    return (
-      <Level
-        level={5}
-        logClick={this.props.logClick}
-        academicmode={this.props.academicmode}
-        getModeSwitch={this.props.getModeSwitch}
-        mission="resize the box."
-        openHint={this.props.openHint}
-        closeHint={this.props.closeHint}
-        isHintShown={this.props.isHintShown}
-        hintMessage="Resizing can be done by clicking the handle in the lower right of the box, and dragging it to make the box bigger or smaller."
-        isJewelFound={this.state.isJewelFound}
-        handleCloseDialog={this.handleCloseDialog}
-        dialogMessage="Your mission is complete! Resizing is a common way to make things bigger or smaller. Click the X to return to the home page and receive your next mission."
-      >
-        <div>
-          <Jewel top="25%" left="25%" handleFound={this.handleFound} />
-          <ResizableBox
-            id="level 5 box resized"
-            width={1250}
-            height={450}
-            minConstraints={[100, 100]}
-            maxConstraints={[1530, 600]}
-            onResizeStop={this.handleResize}
-          />
-        </div>
-      </Level>
-    );
+    props.logClick(e);
   }
-}
 
-export default Level5;
+  return (
+    <Level
+      level={5}
+      logClick={props.logClick}
+      mission="resize the box."
+      openHint={props.openHint}
+      closeHint={props.closeHint}
+      isHintShown={props.isHintShown}
+      hintMessage="Resizing can be done by clicking the handle in the lower right of the box, and dragging it to make the box bigger or smaller."
+      isJewelFound={isJewelFound}
+      handleCloseDialog={handleCloseDialog}
+      dialogMessage="Your mission is complete! Resizing is a common way to make things bigger or smaller. Click the X to return to the home page and receive your next mission."
+    >
+      <div>
+        <Jewel top="25%" left="25%" handleFound={handleFound} />
+        <ResizableBox
+          id="level 5 box resized"
+          width={1250}
+          height={450}
+          minConstraints={[100, 100]}
+          maxConstraints={[1530, 600]}
+          onResizeStop={handleResize}
+        />
+      </div>
+    </Level>
+  );
+}

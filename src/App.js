@@ -45,14 +45,6 @@ class App extends React.Component {
     });
   };
 
-  getModeSwitch = (e) => {
-    this.logClick(e);
-    let oldValue = this.state.academicmode;
-    this.setState({
-      academicmode: !oldValue,
-    });
-  };
-
   getLevelChange = () => {
     if (this.state.level === 16) {
       window.location.href = "/congrats";
@@ -95,8 +87,6 @@ class App extends React.Component {
                 {...props}
                 logClick={this.logClick}
                 level={this.state.level}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
               />
             )}
           />
@@ -108,8 +98,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
                 openHint={this.openHint}
                 isHintShown={this.state.isHintShown}
                 closeHint={this.closeHint}
@@ -124,8 +112,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
               />
             )}
           />
@@ -137,8 +123,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
                 openHint={this.openHint}
                 isHintShown={this.state.isHintShown}
                 closeHint={this.closeHint}
@@ -153,8 +137,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
                 openHint={this.openHint}
                 isHintShown={this.state.isHintShown}
                 closeHint={this.closeHint}
@@ -169,8 +151,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
                 openHint={this.openHint}
                 isHintShown={this.state.isHintShown}
                 closeHint={this.closeHint}
@@ -185,8 +165,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
                 openHint={this.openHint}
                 isHintShown={this.state.isHintShown}
                 closeHint={this.closeHint}
@@ -201,8 +179,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
                 openHint={this.openHint}
                 isHintShown={this.state.isHintShown}
                 closeHint={this.closeHint}
@@ -218,8 +194,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
                 openHint={this.openHint}
                 isHintShown={this.state.isHintShown}
                 closeHint={this.closeHint}
@@ -235,8 +209,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
                 openHint={this.openHint}
                 isHintShown={this.state.isHintShown}
                 closeHint={this.closeHint}
@@ -251,8 +223,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
                 openHint={this.openHint}
                 isHintShown={this.state.isHintShown}
                 closeHint={this.closeHint}
@@ -267,8 +237,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
                 openHint={this.openHint}
                 isHintShown={this.state.isHintShown}
                 closeHint={this.closeHint}
@@ -283,8 +251,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
                 openHint={this.openHint}
                 isHintShown={this.state.isHintShown}
                 closeHint={this.closeHint}
@@ -299,8 +265,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
                 openHint={this.openHint}
                 isHintShown={this.state.isHintShown}
                 closeHint={this.closeHint}
@@ -315,8 +279,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
                 openHint={this.openHint}
                 isHintShown={this.state.isHintShown}
                 closeHint={this.closeHint}
@@ -331,8 +293,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
                 openHint={this.openHint}
                 isHintShown={this.state.isHintShown}
                 closeHint={this.closeHint}
@@ -347,8 +307,6 @@ class App extends React.Component {
                 logClick={this.logClick}
                 level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                academicmode={this.state.academicmode}
-                getModeSwitch={this.getModeSwitch}
                 openHint={this.openHint}
                 isHintShown={this.state.isHintShown}
                 closeHint={this.closeHint}
