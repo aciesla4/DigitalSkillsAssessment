@@ -45,9 +45,6 @@ export default function Level14(props) {
       level={14}
       logClick={props.logClick}
       mission='log into the learning portal using the username "agent203@spyacademy.org" and password "password"'
-      openHint={props.openHint}
-      closeHint={props.closeHint}
-      isHintShown={props.isHintShown}
       hintMessage="You may not have the right password. Try resetting it."
       isJewelFound={isJewelFound}
       handleCloseDialog={handleCloseDialog}

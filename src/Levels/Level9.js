@@ -42,9 +42,6 @@ export default function Level9(props) {
       level={9}
       logClick={props.logClick}
       mission="share your certificate on Facebook."
-      openHint={props.openHint}
-      closeHint={props.closeHint}
-      isHintShown={props.isHintShown}
       hintMessage="The facebook icon is the leftmost icon. Click it, then click post at the bottom of the dialog that pops up."
       isJewelFound={isJewelFound}
       handleCloseDialog={handleCloseDialog}

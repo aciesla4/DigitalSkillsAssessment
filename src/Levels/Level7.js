@@ -44,9 +44,6 @@ export default function Level7(props) {
       level={7}
       logClick={props.logClick}
       mission="add spy gear to your cart and begin checking out."
-      openHint={props.openHint}
-      closeHint={props.closeHint}
-      isHintShown={props.isHintShown}
       hintMessage="Adding gear to your cart can be down by hovering over an item and clicking the add to cart icon. You can begin checking out by clicking the shopping cart icon in the top right."
       isJewelFound={isJewelFound}
       handleCloseDialog={handleCloseDialog}

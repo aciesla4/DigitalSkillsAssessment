@@ -28,9 +28,6 @@ export default function Level5(props) {
       level={5}
       logClick={props.logClick}
       mission="resize the box."
-      openHint={props.openHint}
-      closeHint={props.closeHint}
-      isHintShown={props.isHintShown}
       hintMessage="Resizing can be done by clicking the handle in the lower right of the box, and dragging it to make the box bigger or smaller."
       isJewelFound={isJewelFound}
       handleCloseDialog={handleCloseDialog}

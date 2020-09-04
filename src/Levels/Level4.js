@@ -85,9 +85,6 @@ export default function Level4(props) {
       level={4}
       logClick={props.logClick}
       mission="favorite something."
-      openHint={props.openHint}
-      closeHint={props.closeHint}
-      isHintShown={props.isHintShown}
       hintMessage="Favoriting an item can be done by clicking the heart icon under an image."
       isJewelFound={isJewelFound}
       handleCloseDialog={handleCloseDialog}

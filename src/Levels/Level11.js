@@ -75,9 +75,6 @@ export default function Level11(props) {
       level={11}
       logClick={props.logClick}
       mission="stop saving Notes in your Cloud."
-      openHint={props.openHint}
-      closeHint={props.closeHint}
-      isHintShown={props.isHintShown}
       hintMessage="Click on the button labeled privacy. Then scroll down on the left side to find the button labeled Cloud. Then uncheck the box labeled Notes."
       isJewelFound={isJewelFound}
       handleCloseDialog={handleCloseDialog}

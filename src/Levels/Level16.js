@@ -71,9 +71,6 @@ export default function Level16(props) {
       level={16}
       logClick={props.logClick}
       mission="move the Training Completion Certificate to your files."
-      openHint={props.openHint}
-      closeHint={props.closeHint}
-      isHintShown={props.isHintShown}
       hintMessage="Files can be moved from one place to another by dragging and dropping."
       isJewelFound={isJewelFound}
       handleCloseDialog={handleCloseDialog}

@@ -31,9 +31,6 @@ export default function Level6(props) {
       level={6}
       logClick={props.logClick}
       mission="click on the sort icons to see their effect."
-      openHint={props.openHint}
-      closeHint={props.closeHint}
-      isHintShown={props.isHintShown}
       hintMessage="The sort icons are the arrows next to the column headings. When clicked, they alternative between sorting the column in ascending and descending order. "
       isJewelFound={isJewelFound}
       handleCloseDialog={handleCloseDialog}

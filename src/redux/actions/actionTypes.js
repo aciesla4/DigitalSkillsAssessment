@@ -1,4 +1,0 @@
-export const UPDATE_ACADEMIC_MODE = "UPDATE_ACADEMIC_MODE";
-export const UPDATE_LEVEL = "UPDATE_LEVEL";
-export const OPEN_HINT = "OPEN_HINT";
-export const CLOSE_HINT = "CLOSE_HINT";

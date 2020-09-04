@@ -22,9 +22,6 @@ export default function Level1(props) {
       level={1}
       logClick={props.logClick}
       mission="find the jewel on the page by scrolling down."
-      openHint={props.openHint}
-      closeHint={props.closeHint}
-      isHintShown={props.isHintShown}
       hintMessage="Scrolling down means moving the screen down by pressing the down arrow key or by clicking and dragging the scroll bar (on the right) down."
       isJewelFound={isJewelFound}
       handleCloseDialog={handleCloseDialog}

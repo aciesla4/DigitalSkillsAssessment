@@ -54,9 +54,6 @@ export default function Level10(props) {
       level={10}
       logClick={props.logClick}
       mission="find the privacy settings."
-      openHint={props.openHint}
-      closeHint={props.closeHint}
-      isHintShown={props.isHintShown}
       hintMessage="Click on the button labeled Privacy."
       isJewelFound={isJewelFound}
       handleCloseDialog={handleCloseDialog}

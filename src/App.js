@@ -25,9 +25,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      level: 1,
-      academicmode: true,
-      isHintShown: false,
       items: [],
     };
   }
@@ -55,20 +52,6 @@ class App extends React.Component {
     }
   };
 
-  openHint = (e) => {
-    this.logClick(e);
-    this.setState({
-      isHintShown: true,
-    });
-  };
-
-  closeHint = (e) => {
-    this.logClick(e);
-    this.setState({
-      isHintShown: false,
-    });
-  };
-
   getItems = (items) => {
     this.setState({
       items: items,
@@ -82,13 +65,7 @@ class App extends React.Component {
           <Route
             exact
             path="/home"
-            render={(props) => (
-              <Home
-                {...props}
-                logClick={this.logClick}
-                level={this.state.level}
-              />
-            )}
+            render={(props) => <Home {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level1"
@@ -96,11 +73,7 @@ class App extends React.Component {
               <Level1
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                openHint={this.openHint}
-                isHintShown={this.state.isHintShown}
-                closeHint={this.closeHint}
               />
             )}
           />
@@ -110,7 +83,6 @@ class App extends React.Component {
               <Level2
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
               />
             )}
@@ -121,11 +93,7 @@ class App extends React.Component {
               <Level3
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                openHint={this.openHint}
-                isHintShown={this.state.isHintShown}
-                closeHint={this.closeHint}
               />
             )}
           />
@@ -135,11 +103,7 @@ class App extends React.Component {
               <Level4
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                openHint={this.openHint}
-                isHintShown={this.state.isHintShown}
-                closeHint={this.closeHint}
               />
             )}
           />
@@ -149,11 +113,7 @@ class App extends React.Component {
               <Level5
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                openHint={this.openHint}
-                isHintShown={this.state.isHintShown}
-                closeHint={this.closeHint}
               />
             )}
           />
@@ -163,11 +123,7 @@ class App extends React.Component {
               <Level6
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                openHint={this.openHint}
-                isHintShown={this.state.isHintShown}
-                closeHint={this.closeHint}
               />
             )}
           />
@@ -177,11 +133,7 @@ class App extends React.Component {
               <Level7
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                openHint={this.openHint}
-                isHintShown={this.state.isHintShown}
-                closeHint={this.closeHint}
                 getItems={this.getItems}
               />
             )}
@@ -192,11 +144,7 @@ class App extends React.Component {
               <Level8
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                openHint={this.openHint}
-                isHintShown={this.state.isHintShown}
-                closeHint={this.closeHint}
                 items={this.state.items}
               />
             )}
@@ -207,11 +155,7 @@ class App extends React.Component {
               <Level9
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                openHint={this.openHint}
-                isHintShown={this.state.isHintShown}
-                closeHint={this.closeHint}
               />
             )}
           />
@@ -221,11 +165,7 @@ class App extends React.Component {
               <Level10
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                openHint={this.openHint}
-                isHintShown={this.state.isHintShown}
-                closeHint={this.closeHint}
               />
             )}
           />
@@ -235,11 +175,7 @@ class App extends React.Component {
               <Level11
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                openHint={this.openHint}
-                isHintShown={this.state.isHintShown}
-                closeHint={this.closeHint}
               />
             )}
           />
@@ -249,11 +185,7 @@ class App extends React.Component {
               <Level12
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                openHint={this.openHint}
-                isHintShown={this.state.isHintShown}
-                closeHint={this.closeHint}
               />
             )}
           />
@@ -263,11 +195,7 @@ class App extends React.Component {
               <Level13
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                openHint={this.openHint}
-                isHintShown={this.state.isHintShown}
-                closeHint={this.closeHint}
               />
             )}
           />
@@ -277,11 +205,7 @@ class App extends React.Component {
               <Level14
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                openHint={this.openHint}
-                isHintShown={this.state.isHintShown}
-                closeHint={this.closeHint}
               />
             )}
           />
@@ -291,11 +215,7 @@ class App extends React.Component {
               <Level15
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                openHint={this.openHint}
-                isHintShown={this.state.isHintShown}
-                closeHint={this.closeHint}
               />
             )}
           />
@@ -305,11 +225,7 @@ class App extends React.Component {
               <Level16
                 {...props}
                 logClick={this.logClick}
-                level={this.state.level}
                 getLevelChange={this.getLevelChange}
-                openHint={this.openHint}
-                isHintShown={this.state.isHintShown}
-                closeHint={this.closeHint}
               />
             )}
           />

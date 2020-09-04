@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "../../css/NavBar.css";
 import { FormControlLabel, Switch, IconButton } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
@@ -10,18 +10,17 @@ import {
   update,
   selectAcademicMode,
 } from "../../redux/slices/academicModeSlice";
+import { openHint } from "../../redux/slices/hintSlice";
+import { selectLevel } from "../../redux/slices/levelSlice";
 import { Link as RouterLink } from "react-router-dom";
 import $ from "jquery";
-import axios from "axios";
 
 export default function NavBar(props) {
-  const dt = new Date();
   const currentPath = window.location.pathname;
 
   const academicMode = useSelector(selectAcademicMode);
+  const level = useSelector(selectLevel);
   const dispatch = useDispatch();
-
-  const [start] = useState(dt);
 
   useEffect(() => {
     $(document).ready(function() {
@@ -30,19 +29,6 @@ export default function NavBar(props) {
       });
     });
   });
-
-  function logClick(e) {
-    console.log(e.currentTarget.id);
-    const dt = new Date();
-    axios({
-      method: "post",
-      url: "http://localhost:8080/logging",
-      data: {
-        id: e.currentTarget.id,
-        time: (dt - start) / 1000,
-      },
-    });
-  }
 
   return (
     <div className="navbar">
@@ -63,7 +49,7 @@ export default function NavBar(props) {
           id="home button"
           component={RouterLink}
           to="/home"
-          onClick={logClick}
+          onClick={props.logClick}
         >
           <HomeIcon fontSize="large" />
         </IconButton>
@@ -72,8 +58,8 @@ export default function NavBar(props) {
           style={{ position: "absolute", left: "50%", bottom: 0 }}
           id="check button"
           component={RouterLink}
-          to={`/level${props.level}`}
-          onClick={logClick}
+          to={`/level${level}`}
+          onClick={props.logClick}
         >
           <CheckCircleIcon fontSize="large" />
         </IconButton>
@@ -82,7 +68,7 @@ export default function NavBar(props) {
         <IconButton
           style={{ position: "absolute", right: 0, bottom: 0 }}
           id="open hint button"
-          onClick={props.openHint}
+          onClick={() => dispatch(openHint())}
         >
           <HelpIcon fontSize="large" />
         </IconButton>

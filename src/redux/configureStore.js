@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import academicModeReducer from "./slices/academicModeSlice";
-import levelReducer from "./reducers/levelReducer";
-import hintReducer from "./reducers/hintReducer";
+import levelReducer from "./slices/levelSlice";
+import hintReducer from "./slices/hintSlice";
 
 export default configureStore({
   reducer: {

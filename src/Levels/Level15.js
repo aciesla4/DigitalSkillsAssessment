@@ -30,9 +30,6 @@ export default function Level15(props) {
       level={15}
       logClick={props.logClick}
       mission="find information about Google Drive."
-      openHint={props.openHint}
-      closeHint={props.closeHint}
-      isHintShown={props.isHintShown}
       hintMessage="Google Drive is a software in the Google Suite."
       isJewelFound={isJewelFound}
       handleCloseDialog={handleCloseDialog}

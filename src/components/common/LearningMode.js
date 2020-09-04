@@ -24,7 +24,7 @@ export default function LearningMode(props) {
   function closeHome(e) {
     props.logClick(e);
     let update = home;
-    let length = length;
+    let length = home.length;
     update[length - 1] = false;
     setHome(update);
   }
@@ -34,7 +34,7 @@ export default function LearningMode(props) {
     let update = level1;
     update[index] = false;
     update[index + 1] = true;
-    setLevel1(update);
+    console.log(update);
   }
 
   function closeLevel1(e) {

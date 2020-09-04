@@ -54,9 +54,6 @@ export default function Level3(props) {
       level={3}
       logClick={props.logClick}
       mission="find the cat image."
-      openHint={props.openHint}
-      closeHint={props.closeHint}
-      isHintShown={props.isHintShown}
       hintMessage="Look in the bottom right hand corner for the cat image."
       isJewelFound={isJewelFound}
       handleCloseDialog={handleCloseDialog}

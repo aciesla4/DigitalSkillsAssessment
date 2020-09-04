@@ -55,9 +55,6 @@ export default function Level8(props) {
       level={8}
       logClick={props.logClick}
       mission="delete an item from your cart then check out."
-      openHint={props.openHint}
-      closeHint={props.closeHint}
-      isHintShown={props.isHintShown}
       hintMessage="Deleting an item can be done by clicking the X in the right hand corner of the item."
       isJewelFound={isJewelFound}
       handleCloseDialog={handleCloseDialog}

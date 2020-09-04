@@ -28,9 +28,6 @@ export default function Level13(props) {
       level={13}
       logClick={props.logClick}
       mission="chat with Mission Control."
-      openHint={props.openHint}
-      closeHint={props.closeHint}
-      isHintShown={props.isHintShown}
       hintMessage="Click on a response option given by HQ and then type a response in the message field if prompted."
       isJewelFound={isJewelFound}
       handleCloseDialog={handleCloseDialog}

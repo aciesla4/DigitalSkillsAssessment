@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectAcademicMode } from "../../redux/slices/academicModeSlice";
+import { selectLevel } from "../../redux/slices/levelSlice";
 import NavBar from "../common/NavBar";
 import Messages from "./Messages";
 import LearningMode from "../common/LearningMode";
@@ -13,9 +14,9 @@ export default function Home(props) {
   const [member] = useState({ username: "spy", color: "blue" });
 
   const academicMode = useSelector(selectAcademicMode);
+  const level = useSelector(selectLevel);
 
-  function getPhoneClick(e) {
-    props.logClick(e);
+  function getPhoneClick() {
     setIsPhoneClicked(true);
   }
 
@@ -23,7 +24,7 @@ export default function Home(props) {
     var i;
     const newMessages = [];
     for (i = 0; i < messages.length; i++) {
-      if (messages[i].level === props.level) {
+      if (messages[i].level === level) {
         newMessages.push(messages[i]);
       }
     }
@@ -37,12 +38,7 @@ export default function Home(props) {
         <Messages messages={displayMessages} currentMember={member} />
       )}
       {academicMode && <LearningMode logClick={props.logClick} />}
-      <NavBar
-        level={props.level}
-        getPhoneClick={getPhoneClick}
-        clicked={isPhoneClicked}
-        getLevelChange={props.getLevelChange}
-      />
+      <NavBar getPhoneClick={getPhoneClick} logClick={props.logClick} />
     </div>
   );
 }

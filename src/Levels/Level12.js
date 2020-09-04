@@ -31,9 +31,6 @@ export default function Level12(props) {
       level={12}
       logClick={props.logClick}
       mission="find Copper Harbor on the map."
-      openHint={props.openHint}
-      closeHint={props.closeHint}
-      isHintShown={props.isHintShown}
       hintMessage="You can scroll using the scroll wheel on your mouse and zoom in and out using the + and - buttons in the top left."
       isJewelFound={isJewelFound}
       handleCloseDialog={handleCloseDialog}
