@@ -4,13 +4,15 @@ import CloseIcon from "@material-ui/icons/Close";
 import FilterNoneIcon from "@material-ui/icons/FilterNone";
 import MinimizeIcon from "@material-ui/icons/Minimize";
 import DescriptionIcon from "@material-ui/icons/Description";
-import originalFiles from "../components/level16";
+import FILES from "../components/level16";
 import Level from "../components/common/Level";
 import Jewel from "../components/common/Jewel";
 
 export default function Level16(props) {
   const [isJewelFound, setIsJewelFound] = useState(false);
   const [isJewelShown, setIsJewelShown] = useState(false);
+
+  let originalFiles = [...FILES.files];
 
   function handleFound(e) {
     props.logClick(e);
@@ -19,7 +21,7 @@ export default function Level16(props) {
 
   function handleCloseDialog(e) {
     props.logClick(e);
-    isJewelFound(false);
+    setIsJewelFound(false);
     props.getLevelChange();
   }
 
@@ -45,13 +47,13 @@ export default function Level16(props) {
     originalFiles = newFiles;
   }
 
-  var files = {
+  var sortedFiles = {
     personal: [],
     academy: [],
   };
 
-  files.forEach((file) => {
-    files[file.type].push(
+  originalFiles.forEach((file) => {
+    sortedFiles[file.type].push(
       <grid
         item
         key={file.id}
@@ -96,7 +98,7 @@ export default function Level16(props) {
               </grid>
             </grid>
           </div>
-          <grid className="file-grid">{files.personal}</grid>
+          <grid className="file-grid">{originalFiles.personal}</grid>
         </div>
         <div
           className="droppable"
@@ -119,7 +121,7 @@ export default function Level16(props) {
               </grid>
             </grid>
           </div>
-          <grid className="file-grid">{files.academy}</grid>
+          <grid className="file-grid">{originalFiles.academy}</grid>
         </div>
         {isJewelShown && <Jewel top="80%" handleFound={handleFound} />}
       </div>

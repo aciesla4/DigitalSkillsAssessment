@@ -19,8 +19,7 @@ import Level from "../components/common/Level";
 
 export default function Level4(props) {
   const [isJewelFound, setIsJewelFound] = useState(false);
-
-  let elements = renderCards();
+  const [elements, setElements] = useState(renderCards());
 
   function handleFound(e) {
     props.logClick(e);
@@ -35,7 +34,7 @@ export default function Level4(props) {
 
   function handleClick(i, e) {
     props.logClick(e);
-    let update = elements;
+    let update = [...elements];
     update[i] = (
       <FavCard
         key={i}
@@ -45,7 +44,7 @@ export default function Level4(props) {
         isJewelShown={true}
       />
     );
-    elements = update;
+    setElements([...update]);
   }
 
   function renderCards() {

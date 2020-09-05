@@ -16,11 +16,12 @@ export default function Level7(props) {
   function handleFound(e) {
     props.logClick(e);
     setIsJewelFound(true);
+    props.getItems(items);
   }
 
   function handleCloseDialog(e) {
     props.logClick(e);
-    isJewelFound(false);
+    setIsJewelFound(false);
     props.getLevelChange();
   }
 
@@ -66,7 +67,7 @@ export default function Level7(props) {
           </button>
         </div>
         <div className="product-container">
-          {elements.map((element) => (
+          {elements.elements.map((element) => (
             <ProductCard
               key={element.id}
               id={"level 7 card " + element.id}

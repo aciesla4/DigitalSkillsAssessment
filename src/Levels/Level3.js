@@ -8,8 +8,7 @@ import Level from "../components/common/Level";
 
 export default function Level3(props) {
   const [isJewelFound, setIsJewelFound] = useState(false);
-
-  let elements = renderCards();
+  const [elements, setElements] = useState(renderCards());
 
   function handleFound(e) {
     props.logClick(e);
@@ -24,13 +23,13 @@ export default function Level3(props) {
 
   function showJewel(e) {
     props.logClick(e);
-    let update = elements;
+    let update = [...elements];
     update[23] = (
       <div>
         <Jewel handleFound={handleFound} />
       </div>
     );
-    elements = update;
+    setElements([...update]);
   }
 
   function handleCardClick(e) {

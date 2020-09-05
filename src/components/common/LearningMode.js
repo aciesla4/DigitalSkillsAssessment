@@ -15,41 +15,41 @@ export default function LearningMode(props) {
 
   function openNextHome(index, e) {
     props.logClick(e);
-    let update = home;
+    let update = [...home];
     update[index] = false;
     update[index + 1] = true;
-    setHome(update);
+    setHome([...update]);
   }
 
   function closeHome(e) {
     props.logClick(e);
-    let update = home;
+    let update = [...home];
     let length = home.length;
     update[length - 1] = false;
-    setHome(update);
+    setHome([...update]);
   }
 
   function openNextLevel1(index, e) {
     props.logClick(e);
-    let update = level1;
+    let update = [...level1];
     update[index] = false;
     update[index + 1] = true;
-    console.log(update);
+    setLevel1([...update]);
   }
 
   function closeLevel1(e) {
     props.logClick(e);
-    let update = level1;
+    let update = [...level1];
     let length = level1.length;
     update[length - 1] = false;
-    setLevel1(update);
+    setLevel1([...update]);
   }
 
   function closeLevel2() {
-    let update = level2;
+    let update = [...level2];
     let length = level2.length;
     update[length - 1] = false;
-    setLevel2(update);
+    setLevel2([...update]);
   }
 
   const currentPath = window.location.pathname;

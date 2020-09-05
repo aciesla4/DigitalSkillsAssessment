@@ -20,7 +20,7 @@ export default function Level14(props) {
 
   function handleCloseDialog(e) {
     props.logClick(e);
-    isJewelFound(false);
+    setIsJewelFound(false);
     props.getLevelChange();
   }
 

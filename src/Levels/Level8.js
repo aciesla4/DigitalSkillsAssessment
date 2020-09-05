@@ -9,8 +9,7 @@ export default function Level8(props) {
   const [isJewelFound, setIsJewelFound] = useState(false);
   const [isJewelShown, setIsJewelShown] = useState(false);
   const [deleted, setDeleted] = useState(false);
-
-  let elements = props.items;
+  const [elements, setElements] = useState(props.items);
 
   function handleFound(e) {
     props.logClick(e);
@@ -19,15 +18,15 @@ export default function Level8(props) {
 
   function handleCloseDialog(e) {
     props.logClick(e);
-    isJewelFound(false);
+    setIsJewelFound(false);
     props.getLevelChange();
   }
 
   function deleteItem(id, e) {
     e.currentTarget.id = "level 8 card " + id;
     props.logClick(e);
-    const update = elements.filter((element) => element.id !== id);
-    elements = update;
+    const update = [...elements.filter((element) => element.id !== id)];
+    setElements([...update]);
     setDeleted(true);
   }
 
@@ -35,7 +34,7 @@ export default function Level8(props) {
     let subtotal = 0;
     for (var i = 0; i < elements.length; i++) {
       let item = elements[i];
-      subtotal = subtotal + prices[item.id];
+      subtotal = subtotal + prices.prices[item.id];
     }
     subtotal = parseFloat(subtotal.toFixed(2));
     let tax = parseFloat((0.06 * subtotal).toFixed(2));
@@ -69,7 +68,7 @@ export default function Level8(props) {
               pic={element.pic}
               desc={element.desc}
               quantity={1}
-              price={this.state.prices[element.id]}
+              price={prices.prices[element.id]}
               deleteItem={deleteItem}
             />
           ))}

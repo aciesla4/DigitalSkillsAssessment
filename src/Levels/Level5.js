@@ -14,7 +14,7 @@ export default function Level5(props) {
 
   function handleCloseDialog(e) {
     props.logClick(e);
-    isJewelFound(false);
+    setIsJewelFound(false);
     props.getLevelChange();
   }
 

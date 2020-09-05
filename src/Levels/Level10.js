@@ -40,7 +40,7 @@ export default function Level10(props) {
 
   function handleCloseDialog(e) {
     props.logClick(e);
-    isJewelFound(false);
+    setIsJewelFound(false);
     props.getLevelChange();
   }
 
@@ -163,7 +163,7 @@ export default function Level10(props) {
             </div>
           </div>
         )}
-        {this.state.isPrivacyClicked && (
+        {isPrivacyClicked && (
           <div className="privacy-container">
             <div className="privacy-drawer">
               <div
