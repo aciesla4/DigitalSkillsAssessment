@@ -22,13 +22,6 @@ import Final from "./components/final/Final";
 import axios from "axios";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [],
-    };
-  }
-
   logClick = (e) => {
     console.log(e.currentTarget.id);
     const dt = new Date();
@@ -39,22 +32,6 @@ class App extends React.Component {
         id: e.currentTarget.id,
         time: (dt - this.state.start) / 1000,
       },
-    });
-  };
-
-  getLevelChange = () => {
-    if (this.state.level === 16) {
-      window.location.href = "/congrats";
-    } else {
-      this.setState({
-        level: this.state.level + 1,
-      });
-    }
-  };
-
-  getItems = (items) => {
-    this.setState({
-      items: items,
     });
   };
 
@@ -69,165 +46,67 @@ class App extends React.Component {
           />
           <Route
             path="/level1"
-            render={(props) => (
-              <Level1
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-              />
-            )}
+            render={(props) => <Level1 {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level2"
-            render={(props) => (
-              <Level2
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-              />
-            )}
+            render={(props) => <Level2 {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level3"
-            render={(props) => (
-              <Level3
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-              />
-            )}
+            render={(props) => <Level3 {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level4"
-            render={(props) => (
-              <Level4
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-              />
-            )}
+            render={(props) => <Level4 {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level5"
-            render={(props) => (
-              <Level5
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-              />
-            )}
+            render={(props) => <Level5 {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level6"
-            render={(props) => (
-              <Level6
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-              />
-            )}
+            render={(props) => <Level6 {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level7"
-            render={(props) => (
-              <Level7
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-                getItems={this.getItems}
-              />
-            )}
+            render={(props) => <Level7 {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level8"
-            render={(props) => (
-              <Level8
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-                items={this.state.items}
-              />
-            )}
+            render={(props) => <Level8 {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level9"
-            render={(props) => (
-              <Level9
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-              />
-            )}
+            render={(props) => <Level9 {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level10"
-            render={(props) => (
-              <Level10
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-              />
-            )}
+            render={(props) => <Level10 {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level11"
-            render={(props) => (
-              <Level11
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-              />
-            )}
+            render={(props) => <Level11 {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level12"
-            render={(props) => (
-              <Level12
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-              />
-            )}
+            render={(props) => <Level12 {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level13"
-            render={(props) => (
-              <Level13
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-              />
-            )}
+            render={(props) => <Level13 {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level14"
-            render={(props) => (
-              <Level14
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-              />
-            )}
+            render={(props) => <Level14 {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level15"
-            render={(props) => (
-              <Level15
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-              />
-            )}
+            render={(props) => <Level15 {...props} logClick={this.logClick} />}
           />
           <Route
             path="/level16"
-            render={(props) => (
-              <Level16
-                {...props}
-                logClick={this.logClick}
-                getLevelChange={this.getLevelChange}
-              />
-            )}
+            render={(props) => <Level16 {...props} logClick={this.logClick} />}
           />
           <Route path="/congrats" component={Final} />
           <Route path="/" component={Welcome} />

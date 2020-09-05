@@ -1,4 +1,4 @@
-const originalFiles = [
+const files = [
   { id: "level 16 file 1", name: "Resume", type: "personal" },
   { id: "level 16 file 2", name: "Cover Letter", type: "personal" },
   {
@@ -71,4 +71,4 @@ const originalFiles = [
   },
 ];
 
-export default { originalFiles };
+export default files;

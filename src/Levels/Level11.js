@@ -33,6 +33,8 @@ import {
 } from "../components/level10";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
+import { useDispatch } from "react-redux";
+import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level11(props) {
   const [isJewelFound, setIsJewelFound] = useState(false);
@@ -42,6 +44,8 @@ export default function Level11(props) {
   const [notesOn, setNotesOn] = useState(true);
   const [isJewelShown, setIsJewelShown] = useState(false);
 
+  const dispatch = useDispatch();
+
   function handleFound(e) {
     props.logClick(e);
     setIsJewelFound(true);
@@ -50,7 +54,7 @@ export default function Level11(props) {
   function handleCloseDialog(e) {
     props.logClick(e);
     setIsJewelFound(false);
-    props.getLevelChange();
+    dispatch(changeLevel());
   }
 
   function handlePrivacyClick(e) {

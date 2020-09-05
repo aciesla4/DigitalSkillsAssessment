@@ -4,15 +4,18 @@ import CloseIcon from "@material-ui/icons/Close";
 import FilterNoneIcon from "@material-ui/icons/FilterNone";
 import MinimizeIcon from "@material-ui/icons/Minimize";
 import DescriptionIcon from "@material-ui/icons/Description";
-import FILES from "../components/level16";
+import originalFiles from "../components/level16";
 import Level from "../components/common/Level";
 import Jewel from "../components/common/Jewel";
+import { useDispatch } from "react-redux";
+import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level16(props) {
   const [isJewelFound, setIsJewelFound] = useState(false);
   const [isJewelShown, setIsJewelShown] = useState(false);
+  const [files, setFiles] = useState(originalFiles);
 
-  let originalFiles = [...FILES.files];
+  const dispatch = useDispatch();
 
   function handleFound(e) {
     props.logClick(e);
@@ -22,7 +25,7 @@ export default function Level16(props) {
   function handleCloseDialog(e) {
     props.logClick(e);
     setIsJewelFound(false);
-    props.getLevelChange();
+    dispatch(changeLevel());
   }
 
   function onDragStart(event, name) {
@@ -37,36 +40,38 @@ export default function Level16(props) {
     let name = event.dataTransfer.getData("name");
     event.currentTarget.id = "level 16 " + name + " file dropped";
     props.logClick(event);
-    let newFiles = originalFiles.filter((file) => {
+    let newFiles = files.filter((file) => {
       if (file.name === name) {
         file.type = cat;
       }
       return file;
     });
     setIsJewelShown(name === "Training Completion Certificate");
-    originalFiles = newFiles;
+    setFiles(newFiles);
   }
 
-  var sortedFiles = {
-    personal: [],
-    academy: [],
-  };
-
-  originalFiles.forEach((file) => {
-    sortedFiles[file.type].push(
-      <grid
-        item
-        key={file.id}
-        onDragStart={(event) => onDragStart(event, file.name)}
-        draggable
-        className="draggable"
-      >
-        <DescriptionIcon fontSize="large" />
-        <br />
-        {file.name}
-      </grid>
-    );
-  });
+  function sortFiles() {
+    var sortedFiles = {
+      personal: [],
+      academy: [],
+    };
+    files.forEach((file) => {
+      sortedFiles[file.type].push(
+        <grid
+          item
+          key={file.id}
+          onDragStart={(event) => onDragStart(event, file.name)}
+          draggable
+          className="draggable"
+        >
+          <DescriptionIcon fontSize="large" />
+          <br />
+          {file.name}
+        </grid>
+      );
+    });
+    return sortedFiles;
+  }
 
   return (
     <Level
@@ -98,7 +103,7 @@ export default function Level16(props) {
               </grid>
             </grid>
           </div>
-          <grid className="file-grid">{originalFiles.personal}</grid>
+          <grid className="file-grid">{sortFiles().personal}</grid>
         </div>
         <div
           className="droppable"
@@ -121,7 +126,7 @@ export default function Level16(props) {
               </grid>
             </grid>
           </div>
-          <grid className="file-grid">{originalFiles.academy}</grid>
+          <grid className="file-grid">{sortFiles().academy}</grid>
         </div>
         {isJewelShown && <Jewel top="80%" handleFound={handleFound} />}
       </div>

@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 import EnhancedTable from "../components/level6/EnhancedTable";
+import { useDispatch } from "react-redux";
+import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level6(props) {
   const [isJewelFound, setIsJewelFound] = useState(false);
   const [isJewelShown, setIsJewelShown] = useState(false);
   const [count, setCount] = useState(0);
+
+  const dispatch = useDispatch();
 
   function handleFound(e) {
     props.logClick(e);
@@ -16,7 +20,7 @@ export default function Level6(props) {
   function handleCloseDialog(e) {
     props.logClick(e);
     setIsJewelFound(false);
-    props.getLevelChange();
+    dispatch(changeLevel());
   }
 
   function showJewel() {

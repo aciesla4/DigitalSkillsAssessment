@@ -4,10 +4,14 @@ import GoogleDrive from "../images/googleDrive.jpg";
 import Level from "../components/common/Level";
 import Jewel from "../components/common/Jewel";
 import Menu from "../components/level15/Menu";
+import { useDispatch } from "react-redux";
+import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level15(props) {
   const [isJewelFound, setIsJewelFound] = useState(false);
   const [isDriveClicked, setIsDriveClicked] = useState(false);
+
+  const dispatch = useDispatch();
 
   function handleFound(e) {
     props.logClick(e);
@@ -17,7 +21,7 @@ export default function Level15(props) {
   function handleCloseDialog(e) {
     props.logClick(e);
     setIsJewelFound(false);
-    props.getLevelChange();
+    dispatch(changeLevel());
   }
 
   function handleDriveClick(e) {

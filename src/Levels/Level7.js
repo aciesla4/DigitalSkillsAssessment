@@ -6,6 +6,9 @@ import elements from "../components/level7";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 import ProductCard from "../components/level7/ProductCard";
+import { useDispatch } from "react-redux";
+import { changeLevel } from "../redux/slices/levelSlice";
+import { updateItems } from "../redux/slices/itemsSlice";
 
 export default function Level7(props) {
   const [isJewelFound, setIsJewelFound] = useState(false);
@@ -13,16 +16,18 @@ export default function Level7(props) {
   const [items, setItems] = useState([]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
+  const dispatch = useDispatch();
+
   function handleFound(e) {
     props.logClick(e);
     setIsJewelFound(true);
-    props.getItems(items);
+    dispatch(updateItems(items));
   }
 
   function handleCloseDialog(e) {
     props.logClick(e);
     setIsJewelFound(false);
-    props.getLevelChange();
+    dispatch(changeLevel());
   }
 
   function handleAddItem(element, e) {

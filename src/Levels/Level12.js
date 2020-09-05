@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import Level from "../components/common/Level";
 import SimpleMap from "../components/level12/SimpleMap";
+import { useDispatch } from "react-redux";
+import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level12(props) {
   const [isJewelFound, setIsJewelFound] = useState(false);
+
+  const dispatch = useDispatch();
 
   function handleFound(e) {
     props.logClick(e);
@@ -13,7 +17,7 @@ export default function Level12(props) {
   function handleCloseDialog(e) {
     props.logClick(e);
     setIsJewelFound(false);
-    props.getLevelChange();
+    dispatch(changeLevel());
   }
 
   function logMapClick(id) {

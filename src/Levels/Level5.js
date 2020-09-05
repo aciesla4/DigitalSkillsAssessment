@@ -3,9 +3,13 @@ import "../css/Level5.css";
 import { ResizableBox } from "react-resizable";
 import Level from "../components/common/Level";
 import Jewel from "../components/common/Jewel";
+import { useDispatch } from "react-redux";
+import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level5(props) {
   const [isJewelFound, setIsJewelFound] = useState(false);
+
+  const dispatch = useDispatch();
 
   function handleFound(e) {
     props.logClick(e);
@@ -15,7 +19,7 @@ export default function Level5(props) {
   function handleCloseDialog(e) {
     props.logClick(e);
     setIsJewelFound(false);
-    props.getLevelChange();
+    dispatch(changeLevel());
   }
 
   function handleResize(e) {

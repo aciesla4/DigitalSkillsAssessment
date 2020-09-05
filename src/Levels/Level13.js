@@ -3,10 +3,14 @@ import "../css/Level13.css";
 import Level from "../components/common/Level";
 import Jewel from "../components/common/Jewel";
 import CustomChatbot from "../components/level13/CustomChatbot";
+import { useDispatch } from "react-redux";
+import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level13(props) {
   const [isJewelFound, setIsJewelFound] = useState(false);
   const [isJewelShown, setIsJewelShown] = useState(false);
+
+  const dispatch = useDispatch();
 
   function handleFound(e) {
     props.logClick(e);
@@ -16,7 +20,7 @@ export default function Level13(props) {
   function handleCloseDialog(e) {
     props.logClick(e);
     setIsJewelFound(false);
-    props.getLevelChange();
+    dispatch(changeLevel());
   }
 
   function handleEnd() {

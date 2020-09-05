@@ -24,11 +24,13 @@ class ForgotPassword extends React.Component {
   }
 
   onSubmit = ({ email }) => {
+    console.log(email);
     axios
-      .post("https://digital-skills-json-server.herokuapp.com/user", {
+      .post("https://digital-skills-json-server.herokuapp.com/passwordreset", {
         email: email,
       })
       .then((response) => {
+        console.log(response);
         this.setState({
           showResetLink: true,
           resetLink: response.data,
@@ -40,9 +42,10 @@ class ForgotPassword extends React.Component {
   };
 
   handleClickReset = () => {
+    console.log(this.state.resetLink);
     axios
       .get(
-        "https://digital-skills-json-server.herokuapp.com/user" +
+        "https://digital-skills-json-server.herokuapp.com" +
           this.state.resetLink
       )
       .then((response) => {

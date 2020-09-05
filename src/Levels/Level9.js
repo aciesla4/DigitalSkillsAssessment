@@ -9,11 +9,15 @@ import IconButton from "@material-ui/core/IconButton";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 import ShareModal from "../components/level9/ShareModal";
+import { useDispatch } from "react-redux";
+import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level9(props) {
   const [isJewelFound, setIsJewelFound] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isJewelShown, setIsJewelShown] = useState(false);
+
+  const dispatch = useDispatch();
 
   function handleFound(e) {
     props.logClick(e);
@@ -23,7 +27,7 @@ export default function Level9(props) {
   function handleCloseDialog(e) {
     props.logClick(e);
     setIsJewelFound(false);
-    props.getLevelChange();
+    dispatch(changeLevel());
   }
 
   function openFacebookDialog(e) {

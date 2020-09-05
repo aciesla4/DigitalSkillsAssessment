@@ -4,12 +4,18 @@ import prices from "../components/level8";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 import CartCard from "../components/level8/CartCard";
+import { useDispatch, useSelector } from "react-redux";
+import { changeLevel } from "../redux/slices/levelSlice";
+import { selectItems } from "../redux/slices/itemsSlice";
 
 export default function Level8(props) {
+  const dispatch = useDispatch();
+  const items = useSelector(selectItems);
+
   const [isJewelFound, setIsJewelFound] = useState(false);
   const [isJewelShown, setIsJewelShown] = useState(false);
   const [deleted, setDeleted] = useState(false);
-  const [elements, setElements] = useState(props.items);
+  const [elements, setElements] = useState(items);
 
   function handleFound(e) {
     props.logClick(e);
@@ -19,7 +25,7 @@ export default function Level8(props) {
   function handleCloseDialog(e) {
     props.logClick(e);
     setIsJewelFound(false);
-    props.getLevelChange();
+    dispatch(changeLevel());
   }
 
   function deleteItem(id, e) {

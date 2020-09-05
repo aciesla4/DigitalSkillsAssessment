@@ -5,6 +5,8 @@ import Login from "../components/level14/Login";
 import ForgotPassword from "../components/level14/ForgotPassword";
 import ResetPassword from "../components/level14/ResetPassword";
 import Jewel from "../components/common/Jewel";
+import { useDispatch } from "react-redux";
+import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level14(props) {
   const [isJewelFound, setIsJewelFound] = useState(false);
@@ -12,6 +14,8 @@ export default function Level14(props) {
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [showResetPassword, setShowResetPassword] = useState(false);
   const [showDone, setShowDone] = useState(false);
+
+  const dispatch = useDispatch();
 
   function handleFound(e) {
     props.logClick(e);
@@ -21,7 +25,7 @@ export default function Level14(props) {
   function handleCloseDialog(e) {
     props.logClick(e);
     setIsJewelFound(false);
-    props.getLevelChange();
+    dispatch(changeLevel());
   }
 
   function changeView(view) {

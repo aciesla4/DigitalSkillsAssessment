@@ -5,10 +5,14 @@ import Cat from "../images/cat.jpg";
 import Card from "../components/level3/Card";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
+import { useDispatch } from "react-redux";
+import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level3(props) {
   const [isJewelFound, setIsJewelFound] = useState(false);
   const [elements, setElements] = useState(renderCards());
+
+  const dispatch = useDispatch();
 
   function handleFound(e) {
     props.logClick(e);
@@ -18,7 +22,7 @@ export default function Level3(props) {
   function handleCloseDialog(e) {
     props.logClick(e);
     setIsJewelFound(false);
-    props.getLevelChange();
+    dispatch(changeLevel());
   }
 
   function showJewel(e) {
