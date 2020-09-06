@@ -28,25 +28,9 @@ import {
 } from "../components/level10";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
-import { useDispatch } from "react-redux";
-import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level10(props) {
-  const [isJewelFound, setIsJewelFound] = useState(false);
   const [isPrivacyClicked, setIsPrivacyClicked] = useState(false);
-
-  const dispatch = useDispatch();
-
-  function handleFound(e) {
-    props.logClick(e);
-    setIsJewelFound(true);
-  }
-
-  function handleCloseDialog(e) {
-    props.logClick(e);
-    setIsJewelFound(false);
-    dispatch(changeLevel());
-  }
 
   function handleClick(e) {
     props.logClick(e);
@@ -55,12 +39,9 @@ export default function Level10(props) {
 
   return (
     <Level
-      level={10}
       logClick={props.logClick}
       mission="find the privacy settings."
       hintMessage="Click on the button labeled Privacy."
-      isJewelFound={isJewelFound}
-      handleCloseDialog={handleCloseDialog}
       dialogMessage="Your mission is complete! Sometimes it is easier to search for a setting than clicking around to find it. Click the X to return to the home page and receive your next mission."
     >
       <div>
@@ -342,7 +323,7 @@ export default function Level10(props) {
               />
               <br />
               <br />
-              <Jewel handleFound={handleFound} />
+              <Jewel logClick={props.logClick} />
             </div>
           </div>
         )}

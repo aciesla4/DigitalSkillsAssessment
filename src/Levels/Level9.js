@@ -9,26 +9,10 @@ import IconButton from "@material-ui/core/IconButton";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 import ShareModal from "../components/level9/ShareModal";
-import { useDispatch } from "react-redux";
-import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level9(props) {
-  const [isJewelFound, setIsJewelFound] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isJewelShown, setIsJewelShown] = useState(false);
-
-  const dispatch = useDispatch();
-
-  function handleFound(e) {
-    props.logClick(e);
-    setIsJewelFound(true);
-  }
-
-  function handleCloseDialog(e) {
-    props.logClick(e);
-    setIsJewelFound(false);
-    dispatch(changeLevel());
-  }
 
   function openFacebookDialog(e) {
     props.logClick(e);
@@ -43,12 +27,9 @@ export default function Level9(props) {
 
   return (
     <Level
-      level={9}
       logClick={props.logClick}
       mission="share your certificate on Facebook."
       hintMessage="The facebook icon is the leftmost icon. Click it, then click post at the bottom of the dialog that pops up."
-      isJewelFound={isJewelFound}
-      handleCloseDialog={handleCloseDialog}
       dialogMessage="Your mission is complete! Most websites allow you to post pages to social media. Often you will need to login before continuing. Click the X to return to the home page and receive your next mission."
     >
       <div>
@@ -96,7 +77,7 @@ export default function Level9(props) {
           >
             <EmailIcon fontSize="large" />
           </IconButton>
-          {isJewelShown && <Jewel handleFound={handleFound} />}
+          {isJewelShown && <Jewel logClick={props.logClick} />}
         </div>
         <ShareModal
           show={isDialogOpen}

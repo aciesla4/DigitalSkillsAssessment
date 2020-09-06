@@ -16,25 +16,9 @@ import {
 } from "../components/level4";
 import FavCard from "../components/level4/FavCard";
 import Level from "../components/common/Level";
-import { useDispatch } from "react-redux";
-import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level4(props) {
-  const [isJewelFound, setIsJewelFound] = useState(false);
   const [elements, setElements] = useState(renderCards());
-
-  const dispatch = useDispatch();
-
-  function handleFound(e) {
-    props.logClick(e);
-    setIsJewelFound(true);
-  }
-
-  function handleCloseDialog(e) {
-    props.logClick(e);
-    setIsJewelFound(false);
-    dispatch(changeLevel());
-  }
 
   function handleClick(i, e) {
     props.logClick(e);
@@ -44,8 +28,8 @@ export default function Level4(props) {
         key={i}
         id={i}
         color="red"
-        handleFound={(e) => handleFound(e)}
         isJewelShown={true}
+        logClick={props.logClick}
       />
     );
     setElements([...update]);
@@ -77,6 +61,7 @@ export default function Level4(props) {
           color=""
           isJewelShown={false}
           onClick={(e) => handleClick(index, e)}
+          logClick={props.logClick}
         />
       );
     }
@@ -85,12 +70,9 @@ export default function Level4(props) {
 
   return (
     <Level
-      level={4}
       logClick={props.logClick}
       mission="favorite something."
       hintMessage="Favoriting an item can be done by clicking the heart icon under an image."
-      isJewelFound={isJewelFound}
-      handleCloseDialog={handleCloseDialog}
       dialogMessage="Your mission is complete! Favoriting something is a common way to save something to be found later. Click the X to return to the home page and receive your next mission."
     >
       <div className="level4-grid">

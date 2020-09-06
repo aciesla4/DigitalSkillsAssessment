@@ -1,25 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Level from "../components/common/Level";
 import SimpleMap from "../components/level12/SimpleMap";
-import { useDispatch } from "react-redux";
-import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level12(props) {
-  const [isJewelFound, setIsJewelFound] = useState(false);
-
-  const dispatch = useDispatch();
-
-  function handleFound(e) {
-    props.logClick(e);
-    setIsJewelFound(true);
-  }
-
-  function handleCloseDialog(e) {
-    props.logClick(e);
-    setIsJewelFound(false);
-    dispatch(changeLevel());
-  }
-
   function logMapClick(id) {
     let e = {
       currentTarget: {
@@ -32,16 +15,13 @@ export default function Level12(props) {
 
   return (
     <Level
-      level={12}
       logClick={props.logClick}
       mission="find Copper Harbor on the map."
       hintMessage="You can scroll using the scroll wheel on your mouse and zoom in and out using the + and - buttons in the top left."
-      isJewelFound={isJewelFound}
-      handleCloseDialog={handleCloseDialog}
       dialogMessage="Your mission is complete! <Something helpful about maps> Click the X to return to the home page and receive your next mission."
     >
       <div>
-        <SimpleMap handleFound={handleFound} logClick={logMapClick} />
+        <SimpleMap logClick={props.logClick} logMapClick={logMapClick} />
       </div>
     </Level>
   );

@@ -4,29 +4,15 @@ import prices from "../components/level8";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 import CartCard from "../components/level8/CartCard";
-import { useDispatch, useSelector } from "react-redux";
-import { changeLevel } from "../redux/slices/levelSlice";
+import { useSelector } from "react-redux";
 import { selectItems } from "../redux/slices/itemsSlice";
 
 export default function Level8(props) {
-  const dispatch = useDispatch();
   const items = useSelector(selectItems);
 
-  const [isJewelFound, setIsJewelFound] = useState(false);
   const [isJewelShown, setIsJewelShown] = useState(false);
   const [deleted, setDeleted] = useState(false);
   const [elements, setElements] = useState(items);
-
-  function handleFound(e) {
-    props.logClick(e);
-    setIsJewelFound(true);
-  }
-
-  function handleCloseDialog(e) {
-    props.logClick(e);
-    setIsJewelFound(false);
-    dispatch(changeLevel());
-  }
 
   function deleteItem(id, e) {
     e.currentTarget.id = "level 8 card " + id;
@@ -57,12 +43,9 @@ export default function Level8(props) {
 
   return (
     <Level
-      level={8}
       logClick={props.logClick}
       mission="delete an item from your cart then check out."
       hintMessage="Deleting an item can be done by clicking the X in the right hand corner of the item."
-      isJewelFound={isJewelFound}
-      handleCloseDialog={handleCloseDialog}
       dialogMessage="Your mission is complete! Always double check that the items you want are correct in your cart before checking out. Click the X to return to the home page and receive your next mission."
     >
       <div>
@@ -113,7 +96,7 @@ export default function Level8(props) {
           </button>
         </div>
       </div>
-      {isJewelShown && <Jewel top="70%" left="82%" handleFound={handleFound} />}
+      {isJewelShown && <Jewel top="70%" left="82%" logClick={props.logClick} />}
     </Level>
   );
 }

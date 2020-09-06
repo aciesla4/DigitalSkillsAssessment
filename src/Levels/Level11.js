@@ -33,29 +33,13 @@ import {
 } from "../components/level10";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
-import { useDispatch } from "react-redux";
-import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level11(props) {
-  const [isJewelFound, setIsJewelFound] = useState(false);
   const [isPrivacyClicked, setIsPrivacyClicked] = useState(false);
   const [isCloudClicked, setIsCloudClicked] = useState(false);
   const [color, setColor] = useState("");
   const [notesOn, setNotesOn] = useState(true);
   const [isJewelShown, setIsJewelShown] = useState(false);
-
-  const dispatch = useDispatch();
-
-  function handleFound(e) {
-    props.logClick(e);
-    setIsJewelFound(true);
-  }
-
-  function handleCloseDialog(e) {
-    props.logClick(e);
-    setIsJewelFound(false);
-    dispatch(changeLevel());
-  }
 
   function handlePrivacyClick(e) {
     props.logClick(e);
@@ -76,12 +60,9 @@ export default function Level11(props) {
 
   return (
     <Level
-      level={11}
       logClick={props.logClick}
       mission="stop saving Notes in your Cloud."
       hintMessage="Click on the button labeled privacy. Then scroll down on the left side to find the button labeled Cloud. Then uncheck the box labeled Notes."
-      isJewelFound={isJewelFound}
-      handleCloseDialog={handleCloseDialog}
       dialogMessage="Your mission is complete! Sometimes settings are buried in multiple menus. Click the X to return to the home page and receive your next mission."
     >
       <div>
@@ -426,7 +407,7 @@ export default function Level11(props) {
                 />
                 <br />
                 <br />
-                {isJewelShown && <Jewel handleFound={handleFound} />}
+                {isJewelShown && <Jewel logClick={props.logClick} />}
               </div>
             ) : (
               <div>

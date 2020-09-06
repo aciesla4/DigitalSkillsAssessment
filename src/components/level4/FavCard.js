@@ -9,7 +9,7 @@ class FavCard extends React.Component {
     if (this.props.isJewelShown) {
       return (
         <div className="favcard">
-          <Jewel handleFound={this.props.handleFound} />
+          <Jewel logClick={this.props.logClick} />
           <IconButton
             style={{ color: this.props.color, top: "85%" }}
             id={"level 4 card" + this.props.id}

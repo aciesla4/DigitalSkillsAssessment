@@ -9,25 +9,9 @@ import {
 import CloseIcon from "@material-ui/icons/Close";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
-import { useDispatch } from "react-redux";
-import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level2(props) {
-  const [isJewelFound, setIsJewelFound] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(true);
-
-  const dispatch = useDispatch();
-
-  function handleFound(e) {
-    props.logClick(e);
-    setIsJewelFound(true);
-  }
-
-  function handleCloseDialog(e) {
-    props.logClick(e);
-    setIsJewelFound(false);
-    dispatch(changeLevel());
-  }
 
   function handleClose(e) {
     props.logClick(e);
@@ -36,11 +20,8 @@ export default function Level2(props) {
 
   return (
     <Level
-      level={2}
       logClick={props.logClick}
       mission="find the jewel on the page by closing the pop up."
-      isJewelFound={isJewelFound}
-      handleCloseDialog={handleCloseDialog}
       dialogMessage="Your mission is complete! Pop ups can always be closed by clicking the X, but some sites also let you click anywhere else on the page to get rid of them. Click the X to return to the home page and receive your next mission."
     >
       <Container>
@@ -76,7 +57,7 @@ export default function Level2(props) {
             imperdiet.
           </DialogContent>
         </Dialog>
-        <Jewel top="50%" left="50%" handleFound={handleFound} />
+        <Jewel top="50%" left="50%" logClick={props.logClick} />
       </Container>
     </Level>
   );

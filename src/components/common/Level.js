@@ -1,18 +1,22 @@
 import React, { useEffect } from "react";
-import NavBar from "../common/NavBar";
-import Header from "../common/Header";
-import EndDialog from "../common/EndDialog";
-import LearningMode from "../common/LearningMode";
-import Modal from "../common/Modal";
+import NavBar from "./NavBar";
+import Header from "./Header";
+import EndDialog from "./EndDialog";
+import LearningMode from "./LearningMode";
+import Modal from "./Modal";
 import { useSelector, useDispatch } from "react-redux";
 import { selectAcademicMode } from "../../redux/slices/academicModeSlice";
 import { openHint, closeHint, selectHint } from "../../redux/slices/hintSlice";
+import { changeLevel, selectLevel } from "../../redux/slices/levelSlice";
+import { setFound, selectJewel } from "../../redux/slices/jewelSlice";
 import $ from "jquery";
 
 export default function Level(props) {
   const dispatch = useDispatch();
   const academicMode = useSelector(selectAcademicMode);
   const hint = useSelector(selectHint);
+  const jewel = useSelector(selectJewel);
+  const level = useSelector(selectLevel);
 
   useEffect(() => {
     $(document).ready(function() {
@@ -21,6 +25,12 @@ export default function Level(props) {
       });
     });
   });
+
+  function handleCloseDialog(e) {
+    props.logClick(e);
+    dispatch(setFound());
+    dispatch(changeLevel());
+  }
 
   return (
     <div>
@@ -43,9 +53,9 @@ export default function Level(props) {
         {props.hintMessage}
       </Modal>
       <EndDialog
-        level={props.level}
-        open={props.isJewelFound}
-        handleCloseDialog={props.handleCloseDialog}
+        level={level}
+        open={jewel}
+        handleCloseDialog={handleCloseDialog}
         academicmode={academicMode}
       >
         {props.dialogMessage}

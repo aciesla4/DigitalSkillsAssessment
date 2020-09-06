@@ -7,28 +7,14 @@ import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 import ProductCard from "../components/level7/ProductCard";
 import { useDispatch } from "react-redux";
-import { changeLevel } from "../redux/slices/levelSlice";
 import { updateItems } from "../redux/slices/itemsSlice";
 
 export default function Level7(props) {
-  const [isJewelFound, setIsJewelFound] = useState(false);
   const [numItems, setNumItems] = useState(0);
   const [items, setItems] = useState([]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const dispatch = useDispatch();
-
-  function handleFound(e) {
-    props.logClick(e);
-    setIsJewelFound(true);
-    dispatch(updateItems(items));
-  }
-
-  function handleCloseDialog(e) {
-    props.logClick(e);
-    setIsJewelFound(false);
-    dispatch(changeLevel());
-  }
 
   function handleAddItem(element, e) {
     props.logClick(e);
@@ -43,16 +29,14 @@ export default function Level7(props) {
     if (numItems >= 1) {
       setIsDialogOpen(true);
     }
+    dispatch(updateItems(items));
   }
 
   return (
     <Level
-      level={7}
       logClick={props.logClick}
       mission="add spy gear to your cart and begin checking out."
       hintMessage="Adding gear to your cart can be down by hovering over an item and clicking the add to cart icon. You can begin checking out by clicking the shopping cart icon in the top right."
-      isJewelFound={isJewelFound}
-      handleCloseDialog={handleCloseDialog}
       dialogMessage="Your mission is complete! There are many ways you can add items to your cart. One some sites, clicking the item takes you to another page where you can add it. Click the X to return to the home page and receive your next mission."
     >
       <div>
@@ -93,7 +77,7 @@ export default function Level7(props) {
           hideBackdrop={true}
         >
           <DialogContent>
-            <Jewel handleFound={handleFound} />
+            <Jewel logClick={props.logClick} />
           </DialogContent>
         </Dialog>
       </div>

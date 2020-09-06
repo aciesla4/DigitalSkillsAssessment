@@ -7,26 +7,10 @@ import DescriptionIcon from "@material-ui/icons/Description";
 import originalFiles from "../components/level16";
 import Level from "../components/common/Level";
 import Jewel from "../components/common/Jewel";
-import { useDispatch } from "react-redux";
-import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level16(props) {
-  const [isJewelFound, setIsJewelFound] = useState(false);
   const [isJewelShown, setIsJewelShown] = useState(false);
   const [files, setFiles] = useState(originalFiles);
-
-  const dispatch = useDispatch();
-
-  function handleFound(e) {
-    props.logClick(e);
-    setIsJewelFound(true);
-  }
-
-  function handleCloseDialog(e) {
-    props.logClick(e);
-    setIsJewelFound(false);
-    dispatch(changeLevel());
-  }
 
   function onDragStart(event, name) {
     event.dataTransfer.setData("name", name);
@@ -75,12 +59,9 @@ export default function Level16(props) {
 
   return (
     <Level
-      level={16}
       logClick={props.logClick}
       mission="move the Training Completion Certificate to your files."
       hintMessage="Files can be moved from one place to another by dragging and dropping."
-      isJewelFound={isJewelFound}
-      handleCloseDialog={handleCloseDialog}
       dialogMessage="Your mission is complete! Dragging and dropping items can be an easy way to move them from one place to another. Click the X to return to the home page and receive your next mission."
     >
       <div className="drag-container">
@@ -128,7 +109,7 @@ export default function Level16(props) {
           </div>
           <grid className="file-grid">{sortFiles().academy}</grid>
         </div>
-        {isJewelShown && <Jewel top="80%" handleFound={handleFound} />}
+        {isJewelShown && <Jewel top="80%" logClick={props.logClick} />}
       </div>
     </Level>
   );

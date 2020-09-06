@@ -5,32 +5,16 @@ import Cat from "../images/cat.jpg";
 import Card from "../components/level3/Card";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
-import { useDispatch } from "react-redux";
-import { changeLevel } from "../redux/slices/levelSlice";
 
 export default function Level3(props) {
-  const [isJewelFound, setIsJewelFound] = useState(false);
   const [elements, setElements] = useState(renderCards());
-
-  const dispatch = useDispatch();
-
-  function handleFound(e) {
-    props.logClick(e);
-    setIsJewelFound(true);
-  }
-
-  function handleCloseDialog(e) {
-    props.logClick(e);
-    setIsJewelFound(false);
-    dispatch(changeLevel());
-  }
 
   function showJewel(e) {
     props.logClick(e);
     let update = [...elements];
     update[23] = (
       <div>
-        <Jewel handleFound={handleFound} />
+        <Jewel logClick={props.logClick} />
       </div>
     );
     setElements([...update]);
@@ -54,12 +38,9 @@ export default function Level3(props) {
 
   return (
     <Level
-      level={3}
       logClick={props.logClick}
       mission="find the cat image."
       hintMessage="Look in the bottom right hand corner for the cat image."
-      isJewelFound={isJewelFound}
-      handleCloseDialog={handleCloseDialog}
       dialogMessage="Your mission is complete! Changing the view when searching for an image can help you find the one you are looking for. Click the X to return to the home page and receive your next mission."
     >
       <div className="level3-grid">
