@@ -1,29 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../css/Level14.css";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
-const initialValues = {
-  email: "",
-};
+export default function ForgotPassword(props) {
+  const initialValues = {
+    email: "",
+  };
 
-const validationSchema = Yup.object().shape({
-  email: Yup.string()
-    .email("Email is invalid")
-    .required("Email is required"),
-});
+  const validationSchema = Yup.object().shape({
+    email: Yup.string()
+      .email("Email is invalid")
+      .required("Email is required"),
+  });
 
-class ForgotPassword extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      showResetLink: false,
-      resetLink: "",
-    };
-  }
+  const [showResetLink, setShowResetLink] = useState(false);
+  const [resetLink, setResetLink] = useState("");
 
-  onSubmit = ({ email }) => {
+  function onSubmit({ email }) {
     console.log(email);
     axios
       .post("https://digital-skills-json-server.herokuapp.com/passwordreset", {
@@ -31,90 +26,78 @@ class ForgotPassword extends React.Component {
       })
       .then((response) => {
         console.log(response);
-        this.setState({
-          showResetLink: true,
-          resetLink: response.data,
-        });
+        setShowResetLink(true);
+        setResetLink(response.data);
       });
-    this.setState({
-      success: true,
-    });
-  };
+  }
 
-  handleClickReset = () => {
-    console.log(this.state.resetLink);
+  function handleClickReset() {
+    console.log(resetLink);
     axios
-      .get(
-        "https://digital-skills-json-server.herokuapp.com" +
-          this.state.resetLink
-      )
+      .get("https://digital-skills-json-server.herokuapp.com" + resetLink)
       .then((response) => {
         if (response.status === 200) {
-          this.props.changeView("resetPassword");
+          props.changeView("resetPassword");
         } else {
           console.log("error");
         }
       });
-  };
+  }
 
-  render() {
-    return (
-      <div>
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={this.onSubmit}
-        >
-          {({ errors, touched }) => (
-            <Form>
-              <br />
-              <h2 style={{ textAlign: "center" }}>Forgot Password</h2>
-              <div className="card-body">
-                <div className="form-group">
-                  <label>Email</label>
-                  <Field
-                    name="email"
-                    type="text"
-                    className={
-                      "form-control" +
-                      (errors.email && touched.email ? " is-invalid" : "")
-                    }
-                  />
-                  <ErrorMessage
-                    name="email"
-                    component="div"
-                    className="invalid-feedback"
-                  />
+  return (
+    <div>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={onSubmit}
+      >
+        {({ errors, touched }) => (
+          <Form>
+            <br />
+            <h2 style={{ textAlign: "center" }}>Forgot Password</h2>
+            <div className="card-body">
+              <div className="form-group">
+                <label>Email</label>
+                <Field
+                  name="email"
+                  type="text"
+                  className={
+                    "form-control" +
+                    (errors.email && touched.email ? " is-invalid" : "")
+                  }
+                />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="invalid-feedback"
+                />
+              </div>
+              <div>
+                <div>
+                  <button type="submit" className="submit-btn">
+                    Submit
+                  </button>
                 </div>
                 <div>
-                  <div>
-                    <button type="submit" className="submit-btn">
-                      Submit
-                    </button>
-                  </div>
-                  <div>
-                    <button
-                      onClick={() => this.props.changeView("forgotPassword")}
-                      className="link-btn"
-                    >
-                      Cancel
-                    </button>
-                  </div>
+                  <button
+                    onClick={() => props.changeView("forgotPassword")}
+                    className="link-btn"
+                  >
+                    Cancel
+                  </button>
                 </div>
               </div>
-            </Form>
-          )}
-        </Formik>
-        {this.state.showResetLink && (
-          <div className="reset-container">
-            <button className="reset-btn" onClick={this.handleClickReset}>
-              Reset Your Password Here
-            </button>
-          </div>
+            </div>
+          </Form>
         )}
-      </div>
-    );
-  }
+      </Formik>
+      {showResetLink && (
+        <div className="reset-container">
+          <button className="reset-btn" onClick={handleClickReset}>
+            Reset Your Password Here
+          </button>
+        </div>
+      )}
+    </div>
+  );
 }
-
-export default ForgotPassword;
