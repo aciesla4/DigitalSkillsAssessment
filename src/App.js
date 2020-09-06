@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Welcome from "./components/welcome/Welcome";
-import Home from "./components/welcome/Home";
 import Level1 from "./levels/Level1";
 import Level2 from "./levels/Level2";
 import Level3 from "./levels/Level3";
@@ -38,11 +37,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route
-          exact
-          path="/home"
-          render={(props) => <Home {...props} logClick={logClick} />}
-        />
         <Route
           path="/level1"
           render={(props) => <Level1 {...props} logClick={logClick} />}

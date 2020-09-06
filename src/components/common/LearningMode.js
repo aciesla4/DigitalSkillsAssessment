@@ -9,25 +9,8 @@ export default function LearningMode(props) {
 
   let open = academicMode;
 
-  const [home, setHome] = useState([open, false, false]);
   const [level1, setLevel1] = useState([open, false]);
   const [level2, setLevel2] = useState([open]);
-
-  function openNextHome(index, e) {
-    props.logClick(e);
-    let update = [...home];
-    update[index] = false;
-    update[index + 1] = true;
-    setHome([...update]);
-  }
-
-  function closeHome(e) {
-    props.logClick(e);
-    let update = [...home];
-    let length = home.length;
-    update[length - 1] = false;
-    setHome([...update]);
-  }
 
   function openNextLevel1(index, e) {
     props.logClick(e);
@@ -56,53 +39,18 @@ export default function LearningMode(props) {
   const len = currentPath.length;
   return (
     <div>
-      {currentPath.includes("home") && (
-        <div id="home" style={{ width: "100%" }}>
+      {currentPath.substring(len - 6) === "level1" && (
+        <div id="level1">
           <Modal
-            show={home[0]}
+            show={level1[0]}
             heading="Learning Mode"
-            openNext={(e) => openNextHome(0, e)}
+            openNext={(e) => openNextLevel1(0, e)}
             x="0"
             y="15%"
             modalStyle="modalL"
           >
             Click the slider to turn learning mode off or on. Learning mode
             gives you extra tips on how to use the site and complete levels.
-          </Modal>
-          <Modal
-            show={home[1]}
-            heading="Check Button"
-            openNext={(e) => openNextHome(1, e)}
-            x="40%"
-            y="15%"
-            modalStyle="my-modal"
-          >
-            Click this button to begin a level.
-          </Modal>
-          <Modal
-            show={home[2]}
-            last={true}
-            heading="Phone Button"
-            closeModal={closeHome}
-            y="15%"
-            modalStyle="modalR"
-          >
-            When this rings, HQ is calling. Click to pick it up and receive
-            their message.
-          </Modal>
-        </div>
-      )}
-      {currentPath.substring(len - 6) === "level1" && (
-        <div id="level1">
-          <Modal
-            show={level1[0]}
-            heading="Home Button"
-            openNext={(e) => openNextLevel1(0, e)}
-            x="40%"
-            y="15%"
-            modalStyle="my-modal"
-          >
-            Click this button to return to the home page.
           </Modal>
           <Modal
             show={level1[1]}
