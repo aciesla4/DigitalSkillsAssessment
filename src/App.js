@@ -20,10 +20,13 @@ import Level16 from "./levels/Level16";
 import Final from "./components/final/Final";
 import axios from "axios";
 
+// Component for the web app that handles logging and switching between pages
 export default function App() {
+  // handles logging each click and their time to the API
   function logClick(e) {
     console.log(e.currentTarget.id);
     const dt = new Date();
+    // makes an HTTP request to the logging server
     axios({
       method: "post",
       url: "https://digital-skills-server.herokuapp.com/logging",

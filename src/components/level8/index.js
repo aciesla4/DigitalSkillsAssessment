@@ -13,4 +13,5 @@ const prices = [
   31.99,
 ];
 
+// file to hold the list of prices used in Level 8
 export default { prices };

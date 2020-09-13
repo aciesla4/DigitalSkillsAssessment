@@ -9,13 +9,17 @@ import ProductCard from "../components/level7/ProductCard";
 import { useDispatch } from "react-redux";
 import { updateItems } from "../redux/slices/itemsSlice";
 
+// Component for level 7 - putting items in a shopping cart
 export default function Level7(props) {
+  // local state for the number of items chosen, which items are chosen, and if the jewel dialog is shown
   const [numItems, setNumItems] = useState(0);
   const [items, setItems] = useState([]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
+  // redux - allows methods to update global state to be called
   const dispatch = useDispatch();
 
+  // handles adding an item to the list of items in the user's cart
   function handleAddItem(element, e) {
     props.logClick(e);
     let update = items;
@@ -24,6 +28,7 @@ export default function Level7(props) {
     setItems(update);
   }
 
+  // handles showing the jewel when the user clicks the shopping cart
   function showJewel(e) {
     props.logClick(e);
     if (numItems >= 1) {

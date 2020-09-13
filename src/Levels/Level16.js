@@ -8,18 +8,24 @@ import originalFiles from "../components/level16";
 import Level from "../components/common/Level";
 import Jewel from "../components/common/Jewel";
 
+// Component for Level 16 - dragging and dropping a file
+// See https://www.freecodecamp.org/news/reactjs-implement-drag-and-drop-feature-without-using-external-libraries-ad8994429f1a/
 export default function Level16(props) {
+    // local state for if the jewel is shown and the list of files to be displayed
   const [isJewelShown, setIsJewelShown] = useState(false);
   const [files, setFiles] = useState(originalFiles);
 
+  // handles when a file begins to be dragged
   function onDragStart(event, name) {
     event.dataTransfer.setData("name", name);
   }
 
+  // handles when a file is dragged from one side to another
   function onDragOver(event) {
     event.preventDefault();
   }
 
+  // handles when the file is dropped and if the jewel should be shown
   function onDrop(event, cat) {
     let name = event.dataTransfer.getData("name");
     event.currentTarget.id = "level 16 " + name + " file dropped";
@@ -34,6 +40,7 @@ export default function Level16(props) {
     setFiles(newFiles);
   }
 
+  // sorts the files in the list into two lists that are displayed on each side of the screen
   function sortFiles() {
     var sortedFiles = {
       personal: [],

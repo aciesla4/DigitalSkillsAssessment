@@ -3,10 +3,13 @@ import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 import EnhancedTable from "../components/level6/EnhancedTable";
 
+// Component for Level 6 - sorting data in a table
 export default function Level6(props) {
+  // local state for whether the jewel is shown and how many times the user has sorted the table
   const [isJewelShown, setIsJewelShown] = useState(false);
   const [count, setCount] = useState(0);
 
+  // handles showing the jewel when the user has sorted the table five times
   function showJewel() {
     setCount(count + 1);
     if (count === 4) {

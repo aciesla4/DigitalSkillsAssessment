@@ -8,6 +8,7 @@ import {
 import CloseIcon from "@material-ui/icons/Close";
 import { Link as RouterLink } from "react-router-dom";
 
+// Component for the dialog that shows up at the end of each level
 export default function EndDialog(props) {
   return (
     <Dialog open={props.open} disableBackdropClick={true}>

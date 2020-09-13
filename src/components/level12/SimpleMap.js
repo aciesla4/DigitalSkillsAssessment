@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import Jewel from "../common/Jewel";
 
+// Component for the Leaflet map used in level 12
+// Adapted from https://github.com/PaulLeCam/react-leaflet/blob/master/example/components/simple.js
 export default class SimpleMap extends Component {
   state = {
     lat: 47.1167748,

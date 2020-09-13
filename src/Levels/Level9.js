@@ -10,15 +10,19 @@ import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 import ShareModal from "../components/level9/ShareModal";
 
+// Component for Level 9 - sharing something to social media
 export default function Level9(props) {
+    // local state for if the share modal is open and if the jewel is shown
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isJewelShown, setIsJewelShown] = useState(false);
 
+  // handles opening the facebook dialog when the facebook icon is clicked
   function openFacebookDialog(e) {
     props.logClick(e);
     setIsDialogOpen(true);
   }
 
+  // handles closing the facebook dialog when post is clicked
   function closeFacebookDialog(e) {
     props.logClick(e);
     setIsDialogOpen(false);

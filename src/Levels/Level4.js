@@ -17,9 +17,12 @@ import {
 import FavCard from "../components/level4/FavCard";
 import Level from "../components/common/Level";
 
+// Component for Level 4 - favoriting an item
 export default function Level4(props) {
+  // local state for the list of elements to be displayed
   const [elements, setElements] = useState(renderCards());
 
+  // handles when the user clicks the heart on a card and shows the jewel in the picture's place
   function handleClick(i, e) {
     props.logClick(e);
     let update = [...elements];
@@ -35,6 +38,7 @@ export default function Level4(props) {
     setElements([...update]);
   }
 
+  // generates the list of card elements to be displayed
   function renderCards() {
     let pictures = [
       nature1,

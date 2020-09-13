@@ -6,12 +6,16 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
+// Component that shows the reset password page in Level 14
 export default function ResetPassword(props) {
+    // the initial values of the inputs in the form
   const initialValues = {
     password: "",
     confirmPassword: "",
   };
 
+  // schema for validating the password and confirmed password in the form
+    // see https://formik.org/docs/guides/validation
   const validationSchema = Yup.object().shape({
     password: Yup.string()
       .min(6, "Password must be at least 6 characters")
@@ -21,14 +25,18 @@ export default function ResetPassword(props) {
       .required("Confirm Password is required"),
   });
 
+  // local state for whether the password reset was successful or not
   const [success, setSuccess] = useState(false);
 
+  // handles closing the snackbar that appears when the form is submitted
   function handleClose() {
     setSuccess(false);
     props.changeView("resetToLogin");
   }
 
+  // handles submitting the form
   function onSubmit({ password, confirmPassword }) {
+      // makes an HTTP request to the json server that handles login logic to reset the user's password
     axios
       .post("https://digital-skills-json-server.herokuapp.com/user", {
         id: 1,

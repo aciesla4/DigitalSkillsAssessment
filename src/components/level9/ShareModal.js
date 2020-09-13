@@ -2,6 +2,7 @@ import React from "react";
 import "../../css/ShareModal.css";
 import Certificate from "../../images/certificate.png";
 
+// Component for the modal used in Level 9
 export default function ShareModal(props) {
   return (
     props.show && (

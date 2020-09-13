@@ -11,13 +11,18 @@ import { changeLevel, selectLevel } from "../../redux/slices/levelSlice";
 import { setFound, selectJewel } from "../../redux/slices/jewelSlice";
 import $ from "jquery";
 
+// Base component for each level that hold common code
 export default function Level(props) {
+    // redux - allows methods to be called to modify global state
   const dispatch = useDispatch();
+
+  // redux - gets the value of the global variables below
   const academicMode = useSelector(selectAcademicMode);
   const hint = useSelector(selectHint);
   const jewel = useSelector(selectJewel);
   const level = useSelector(selectLevel);
 
+  // hook for using jquery to animate the jewel
   useEffect(() => {
     $(document).ready(function() {
       $(".jewel").click(function() {
@@ -26,6 +31,7 @@ export default function Level(props) {
     });
   });
 
+  // handles closing the dialog at the end of each level
   function handleCloseDialog(e) {
     props.logClick(e);
     dispatch(setFound());

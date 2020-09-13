@@ -5,9 +5,12 @@ import Level from "../components/common/Level";
 import Jewel from "../components/common/Jewel";
 import Menu from "../components/level15/Menu";
 
+// Component for Level 15 - Multi-level menu
 export default function Level15(props) {
+  // local state for if the correct menu item is clicked
   const [isDriveClicked, setIsDriveClicked] = useState(false);
 
+  // handles when the user clicks the correct menu item
   function handleDriveClick(e) {
     props.logClick(e);
     setIsDriveClicked(true);

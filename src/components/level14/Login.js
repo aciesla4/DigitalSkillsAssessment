@@ -6,9 +6,13 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
+// Component for the login page in Level 14
 export default function Login(props) {
+    // the initial values of the inputs in the form
   const initialValues = { email: "", password: "" };
 
+  // schema for validating the email and password entered by the user
+    // see https://formik.org/docs/guides/validation
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .email("Email is invalid")
@@ -16,13 +20,17 @@ export default function Login(props) {
     password: Yup.string().required("Password is required"),
   });
 
+  // local state that holds whether an error has occured or not
   const [error, setError] = useState(false);
 
+  // handles closing the snackbar that appears when the form is submitted
   function handleClose() {
     setError(false);
   }
 
+  // handle submitting the form
   function onSubmit({ email, password }) {
+      // makes an HTTP request to the json server that handles login logic to see if the user entered a valid username and password
     axios
       .get("https://digital-skills-json-server.herokuapp.com/user")
       .then((response) => {

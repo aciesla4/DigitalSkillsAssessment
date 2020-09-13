@@ -34,24 +34,33 @@ import {
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 
+// Component for Level 11 - finding a setting and using a commitment menu
 export default function Level11(props) {
+    // local state for if the privacy button is clicked
   const [isPrivacyClicked, setIsPrivacyClicked] = useState(false);
+  // local state for if the cloud button is clicked
   const [isCloudClicked, setIsCloudClicked] = useState(false);
+  // local state for setting the color of buttons that have been clicked
   const [color, setColor] = useState("");
+  // local state for if the noted checkbox is checked
   const [notesOn, setNotesOn] = useState(true);
+  // local state for if the jewel is shown
   const [isJewelShown, setIsJewelShown] = useState(false);
 
+  // handles when the privacy button is clicked by setting local state to true
   function handlePrivacyClick(e) {
     props.logClick(e);
     setIsPrivacyClicked(true);
   }
 
+  // handles when the cloud button is clicked by setting local state to true and setting the color
   function handleCloudClick(e) {
     props.logClick(e);
     setIsCloudClicked(true);
     setColor("lightgray");
   }
 
+  // handles when the notes checkbox is checked by setting local state to false and showing the jewel
   function handleNotesChange(e) {
     props.logClick(e);
     setNotesOn(false);

@@ -2,7 +2,9 @@ import React from "react";
 import Level from "../components/common/Level";
 import SimpleMap from "../components/level12/SimpleMap";
 
+// Component for Level 12 - navigating a map
 export default function Level12(props) {
+  // handles logging when a marker on the map is clicked
   function logMapClick(id) {
     let e = {
       currentTarget: {

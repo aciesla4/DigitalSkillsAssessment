@@ -3,6 +3,7 @@ import { Container, Box } from "@material-ui/core";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 
+// Component for Level 1 - Scrolling to the bottom of a page
 export default function Level1(props) {
   return (
     <Level

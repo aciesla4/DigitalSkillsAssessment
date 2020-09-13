@@ -4,9 +4,12 @@ import SpyLogo from "../../images/spyLogo.jpg";
 import $ from "jquery";
 import axios from "axios";
 
+// Component for the page the user sees after finishing all the levels
 export default function Final(props) {
+    // local state for the score the user receives
   const [score, setScore] = useState(0);
 
+  // hook that allows jquery to be used to animate the buttons appearing and calling the API that generates the score
   useEffect(() => {
     $(document).ready(function() {
       $("#congrats")

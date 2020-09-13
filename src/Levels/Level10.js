@@ -29,9 +29,12 @@ import {
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 
+// Component for Level 10 - searching for a setting
 export default function Level10(props) {
+  // local state for if the privacy button is clicked
   const [isPrivacyClicked, setIsPrivacyClicked] = useState(false);
 
+  // handles when the privacy button is clicked by setting local state to true
   function handleClick(e) {
     props.logClick(e);
     setIsPrivacyClicked(true);

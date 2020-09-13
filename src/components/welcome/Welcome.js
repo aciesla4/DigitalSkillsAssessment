@@ -3,7 +3,9 @@ import "../../css/Welcome.css";
 import SpyLogo from "../../images/spyLogo.jpg";
 import $ from "jquery";
 
+// Component for the first page that the user sees when opening the app
 export default function Welcome(props) {
+    // hook that allows jquery to be used to animate the buttons
   useEffect(() => {
     $(document).ready(function() {
       $("#begin")

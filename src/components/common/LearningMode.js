@@ -4,14 +4,19 @@ import { useSelector } from "react-redux";
 import { selectAcademicMode } from "../../redux/slices/academicModeSlice";
 import Modal from "./Modal";
 
+// Component for introductory modals
 export default function LearningMode(props) {
+  // redux - gets the global state for academicMode
   const academicMode = useSelector(selectAcademicMode);
 
+  // sets whether the modals should be open to if academicMode is enabled
   let open = academicMode;
 
+  // local state for if the level1 and level2 modals are open
   const [level1, setLevel1] = useState([open, false]);
   const [level2, setLevel2] = useState([open]);
 
+  // handles opening the next modal for level 1
   function openNextLevel1(index, e) {
     props.logClick(e);
     let update = [...level1];
@@ -20,6 +25,7 @@ export default function LearningMode(props) {
     setLevel1([...update]);
   }
 
+  // handles closing the last modal for level 1
   function closeLevel1(e) {
     props.logClick(e);
     let update = [...level1];
@@ -28,6 +34,7 @@ export default function LearningMode(props) {
     setLevel1([...update]);
   }
 
+  // handles closing the modal for level 2
   function closeLevel2() {
     let update = [...level2];
     let length = level2.length;
@@ -35,6 +42,7 @@ export default function LearningMode(props) {
     setLevel2([...update]);
   }
 
+  // determines the url of the current page and it's length
   const currentPath = window.location.pathname;
   const len = currentPath.length;
   return (

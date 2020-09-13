@@ -1,6 +1,7 @@
 import React from "react";
 import "../../css/Menu.css";
 
+// Component for the menu used in Level 15
 export default function Menu(props) {
   return (
     <div id="main_nav">

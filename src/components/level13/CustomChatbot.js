@@ -3,6 +3,8 @@ import SpyLogo from "../../images/spyLogo.jpg";
 import { ThemeProvider } from "styled-components";
 import ChatBot from "react-simple-chatbot";
 
+// Component for the chatbot used in Level 13
+// Adapted from https://lucasbassetti.com.br/react-simple-chatbot/#/
 function CustomChatbot(props) {
   const theme = {
     background: "white",

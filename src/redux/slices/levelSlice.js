@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// Creates the actions, reducers, and selectors for the global level variable
+// See https://redux.js.org/tutorials/essentials/part-1-overview-concepts
+// See https://redux.js.org/tutorials/essentials/part-2-app-structure
 export const levelSlice = createSlice({
   name: "level",
   initialState: {

@@ -6,9 +6,12 @@ import Card from "../components/level3/Card";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 
+// Component for Level 3 - finding an image in a list of images
 export default function Level3(props) {
+  // local state for the list of elements to be shown
   const [elements, setElements] = useState(renderCards());
 
+  // handles showing the jewel when the user clicks on the correct image
   function showJewel(e) {
     props.logClick(e);
     let update = [...elements];
@@ -20,10 +23,12 @@ export default function Level3(props) {
     setElements([...update]);
   }
 
+  // handles a click to any incorrect card
   function handleCardClick(e) {
     props.logClick(e);
   }
 
+  // generates the list of card elements to be shown
   function renderCards() {
     const items = [];
     for (var i = 0; i < 32; i++) {

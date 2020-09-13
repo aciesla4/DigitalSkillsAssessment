@@ -11,6 +11,7 @@ import nature10 from "../../images/nature10.jpg";
 import nature11 from "../../images/nature11.jpg";
 import nature12 from "../../images/nature12.jpg";
 
+// file to hold the imports for the images in Level 4
 export {
   nature1,
   nature2,

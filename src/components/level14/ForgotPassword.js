@@ -4,22 +4,29 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
+// Component for the forgot password page in Level 14
 export default function ForgotPassword(props) {
+    // the initial values inputs in the form
   const initialValues = {
     email: "",
   };
 
+  // schema used to validate the email entered by the user
+    // see https://formik.org/docs/guides/validation
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .email("Email is invalid")
       .required("Email is required"),
   });
 
+  // local state for whether the reset link is shown and its value
   const [showResetLink, setShowResetLink] = useState(false);
   const [resetLink, setResetLink] = useState("");
 
+  // handle submitting the form
   function onSubmit({ email }) {
     console.log(email);
+    // makes an HTTP request to the json server that handles the login logic to check if the email exists and receives the reset password link
     axios
       .post("https://digital-skills-json-server.herokuapp.com/passwordreset", {
         email: email,
@@ -31,8 +38,10 @@ export default function ForgotPassword(props) {
       });
   }
 
+  // handles when the user clicks the reset link
   function handleClickReset() {
     console.log(resetLink);
+    // makes an HTTP request to the json server that handles the login logic to check if the reset link is valid
     axios
       .get("https://digital-skills-json-server.herokuapp.com" + resetLink)
       .then((response) => {

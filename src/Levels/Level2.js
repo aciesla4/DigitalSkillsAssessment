@@ -10,9 +10,12 @@ import CloseIcon from "@material-ui/icons/Close";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 
+// Component for Level 2 - Closing a popup
 export default function Level2(props) {
+  // local state for whether the popup is open or not
   const [isDialogOpen, setIsDialogOpen] = useState(true);
 
+  // handles closing the popup
   function handleClose(e) {
     props.logClick(e);
     setIsDialogOpen(false);

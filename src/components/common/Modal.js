@@ -4,7 +4,9 @@ import { IconButton } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
+// Component for a generic modal to hold introduction messages and hints
 export default function Modal(props) {
+    // gets the x and y coordinates and left, right, or center modal from props
   const { x, y, modalStyle } = props;
   const styles = {
     modal: {

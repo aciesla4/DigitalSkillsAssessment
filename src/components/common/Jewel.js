@@ -5,9 +5,12 @@ import $ from "jquery";
 import { useDispatch } from "react-redux";
 import { setFound } from "../../redux/slices/jewelSlice";
 
+// Component for the jewel that appears in every level
 export default function Jewel(props) {
+  // redux - allows methods to be called that save variables to global state
   const dispatch = useDispatch();
 
+  // hook that allows jquery to be used to animate the jewel
   useEffect(() => {
     $(document).ready(function() {
       $(".jewel").click(function() {
@@ -16,6 +19,7 @@ export default function Jewel(props) {
     });
   });
 
+  // logs the click made by the user and calls the global state method to save that the jewel is found
   function handleFound(e) {
     props.logClick(e);
     dispatch(setFound());

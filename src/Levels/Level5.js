@@ -4,7 +4,10 @@ import { ResizableBox } from "react-resizable";
 import Level from "../components/common/Level";
 import Jewel from "../components/common/Jewel";
 
+// Component for Level 5 - Resizing a box
+// See https://www.npmjs.com/package/react-resizable
 export default function Level5(props) {
+  // logs when the box is resized
   function handleResize(e) {
     e.currentTarget.id = "level 5 box resized";
     props.logClick(e);

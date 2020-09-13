@@ -7,13 +7,17 @@ import CartCard from "../components/level8/CartCard";
 import { useSelector } from "react-redux";
 import { selectItems } from "../redux/slices/itemsSlice";
 
+// Component for Level 8 - deleting an item from the shopping cart and checking out
 export default function Level8(props) {
+  // redux - gets the current value of the items variable
   const items = useSelector(selectItems);
 
+  // local state for if the jewel is shown, if an item has been deleted, and the list of items to be displayed
   const [isJewelShown, setIsJewelShown] = useState(false);
   const [deleted, setDeleted] = useState(false);
   const [elements, setElements] = useState(items);
 
+  // handles when an item is deleted by setting the local state to true and removing the item from the page
   function deleteItem(id, e) {
     e.currentTarget.id = "level 8 card " + id;
     props.logClick(e);
@@ -22,6 +26,7 @@ export default function Level8(props) {
     setDeleted(true);
   }
 
+  // calculates the subtotal, tax, and total shown in the summary field of the page
   function calculateSummary() {
     let subtotal = 0;
     for (var i = 0; i < elements.length; i++) {
@@ -34,6 +39,7 @@ export default function Level8(props) {
     return { subtotal, tax, total };
   }
 
+  // handles showing the jewel once an item has been deleted
   function showJewel(e) {
     if (deleted) {
       props.logClick(e);

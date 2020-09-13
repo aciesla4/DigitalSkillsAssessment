@@ -1,7 +1,9 @@
 import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
 
+// Component for the cart card used in Level 8
 export default function CartCard(props) {
+    // gets the picture, description, quantity, price, and id from props
   const { pic, desc, quantity, price, id } = props;
   return (
     <div className="cart-card">

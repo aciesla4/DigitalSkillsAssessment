@@ -11,6 +11,7 @@ import gear10 from "../../images/gear10.jpg";
 import gear11 from "../../images/gear11.jpg";
 import gear12 from "../../images/gear12.jpeg";
 
+// file to hold the imports and return the elements needed in Level 7
 const elements = [
   { id: 0, pic: gear1, desc: "Night Vision Glasses" },
   { id: 1, pic: gear2, desc: "Laser Shooting Watch" },

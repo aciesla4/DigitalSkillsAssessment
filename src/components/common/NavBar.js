@@ -9,10 +9,14 @@ import {
 } from "../../redux/slices/academicModeSlice";
 import { openHint } from "../../redux/slices/hintSlice";
 
+// Component for the navigation bar the appears at the bottom of each level
 export default function NavBar(props) {
+    // gets the current url of the page
   const currentPath = window.location.pathname;
 
+  // redux - gets the current value of academicMode from global state
   const academicMode = useSelector(selectAcademicMode);
+  // redux - allows methods to be called to update global state
   const dispatch = useDispatch();
 
   return (

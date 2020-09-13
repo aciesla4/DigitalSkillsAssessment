@@ -4,9 +4,12 @@ import Level from "../components/common/Level";
 import Jewel from "../components/common/Jewel";
 import CustomChatbot from "../components/level13/CustomChatbot";
 
+// Component for Level 13 - Using a chat box
 export default function Level13(props) {
+  // local state for if the jewel is shown
   const [isJewelShown, setIsJewelShown] = useState(false);
 
+  // handles showing the jewel when the conversation is complete
   function handleEnd() {
     setIsJewelShown(true);
   }
