@@ -5,6 +5,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import PropTypes from "prop-types";
 
 // Component that shows the reset password page in Level 14
 export default function ResetPassword(props) {
@@ -126,4 +127,9 @@ export default function ResetPassword(props) {
       </Formik>
     </div>
   );
+}
+
+// defines the props the component expects
+ResetPassword.propTypes = {
+    changeView: PropTypes.func,     // function that changes the view when the workflow on the view is done
 }

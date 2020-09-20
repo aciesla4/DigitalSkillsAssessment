@@ -16,6 +16,7 @@ import {
 } from "../components/level4";
 import FavCard from "../components/level4/FavCard";
 import Level from "../components/common/Level";
+import PropTypes from "prop-types";
 
 // Component for Level 4 - favoriting an item
 export default function Level4(props) {
@@ -89,4 +90,9 @@ export default function Level4(props) {
       </div>
     </Level>
   );
+}
+
+// defines the props the component expects
+Level4.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }

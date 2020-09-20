@@ -6,6 +6,7 @@ import Level from "../components/common/Level";
 import CartCard from "../components/level8/CartCard";
 import { useSelector } from "react-redux";
 import { selectItems } from "../redux/slices/itemsSlice";
+import PropTypes from "prop-types";
 
 // Component for Level 8 - deleting an item from the shopping cart and checking out
 export default function Level8(props) {
@@ -105,4 +106,9 @@ export default function Level8(props) {
       {isJewelShown && <Jewel top="70%" left="82%" logClick={props.logClick} />}
     </Level>
   );
+}
+
+// defines the props the component expects
+Level8.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }

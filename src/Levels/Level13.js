@@ -3,6 +3,7 @@ import "../css/Level13.css";
 import Level from "../components/common/Level";
 import Jewel from "../components/common/Jewel";
 import CustomChatbot from "../components/level13/CustomChatbot";
+import PropTypes from "prop-types";
 
 // Component for Level 13 - Using a chat box
 export default function Level13(props) {
@@ -29,4 +30,9 @@ export default function Level13(props) {
       </div>
     </Level>
   );
+}
+
+// defines the props the component expects
+Level13.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }

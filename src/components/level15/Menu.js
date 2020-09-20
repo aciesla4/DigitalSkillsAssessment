@@ -1,5 +1,6 @@
 import React from "react";
 import "../../css/Menu.css";
+import PropTypes from "prop-types";
 
 // Component for the menu used in Level 15
 export default function Menu(props) {
@@ -471,4 +472,8 @@ export default function Menu(props) {
       </ul>
     </div>
   );
+}
+
+Menu.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's click
 }

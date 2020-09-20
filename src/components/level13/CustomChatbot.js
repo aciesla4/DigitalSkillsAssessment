@@ -2,10 +2,11 @@ import React from "react";
 import SpyLogo from "../../images/spyLogo.jpg";
 import { ThemeProvider } from "styled-components";
 import ChatBot from "react-simple-chatbot";
+import PropTypes from "prop-types";
 
 // Component for the chatbot used in Level 13
 // Adapted from https://lucasbassetti.com.br/react-simple-chatbot/#/
-function CustomChatbot(props) {
+export default function CustomChatbot(props) {
   const theme = {
     background: "white",
     fontFamily: "Oxanium",
@@ -87,4 +88,7 @@ function CustomChatbot(props) {
   );
 }
 
-export default CustomChatbot;
+// defines the props the component expects
+CustomChatbot.propTypes = {
+  handleEnd: PropTypes.func,  // function that shows the jewel when the conversation is done
+}

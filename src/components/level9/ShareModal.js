@@ -1,6 +1,7 @@
 import React from "react";
 import "../../css/ShareModal.css";
 import Certificate from "../../images/certificate.png";
+import PropTypes from "prop-types";
 
 // Component for the modal used in Level 9
 export default function ShareModal(props) {
@@ -33,4 +34,10 @@ export default function ShareModal(props) {
       </div>
     )
   );
+}
+
+// defines the props the component expects
+ShareModal.propTypes = {
+    show: PropTypes.bool,       // boolean for if the modal is shown or not
+    onClick: PropTypes.func,    // function that handles when the share button is clicked
 }

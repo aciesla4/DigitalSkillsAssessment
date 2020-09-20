@@ -3,6 +3,7 @@ import "../../css/Modal.css";
 import { useSelector } from "react-redux";
 import { selectAcademicMode } from "../../redux/slices/academicModeSlice";
 import Modal from "./Modal";
+import PropTypes from "prop-types";
 
 // Component for introductory modals
 export default function LearningMode(props) {
@@ -90,4 +91,9 @@ export default function LearningMode(props) {
       )}
     </div>
   );
+}
+
+// defines what props the component expects
+LearningMode.propTypes = {
+  logClick: PropTypes.func    // function the handles when the user clicks on an object
 }

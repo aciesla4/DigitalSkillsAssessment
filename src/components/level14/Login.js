@@ -5,6 +5,7 @@ import MuiAlert from "@material-ui/lab/Alert";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import PropTypes from "prop-types";
 
 // Component for the login page in Level 14
 export default function Login(props) {
@@ -20,8 +21,9 @@ export default function Login(props) {
     password: Yup.string().required("Password is required"),
   });
 
-  // local state that holds whether an error has occured or not
+  // local state that holds whether an error has occured and whether the form is being submitted
   const [error, setError] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   // handles closing the snackbar that appears when the form is submitted
   function handleClose() {
@@ -31,6 +33,7 @@ export default function Login(props) {
   // handle submitting the form
   function onSubmit({ email, password }) {
       // makes an HTTP request to the json server that handles login logic to see if the user entered a valid username and password
+      setSubmitting(true);
     axios
       .get("https://digital-skills-json-server.herokuapp.com/user")
       .then((response) => {
@@ -42,6 +45,7 @@ export default function Login(props) {
         } else {
           setError(true);
         }
+        setSubmitting(false);
       });
   }
 
@@ -102,8 +106,8 @@ export default function Login(props) {
               </div>
               <div>
                 <div>
-                  <button type="submit" className="submit-btn">
-                    Login
+                  <button type="submit" disabled={submitting} className="submit-btn">
+                      {submitting ? "Logging In..." : "Login"}
                   </button>
                 </div>
                 <div>
@@ -121,4 +125,9 @@ export default function Login(props) {
       </Formik>
     </div>
   );
+}
+
+// defines the props the component expects
+Login.propTypes = {
+    changeView: PropTypes.func,     // function that changes the view when the workflow on the view is done
 }

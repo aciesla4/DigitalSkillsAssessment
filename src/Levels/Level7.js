@@ -8,6 +8,7 @@ import Level from "../components/common/Level";
 import ProductCard from "../components/level7/ProductCard";
 import { useDispatch } from "react-redux";
 import { updateItems } from "../redux/slices/itemsSlice";
+import PropTypes from "prop-types";
 
 // Component for level 7 - putting items in a shopping cart
 export default function Level7(props) {
@@ -88,4 +89,9 @@ export default function Level7(props) {
       </div>
     </Level>
   );
+}
+
+// defines the props the component expects
+Level7.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }

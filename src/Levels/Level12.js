@@ -1,6 +1,7 @@
 import React from "react";
 import Level from "../components/common/Level";
 import SimpleMap from "../components/level12/SimpleMap";
+import PropTypes from "prop-types";
 
 // Component for Level 12 - navigating a map
 export default function Level12(props) {
@@ -27,4 +28,9 @@ export default function Level12(props) {
       </div>
     </Level>
   );
+}
+
+// defines the props the component expects
+Level12.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }

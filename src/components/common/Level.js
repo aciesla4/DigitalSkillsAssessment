@@ -10,6 +10,7 @@ import { openHint, closeHint, selectHint } from "../../redux/slices/hintSlice";
 import { changeLevel, selectLevel } from "../../redux/slices/levelSlice";
 import { setFound, selectJewel } from "../../redux/slices/jewelSlice";
 import $ from "jquery";
+import PropTypes from "prop-types";
 
 // Base component for each level that hold common code
 export default function Level(props) {
@@ -68,4 +69,12 @@ export default function Level(props) {
       </EndDialog>
     </div>
   );
+}
+
+// defines what props the component expects
+Level.propTypes = {
+    logClick: PropTypes.func,           // function that handles when the user clicks on an object
+    mission: PropTypes.string,          // string that holds what the level's mission is
+    hintMessage: PropTypes.string,      // string that holds the message in the hint
+    dialogMessage: PropTypes.string     // string that holds the message in the end dialog
 }

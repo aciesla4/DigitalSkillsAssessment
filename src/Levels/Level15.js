@@ -4,6 +4,7 @@ import GoogleDrive from "../images/googleDrive.jpg";
 import Level from "../components/common/Level";
 import Jewel from "../components/common/Jewel";
 import Menu from "../components/level15/Menu";
+import PropTypes from "prop-types";
 
 // Component for Level 15 - Multi-level menu
 export default function Level15(props) {
@@ -37,4 +38,9 @@ export default function Level15(props) {
       </div>
     </Level>
   );
+}
+
+// defines the props the component expects
+Level15.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }

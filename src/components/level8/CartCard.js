@@ -1,5 +1,6 @@
 import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
+import PropTypes from "prop-types";
 
 // Component for the cart card used in Level 8
 export default function CartCard(props) {
@@ -21,4 +22,15 @@ export default function CartCard(props) {
       </button>
     </div>
   );
+}
+
+// defines the props the component expects
+CartCard.propTypes = {
+    pic: PropTypes.object,          // object for the picture to be rendered on the card
+    desc: PropTypes.string,         // string for the description of the product
+    quantity: PropTypes.number,     // number for the quantity of the the product
+    price: PropTypes.number,        // number for the price of the product
+    id: PropTypes.number,           // number for the id of the card
+    showJewel: PropTypes.func,      // function that handles showing the jewel
+    deleteItem: PropTypes.func,     // function that handles deleting the product from the cart
 }

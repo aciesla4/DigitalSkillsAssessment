@@ -9,6 +9,7 @@ import {
 import CloseIcon from "@material-ui/icons/Close";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
+import PropTypes from "prop-types";
 
 // Component for Level 2 - Closing a popup
 export default function Level2(props) {
@@ -64,4 +65,9 @@ export default function Level2(props) {
       </Container>
     </Level>
   );
+}
+
+// defines the props the component expects
+Level2.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }

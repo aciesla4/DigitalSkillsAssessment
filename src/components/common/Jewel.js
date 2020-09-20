@@ -4,6 +4,7 @@ import { IconButton, SvgIcon } from "@material-ui/core";
 import $ from "jquery";
 import { useDispatch } from "react-redux";
 import { setFound } from "../../redux/slices/jewelSlice";
+import PropTypes from "prop-types";
 
 // Component for the jewel that appears in every level
 export default function Jewel(props) {
@@ -46,4 +47,11 @@ export default function Jewel(props) {
       </SvgIcon>
     </IconButton>
   );
+}
+
+// defines what props the component expects
+Jewel.propTypes = {
+    logClick: PropTypes.func,   // function that handles when the user clicks on the jewel
+    top: PropTypes.string,      // string that specifies the jewel's offset from the top of the page
+    left: PropTypes.string      // string that specifies the jewel's offset from the left side of the page
 }

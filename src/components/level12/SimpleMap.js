@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import Jewel from "../common/Jewel";
+import PropTypes from "prop-types";
 
 // Component for the Leaflet map used in level 12
 // Adapted from https://github.com/PaulLeCam/react-leaflet/blob/master/example/components/simple.js
@@ -97,4 +98,10 @@ export default class SimpleMap extends Component {
       </Map>
     );
   }
+}
+
+// defines the props the component expects
+SimpleMap.propTypes = {
+  logMapClick: PropTypes.func,  // function that formats the click event for logging
+  logClick: PropTypes.func      // function that handles logging a click
 }

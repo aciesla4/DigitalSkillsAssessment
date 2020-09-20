@@ -33,6 +33,7 @@ import {
 } from "../components/level10";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
+import PropTypes from "prop-types";
 
 // Component for Level 11 - finding a setting and using a commitment menu
 export default function Level11(props) {
@@ -483,4 +484,9 @@ export default function Level11(props) {
       </div>
     </Level>
   );
+}
+
+// defines the props the component expects
+Level11.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }

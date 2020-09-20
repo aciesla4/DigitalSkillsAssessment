@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 import EnhancedTable from "../components/level6/EnhancedTable";
+import PropTypes from "prop-types";
 
 // Component for Level 6 - sorting data in a table
 export default function Level6(props) {
@@ -32,4 +33,9 @@ export default function Level6(props) {
       </div>
     </Level>
   );
+}
+
+// defines the props the component expects
+Level6.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }

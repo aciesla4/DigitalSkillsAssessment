@@ -9,6 +9,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 import ShareModal from "../components/level9/ShareModal";
+import PropTypes from "prop-types";
 
 // Component for Level 9 - sharing something to social media
 export default function Level9(props) {
@@ -90,4 +91,9 @@ export default function Level9(props) {
       </div>
     </Level>
   );
+}
+
+// defines the props the component expects
+Level9.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }

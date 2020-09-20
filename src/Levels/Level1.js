@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Box } from "@material-ui/core";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
+import PropTypes from "prop-types";
 
 // Component for Level 1 - Scrolling to the bottom of a page
 export default function Level1(props) {
@@ -33,4 +34,9 @@ export default function Level1(props) {
       </Container>
     </Level>
   );
+}
+
+// defines the props the component expects
+Level1.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }

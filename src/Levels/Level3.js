@@ -5,6 +5,7 @@ import Cat from "../images/cat.jpg";
 import Card from "../components/level3/Card";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
+import PropTypes from "prop-types";
 
 // Component for Level 3 - finding an image in a list of images
 export default function Level3(props) {
@@ -60,4 +61,9 @@ export default function Level3(props) {
       </div>
     </Level>
   );
+}
+
+// defines the props the component expects
+Level3.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }

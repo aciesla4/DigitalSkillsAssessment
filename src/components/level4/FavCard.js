@@ -2,6 +2,7 @@ import React from "react";
 import { IconButton } from "@material-ui/core";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import Jewel from "../common/Jewel";
+import PropTypes from "prop-types";
 
 // Component for the favorite cards used in Level 4
 export default function FavCard(props) {
@@ -42,4 +43,11 @@ export default function FavCard(props) {
       </div>
     );
   }
+}
+
+// defines the props the component expects
+FavCard.propTypes = {
+    isJewelShown: PropTypes.bool,   // boolean for if the jewel is shown in the level
+    color: PropTypes.string,        // color of the heart on the card
+    id: PropTypes.number,           // number of the card that was clicked on
 }

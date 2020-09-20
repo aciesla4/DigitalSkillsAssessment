@@ -5,6 +5,7 @@ import Login from "../components/level14/Login";
 import ForgotPassword from "../components/level14/ForgotPassword";
 import ResetPassword from "../components/level14/ResetPassword";
 import Jewel from "../components/common/Jewel";
+import PropTypes from "prop-types";
 
 // Component for Level 14 - resetting a password
 export default function Level14(props) {
@@ -49,4 +50,9 @@ export default function Level14(props) {
       </div>
     </Level>
   );
+}
+
+// defines the props the component expects
+Level14.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }

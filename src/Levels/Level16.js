@@ -7,6 +7,7 @@ import DescriptionIcon from "@material-ui/icons/Description";
 import originalFiles from "../components/level16";
 import Level from "../components/common/Level";
 import Jewel from "../components/common/Jewel";
+import PropTypes from "prop-types";
 
 // Component for Level 16 - dragging and dropping a file
 // See https://www.freecodecamp.org/news/reactjs-implement-drag-and-drop-feature-without-using-external-libraries-ad8994429f1a/
@@ -120,4 +121,9 @@ export default function Level16(props) {
       </div>
     </Level>
   );
+}
+
+// defines the props the component expects
+Level16.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }

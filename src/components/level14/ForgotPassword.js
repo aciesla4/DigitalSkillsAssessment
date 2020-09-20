@@ -3,6 +3,7 @@ import "../../css/Level14.css";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import PropTypes from "prop-types";
 
 // Component for the forgot password page in Level 14
 export default function ForgotPassword(props) {
@@ -109,4 +110,9 @@ export default function ForgotPassword(props) {
       )}
     </div>
   );
+}
+
+// defines the props the component expects
+ForgotPassword.propTypes = {
+    changeView: PropTypes.func,     // function that changes the view when the workflow on the view is done
 }

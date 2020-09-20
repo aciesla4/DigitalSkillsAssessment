@@ -45,6 +45,12 @@
     cursor: pointer;
 }
 
+.submit-btn:disabled {
+    background-color: #a8003c;
+    border-color: #a8003c;
+    cursor: wait;
+}
+
 .reset-container {
     width: 100%;
     text-align: center;

@@ -3,6 +3,7 @@ import "../css/Level5.css";
 import { ResizableBox } from "react-resizable";
 import Level from "../components/common/Level";
 import Jewel from "../components/common/Jewel";
+import PropTypes from "prop-types";
 
 // Component for Level 5 - Resizing a box
 // See https://www.npmjs.com/package/react-resizable
@@ -33,4 +34,9 @@ export default function Level5(props) {
       </div>
     </Level>
   );
+}
+
+// defines the props the component expects
+Level5.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }

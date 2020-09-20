@@ -28,6 +28,7 @@ import {
 } from "../components/level10";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
+import PropTypes from "prop-types";
 
 // Component for Level 10 - searching for a setting
 export default function Level10(props) {
@@ -333,4 +334,9 @@ export default function Level10(props) {
       </div>
     </Level>
   );
+}
+
+// defines the props the component expects
+Level10.propTypes = {
+  logClick: PropTypes.func,   // function that handles logging the user's clicks
 }
