@@ -17,6 +17,7 @@ import Level13 from "./levels/Level13";
 import Level14 from "./levels/Level14";
 import Level15 from "./levels/Level15";
 import Level16 from "./levels/Level16";
+import Level17 from "./levels/Level17";
 import Final from "./components/final/Final";
 import axios from "axios";
 
@@ -103,6 +104,10 @@ export default function App() {
         <Route
           path="/level16"
           render={(props) => <Level16 {...props} logClick={logClick} />}
+        />
+        <Route
+          path="/level17"
+          render={(props) => <Level17 {...props} logClick={logClick} />}
         />
         <Route path="/congrats" component={Final} />
         <Route path="/" component={Welcome} />

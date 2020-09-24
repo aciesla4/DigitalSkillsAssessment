@@ -14,63 +14,40 @@ import {
   nature11,
   nature12,
 } from "../components/level4";
-import FavCard from "../components/level4/FavCard";
 import Level from "../components/common/Level";
+import ListOfFavCards from "../components/level4/ListOfFavCards";
 import PropTypes from "prop-types";
 
 // Component for Level 4 - favoriting an item
 export default function Level4(props) {
   // local state for the list of elements to be displayed
-  const [elements, setElements] = useState(renderCards());
+  const [elements, setElements] = useState([
+    { id: 0, pic: nature1, color: "" },
+    { id: 1, pic: nature2, color: "" },
+    { id: 2, pic: nature3, color: "" },
+    { id: 3, pic: nature4, color: "" },
+    { id: 4, pic: nature5, color: "" },
+    { id: 5, pic: nature6, color: "" },
+    { id: 6, pic: nature7, color: "" },
+    { id: 7, pic: nature8, color: "" },
+    { id: 8, pic: nature9, color: "" },
+    { id: 9, pic: nature10, color: "" },
+    { id: 10, pic: nature11, color: "" },
+    { id: 11, pic: nature12, color: "" },
+  ]);
 
   // handles when the user clicks the heart on a card and shows the jewel in the picture's place
   function handleClick(i, e) {
     props.logClick(e);
-    let update = [...elements];
-    update[i] = (
-      <FavCard
-        key={i}
-        id={i}
-        color="red"
-        isJewelShown={true}
-        logClick={props.logClick}
-      />
-    );
-    setElements([...update]);
-  }
-
-  // generates the list of card elements to be displayed
-  function renderCards() {
-    let pictures = [
-      nature1,
-      nature2,
-      nature3,
-      nature4,
-      nature5,
-      nature6,
-      nature7,
-      nature8,
-      nature9,
-      nature10,
-      nature11,
-      nature12,
-    ];
-    const items = [];
-    for (var i = 0; i < 12; i++) {
-      let index = i;
-      items.push(
-        <FavCard
-          key={i}
-          id={i}
-          pic={pictures[i]}
-          color=""
-          isJewelShown={false}
-          onClick={(e) => handleClick(index, e)}
-          logClick={props.logClick}
-        />
-      );
-    }
-    return items;
+    const list = elements.map((item, j) => {
+      if (j === i) {
+        return {...item, color: 'red', isJewelShown: true}
+      }
+      else {
+        return item
+      }
+    })
+    setElements(list);
   }
 
   return (
@@ -81,12 +58,9 @@ export default function Level4(props) {
       dialogMessage="Your mission is complete! Favoriting something is a common way to save something to be found later. Click the X to return to the home page and receive your next mission."
     >
       <div className="level4-grid">
-        <div className="level4-content">{elements.slice(0, 2)}</div>
-        <div className="level4-content">{elements.slice(2, 4)}</div>
-        <div className="level4-content">{elements.slice(4, 6)}</div>
-        <div className="level4-content">{elements.slice(6, 8)}</div>
-        <div className="level4-content">{elements.slice(8, 10)}</div>
-        <div className="level4-content">{elements.slice(10, 12)}</div>
+        {elements.map((item, i) =>
+          <ListOfFavCards item={item} handleClick={handleClick} logClick={props.logClick} />
+        )}
       </div>
     </Level>
   );
