@@ -38,7 +38,7 @@ export default function Level14(props) {
   return (
     <Level
       logClick={props.logClick}
-      mission='log into the learning portal using the username "agent203@spyacademy.org" and password "password"'
+      mission='log into the learning portal using the username "agent203@spyacademy.org" and password "password".'
       hintMessage="You may not have the right password. Try resetting it."
       dialogMessage="Your mission is complete! It is easy to forget passwords, but also easy to reset them. Most sites will email you a link to reset your password in a similar manner. Click the X to return to the home page and receive your next mission."
     >

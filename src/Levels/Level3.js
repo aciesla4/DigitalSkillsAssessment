@@ -45,8 +45,8 @@ export default function Level3(props) {
   return (
     <Level
       logClick={props.logClick}
-      mission="find the cat image."
-      hintMessage="Look in the bottom right hand corner for the cat image."
+      mission="find the jewel under the cat image."
+      hintMessage="Look in the bottom right hand corner for the cat image and click the X in the corner to remove the image."
       dialogMessage="Your mission is complete! Changing the view when searching for an image can help you find the one you are looking for. Click the X to return to the home page and receive your next mission."
     >
       <div className="level3-grid">

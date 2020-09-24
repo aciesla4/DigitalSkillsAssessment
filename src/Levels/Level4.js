@@ -76,7 +76,7 @@ export default function Level4(props) {
   return (
     <Level
       logClick={props.logClick}
-      mission="favorite something."
+      mission="favorite an item."
       hintMessage="Favoriting an item can be done by clicking the heart icon under an image."
       dialogMessage="Your mission is complete! Favoriting something is a common way to save something to be found later. Click the X to return to the home page and receive your next mission."
     >

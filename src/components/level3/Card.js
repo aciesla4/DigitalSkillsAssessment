@@ -1,19 +1,20 @@
 import React from "react";
+import CloseIcon from '@material-ui/icons/Close';
+import IconButton from "@material-ui/core/IconButton";
 import PropTypes from "prop-types";
 
 // Component for the picture cards used in Level 3
 export default function Card(props) {
   const { pic } = props;
   return (
-    <div>
+    <div className="card">
       <input
-        id={"level 3 card " + props.id}
-        className="card"
+        className="card-picture"
         type="image"
         alt="pic"
         src={pic}
-        onClick={props.onClick}
       />
+      <IconButton id={"level 3 card " + props.id} onClick={props.onClick} className="close-btn"><CloseIcon/></IconButton>
     </div>
   );
 }

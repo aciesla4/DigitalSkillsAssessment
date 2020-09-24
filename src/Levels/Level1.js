@@ -9,8 +9,8 @@ export default function Level1(props) {
   return (
     <Level
       logClick={props.logClick}
-      mission="find the jewel on the page by scrolling down."
-      hintMessage="Scrolling down means moving the screen down by pressing the down arrow key or by clicking and dragging the scroll bar (on the right) down."
+      mission="find the jewel at the bottom of the page."
+      hintMessage="You can move information on a screen by scrolling. Scrolling down means moving the screen down by pressing the down arrow key or by clicking and dragging the scroll bar (on the right) down."
       dialogMessage="Your mission is complete! Sometimes there is a lot of information on one page, so you must scroll down or up to view it all. Click the X to return to the home page and receive your next mission."
     >
       <Container>

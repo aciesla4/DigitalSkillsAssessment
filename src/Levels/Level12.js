@@ -21,7 +21,7 @@ export default function Level12(props) {
       logClick={props.logClick}
       mission="find Copper Harbor on the map."
       hintMessage="You can scroll using the scroll wheel on your mouse and zoom in and out using the + and - buttons in the top left."
-      dialogMessage="Your mission is complete! <Something helpful about maps> Click the X to return to the home page and receive your next mission."
+      dialogMessage="Your mission is complete! Maps can be navigating by zooming in and out and clicking and dragging. Click the X to return to the home page and receive your next mission."
     >
       <div>
         <SimpleMap logClick={props.logClick} logMapClick={logMapClick} />
