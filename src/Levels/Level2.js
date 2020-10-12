@@ -13,6 +13,14 @@ import PropTypes from "prop-types";
 
 // Component for Level 2 - Closing a popup
 export default function Level2(props) {
+  // a possible correct sequence of moves the user can take to get the jewel
+  const correctMoves = (
+      <ol>
+        <li>Navigate away from the pop up by clicking the X to close it.</li>
+        <li>Get the jewel by clicking on it.</li>
+      </ol>
+  )
+
   // local state for whether the popup is open or not
   const [isDialogOpen, setIsDialogOpen] = useState(true);
 
@@ -27,6 +35,7 @@ export default function Level2(props) {
       logClick={props.logClick}
       mission="find the jewel underneath the pop up."
       dialogMessage="Your mission is complete! Pop ups can always be closed by clicking the X, but some sites also let you click anywhere else on the page to get rid of them. Click the X to return to the home page and receive your next mission."
+      correctMoves={correctMoves}
     >
       <Container>
         <Dialog

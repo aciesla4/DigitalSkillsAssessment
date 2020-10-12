@@ -13,7 +13,17 @@ import PropTypes from "prop-types";
 
 // Component for Level 9 - sharing something to social media
 export default function Level9(props) {
-    // local state for if the share modal is open and if the jewel is shown
+  // a possible correct sequence of moves the user can take to get the jewel
+  const correctMoves = (
+      <ol>
+        <li>Navigate to the Facebook icon at the bottom of the page.</li>
+        <li>Get a dialog to post to Facebook by clicking on the icon.</li>
+        <li>Change the content on your Facebook page by clicking the post button.</li>
+        <li>Get the jewel by clicking on it.</li>
+      </ol>
+  )
+
+  // local state for if the share modal is open and if the jewel is shown
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isJewelShown, setIsJewelShown] = useState(false);
 
@@ -36,6 +46,7 @@ export default function Level9(props) {
       mission="share your certificate on Facebook."
       hintMessage="The facebook icon is the leftmost icon. Click it, then click post at the bottom of the dialog that pops up."
       dialogMessage="Your mission is complete! Most websites allow you to post pages to social media. Often you will need to login before continuing. Click the X to return to the home page and receive your next mission."
+      correctMoves={correctMoves}
     >
       <div>
         <div className="certificate">

@@ -7,6 +7,17 @@ import PropTypes from "prop-types";
 
 // Component for Level 13 - Using a chat box
 export default function Level13(props) {
+  // a possible correct sequence of moves the user can take to get the jewel
+  const correctMoves = (
+      <ol>
+        <li>Learn how to respond to Mission Control by reading the response options.</li>
+        <li>Change you response by clicking on one of the responses.</li>
+        <li>Learn Mission Control's response by reading it.</li>
+        <li>Change your response by typing in the chat box if prompted and click the send button.</li>
+        <li>Get the jewel by clicking on it.</li>
+      </ol>
+  )
+
   // local state for if the jewel is shown
   const [isJewelShown, setIsJewelShown] = useState(false);
 
@@ -21,6 +32,7 @@ export default function Level13(props) {
       mission="chat with Mission Control."
       hintMessage="Click on a response option given by HQ and then type a response in the message field if prompted."
       dialogMessage="Your mission is complete! Chatting can be done on most websites, whether your chatting with a friend or chatting with a customer service representative. Click the X to return to the home page and receive your next mission."
+      correctMoves={correctMoves}
     >
       <div>
         <CustomChatbot handleEnd={handleEnd} />

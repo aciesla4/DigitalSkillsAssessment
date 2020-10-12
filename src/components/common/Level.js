@@ -50,7 +50,7 @@ export default function Level(props) {
       <Modal
         id="hint"
         show={hint}
-        last={true}
+        last={jewel}
         heading="Hint"
         closeModal={() => dispatch(closeHint())}
         x="75%"
@@ -64,6 +64,7 @@ export default function Level(props) {
         open={jewel}
         handleCloseDialog={handleCloseDialog}
         academicmode={academicMode}
+        correctMoves={props.correctMoves}
       >
         {props.dialogMessage}
       </EndDialog>
@@ -76,5 +77,6 @@ Level.propTypes = {
     logClick: PropTypes.func,           // function that handles when the user clicks on an object
     mission: PropTypes.string,          // string that holds what the level's mission is
     hintMessage: PropTypes.string,      // string that holds the message in the hint
-    dialogMessage: PropTypes.string     // string that holds the message in the end dialog
+    dialogMessage: PropTypes.string,    // string that holds the message in the end dialog
+    correctMoves: PropTypes.object      // object that holds a list of moves that the user could use to finish the level
 }

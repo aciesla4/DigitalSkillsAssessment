@@ -27,7 +27,13 @@ export default function EndDialog(props) {
         </IconButton>
       </DialogTitle>
       {props.academicmode ? (
-        <DialogContent dividers>{props.children}</DialogContent>
+        <DialogContent dividers>
+          {props.children}
+          <h3>Your Moves</h3>
+          {"something or another"}
+          <h3>Our Moves</h3>
+          {props.correctMoves}
+        </DialogContent>
       ) : (
         <DialogContent dividers>
           Your mission is complete! Click the X to receive your next mission.

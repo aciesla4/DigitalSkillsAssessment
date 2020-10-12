@@ -12,7 +12,16 @@ import PropTypes from "prop-types";
 // Component for Level 16 - dragging and dropping a file
 // See https://www.freecodecamp.org/news/reactjs-implement-drag-and-drop-feature-without-using-external-libraries-ad8994429f1a/
 export default function Level16(props) {
-    // local state for if the jewel is shown and the list of files to be displayed
+  // a possible correct sequence of moves the user can take to get the jewel
+  const correctMoves = (
+      <ol>
+        <li>Navigate to the Training Completion Certificate by finding it under the Academy files.</li>
+        <li>Get the Training Completion Certificate by dragging and dropping it to Personal files.</li>
+        <li>Get the jewel by clicking on it.</li>
+      </ol>
+  )
+
+  // local state for if the jewel is shown and the list of files to be displayed
   const [isJewelShown, setIsJewelShown] = useState(false);
   const [files, setFiles] = useState(originalFiles);
 
@@ -71,6 +80,7 @@ export default function Level16(props) {
       mission="move the Training Completion Certificate to your files."
       hintMessage="Files can be moved from one place to another by dragging and dropping."
       dialogMessage="Your mission is complete! Dragging and dropping items can be an easy way to move them from one place to another. Click the X to return to the home page and receive your next mission."
+      correctMoves={correctMoves}
     >
       <div className="drag-container">
         <div

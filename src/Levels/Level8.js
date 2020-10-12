@@ -10,6 +10,15 @@ import PropTypes from "prop-types";
 
 // Component for Level 8 - deleting an item from the shopping cart and checking out
 export default function Level8(props) {
+  // a possible correct sequence of moves the user can take to get the jewel
+  const correctMoves = (
+      <ol>
+        <li>Change the items in the cart by clicking the X to remove an item.</li>
+        <li>Get the remaining items in the cart by clicking the check out button.</li>
+        <li>Get the jewel by clicking on it.</li>
+      </ol>
+  )
+
   // redux - gets the current value of the items variable
   const items = useSelector(selectItems);
 
@@ -54,6 +63,7 @@ export default function Level8(props) {
       mission="delete an item from your cart then check out."
       hintMessage="Deleting an item can be done by clicking the X in the right hand corner of the item."
       dialogMessage="Your mission is complete! Always double check that the items you want are correct in your cart before checking out. Click the X to return to the home page and receive your next mission."
+      correctMoves={correctMoves}
     >
       <div>
         <div className="cart-container">
