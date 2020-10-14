@@ -13,4 +13,8 @@ code {
     monospace;
 }
 
+ol {
+  padding-left: 20px;
+}
+
 #mapid { height: 180px; }

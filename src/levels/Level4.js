@@ -20,6 +20,14 @@ import PropTypes from "prop-types";
 
 // Component for Level 4 - favoriting an item
 export default function Level4(props) {
+  // a possible correct sequence of moves the user can take to get the jewel
+  const correctMoves = (
+      <ol>
+        <li>Get a favorited image by clicking on one.</li>
+        <li>Get the jewel by clicking on it.</li>
+      </ol>
+  )
+
   // local state for the list of elements to be displayed
   const [elements, setElements] = useState([
     { id: 0, pic: nature1, color: "" },
@@ -56,6 +64,7 @@ export default function Level4(props) {
       mission="favorite an item."
       hintMessage="Favoriting an item can be done by clicking the heart icon under an image."
       dialogMessage="Your mission is complete! Favoriting something is a common way to save something to be found later. Click the X to return to the home page and receive your next mission."
+      correctMoves={correctMoves}
     >
       <div className="level4-grid">
         {elements.map((item, i) =>

@@ -1,17 +1,26 @@
 import React from "react";
-import { Container, Box } from "@material-ui/core";
+import {Container, Box, DialogContent} from "@material-ui/core";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 import PropTypes from "prop-types";
 
 // Component for Level 1 - Scrolling to the bottom of a page
 export default function Level1(props) {
+  // a possible correct sequence of moves the user can take to get the jewel
+  const correctMoves = (
+    <ol>
+      <li>Navigate to the end of the page by scrolling down.</li>
+      <li>Get the jewel by clicking on it.</li>
+    </ol>
+  )
+
   return (
     <Level
       logClick={props.logClick}
       mission="find the jewel at the bottom of the page."
       hintMessage="You can move information on a screen by scrolling. Scrolling down means moving the screen down by pressing the down arrow key or by clicking and dragging the scroll bar (on the right) down."
       dialogMessage="Your mission is complete! Sometimes there is a lot of information on one page, so you must scroll down or up to view it all. Click the X to return to the home page and receive your next mission."
+      correctMoves={correctMoves}
     >
       <Container>
         <Box my={2}>

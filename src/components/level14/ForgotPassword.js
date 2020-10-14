@@ -23,10 +23,12 @@ export default function ForgotPassword(props) {
   // local state for whether the reset link is shown and its value
   const [showResetLink, setShowResetLink] = useState(false);
   const [resetLink, setResetLink] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   // handle submitting the form
   function onSubmit({ email }) {
     console.log(email);
+    setSubmitting(true);
     // makes an HTTP request to the json server that handles the login logic to check if the email exists and receives the reset password link
     axios
       .post("https://digital-skills-json-server.herokuapp.com/passwordreset", {
@@ -37,6 +39,7 @@ export default function ForgotPassword(props) {
         setShowResetLink(true);
         setResetLink(response.data);
       });
+    setSubmitting(false);
   }
 
   // handles when the user clicks the reset link
@@ -84,8 +87,8 @@ export default function ForgotPassword(props) {
               </div>
               <div>
                 <div>
-                  <button type="submit" className="submit-btn">
-                    Submit
+                  <button type="submit" disabled={submitting} className="submit-btn">
+                      {submitting ? "Submitting..." : "Submit"}
                   </button>
                 </div>
                 <div>

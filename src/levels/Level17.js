@@ -22,6 +22,13 @@ import ListOfFavCards from "../components/level4/ListOfFavCards";
 
 // Component for Level 17 - ??
 export default function Level17(props) {
+    // a possible correct sequence of moves the user can take to get the jewel
+    const correctMoves = (
+        <ol>
+            <li>Hmm</li>
+        </ol>
+    )
+
     // local state for the list of elements to be displayed
     const [elements, setElements] = useState([
         { id: 0, pic: nature1, color: "" },
@@ -58,6 +65,7 @@ export default function Level17(props) {
             mission=""
             hintMessage=""
             dialogMessage="Your mission is complete! ... Click the X to return to the home page and receive your next mission."
+            correctMoves={correctMoves}
         >
             <div className="level4-grid">
                 {elements.map((item, i) => <ListOfFavCards item={item} handleClick={updateColor} logClick={props.logClick}/>)}

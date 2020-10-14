@@ -8,6 +8,18 @@ import PropTypes from "prop-types";
 
 // Component for Level 15 - Multi-level menu
 export default function Level15(props) {
+  // a possible correct sequence of moves the user can take to get the jewel
+  const correctMoves = (
+      <ol>
+        <li>Navigate to the Technical skills menu by hovering over the Technical menu item.</li>
+        <li>Navigate to the Software skills menu by hovering over the Software menu item.</li>
+        <li>Navigate to the Google Suite skills menu by hovering over the Google Suite menu item.</li>
+        <li>Navigate to the Drive Skills page by clicking on the Drive menu item.</li>
+        <li>Learn about Drive from the information on the page.</li>
+        <li>Get the jewel by clicking on it.</li>
+      </ol>
+  )
+
   // local state for if the correct menu item is clicked
   const [isDriveClicked, setIsDriveClicked] = useState(false);
 
@@ -23,6 +35,7 @@ export default function Level15(props) {
       mission="find information about Google Drive."
       hintMessage="Google Drive is a software in the Google Suite."
       dialogMessage="Your mission is complete! Dropdown menus can be tricky to navigate, but moving the mouse slowly over each option can help. Click the X to return to the home page and receive your next mission."
+      correctMoves={correctMoves}
     >
       <div>
         <Menu logClick={props.logClick} handleClick={handleDriveClick} />

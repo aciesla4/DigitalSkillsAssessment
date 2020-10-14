@@ -12,6 +12,15 @@ import PropTypes from "prop-types";
 
 // Component for level 7 - putting items in a shopping cart
 export default function Level7(props) {
+  // a possible correct sequence of moves the user can take to get the jewel
+  const correctMoves = (
+      <ol>
+        <li>Get an item by clicking the add to cart button on top.</li>
+        <li>Navigate to the checkout by clicking the cart icon.</li>
+        <li>Get the jewel by clicking on it.</li>
+      </ol>
+  )
+
   // local state for the number of items chosen, which items are chosen, and if the jewel dialog is shown
   const [numItems, setNumItems] = useState(0);
   const [items, setItems] = useState([]);
@@ -44,6 +53,7 @@ export default function Level7(props) {
       mission="add spy gear to your cart and begin checking out."
       hintMessage="Adding gear to your cart can be down by hovering over an item and clicking the add to cart icon. You can begin checking out by clicking the shopping cart icon in the top right."
       dialogMessage="Your mission is complete! There are many ways you can add items to your cart. One some sites, clicking the item takes you to another page where you can add it. Click the X to return to the home page and receive your next mission."
+      correctMoves={correctMoves}
     >
       <div>
         <div className="bar">

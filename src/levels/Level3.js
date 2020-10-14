@@ -9,6 +9,15 @@ import PropTypes from "prop-types";
 
 // Component for Level 3 - finding an image in a list of images
 export default function Level3(props) {
+  // a possible correct sequence of moves the user can take to get the jewel
+  const correctMoves = (
+      <ol>
+        <li>Navigate to the cat image by finding it on the screen.</li>
+        <li>Change the cat image to the jewel by clicking on it.</li>
+        <li>Get the jewel by clicking on it.</li>
+      </ol>
+  )
+
   // local state for the list of elements to be shown
   const [elements, setElements] = useState(renderCards());
 
@@ -48,6 +57,7 @@ export default function Level3(props) {
       mission="find the jewel under the cat image."
       hintMessage="Look in the bottom right hand corner for the cat image and click the X in the corner to remove the image."
       dialogMessage="Your mission is complete! Changing the view when searching for an image can help you find the one you are looking for. Click the X to return to the home page and receive your next mission."
+      correctMoves={correctMoves}
     >
       <div className="level3-grid">
         <div className="level3-content">{elements.slice(0, 4)}</div>
