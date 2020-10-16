@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Box, DialogContent} from "@material-ui/core";
+import {Container, Box} from "@material-ui/core";
 import Jewel from "../components/common/Jewel";
 import Level from "../components/common/Level";
 import PropTypes from "prop-types";

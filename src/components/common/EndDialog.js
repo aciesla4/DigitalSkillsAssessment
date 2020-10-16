@@ -7,10 +7,15 @@ import {
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import { Link as RouterLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectMoves } from "../../redux/slices/jewelSlice";
 import PropTypes from "prop-types";
 
 // Component for the dialog that shows up at the end of each level
 export default function EndDialog(props) {
+
+  const moves = useSelector(selectMoves);
+
   return (
     <Dialog open={props.open} disableBackdropClick={true}>
       <DialogTitle>
@@ -30,7 +35,7 @@ export default function EndDialog(props) {
         <DialogContent dividers>
           {props.children}
           <h3>Your Moves</h3>
-          {"something or another"}
+          <ol>{moves.payload? moves.payload.map((move) => <li>{move}</li>) : []}</ol>
           <h3>Our Moves</h3>
           {props.correctMoves}
         </DialogContent>

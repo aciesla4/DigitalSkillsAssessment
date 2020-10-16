@@ -28,9 +28,10 @@ export default function App() {
     console.log(e.currentTarget.id);
     const dt = new Date();
     // makes an HTTP request to the logging server
+    //url: "https://digital-skills-server.herokuapp.com/logging",
     axios({
       method: "post",
-      url: "https://digital-skills-server.herokuapp.com/logging",
+      url: "http://localhost:8080/logging",
       data: {
         id: e.currentTarget.id,
         time: dt / 1000,

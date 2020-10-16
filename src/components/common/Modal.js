@@ -47,8 +47,8 @@ export default function Modal(props) {
 
 // defines the props the component expects
 Modal.propTypes = {
-    x: PropTypes.number,            // number that specifies the x position of the modal
-    y: PropTypes.number,            // number that specifies the y position of the modal
+    x: PropTypes.string,            // number that specifies the x position of the modal
+    y: PropTypes.string,            // number that specifies the y position of the modal
     modalStyle: PropTypes.string,   // string that specifies if the modal is on the left or right, or in the center
     show: PropTypes.bool,           // boolean for if the modal should be shown
     heading: PropTypes.string,      // string that holds the heading for the modal

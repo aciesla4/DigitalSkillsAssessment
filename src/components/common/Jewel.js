@@ -3,8 +3,9 @@ import "../../css/Jewel.css";
 import { IconButton, SvgIcon } from "@material-ui/core";
 import $ from "jquery";
 import { useDispatch } from "react-redux";
-import { setFound } from "../../redux/slices/jewelSlice";
+import { setFound, setMoves } from "../../redux/slices/jewelSlice";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 // Component for the jewel that appears in every level
 export default function Jewel(props) {
@@ -20,10 +21,24 @@ export default function Jewel(props) {
     });
   });
 
+  async function getMoves() {
+      // makes an HTTP request to the logging server
+      //url: "https://digital-skills-server.herokuapp.com/logging",
+      const response = await axios.get("http://localhost:8080/logging");
+      if (response.status === 200) {
+          console.log("Response.data:")
+          console.log(response.data);
+          dispatch(setMoves(response.data));
+      } else {
+          console.log("error");
+      }
+  }
+
   // logs the click made by the user and calls the global state method to save that the jewel is found
-  function handleFound(e) {
+  async function handleFound(e) {
     props.logClick(e);
     dispatch(setFound());
+    await getMoves();
   }
 
   return (

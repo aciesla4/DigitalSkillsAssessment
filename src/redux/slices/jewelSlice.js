@@ -7,16 +7,22 @@ export const jewelSlice = createSlice({
   name: "jewel",
   initialState: {
     value: false,
+    moves: [],
   },
   reducers: {
     setFound: (state) => {
       state.value = !state.value;
     },
+    setMoves: (state, moves) => {
+      state.moves = moves;
+    },
   },
 });
 
-export const { setFound } = jewelSlice.actions;
+export const { setFound, setMoves } = jewelSlice.actions;
 
 export const selectJewel = (state) => state.jewel.value;
+
+export const selectMoves = (state) => state.jewel.moves;
 
 export default jewelSlice.reducer;
