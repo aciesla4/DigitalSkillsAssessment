@@ -25,7 +25,7 @@ export default function Level15(props) {
 
   // handles when the user clicks the correct menu item
   function handleDriveClick(e) {
-    props.logClick(e);
+    props.logClick(e, 15);
     setIsDriveClicked(true);
   }
 

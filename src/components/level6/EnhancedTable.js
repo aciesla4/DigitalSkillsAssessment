@@ -8,6 +8,8 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableSortLabel from "@material-ui/core/TableSortLabel";
 import Paper from "@material-ui/core/Paper";
+import { useSelector } from "react-redux";
+import { selectLevel } from "../../redux/slices/levelSlice";
 
 // Component for the table shown in Level 6
 // Adapted from https://material-ui.com/components/tables/
@@ -65,9 +67,10 @@ const headCells = [
 
 function EnhancedTableHead(props) {
   const { classes, order, orderBy, onRequestSort } = props;
+  const level = useSelector(selectLevel);
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
-    props.logClick(event);
+    props.logClick(event, level);
     props.showJewel();
   };
 

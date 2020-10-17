@@ -39,7 +39,7 @@ export default function Level16(props) {
   function onDrop(event, cat) {
     let name = event.dataTransfer.getData("name");
     event.currentTarget.id = "level 16 " + name + " file dropped";
-    props.logClick(event);
+    props.logClick(event, 16);
     let newFiles = files.filter((file) => {
       if (file.name === name) {
         file.type = cat;

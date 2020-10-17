@@ -30,7 +30,7 @@ export default function Level8(props) {
   // handles when an item is deleted by setting the local state to true and removing the item from the page
   function deleteItem(id, e) {
     e.currentTarget.id = "level 8 card " + id;
-    props.logClick(e);
+    props.logClick(e, 8);
     const update = [...elements.filter((element) => element.id !== id)];
     setElements([...update]);
     setDeleted(true);
@@ -52,7 +52,7 @@ export default function Level8(props) {
   // handles showing the jewel once an item has been deleted
   function showJewel(e) {
     if (deleted) {
-      props.logClick(e);
+      props.logClick(e, 8);
       setIsJewelShown(true);
     }
   }

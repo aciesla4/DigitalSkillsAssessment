@@ -31,7 +31,7 @@ export default function Level7(props) {
 
   // handles adding an item to the list of items in the user's cart
   function handleAddItem(element, e) {
-    props.logClick(e);
+    props.logClick(e, 7);
     let update = items;
     update.push(element);
     setNumItems(numItems + 1);
@@ -40,7 +40,7 @@ export default function Level7(props) {
 
   // handles showing the jewel when the user clicks the shopping cart
   function showJewel(e) {
-    props.logClick(e);
+    props.logClick(e, 7);
     if (numItems >= 1) {
       setIsDialogOpen(true);
     }

@@ -2,15 +2,17 @@ import React, { useEffect } from "react";
 import "../../css/Jewel.css";
 import { IconButton, SvgIcon } from "@material-ui/core";
 import $ from "jquery";
-import { useDispatch } from "react-redux";
-import { setFound, setMoves } from "../../redux/slices/jewelSlice";
-import PropTypes from "prop-types";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setFound, setMoves } from "../../redux/slices/jewelSlice";
+import {selectLevel} from "../../redux/slices/levelSlice";
+import PropTypes from "prop-types";
 
 // Component for the jewel that appears in every level
 export default function Jewel(props) {
   // redux - allows methods to be called that save variables to global state
   const dispatch = useDispatch();
+  const level = useSelector(selectLevel);
 
   // hook that allows jquery to be used to animate the jewel
   useEffect(() => {
@@ -24,19 +26,30 @@ export default function Jewel(props) {
   async function getMoves() {
       // makes an HTTP request to the logging server
       //url: "https://digital-skills-server.herokuapp.com/logging",
-      const response = await axios.get("http://localhost:8080/logging");
-      if (response.status === 200) {
-          console.log("Response.data:")
-          console.log(response.data);
-          dispatch(setMoves(response.data));
-      } else {
-          console.log("error");
+      if (level === 1) {
+          dispatch(setMoves(["jewel icon"]))
+      }
+      else {
+          const response = await axios({
+              method: "get",
+              url: "http://localhost:8080/logging",
+              params: {
+                  level: level,
+              },
+          });
+          if (response.status === 200) {
+              console.log("Response.data:")
+              console.log(response.data);
+              dispatch(setMoves(response.data));
+          } else {
+              console.log("error");
+          }
       }
   }
 
   // logs the click made by the user and calls the global state method to save that the jewel is found
   async function handleFound(e) {
-    props.logClick(e);
+    props.logClick(e, level);
     dispatch(setFound());
     await getMoves();
   }

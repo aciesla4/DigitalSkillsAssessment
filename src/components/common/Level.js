@@ -34,7 +34,7 @@ export default function Level(props) {
 
   // handles closing the dialog at the end of each level
   function handleCloseDialog(e) {
-    props.logClick(e);
+    props.logClick(e, level);
     dispatch(setFound());
     dispatch(changeLevel());
   }

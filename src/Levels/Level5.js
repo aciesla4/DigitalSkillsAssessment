@@ -20,7 +20,7 @@ export default function Level5(props) {
   // logs when the box is resized
   function handleResize(e) {
     e.currentTarget.id = "level 5 box resized";
-    props.logClick(e);
+    props.logClick(e, 5);
   }
 
   return (

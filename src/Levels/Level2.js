@@ -26,7 +26,7 @@ export default function Level2(props) {
 
   // handles closing the popup
   function handleClose(e) {
-    props.logClick(e);
+    props.logClick(e, 2);
     setIsDialogOpen(false);
   }
 

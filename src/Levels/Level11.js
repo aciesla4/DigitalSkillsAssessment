@@ -61,20 +61,20 @@ export default function Level11(props) {
 
   // handles when the privacy button is clicked by setting local state to true
   function handlePrivacyClick(e) {
-    props.logClick(e);
+    props.logClick(e, 11);
     setIsPrivacyClicked(true);
   }
 
   // handles when the cloud button is clicked by setting local state to true and setting the color
   function handleCloudClick(e) {
-    props.logClick(e);
+    props.logClick(e, 11);
     setIsCloudClicked(true);
     setColor("lightgray");
   }
 
   // handles when the notes checkbox is checked by setting local state to false and showing the jewel
   function handleNotesChange(e) {
-    props.logClick(e);
+    props.logClick(e, 11);
     setNotesOn(false);
     setIsJewelShown(true);
   }
@@ -93,7 +93,7 @@ export default function Level11(props) {
             <div
               className="settings-grid"
               id="level 11 system icon"
-              onClick={(e) => props.logClick(e)}
+              onClick={(e) => props.logClick(e, 11)}
             >
               <IconButton>
                 <ComputerIcon fontSize="large" />
@@ -104,7 +104,7 @@ export default function Level11(props) {
             <div
               className="settings-grid"
               id="level 11 devices icon"
-              onClick={(e) => props.logClick(e)}
+              onClick={(e) => props.logClick(e, 11)}
             >
               <IconButton>
                 <DevicesIcon fontSize="large" />
@@ -115,7 +115,7 @@ export default function Level11(props) {
             <div
               className="settings-grid"
               id="level 11 network icon"
-              onClick={(e) => props.logClick(e)}
+              onClick={(e) => props.logClick(e, 11)}
             >
               <IconButton>
                 <WifiIcon fontSize="large" />
@@ -126,7 +126,7 @@ export default function Level11(props) {
             <div
               className="settings-grid"
               id="level 11 apps icon"
-              onClick={(e) => props.logClick(e)}
+              onClick={(e) => props.logClick(e, 11)}
             >
               <IconButton>
                 <AppsIcon fontSize="large" />
@@ -137,7 +137,7 @@ export default function Level11(props) {
             <div
               className="settings-grid"
               id="level 11 accounts icon"
-              onClick={(e) => props.logClick(e)}
+              onClick={(e) => props.logClick(e, 11)}
             >
               <IconButton>
                 <AccountCircleIcon fontSize="large" />
@@ -148,7 +148,7 @@ export default function Level11(props) {
             <div
               className="settings-grid"
               id="level 11 accessibility icon"
-              onClick={(e) => props.logClick(e)}
+              onClick={(e) => props.logClick(e, 11)}
             >
               <IconButton>
                 <AccessibilityIcon fontSize="large" />
@@ -159,7 +159,7 @@ export default function Level11(props) {
             <div
               className="settings-grid"
               id="level 11 search icon"
-              onClick={(e) => props.logClick(e)}
+              onClick={(e) => props.logClick(e, 11)}
             >
               <IconButton>
                 <SearchIcon fontSize="large" />
@@ -170,7 +170,7 @@ export default function Level11(props) {
             <div
               className="settings-grid"
               id="level 11 privacy icon"
-              onClick={(e) => handlePrivacyClick(e)}
+              onClick={(e) => handlePrivacyClick}
             >
               <IconButton>
                 <LockIcon fontSize="large" />
@@ -181,7 +181,7 @@ export default function Level11(props) {
             <div
               className="settings-grid"
               id="level 11 updates icon"
-              onClick={(e) => props.logClick(e)}
+              onClick={(e) => props.logClick(e, 11)}
             >
               <IconButton>
                 <UpdateIcon fontSize="large" />
@@ -197,7 +197,7 @@ export default function Level11(props) {
               <div
                 className="privacy-grid"
                 id="level 11 location icon"
-                onClick={(e) => props.logClick(e)}
+                onClick={(e) => props.logClick(e, 11)}
               >
                 <IconButton>
                   <LocationOnIcon fontSize="large" />
@@ -207,7 +207,7 @@ export default function Level11(props) {
               <div
                 className="privacy-grid"
                 id="level 11 camera icon"
-                onClick={(e) => props.logClick(e)}
+                onClick={(e) => props.logClick(e, 11)}
               >
                 <IconButton>
                   <CameraAltIcon fontSize="large" />
@@ -217,7 +217,7 @@ export default function Level11(props) {
               <div
                 className="privacy-grid"
                 id="level 11 microphone icon"
-                onClick={(e) => props.logClick(e)}
+                onClick={(e) => props.logClick(e, 11)}
               >
                 <IconButton>
                   <MicIcon fontSize="large" />
@@ -227,7 +227,7 @@ export default function Level11(props) {
               <div
                 className="privacy-grid"
                 id="level 11 notifications icon"
-                onClick={(e) => props.logClick(e)}
+                onClick={(e) => props.logClick(e, 11)}
               >
                 <IconButton>
                   <NotificationsIcon fontSize="large" />
@@ -237,7 +237,7 @@ export default function Level11(props) {
               <div
                 className="privacy-grid"
                 id="level 11 contacts icon"
-                onClick={(e) => props.logClick(e)}
+                onClick={(e) => props.logClick(e, 11)}
               >
                 <IconButton>
                   <RecentActorsIcon fontSize="large" />
@@ -247,7 +247,7 @@ export default function Level11(props) {
               <div
                 className="privacy-grid"
                 id="level 11 calendars icon"
-                onClick={(e) => props.logClick(e)}
+                onClick={(e) => props.logClick(e, 11)}
               >
                 <IconButton>
                   <CalendarTodayIcon fontSize="large" />
@@ -257,7 +257,7 @@ export default function Level11(props) {
               <div
                 className="privacy-grid"
                 id="level 11 email icon"
-                onClick={(e) => props.logClick(e)}
+                onClick={(e) => props.logClick(e, 11)}
               >
                 <IconButton>
                   <EmailIcon fontSize="large" />
@@ -267,7 +267,7 @@ export default function Level11(props) {
               <div
                 className="privacy-grid"
                 id="level 11 tasks icon"
-                onClick={(e) => props.logClick(e)}
+                onClick={(e) => props.logClick(e, 11)}
               >
                 <IconButton>
                   <AssignmentIcon fontSize="large" />
@@ -277,7 +277,7 @@ export default function Level11(props) {
               <div
                 className="privacy-grid"
                 id="level 11 other devices icon"
-                onClick={(e) => props.logClick(e)}
+                onClick={(e) => props.logClick(e, 11)}
               >
                 <IconButton>
                   <DevicesOtherIcon fontSize="large" />
@@ -287,7 +287,7 @@ export default function Level11(props) {
               <div
                 className="privacy-grid"
                 id="level 11 app diagnostics icon"
-                onClick={(e) => props.logClick(e)}
+                onClick={(e) => props.logClick(e, 11)}
               >
                 <IconButton>
                   <AssessmentIcon fontSize="large" />
@@ -308,7 +308,7 @@ export default function Level11(props) {
               <div
                 className="privacy-grid"
                 id="level 11 documents icon"
-                onClick={(e) => props.logClick(e)}
+                onClick={(e) => props.logClick(e, 11)}
               >
                 <IconButton>
                   <InsertDriveFileIcon fontSize="large" />
@@ -318,7 +318,7 @@ export default function Level11(props) {
               <div
                 className="privacy-grid"
                 id="level 11 pictures icon"
-                onClick={(e) => props.logClick(e)}
+                onClick={(e) => props.logClick(e, 11)}
               >
                 <IconButton>
                   <ImageIcon fontSize="large" />
@@ -328,7 +328,7 @@ export default function Level11(props) {
               <div
                 className="privacy-grid"
                 id="level 11 videos icon"
-                onClick={(e) => props.logClick(e)}
+                onClick={(e) => props.logClick(e, 11)}
               >
                 <IconButton>
                   <MovieIcon fontSize="large" />
@@ -345,7 +345,7 @@ export default function Level11(props) {
                     <Checkbox
                       checked={true}
                       id="level 11 mail checkbox"
-                      onChange={(e) => props.logClick(e)}
+                      onChange={(e) => props.logClick(e, 11)}
                     />
                   }
                   label="Mail"
@@ -356,7 +356,7 @@ export default function Level11(props) {
                     <Checkbox
                       checked={true}
                       id="level 11 contacts checkbox"
-                      onChange={(e) => props.logClick(e)}
+                      onChange={(e) => props.logClick(e, 11)}
                     />
                   }
                   label="Contacts"
@@ -367,7 +367,7 @@ export default function Level11(props) {
                     <Checkbox
                       checked={true}
                       id="level 11 calendars checkbox"
-                      onChange={(e) => props.logClick(e)}
+                      onChange={(e) => props.logClick(e, 11)}
                     />
                   }
                   label="Calendars"
@@ -378,7 +378,7 @@ export default function Level11(props) {
                     <Checkbox
                       checked={true}
                       id="level 11 reminders checkbox"
-                      onChange={(e) => props.logClick(e)}
+                      onChange={(e) => props.logClick(e, 11)}
                     />
                   }
                   label="Reminders"
@@ -400,7 +400,7 @@ export default function Level11(props) {
                     <Checkbox
                       checked={true}
                       id="level 11 photos checkbox"
-                      onChange={(e) => props.logClick(e)}
+                      onChange={(e) => props.logClick(e, 11)}
                     />
                   }
                   label="Photos"
@@ -411,7 +411,7 @@ export default function Level11(props) {
                     <Checkbox
                       checked={true}
                       id="level 11 documents checkbox"
-                      onChange={(e) => props.logClick(e)}
+                      onChange={(e) => props.logClick(e, 11)}
                     />
                   }
                   label="Documents"
@@ -422,7 +422,7 @@ export default function Level11(props) {
                     <Checkbox
                       checked={true}
                       id="level 11 videos checkbox"
-                      onChange={(e) => props.logClick(e)}
+                      onChange={(e) => props.logClick(e, 11)}
                     />
                   }
                   label="Videos"
@@ -444,7 +444,7 @@ export default function Level11(props) {
                     <Switch
                       checked={true}
                       id="level 11 ad id switch"
-                      onChange={(e) => props.logClick(e)}
+                      onChange={(e) => props.logClick(e, 11)}
                     />
                   }
                   label="On"
@@ -458,7 +458,7 @@ export default function Level11(props) {
                     <Switch
                       checked={true}
                       id="level 11 local content switch"
-                      onChange={(e) => props.logClick(e)}
+                      onChange={(e) => props.logClick(e, 11)}
                     />
                   }
                   label="On"
@@ -471,7 +471,7 @@ export default function Level11(props) {
                     <Switch
                       checked={true}
                       id="level 11 app launches switch"
-                      onChange={(e) => props.logClick(e)}
+                      onChange={(e) => props.logClick(e, 11)}
                     />
                   }
                   label="On"
@@ -482,7 +482,7 @@ export default function Level11(props) {
                     <Switch
                       checked={true}
                       id="level 11 suggested content switch"
-                      onChange={(e) => props.logClick(e)}
+                      onChange={(e) => props.logClick(e, 11)}
                     />
                   }
                   label="On"

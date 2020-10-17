@@ -29,13 +29,13 @@ export default function Level9(props) {
 
   // handles opening the facebook dialog when the facebook icon is clicked
   function openFacebookDialog(e) {
-    props.logClick(e);
+    props.logClick(e, 9);
     setIsDialogOpen(true);
   }
 
   // handles closing the facebook dialog when post is clicked
   function closeFacebookDialog(e) {
-    props.logClick(e);
+    props.logClick(e, 9);
     setIsDialogOpen(false);
     setIsJewelShown(true);
   }
@@ -77,19 +77,19 @@ export default function Level9(props) {
           </IconButton>
           <IconButton
             id="level 9 twitter icon"
-            onClick={(e) => props.logClick(e)}
+            onClick={(e) => props.logClick(e, 9)}
           >
             <TwitterIcon fontSize="large" />
           </IconButton>
           <IconButton
             id="level 9 instagram icon"
-            onClick={(e) => props.logClick(e)}
+            onClick={(e) => props.logClick(e, 9)}
           >
             <InstagramIcon fontSize="large" />
           </IconButton>
           <IconButton
             id="level 9 email icon"
-            onClick={(e) => props.logClick(e)}
+            onClick={(e) => props.logClick(e, 9)}
           >
             <EmailIcon fontSize="large" />
           </IconButton>

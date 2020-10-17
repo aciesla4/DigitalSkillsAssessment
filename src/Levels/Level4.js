@@ -46,7 +46,7 @@ export default function Level4(props) {
 
   // handles when the user clicks the heart on a card and shows the jewel in the picture's place
   function handleClick(i, e) {
-    props.logClick(e);
+    props.logClick(e, 4);
     const list = elements.map((item, j) => {
       if (j === i) {
         return {...item, color: 'red', isJewelShown: true}

@@ -23,7 +23,7 @@ export default function Level12(props) {
       },
     };
     e.currentTarget.id = id;
-    props.logClick(e);
+    props.logClick(e, 12);
   }
 
   return (

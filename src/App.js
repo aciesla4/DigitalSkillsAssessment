@@ -24,7 +24,7 @@ import axios from "axios";
 // Component for the web app that handles logging and switching between pages
 export default function App() {
   // handles logging each click and their time to the API
-  function logClick(e) {
+  function logClick(e, level) {
     console.log(e.currentTarget.id);
     const dt = new Date();
     // makes an HTTP request to the logging server
@@ -33,6 +33,7 @@ export default function App() {
       method: "post",
       url: "http://localhost:8080/logging",
       data: {
+        level: level,
         id: e.currentTarget.id,
         time: dt / 1000,
       },

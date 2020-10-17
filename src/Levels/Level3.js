@@ -23,7 +23,7 @@ export default function Level3(props) {
 
   // handles showing the jewel when the user clicks on the correct image
   function showJewel(e) {
-    props.logClick(e);
+    props.logClick(e, 3);
     let update = [...elements];
     update[23] = (
       <div>
