@@ -11,7 +11,7 @@ export default function Menu(props) {
           <button
             className="drop-button"
             id="Navigated to the Career menu."
-            onMouseOver={props.logClick}
+            onMouseOver={(e) => props.logClick(e, 15)}
           >
             Career
           </button>
@@ -20,7 +20,7 @@ export default function Menu(props) {
               <button
                 className="drop-button"
                 id="Navigated to the Resume menu."
-                onMouseOver={props.logClick}
+                onMouseOver={(e) => props.logClick(e, 15)}
               >
                 Resume
               </button>
@@ -29,7 +29,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Writing page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Writing
                   </button>
@@ -38,7 +38,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Formatting page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Formatting
                   </button>
@@ -49,7 +49,7 @@ export default function Menu(props) {
               <button
                 className="drop-button"
                 id="Navigated to the Cover Letter menu."
-                onMouseOver={props.logClick}
+                onMouseOver={(e) => props.logClick(e, 15)}
               >
                 Cover Letter
               </button>
@@ -58,7 +58,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Writing page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Writing
                   </button>
@@ -67,7 +67,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Formatting page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Formatting
                   </button>
@@ -78,7 +78,7 @@ export default function Menu(props) {
               <button
                 className="drop-button"
                 id="Navigated to the Interviews menu."
-                onMouseOver={props.logClick}
+                onMouseOver={(e) => props.logClick(e, 15)}
               >
                 Interviews
               </button>
@@ -87,7 +87,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Preparing page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Preparing
                   </button>
@@ -96,7 +96,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Star Method page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Star Method
                   </button>
@@ -105,7 +105,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Following Up page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Following up
                   </button>
@@ -116,7 +116,7 @@ export default function Menu(props) {
               <button
                 className="drop-button"
                 id="Navigated to the Mentorship menu."
-                onMouseOver={props.logClick}
+                onMouseOver={(e) => props.logClick(e, 15)}
               >
                 Mentorship
               </button>
@@ -125,7 +125,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Mentor Finding page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Finding a mentor
                   </button>
@@ -134,7 +134,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Being a Mentor page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Being a mentor
                   </button>
@@ -147,7 +147,7 @@ export default function Menu(props) {
           <button
             className="drop-button"
             id="Navigated to the Soft Skills menu."
-            onMouseOver={props.logClick}
+            onMouseOver={(e) => props.logClick(e, 15)}
           >
             Soft Skills
           </button>
@@ -156,7 +156,7 @@ export default function Menu(props) {
               <button
                 className="drop-button"
                 id="Navigated to the Problem Solving menu."
-                onMouseOver={props.logClick}
+                onMouseOver={(e) => props.logClick(e, 15)}
               >
                 Problem Solving
               </button>
@@ -165,7 +165,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Analysis page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Analysis
                   </button>
@@ -174,7 +174,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Brainstorming page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Brainstorming
                   </button>
@@ -185,7 +185,7 @@ export default function Menu(props) {
               <button
                 className="drop-button"
                 id="Navigated to the Goals menu."
-                onMouseOver={props.logClick}
+                onMouseOver={(e) => props.logClick(e, 15)}
               >
                 Goals
               </button>
@@ -194,7 +194,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Setting Goals page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Setting Goals
                   </button>
@@ -203,7 +203,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Making Progress page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Making Progress
                   </button>
@@ -212,7 +212,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Evaluating Goals page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Evaluating Goals
                   </button>
@@ -221,7 +221,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Creating New Goals menu."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Creating New Goals
                   </button>
@@ -232,7 +232,7 @@ export default function Menu(props) {
               <button
                 className="drop-button"
                 id="Navigated to the Organizing menu."
-                onMouseOver={props.logClick}
+                onMouseOver={(e) => props.logClick(e, 15)}
               >
                 Organizing
               </button>
@@ -241,7 +241,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Evaluating Time page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Evaluating Time
                   </button>
@@ -250,7 +250,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Staying Focused page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Staying Focused
                   </button>
@@ -259,7 +259,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Organizing Your Time menu."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Organizing Your Time
                   </button>
@@ -272,7 +272,7 @@ export default function Menu(props) {
           <button
             className="drop-button"
             id="Navigated to the Technical menu."
-            onMouseOver={props.logClick}
+            onMouseOver={(e) => props.logClick(e, 15)}
           >
             Technical
           </button>
@@ -281,7 +281,7 @@ export default function Menu(props) {
               <button
                 className="drop-button"
                 id="Navigated to the Software menu."
-                onMouseOver={props.logClick}
+                onMouseOver={(e) => props.logClick(e, 15)}
               >
                 Software
               </button>
@@ -290,7 +290,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Microsoft Office menu."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Microsoft Office
                   </button>
@@ -299,7 +299,7 @@ export default function Menu(props) {
                       <button
                         className="drop-button"
                         id="Navigated to the Excel page."
-                        onMouseOver={props.logClick}
+                        onMouseOver={(e) => props.logClick(e, 15)}
                       >
                         Excel
                       </button>
@@ -308,7 +308,7 @@ export default function Menu(props) {
                       <button
                         className="drop-button"
                         id="Navigated to the Word page."
-                        onMouseOver={props.logClick}
+                        onMouseOver={(e) => props.logClick(e, 15)}
                       >
                         Word
                       </button>
@@ -317,7 +317,7 @@ export default function Menu(props) {
                       <button
                         className="drop-button"
                         id="Navigated to the Powerpoint page."
-                        onMouseOver={props.logClick}
+                        onMouseOver={(e) => props.logClick(e, 15)}
                       >
                         Powerpoint
                       </button>
@@ -326,7 +326,7 @@ export default function Menu(props) {
                       <button
                         className="drop-button"
                         id="Navigated to the One Drive menu."
-                        onMouseOver={props.logClick}
+                        onMouseOver={(e) => props.logClick(e, 15)}
                       >
                         One Drive
                       </button>
@@ -337,7 +337,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Google Suite menu."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Google Suite
                   </button>
@@ -346,7 +346,7 @@ export default function Menu(props) {
                       <button
                         className="drop-button"
                         id="Navigated to the Sheets page."
-                        onMouseOver={props.logClick}
+                        onMouseOver={(e) => props.logClick(e, 15)}
                       >
                         Sheets
                       </button>
@@ -355,7 +355,7 @@ export default function Menu(props) {
                       <button
                         className="drop-button"
                         id="Navigated to the Docs page."
-                        onMouseOver={props.logClick}
+                        onMouseOver={(e) => props.logClick(e, 15)}
                       >
                         Docs
                       </button>
@@ -364,7 +364,7 @@ export default function Menu(props) {
                       <button
                         className="drop-button"
                         id="Navigated to the Slides page."
-                        onMouseOver={props.logClick}
+                        onMouseOver={(e) => props.logClick(e, 15)}
                       >
                         Slides
                       </button>
@@ -386,7 +386,7 @@ export default function Menu(props) {
               <button
                 className="drop-button"
                 id="Navigated to the Hardware menu."
-                onMouseOver={props.logClick}
+                onMouseOver={(e) => props.logClick(e, 15)}
               >
                 Hardware
               </button>
@@ -395,7 +395,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Computer page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Computer
                   </button>
@@ -404,7 +404,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Router page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Router
                   </button>
@@ -413,7 +413,7 @@ export default function Menu(props) {
                   <button
                     className="drop-button"
                     id="Navigated to the Printer page."
-                    onMouseOver={props.logClick}
+                    onMouseOver={(e) => props.logClick(e, 15)}
                   >
                     Printer
                   </button>
@@ -424,7 +424,7 @@ export default function Menu(props) {
               <button
                 className="drop-button"
                 id="Navigated to the IT Management page."
-                onMouseOver={props.logClick}
+                onMouseOver={(e) => props.logClick(e, 15)}
               >
                 IT Managing
               </button>
@@ -435,7 +435,7 @@ export default function Menu(props) {
           <button
             className="drop-button"
             id="Navigated to the Leadership menu."
-            onMouseOver={props.logClick}
+            onMouseOver={(e) => props.logClick(e, 15)}
           >
             Leadership
           </button>
@@ -444,7 +444,7 @@ export default function Menu(props) {
               <button
                 className="drop-button"
                 id="Navigated to the Decision page."
-                onMouseOver={props.logClick}
+                onMouseOver={(e) => props.logClick(e, 15)}
               >
                 Decision
               </button>
@@ -453,7 +453,7 @@ export default function Menu(props) {
               <button
                 className="drop-button"
                 id="Navigated to the Vision page."
-                onMouseOver={props.logClick}
+                onMouseOver={(e) => props.logClick(e, 15)}
               >
                 Vision
               </button>
@@ -462,7 +462,7 @@ export default function Menu(props) {
               <button
                 className="drop-button"
                 id="Navigated to the Culture page."
-                onMouseOver={props.logClick}
+                onMouseOver={(e) => props.logClick(e, 15)}
               >
                 Culture
               </button>

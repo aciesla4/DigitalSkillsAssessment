@@ -45,7 +45,7 @@ export default function Level10(props) {
 
   // handles when the privacy button is clicked by setting local state to true
   function handleClick(e) {
-    props.logClick(e);
+    props.logClick(e, 10);
     setIsPrivacyClicked(true);
   }
 
@@ -96,7 +96,7 @@ export default function Level10(props) {
             <div
               className="settings-grid"
               id="Navigated to the Apps settings."
-              onClick={(e) => props.logClick(e)}
+              onClick={(e) => props.logClick(e, 10)}
             >
               <IconButton>
                 <AppsIcon fontSize="large" />
@@ -129,7 +129,7 @@ export default function Level10(props) {
             <div
               className="settings-grid"
               id="Navigated to the Search settings."
-              onClick={(e) => props.logClick(e)}
+              onClick={(e) => props.logClick(e, 10)}
             >
               <IconButton>
                 <SearchIcon fontSize="large" />

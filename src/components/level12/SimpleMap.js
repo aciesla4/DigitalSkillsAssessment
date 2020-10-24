@@ -19,7 +19,7 @@ export default class SimpleMap extends Component {
   }
 
   handleZoom = () => {
-    this.props.logMapClick("Navigated to a zoom in or out view of the map.")
+    this.props.logMapClick("Navigated to a zoomed in or out view of the map.")
   }
 
   render() {

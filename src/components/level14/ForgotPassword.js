@@ -30,7 +30,7 @@ export default function ForgotPassword(props) {
     console.log(email);
     let e = {
         currentTarget: {
-            id: "Get a link to reset your password by entering in the given email and clicking submit."
+            id: "Got a link to reset your password by entering in the given email and clicking submit."
         }
     }
     props.logClick(e, 14);

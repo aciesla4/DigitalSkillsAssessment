@@ -23,9 +23,9 @@ import axios from "axios";
 
 // Component for the web app that handles logging and switching between pages
 class App extends React.Component {
-  // handles logging each click and their time to the API
+  // handles logging each click and the time to the API
   logClick = (e, level)=> {
-    console.log(e.currentTarget.id);
+    //console.log(e.currentTarget.id);
     const dt = new Date();
     // makes an HTTP request to the logging server
     //url: "https://digital-skills-server.herokuapp.com/logging",
@@ -35,7 +35,7 @@ class App extends React.Component {
       data: {
         level: level,
         id: e.currentTarget.id,
-        time: dt / 1000,
+        timestamp: dt,
       },
     });
   }
@@ -116,11 +116,7 @@ class App extends React.Component {
               path="/level16"
               render={(props) => <Level16 {...props} logClick={this.logClick}/>}
           />
-          <Route
-              path="/level17"
-              render={(props) => <Level17 {...props} logClick={this.logClick}/>}
-          />
-          <Route path="/congrats" component={Final}/>
+          <Route path="/final" component={Final}/>
           <Route path="/" component={Welcome}/>
         </Switch>
       </BrowserRouter>

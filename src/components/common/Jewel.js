@@ -30,10 +30,11 @@ export default function Jewel(props) {
           dispatch(setMoves(["Navigated to the bottom of the page by scrolling down.", "Got the jewel by clicking on it."]))
       }
       if (level === 13) {
-          dispatch(setMoves(["Learn how to respond to Mission Control by reading the response options.",
-                                    "Change you response by clicking on one of the responses.",
-                                    "Learn Mission Control's response by reading it.",
-                                    "Change your response by typing in the chat box if prompted and click the send button."]))
+          dispatch(setMoves(["Learned how to respond to Mission Control by reading the response options.",
+                                    "Changed you response by clicking on one of the responses.",
+                                    "Learned Mission Control's response by reading it.",
+                                    "Changed your response by typing in the chat box if prompted and click the send button.",
+                                    "Got the jewel by clicking on it."]))
       }
       else {
           const response = await axios({
@@ -44,7 +45,6 @@ export default function Jewel(props) {
               },
           });
           if (response.status === 200) {
-              console.log(response.data);
               dispatch(setMoves(response.data));
           } else {
               console.log("error");

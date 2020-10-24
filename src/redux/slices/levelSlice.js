@@ -15,6 +15,7 @@ export const levelSlice = createSlice({
       } else {
         state.value = state.value + 1;
       }
+      state.value = state.value + 1;
     },
   },
 });

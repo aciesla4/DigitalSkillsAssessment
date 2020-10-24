@@ -6,8 +6,8 @@ import axios from "axios";
 
 // Component for the page the user sees after finishing all the levels
 export default function Final(props) {
-    // local state for the score the user receives
-  const [score, setScore] = useState(0);
+  // local state for the score the user receives
+  const [time, setTime] = useState(0);
 
   // hook that allows jquery to be used to animate the buttons appearing and calling the API that generates the score
   useEffect(() => {
@@ -25,9 +25,10 @@ export default function Final(props) {
         .delay(5005)
         .fadeIn(100);
     });
-    axios.get("http://localhost:8080/logging").then((response) => {
-      setScore(response.data);
-    });
+      // axios.get("http://localhost:8080/logging/score").then((response) => {
+      //     console.log(response.data);
+      //     setTime(response.data);
+      // });
   });
 
   return (
@@ -38,8 +39,20 @@ export default function Final(props) {
       <p id="congrats" className="congrats-text">
         You have successfully completed your missions!
       </p>
-      <p id="score" className="score-text">
-        Your Digital Skill Level is: {score}
+      <button
+          id="learn"
+          className="learn-btn"
+          onClick={() => {window.location.href = "/";}}
+      >
+          Click Here to Play Again
+      </button>
+    </div>
+  );
+}
+
+/*
+      <p id="time" className="score-text">
+        Total Time Taken: {time}
       </p>
       <button
         id="learn"
@@ -48,6 +61,4 @@ export default function Final(props) {
       >
         Click Here to Learn More About Your Score
       </button>
-    </div>
-  );
-}
+ */
