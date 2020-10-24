@@ -27,10 +27,9 @@ class App extends React.Component {
     //console.log(e.currentTarget.id);
     const dt = new Date();
     // makes an HTTP request to the logging server
-    //url: "https://digital-skills-server.herokuapp.com/logging",
     axios({
       method: "post",
-      url: "http://localhost:8080/logging",
+      url: "https://digital-skills-server.herokuapp.com/logging",
       data: {
         level: level,
         id: e.currentTarget.id,
@@ -43,7 +42,7 @@ class App extends React.Component {
     console.log("DELETING LOGS");
     axios({
       method: 'delete',
-      url: 'http://localhost:8080/logging'
+      url: "https://digital-skills-server.herokuapp.com/logging"
     })
   }
 

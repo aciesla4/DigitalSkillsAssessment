@@ -39,7 +39,7 @@ export default function Jewel(props) {
       else {
           const response = await axios({
               method: "get",
-              url: "http://localhost:8080/logging",
+              url: "https://digital-skills-server.herokuapp.com/logging",
               params: {
                   level: level,
               },
