@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "../../css/Welcome.css";
 import SpyLogo from "../../images/spyLogo.jpg";
 import $ from "jquery";
