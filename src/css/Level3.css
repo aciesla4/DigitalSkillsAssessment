@@ -20,16 +20,16 @@
 }
 
 .card {
-    width: 195px;
-    height: 175px;
+    width: 165px;
+    height: 135px;
     padding: 10px;
     border: 1px solid lightgray;
     box-shadow: -1px 1px 1px lightgrey, -2px 2px 2px lightgrey;
 }
 
 .card-picture {
-    width: 125px;
-    height: 150px;
+    width: 95px;
+    height: 105px;
     float: left;
 }
 

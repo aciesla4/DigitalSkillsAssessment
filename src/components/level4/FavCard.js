@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 // Component for the favorite cards used in Level 4
 export default function FavCard(props) {
-    // gets the picture to be shown on the card from props
+  // gets the picture to be shown on the card from props
   const { pic } = props;
   // if the jewel should be shown, a card with the jewel in place of the picture is returned
   if (props.isJewelShown) {
@@ -15,8 +15,8 @@ export default function FavCard(props) {
         <Jewel logClick={props.logClick} />
         <IconButton
           style={{ color: props.color, top: "85%" }}
-          id={"level 4 card" + props.id}
-          onClick={(e) => props.onClick(e)}
+          id={"Favorited card number " + props.id + "."}
+          onClick={(e) => props.onClick(e, 4)}
         >
           <FavoriteIcon />
         </IconButton>
@@ -35,8 +35,8 @@ export default function FavCard(props) {
         />
         <IconButton
           style={{ color: props.color }}
-          id={"level 4 card " + props.id}
-          onClick={(e) => props.onClick(e)}
+          id={"Favorited card number " + props.id + "."}
+          onClick={(e) => props.onClick(e, 4)}
         >
           <FavoriteIcon />
         </IconButton>

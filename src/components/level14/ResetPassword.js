@@ -32,12 +32,24 @@ export default function ResetPassword(props) {
   // handles closing the snackbar that appears when the form is submitted
   function handleClose() {
     setSuccess(false);
+    let e = {
+        currentTarget: {
+            id: "Navigated back to the Login screen."
+        }
+    }
+    props.logClick(e, 14);
     props.changeView("resetToLogin");
   }
 
   // handles submitting the form
   function onSubmit({ password, confirmPassword }) {
-      // makes an HTTP request to the json server that handles login logic to reset the user's password
+    let e = {
+        currentTarget: {
+            id: "Changed your password by entering the email and new password and clicking the Submit button."
+        }
+    };
+    props.logClick(e, 14);
+    // makes an HTTP request to the json server that handles login logic to reset the user's password
     axios
       .post("https://digital-skills-json-server.herokuapp.com/user", {
         id: 1,
@@ -114,7 +126,11 @@ export default function ResetPassword(props) {
                     Reset Password
                   </button>
                   <button
-                    onClick={() => props.changeView("resetToLogin")}
+                    id="Navigated back to the Login screen."
+                    onClick={(e) => {
+                        props.logClick(e, 14)
+                        props.changeView("resetToLogin")
+                    }}
                     className="link-btn"
                   >
                     Cancel

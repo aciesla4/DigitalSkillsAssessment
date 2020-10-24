@@ -22,9 +22,9 @@ import Final from "./components/final/Final";
 import axios from "axios";
 
 // Component for the web app that handles logging and switching between pages
-export default function App() {
+class App extends React.Component {
   // handles logging each click and their time to the API
-  function logClick(e, level) {
+  logClick = (e, level)=> {
     console.log(e.currentTarget.id);
     const dt = new Date();
     // makes an HTTP request to the logging server
@@ -40,80 +40,91 @@ export default function App() {
     });
   }
 
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route
-          path="/level1"
-          render={(props) => <Level1 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level2"
-          render={(props) => <Level2 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level3"
-          render={(props) => <Level3 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level4"
-          render={(props) => <Level4 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level5"
-          render={(props) => <Level5 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level6"
-          render={(props) => <Level6 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level7"
-          render={(props) => <Level7 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level8"
-          render={(props) => <Level8 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level9"
-          render={(props) => <Level9 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level10"
-          render={(props) => <Level10 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level11"
-          render={(props) => <Level11 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level12"
-          render={(props) => <Level12 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level13"
-          render={(props) => <Level13 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level14"
-          render={(props) => <Level14 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level15"
-          render={(props) => <Level15 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level16"
-          render={(props) => <Level16 {...props} logClick={logClick} />}
-        />
-        <Route
-          path="/level17"
-          render={(props) => <Level17 {...props} logClick={logClick} />}
-        />
-        <Route path="/congrats" component={Final} />
-        <Route path="/" component={Welcome} />
-      </Switch>
-    </BrowserRouter>
-  );
+  componentDidMount() {
+    console.log("DELETING LOGS");
+    axios({
+      method: 'delete',
+      url: 'http://localhost:8080/logging'
+    })
+  }
+
+  render() {
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route
+              path="/level1"
+              render={(props) => <Level1 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level2"
+              render={(props) => <Level2 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level3"
+              render={(props) => <Level3 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level4"
+              render={(props) => <Level4 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level5"
+              render={(props) => <Level5 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level6"
+              render={(props) => <Level6 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level7"
+              render={(props) => <Level7 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level8"
+              render={(props) => <Level8 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level9"
+              render={(props) => <Level9 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level10"
+              render={(props) => <Level10 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level11"
+              render={(props) => <Level11 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level12"
+              render={(props) => <Level12 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level13"
+              render={(props) => <Level13 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level14"
+              render={(props) => <Level14 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level15"
+              render={(props) => <Level15 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level16"
+              render={(props) => <Level16 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level17"
+              render={(props) => <Level17 {...props} logClick={this.logClick}/>}
+          />
+          <Route path="/congrats" component={Final}/>
+          <Route path="/" component={Welcome}/>
+        </Switch>
+      </BrowserRouter>
+    )}
 }
+
+export default App;

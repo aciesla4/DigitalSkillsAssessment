@@ -27,7 +27,13 @@ export default function Jewel(props) {
       // makes an HTTP request to the logging server
       //url: "https://digital-skills-server.herokuapp.com/logging",
       if (level === 1) {
-          dispatch(setMoves(["jewel icon"]))
+          dispatch(setMoves(["Navigated to the bottom of the page by scrolling down.", "Got the jewel by clicking on it."]))
+      }
+      if (level === 13) {
+          dispatch(setMoves(["Learn how to respond to Mission Control by reading the response options.",
+                                    "Change you response by clicking on one of the responses.",
+                                    "Learn Mission Control's response by reading it.",
+                                    "Change your response by typing in the chat box if prompted and click the send button."]))
       }
       else {
           const response = await axios({
@@ -38,7 +44,6 @@ export default function Jewel(props) {
               },
           });
           if (response.status === 200) {
-              console.log("Response.data:")
               console.log(response.data);
               dispatch(setMoves(response.data));
           } else {
@@ -56,7 +61,7 @@ export default function Jewel(props) {
 
   return (
     <IconButton
-      id="jewel icon"
+      id="Got the jewel by clicking on it."
       className="jewel"
       style={{
         margin: 0,

@@ -13,7 +13,7 @@ export default function Level3(props) {
   const correctMoves = (
       <ol>
         <li>Navigate to the cat image by finding it on the screen.</li>
-        <li>Change the cat image to the jewel by clicking on it.</li>
+        <li>Change the cat image to the jewel by clicking card number 23.</li>
         <li>Get the jewel by clicking on it.</li>
       </ol>
   )
@@ -35,7 +35,7 @@ export default function Level3(props) {
 
   // handles a click to any incorrect card
   function handleCardClick(e) {
-    props.logClick(e);
+    props.logClick(e, 3);
   }
 
   // generates the list of card elements to be shown

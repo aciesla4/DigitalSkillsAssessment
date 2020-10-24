@@ -28,6 +28,12 @@ export default function ForgotPassword(props) {
   // handle submitting the form
   function onSubmit({ email }) {
     console.log(email);
+    let e = {
+        currentTarget: {
+            id: "Get a link to reset your password by entering in the given email and clicking submit."
+        }
+    }
+    props.logClick(e, 14);
     setSubmitting(true);
     // makes an HTTP request to the json server that handles the login logic to check if the email exists and receives the reset password link
     axios
@@ -44,12 +50,17 @@ export default function ForgotPassword(props) {
 
   // handles when the user clicks the reset link
   function handleClickReset() {
-    console.log(resetLink);
     // makes an HTTP request to the json server that handles the login logic to check if the reset link is valid
     axios
       .get("https://digital-skills-json-server.herokuapp.com" + resetLink)
       .then((response) => {
         if (response.status === 200) {
+          let e = {
+              currentTarget: {
+                  id: "Navigated to the Reset Password screen."
+              }
+          }
+          props.logClick(e, 14);
           props.changeView("resetPassword");
         } else {
           console.log("error");
@@ -93,7 +104,11 @@ export default function ForgotPassword(props) {
                 </div>
                 <div>
                   <button
-                    onClick={() => props.changeView("forgotPassword")}
+                    id="Navigated back to the Login screen."
+                    onClick={(e) => {
+                        props.logClick(e, 14)
+                        props.changeView("forgotPassword")
+                    }}
                     className="link-btn"
                   >
                     Cancel
@@ -106,7 +121,7 @@ export default function ForgotPassword(props) {
       </Formik>
       {showResetLink && (
         <div className="reset-container">
-          <button className="reset-btn" onClick={handleClickReset}>
+          <button className="reset-btn" id="Navigated to the reset password page by clicking the button displayed." onClick={handleClickReset}>
             Reset Your Password Here
           </button>
         </div>

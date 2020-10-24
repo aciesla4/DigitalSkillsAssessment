@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../../css/Modal.css";
 import { useSelector } from "react-redux";
 import { selectAcademicMode } from "../../redux/slices/academicModeSlice";
-import {selectLevel} from "../../redux/slices/levelSlice";
 import Modal from "./Modal";
 import PropTypes from "prop-types";
 
@@ -10,7 +9,6 @@ import PropTypes from "prop-types";
 export default function LearningMode(props) {
   // redux - gets the global state for academicMode
   const academicMode = useSelector(selectAcademicMode);
-  //const level = useSelector(selectLevel())
 
   // sets whether the modals should be open to if academicMode is enabled
   let open = academicMode;
@@ -21,7 +19,7 @@ export default function LearningMode(props) {
 
   // handles opening the next modal for level 1
   function openNextLevel1(index, e) {
-    props.logClick(e);
+    props.logClick(e, 1);
     let update = [...level1];
     update[index] = false;
     update[index + 1] = true;
@@ -30,7 +28,7 @@ export default function LearningMode(props) {
 
   // handles closing the last modal for level 1
   function closeLevel1(e) {
-    props.logClick(e);
+    props.logClick(e, 1);
     let update = [...level1];
     let length = level1.length;
     update[length - 1] = false;
@@ -39,7 +37,7 @@ export default function LearningMode(props) {
 
   // handles closing the modal for level 2
   function closeLevel2(e) {
-    props.logClick(e);
+    props.logClick(e, 2);
     let update = [...level2];
     let length = level2.length;
     update[length - 1] = false;

@@ -34,6 +34,7 @@ export default function Level2(props) {
     <Level
       logClick={props.logClick}
       mission="find the jewel underneath the pop up."
+      hintMessage="Pop ups can be closed by clicking the X in the top right corner."
       dialogMessage="Your mission is complete! Pop ups can always be closed by clicking the X, but some sites also let you click anywhere else on the page to get rid of them. Click the X to return to the home page and receive your next mission."
       correctMoves={correctMoves}
     >
@@ -47,7 +48,7 @@ export default function Level2(props) {
           <DialogTitle>
             Lorem ipsum dolor sit amet.
             <IconButton
-              id="close level 2 dialog button"
+              id="Navigated away from the pop up by clicking the X to close it."
               style={{
                 position: "absolute",
                 right: 2,

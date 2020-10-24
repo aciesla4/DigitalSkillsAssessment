@@ -6,7 +6,7 @@ import LearningMode from "./LearningMode";
 import Modal from "./Modal";
 import { useSelector, useDispatch } from "react-redux";
 import { selectAcademicMode } from "../../redux/slices/academicModeSlice";
-import { openHint, closeHint, selectHint } from "../../redux/slices/hintSlice";
+import { closeHint, selectHint } from "../../redux/slices/hintSlice";
 import { changeLevel, selectLevel } from "../../redux/slices/levelSlice";
 import { setFound, selectJewel } from "../../redux/slices/jewelSlice";
 import $ from "jquery";
@@ -33,8 +33,7 @@ export default function Level(props) {
   });
 
   // handles closing the dialog at the end of each level
-  function handleCloseDialog(e) {
-    props.logClick(e, level);
+  function handleCloseDialog() {
     dispatch(setFound());
     dispatch(changeLevel());
   }
@@ -43,16 +42,19 @@ export default function Level(props) {
     <div>
       <Header mission={props.mission} />
       <div style={{ marginTop: "5%" }}>{props.children}</div>
-      <NavBar openHint={() => dispatch(openHint())} />
+      <NavBar logClick={props.logClick} level={level}/>
       {academicMode && (
         <LearningMode academicmode={academicMode} logClick={props.logClick} />
       )}
       <Modal
         id="hint"
         show={hint}
-        last={jewel}
+        last={true}
         heading="Hint"
-        closeModal={() => dispatch(closeHint())}
+        closeModal={(e) => {
+            props.logClick(e, level)
+            dispatch(closeHint())
+        }}
         x="75%"
         y="15%"
         modalStyle="modalR"

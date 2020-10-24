@@ -59,7 +59,7 @@ export default function Level7(props) {
         <div className="bar">
           <button
             className="cart"
-            id="level 7 shopping cart button"
+            id="Navigated to the checkout by clicking the shopping cart button."
             onClick={showJewel}
           >
             <Badge
@@ -75,7 +75,7 @@ export default function Level7(props) {
           {elements.elements.map((element) => (
             <ProductCard
               key={element.id}
-              id={"level 7 card " + element.id}
+              id={"Got the " + element.desc + " item."}
               element={element}
               onClick={(e) => {
                 handleAddItem(element, e);

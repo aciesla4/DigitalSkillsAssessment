@@ -28,8 +28,9 @@ export default function Level8(props) {
   const [elements, setElements] = useState(items);
 
   // handles when an item is deleted by setting the local state to true and removing the item from the page
-  function deleteItem(id, e) {
-    e.currentTarget.id = "level 8 card " + id;
+  function deleteItem(desc, id, e) {
+    console.log(desc, id);
+    e.currentTarget.id = "Changed the items in the cart by removing the " + desc;
     props.logClick(e, 8);
     const update = [...elements.filter((element) => element.id !== id)];
     setElements([...update]);
@@ -106,7 +107,7 @@ export default function Level8(props) {
           <br />
           <button
             className="check-out-button"
-            id="level 8 checkout button"
+            id="Got the remaining items in the cart by clicking the check out button."
             onClick={(e) => showJewel(e)}
           >
             Check Out

@@ -10,7 +10,6 @@ export const levelSlice = createSlice({
   },
   reducers: {
     changeLevel: (state) => {
-      console.log(state.value);
       if (state.value === 16) {
         window.location.href = "/congrats";
       } else {

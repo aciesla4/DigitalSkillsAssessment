@@ -25,9 +25,12 @@ export default function NavBar(props) {
         style={{ position: "absolute", left: 20, color: "black", bottom: 10 }}
         control={
           <Switch
-            id="learning mode switch"
+            id="Switched learning mode on or off."
             checked={academicMode}
-            onChange={() => dispatch(update())}
+            onChange={(e) => {
+                dispatch(update())
+                props.logClick(e, props.level)
+            }}
           />
         }
         label="Learning Mode"
@@ -35,8 +38,11 @@ export default function NavBar(props) {
       {currentPath.includes("level") && (
         <IconButton
           style={{ position: "absolute", right: 0, bottom: 0 }}
-          id="open hint button"
-          onClick={() => dispatch(openHint())}
+          id="Opened the hint."
+          onClick={(e) => {
+              dispatch(openHint())
+              props.logClick(e, props.level)
+          }}
         >
           <HelpIcon fontSize="large" />
         </IconButton>

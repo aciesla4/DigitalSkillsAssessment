@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { createRef, Component } from "react";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import Jewel from "../common/Jewel";
 import PropTypes from "prop-types";
@@ -12,10 +12,23 @@ export default class SimpleMap extends Component {
     zoom: 13,
   };
 
+  mapRef = createRef<Map>(<Map/>);
+
+  handleMove = () => {
+    this.props.logMapClick("Navigated to a new location on the map by clicking and dragging.")
+  }
+
+  handleZoom = () => {
+    this.props.logMapClick("Navigated to a zoom in or out view of the map.")
+  }
+
   render() {
     const position = [this.state.lat, this.state.lng];
     return (
       <Map
+        ref={this.mapRef}
+        onZoomEnd={this.handleZoom}
+        onMoveEnd={this.handleMove}
         center={position}
         zoom={this.state.zoom}
         style={{
@@ -33,7 +46,7 @@ export default class SimpleMap extends Component {
         <Marker
           position={[47.468824, -87.890311]}
           onClick={(id) =>
-            this.props.logMapClick("level 12 copper harbor popup")
+            this.props.logMapClick("Learned where Copper Harbor is.")
           }
         >
           <Popup>
@@ -47,51 +60,51 @@ export default class SimpleMap extends Component {
         </Marker>
         <Marker
           position={[47.121231, -88.564461]}
-          onClick={(id) => this.props.logMapClick("level 12 houghton popup")}
+          onClick={(id) => this.props.logMapClick("Learned where Houghton is.")}
         >
           <Popup>Houghton</Popup>
         </Marker>
         <Marker
           position={[47.130692, -88.591217]}
-          onClick={(id) => this.props.logMapClick("level 12 hancock popup")}
+          onClick={(id) => this.props.logMapClick("Learned where Hancock is.")}
         >
           <Popup>Hancock</Popup>
         </Marker>
         <Marker
           position={[47.19825, -88.408562]}
-          onClick={(id) => this.props.logMapClick("level 12 lake linden popup")}
+          onClick={(id) => this.props.logMapClick("Learned where Lake Linden is.")}
         >
           <Popup>Lake Linden</Popup>
         </Marker>
         <Marker
           position={[47.251579, -88.452751]}
-          onClick={(id) => this.props.logMapClick("level 12 calumet popup")}
+          onClick={(id) => this.props.logMapClick("Learned where Calumet is.")}
         >
           <Popup>Calumet</Popup>
         </Marker>
         <Marker
           position={[47.413799, -88.295575]}
-          onClick={(id) => this.props.logMapClick("level 12 eagle river popup")}
+          onClick={(id) => this.props.logMapClick("Learned where Eagle River is.")}
         >
           <Popup>Eagle River</Popup>
         </Marker>
         <Marker
           position={[47.458157, -88.162197]}
           onClick={(id) =>
-            this.props.logMapClick("level 12 eagle harbor popup")
+            this.props.logMapClick("Learned where Eagle Harbor is.")
           }
         >
           <Popup>Eagle Harbor</Popup>
         </Marker>
         <Marker
           position={[47.388827, -87.955023]}
-          onClick={(id) => this.props.logMapClick("level 12 bete grise popup")}
+          onClick={(id) => this.props.logMapClick("Learned where Bete Grise is.")}
         >
           <Popup>Bete Grise</Popup>
         </Marker>
         <Marker
           position={[47.227376, -88.163722]}
-          onClick={(id) => this.props.logMapClick("level 12 gay popup")}
+          onClick={(id) => this.props.logMapClick("Learned where Gay is.")}
         >
           <Popup>Gay</Popup>
         </Marker>

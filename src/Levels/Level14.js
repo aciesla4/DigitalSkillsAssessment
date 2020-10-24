@@ -14,7 +14,7 @@ export default function Level14(props) {
       <ol>
         <li>Learn the given password is incorrect by typing in the given email and password and clicking submit.</li>
         <li>Navigate to the forgot password page by clicking the Forgot Password button.</li>
-        <li>Get a link to reset your password by entering in the given email.</li>
+        <li>Get a link to reset your password by entering in the given email and clicking submit.</li>
         <li>Navigate to the reset password page by clicking the button displayed.</li>
         <li>Change your password by entering the email and new password and clicking the Submit button.</li>
         <li>Navigate to the jewel page by entering the correct email and password and clicking the Submit button.</li>
@@ -57,9 +57,9 @@ export default function Level14(props) {
       correctMoves={correctMoves}
     >
       <div>
-        {showLogin && <Login changeView={changeView} />}
-        {showForgotPassword && <ForgotPassword changeView={changeView} />}
-        {showResetPassword && <ResetPassword changeView={changeView} />}
+        {showLogin && <Login changeView={changeView} logClick={props.logClick}/>}
+        {showForgotPassword && <ForgotPassword changeView={changeView} logClick={props.logClick}/>}
+        {showResetPassword && <ResetPassword changeView={changeView} logClick={props.logClick}/>}
         {showDone && <Jewel left="50%" top="50%" logClick={props.logClick} />}
       </div>
     </Level>

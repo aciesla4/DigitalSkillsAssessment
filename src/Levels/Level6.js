@@ -9,7 +9,11 @@ export default function Level6(props) {
   // a possible correct sequence of moves the user can take to get the jewel
   const correctMoves = (
       <ol>
-        <li>Change the order of the list contents by clicking on the column headers.</li>
+        <li>Change the order of the table contents by clicking on a column header.</li>
+        <li>Change the order of the table contents by clicking on a column header.</li>
+        <li>Change the order of the table contents by clicking on a column header.</li>
+        <li>Change the order of the table contents by clicking on a column header.</li>
+        <li>Change the order of the table contents by clicking on a column header.</li>
         <li>Get the jewel by clicking on it.</li>
       </ol>
   )

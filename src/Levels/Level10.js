@@ -62,7 +62,7 @@ export default function Level10(props) {
           <div className="settings-container">
             <div
               className="settings-grid"
-              id="level 10 system icon"
+              id="Navigated to the System settings."
               onClick={(e) => props.logClick(e, 10)}
             >
               <IconButton>
@@ -73,7 +73,7 @@ export default function Level10(props) {
             </div>
             <div
               className="settings-grid"
-              id="level 10 devices icon"
+              id="Navigated to the Devices settings."
               onClick={(e) => props.logClick(e, 10)}
             >
               <IconButton>
@@ -84,7 +84,7 @@ export default function Level10(props) {
             </div>
             <div
               className="settings-grid"
-              id="level 10 network icon"
+              id="Navigated to the Network settings."
               onClick={(e) => props.logClick(e, 10)}
             >
               <IconButton>
@@ -95,7 +95,7 @@ export default function Level10(props) {
             </div>
             <div
               className="settings-grid"
-              id="level 10 apps icon"
+              id="Navigated to the Apps settings."
               onClick={(e) => props.logClick(e)}
             >
               <IconButton>
@@ -106,7 +106,7 @@ export default function Level10(props) {
             </div>
             <div
               className="settings-grid"
-              id="level 10 accounts icon"
+              id="Navigated to the Accounts settings."
               onClick={(e) => props.logClick(e, 10)}
             >
               <IconButton>
@@ -117,7 +117,7 @@ export default function Level10(props) {
             </div>
             <div
               className="settings-grid"
-              id="level 10 accessibility icon"
+              id="Navigated to the Accessibility settings."
               onClick={(e) => props.logClick(e, 10)}
             >
               <IconButton>
@@ -128,7 +128,7 @@ export default function Level10(props) {
             </div>
             <div
               className="settings-grid"
-              id="level 10 search icon"
+              id="Navigated to the Search settings."
               onClick={(e) => props.logClick(e)}
             >
               <IconButton>
@@ -139,7 +139,7 @@ export default function Level10(props) {
             </div>
             <div
               className="settings-grid"
-              id="level 10 privacy icon"
+              id="Navigated to the Privacy settings."
               onClick={(e) => handleClick(e)}
             >
               <IconButton>
@@ -150,7 +150,7 @@ export default function Level10(props) {
             </div>
             <div
               className="settings-grid"
-              id="level 10 updates icon"
+              id="Navigated to the Updates settings."
               onClick={(e) => props.logClick(e, 10)}
             >
               <IconButton>
@@ -166,7 +166,7 @@ export default function Level10(props) {
             <div className="privacy-drawer">
               <div
                 className="privacy-grid"
-                id="level 10 location icon"
+                id="Navigated to the Location settings."
                 onClick={(e) => props.logClick(e, 10)}
               >
                 <IconButton>
@@ -176,7 +176,7 @@ export default function Level10(props) {
               </div>
               <div
                 className="privacy-grid"
-                id="level 10 camera icon"
+                id="Navigated to the Camera settings."
                 onClick={(e) => props.logClick(e, 10)}
               >
                 <IconButton>
@@ -186,7 +186,7 @@ export default function Level10(props) {
               </div>
               <div
                 className="privacy-grid"
-                id="level 10 microphone icon"
+                id="Navigated to the Microphone settings."
                 onClick={(e) => props.logClick(e, 10)}
               >
                 <IconButton>
@@ -196,7 +196,7 @@ export default function Level10(props) {
               </div>
               <div
                 className="privacy-grid"
-                id="level 10 notifications icon"
+                id="Navigated to the Notifications settings."
                 onClick={(e) => props.logClick(e, 10)}
               >
                 <IconButton>
@@ -206,7 +206,7 @@ export default function Level10(props) {
               </div>
               <div
                 className="privacy-grid"
-                id="level 10 contacts icon"
+                id="Navigated to the Contacts settings."
                 onClick={(e) => props.logClick(e, 10)}
               >
                 <IconButton>
@@ -216,7 +216,7 @@ export default function Level10(props) {
               </div>
               <div
                 className="privacy-grid"
-                id="level 10 calendar icon"
+                id="Navigated to the Calendar settings."
                 onClick={(e) => props.logClick(e, 10)}
               >
                 <IconButton>
@@ -226,7 +226,7 @@ export default function Level10(props) {
               </div>
               <div
                 className="privacy-grid"
-                id="level 10 email icon"
+                id="Navigated to the Email settings."
                 onClick={(e) => props.logClick(e, 10)}
               >
                 <IconButton>
@@ -236,7 +236,7 @@ export default function Level10(props) {
               </div>
               <div
                 className="privacy-grid"
-                id="level 10 tasks icon"
+                id="Navigated to the Tasks settings."
                 onClick={(e) => props.logClick(e, 10)}
               >
                 <IconButton>
@@ -246,7 +246,7 @@ export default function Level10(props) {
               </div>
               <div
                 className="privacy-grid"
-                id="level 10 other devices icon"
+                id="Navigated to the Other Devices settings."
                 onClick={(e) => props.logClick(e, 10)}
               >
                 <IconButton>
@@ -256,7 +256,7 @@ export default function Level10(props) {
               </div>
               <div
                 className="privacy-grid"
-                id="level 10 app diagnostics icon"
+                id="Navigated to the App Diagnostics settings."
                 onClick={(e) => props.logClick(e, 10)}
               >
                 <IconButton>
@@ -266,7 +266,7 @@ export default function Level10(props) {
               </div>
               <div
                 className="privacy-grid"
-                id="level 10 cloud icon"
+                id="Navigated to the Cloud settings."
                 onClick={(e) => props.logClick(e, 10)}
               >
                 <IconButton>
@@ -276,7 +276,7 @@ export default function Level10(props) {
               </div>
               <div
                 className="privacy-grid"
-                id="level 10 documents icon"
+                id="Navigated to the Documents settings."
                 onClick={(e) => props.logClick(e, 10)}
               >
                 <IconButton>
@@ -286,7 +286,7 @@ export default function Level10(props) {
               </div>
               <div
                 className="privacy-grid"
-                id="level 10 pictures icon"
+                id="Navigated to the Pictures settings."
                 onClick={(e) => props.logClick(e, 10)}
               >
                 <IconButton>
@@ -296,7 +296,7 @@ export default function Level10(props) {
               </div>
               <div
                 className="privacy-grid"
-                id="level 10 videos icon"
+                id="Navigated to the Videos settings."
                 onClick={(e) => props.logClick(e, 10)}
               >
                 <IconButton>

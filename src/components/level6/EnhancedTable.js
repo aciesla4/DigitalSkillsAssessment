@@ -88,7 +88,7 @@ function EnhancedTableHead(props) {
             <TableSortLabel
               active={true}
               direction={orderBy === headCell.id ? order : "asc"}
-              id={"level 6 cell " + headCell.id}
+              id={"Sorted the " + headCell.id + " column."}
               onClick={createSortHandler(headCell.id)}
             >
               {headCell.label}

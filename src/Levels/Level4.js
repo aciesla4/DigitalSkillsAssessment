@@ -67,7 +67,7 @@ export default function Level4(props) {
       correctMoves={correctMoves}
     >
       <div className="level4-grid">
-        {elements.map((item, i) =>
+        {elements.map((item) =>
           <ListOfFavCards item={item} handleClick={handleClick} logClick={props.logClick} />
         )}
       </div>

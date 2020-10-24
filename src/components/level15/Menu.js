@@ -10,7 +10,7 @@ export default function Menu(props) {
         <li>
           <button
             className="drop-button"
-            id="level 14 career button"
+            id="Navigated to the Career menu."
             onMouseOver={props.logClick}
           >
             Career
@@ -19,7 +19,7 @@ export default function Menu(props) {
             <li>
               <button
                 className="drop-button"
-                id="level 14 resume button"
+                id="Navigated to the Resume menu."
                 onMouseOver={props.logClick}
               >
                 Resume
@@ -28,7 +28,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 resume writing button"
+                    id="Navigated to the Writing page."
                     onMouseOver={props.logClick}
                   >
                     Writing
@@ -37,7 +37,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 resume formatting button"
+                    id="Navigated to the Formatting page."
                     onMouseOver={props.logClick}
                   >
                     Formatting
@@ -48,7 +48,7 @@ export default function Menu(props) {
             <li>
               <button
                 className="drop-button"
-                id="level 14 cover letter button"
+                id="Navigated to the Cover Letter menu."
                 onMouseOver={props.logClick}
               >
                 Cover Letter
@@ -57,7 +57,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 cover letter writing button"
+                    id="Navigated to the Writing page."
                     onMouseOver={props.logClick}
                   >
                     Writing
@@ -66,7 +66,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 cover letter formatting button"
+                    id="Navigated to the Formatting page."
                     onMouseOver={props.logClick}
                   >
                     Formatting
@@ -77,7 +77,7 @@ export default function Menu(props) {
             <li>
               <button
                 className="drop-button"
-                id="level 14 interviews button"
+                id="Navigated to the Interviews menu."
                 onMouseOver={props.logClick}
               >
                 Interviews
@@ -86,7 +86,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 preparing button"
+                    id="Navigated to the Preparing page."
                     onMouseOver={props.logClick}
                   >
                     Preparing
@@ -95,7 +95,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 star method button"
+                    id="Navigated to the Star Method page."
                     onMouseOver={props.logClick}
                   >
                     Star Method
@@ -104,7 +104,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 following up button"
+                    id="Navigated to the Following Up page."
                     onMouseOver={props.logClick}
                   >
                     Following up
@@ -115,7 +115,7 @@ export default function Menu(props) {
             <li>
               <button
                 className="drop-button"
-                id="level 14 mentorship button"
+                id="Navigated to the Mentorship menu."
                 onMouseOver={props.logClick}
               >
                 Mentorship
@@ -124,7 +124,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 mentor finding button"
+                    id="Navigated to the Mentor Finding page."
                     onMouseOver={props.logClick}
                   >
                     Finding a mentor
@@ -133,7 +133,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 being a mentor button"
+                    id="Navigated to the Being a Mentor page."
                     onMouseOver={props.logClick}
                   >
                     Being a mentor
@@ -146,7 +146,7 @@ export default function Menu(props) {
         <li>
           <button
             className="drop-button"
-            id="level 14 soft skills button"
+            id="Navigated to the Soft Skills menu."
             onMouseOver={props.logClick}
           >
             Soft Skills
@@ -155,7 +155,7 @@ export default function Menu(props) {
             <li>
               <button
                 className="drop-button"
-                id="level 14 problem solving button"
+                id="Navigated to the Problem Solving menu."
                 onMouseOver={props.logClick}
               >
                 Problem Solving
@@ -164,7 +164,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 analysis button"
+                    id="Navigated to the Analysis page."
                     onMouseOver={props.logClick}
                   >
                     Analysis
@@ -173,7 +173,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 brainstorming button"
+                    id="Navigated to the Brainstorming page."
                     onMouseOver={props.logClick}
                   >
                     Brainstorming
@@ -184,7 +184,7 @@ export default function Menu(props) {
             <li>
               <button
                 className="drop-button"
-                id="level 14 goals button"
+                id="Navigated to the Goals menu."
                 onMouseOver={props.logClick}
               >
                 Goals
@@ -193,7 +193,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 setting goals button"
+                    id="Navigated to the Setting Goals page."
                     onMouseOver={props.logClick}
                   >
                     Setting Goals
@@ -202,7 +202,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 making progress button"
+                    id="Navigated to the Making Progress page."
                     onMouseOver={props.logClick}
                   >
                     Making Progress
@@ -211,7 +211,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 eval goals button"
+                    id="Navigated to the Evaluating Goals page."
                     onMouseOver={props.logClick}
                   >
                     Evaluating Goals
@@ -220,7 +220,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 new goals button"
+                    id="Navigated to the Creating New Goals menu."
                     onMouseOver={props.logClick}
                   >
                     Creating New Goals
@@ -231,7 +231,7 @@ export default function Menu(props) {
             <li>
               <button
                 className="drop-button"
-                id="level 14 time management button"
+                id="Navigated to the Organizing menu."
                 onMouseOver={props.logClick}
               >
                 Organizing
@@ -240,7 +240,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 eval time button"
+                    id="Navigated to the Evaluating Time page."
                     onMouseOver={props.logClick}
                   >
                     Evaluating Time
@@ -249,7 +249,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 stay focused button"
+                    id="Navigated to the Staying Focused page."
                     onMouseOver={props.logClick}
                   >
                     Staying Focused
@@ -258,7 +258,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 organizing time button"
+                    id="Navigated to the Organizing Your Time menu."
                     onMouseOver={props.logClick}
                   >
                     Organizing Your Time
@@ -271,7 +271,7 @@ export default function Menu(props) {
         <li>
           <button
             className="drop-button"
-            id="level 14 technical button"
+            id="Navigated to the Technical menu."
             onMouseOver={props.logClick}
           >
             Technical
@@ -280,7 +280,7 @@ export default function Menu(props) {
             <li>
               <button
                 className="drop-button"
-                id="level 14 software button"
+                id="Navigated to the Software menu."
                 onMouseOver={props.logClick}
               >
                 Software
@@ -289,7 +289,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 microsoft office button"
+                    id="Navigated to the Microsoft Office menu."
                     onMouseOver={props.logClick}
                   >
                     Microsoft Office
@@ -298,7 +298,7 @@ export default function Menu(props) {
                     <li>
                       <button
                         className="drop-button"
-                        id="level 14 excel button"
+                        id="Navigated to the Excel page."
                         onMouseOver={props.logClick}
                       >
                         Excel
@@ -307,7 +307,7 @@ export default function Menu(props) {
                     <li>
                       <button
                         className="drop-button"
-                        id="level 14 word button"
+                        id="Navigated to the Word page."
                         onMouseOver={props.logClick}
                       >
                         Word
@@ -316,7 +316,7 @@ export default function Menu(props) {
                     <li>
                       <button
                         className="drop-button"
-                        id="level 14 powerpoint button"
+                        id="Navigated to the Powerpoint page."
                         onMouseOver={props.logClick}
                       >
                         Powerpoint
@@ -325,7 +325,7 @@ export default function Menu(props) {
                     <li>
                       <button
                         className="drop-button"
-                        id="level 14 one drive button"
+                        id="Navigated to the One Drive menu."
                         onMouseOver={props.logClick}
                       >
                         One Drive
@@ -336,7 +336,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 google button"
+                    id="Navigated to the Google Suite menu."
                     onMouseOver={props.logClick}
                   >
                     Google Suite
@@ -345,7 +345,7 @@ export default function Menu(props) {
                     <li>
                       <button
                         className="drop-button"
-                        id="level 14 sheets button"
+                        id="Navigated to the Sheets page."
                         onMouseOver={props.logClick}
                       >
                         Sheets
@@ -354,7 +354,7 @@ export default function Menu(props) {
                     <li>
                       <button
                         className="drop-button"
-                        id="level 14 docs button"
+                        id="Navigated to the Docs page."
                         onMouseOver={props.logClick}
                       >
                         Docs
@@ -363,7 +363,7 @@ export default function Menu(props) {
                     <li>
                       <button
                         className="drop-button"
-                        id="level 14 slides button"
+                        id="Navigated to the Slides page."
                         onMouseOver={props.logClick}
                       >
                         Slides
@@ -372,7 +372,7 @@ export default function Menu(props) {
                     <li>
                       <button
                         className="drop-button"
-                        id="level 14 drive button"
+                        id="Navigated to the Drive page."
                         onClick={props.handleClick}
                       >
                         Drive
@@ -385,7 +385,7 @@ export default function Menu(props) {
             <li>
               <button
                 className="drop-button"
-                id="level 14 hardware button"
+                id="Navigated to the Hardware menu."
                 onMouseOver={props.logClick}
               >
                 Hardware
@@ -394,7 +394,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 computer button"
+                    id="Navigated to the Computer page."
                     onMouseOver={props.logClick}
                   >
                     Computer
@@ -403,7 +403,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 router button"
+                    id="Navigated to the Router page."
                     onMouseOver={props.logClick}
                   >
                     Router
@@ -412,7 +412,7 @@ export default function Menu(props) {
                 <li>
                   <button
                     className="drop-button"
-                    id="level 14 printer button"
+                    id="Navigated to the Printer page."
                     onMouseOver={props.logClick}
                   >
                     Printer
@@ -423,7 +423,7 @@ export default function Menu(props) {
             <li>
               <button
                 className="drop-button"
-                id="level 14 IT management button"
+                id="Navigated to the IT Management page."
                 onMouseOver={props.logClick}
               >
                 IT Managing
@@ -434,7 +434,7 @@ export default function Menu(props) {
         <li>
           <button
             className="drop-button"
-            id="level 14 leadership button"
+            id="Navigated to the Leadership menu."
             onMouseOver={props.logClick}
           >
             Leadership
@@ -443,7 +443,7 @@ export default function Menu(props) {
             <li>
               <button
                 className="drop-button"
-                id="level 14 decision button"
+                id="Navigated to the Decision page."
                 onMouseOver={props.logClick}
               >
                 Decision
@@ -452,7 +452,7 @@ export default function Menu(props) {
             <li>
               <button
                 className="drop-button"
-                id="level 14 vision button"
+                id="Navigated to the Vision page."
                 onMouseOver={props.logClick}
               >
                 Vision
@@ -461,7 +461,7 @@ export default function Menu(props) {
             <li>
               <button
                 className="drop-button"
-                id="level 14 culture button"
+                id="Navigated to the Culture page."
                 onMouseOver={props.logClick}
               >
                 Culture

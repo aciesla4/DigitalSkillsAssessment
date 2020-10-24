@@ -15,6 +15,7 @@ import PropTypes from "prop-types";
 export default function EndDialog(props) {
 
   const moves = useSelector(selectMoves);
+  let index = 0;
 
   return (
     <Dialog open={props.open} disableBackdropClick={true}>
@@ -25,7 +26,7 @@ export default function EndDialog(props) {
           style={{ position: "absolute", right: 2, top: 2 }}
           component={RouterLink}
           to={`/level${props.level + 1}`}
-          onClick={(e) => props.handleCloseDialog(e)}
+          onClick={() => props.handleCloseDialog()}
           color="inherit"
         >
           <CloseIcon />
@@ -35,7 +36,7 @@ export default function EndDialog(props) {
         <DialogContent dividers>
           {props.children}
           <h3>Your Moves</h3>
-          <ol>{moves.payload? moves.payload.map((move) => <li>{move}</li>) : []}</ol>
+          <ol>{moves.payload? moves.payload.map((move) => <li key={index++}>{move}</li>) : []}</ol>
           <h3>Our Moves</h3>
           {props.correctMoves}
         </DialogContent>

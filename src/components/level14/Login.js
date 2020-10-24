@@ -32,8 +32,14 @@ export default function Login(props) {
 
   // handle submitting the form
   function onSubmit({ email, password }) {
-      // makes an HTTP request to the json server that handles login logic to see if the user entered a valid username and password
-      setSubmitting(true);
+    // makes an HTTP request to the json server that handles login logic to see if the user entered a valid username and password
+    setSubmitting(true);
+    let e = {
+        currentTarget: {
+            id: "Learned if the username and password was correct by clicking submit."
+        }
+    }
+    props.logClick(e, 14);
     axios
       .get("https://digital-skills-json-server.herokuapp.com/user")
       .then((response) => {
@@ -112,7 +118,11 @@ export default function Login(props) {
                 </div>
                 <div>
                   <button
-                    onClick={() => props.changeView("forgotPassword")}
+                    id="Navigated to the Forgot Password screen."
+                    onClick={(e) => {
+                        props.changeView("forgotPassword")
+                        props.logClick(e, 14)
+                    }}
                     className="link-btn"
                   >
                     Forgot Password?

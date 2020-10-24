@@ -26,6 +26,6 @@ export default function ProductCard(props) {
 // defines the props the component expects
 ProductCard.propTypes = {
     element: PropTypes.object,  // object that holds the picture and description on the card
-    id: PropTypes.number,       // number for the id of the card
+    id: PropTypes.string,       // number for the id of the card
     onClick: PropTypes.func     // function that handles when the card is clicked on
 }

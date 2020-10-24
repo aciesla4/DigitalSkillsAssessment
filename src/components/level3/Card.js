@@ -14,14 +14,14 @@ export default function Card(props) {
         alt="pic"
         src={pic}
       />
-      <IconButton id={"level 3 card " + props.id} onClick={props.onClick} className="close-btn"><CloseIcon/></IconButton>
+      <IconButton id={"Clicked card number " + props.id + "."} onClick={props.onClick} className="close-btn"><CloseIcon/></IconButton>
     </div>
   );
 }
 
 // defines the props the component expects
 Card.propTypes = {
-    pic: PropTypes.object,      // object that is the picture to be rendered on the card
+    pic: PropTypes.string,      // object that is the picture to be rendered on the card
     id: PropTypes.number,       // number that represents which card was clicked on
     onClick: PropTypes.func     // function that handles when the card is clicked on
 }

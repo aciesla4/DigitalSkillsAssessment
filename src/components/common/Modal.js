@@ -24,7 +24,7 @@ export default function Modal(props) {
           {props.last ? (
             <IconButton
               style={{ position: "absolute", right: 0, top: 0 }}
-              id="close modal button"
+              id="Closed the hint."
               onClick={props.closeModal}
             >
               <CloseIcon />
@@ -32,7 +32,7 @@ export default function Modal(props) {
           ) : (
             <IconButton
               style={{ position: "absolute", right: 0, top: 0 }}
-              id="open next modal button"
+              id="Opened the next hint."
               onClick={props.openNext}
             >
               <ArrowForwardIcon />

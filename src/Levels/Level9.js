@@ -17,7 +17,7 @@ export default function Level9(props) {
   const correctMoves = (
       <ol>
         <li>Navigate to the Facebook icon at the bottom of the page.</li>
-        <li>Get a dialog to post to Facebook by clicking on the icon.</li>
+        <li>Navigate to the Facebook post pop up by clicking on the Facebook icon.</li>
         <li>Change the content on your Facebook page by clicking the post button.</li>
         <li>Get the jewel by clicking on it.</li>
       </ol>
@@ -70,25 +70,25 @@ export default function Level9(props) {
         </div>
         <div className="share">
           <IconButton
-            id="level 9 facebook icon"
+            id="Navigated to the Facebook post pop up by clicking on the Facebook icon."
             onClick={(e) => openFacebookDialog(e)}
           >
             <FacebookIcon fontSize="large" />
           </IconButton>
           <IconButton
-            id="level 9 twitter icon"
+            id="Clicked the Twitter logo."
             onClick={(e) => props.logClick(e, 9)}
           >
             <TwitterIcon fontSize="large" />
           </IconButton>
           <IconButton
-            id="level 9 instagram icon"
+            id="Clicked the Instagram logo."
             onClick={(e) => props.logClick(e, 9)}
           >
             <InstagramIcon fontSize="large" />
           </IconButton>
           <IconButton
-            id="level 9 email icon"
+            id="Clicked the email logo."
             onClick={(e) => props.logClick(e, 9)}
           >
             <EmailIcon fontSize="large" />

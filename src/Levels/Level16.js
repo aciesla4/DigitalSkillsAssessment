@@ -38,7 +38,7 @@ export default function Level16(props) {
   // handles when the file is dropped and if the jewel should be shown
   function onDrop(event, cat) {
     let name = event.dataTransfer.getData("name");
-    event.currentTarget.id = "level 16 " + name + " file dropped";
+    event.currentTarget.id = "Got the " + name + " file by dragging and dropping it.";
     props.logClick(event, 16);
     let newFiles = files.filter((file) => {
       if (file.name === name) {

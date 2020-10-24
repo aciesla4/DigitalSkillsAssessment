@@ -9,10 +9,10 @@ export default function Level1(props) {
   // a possible correct sequence of moves the user can take to get the jewel
   const correctMoves = (
     <ol>
-      <li>Navigate to the end of the page by scrolling down.</li>
+      <li>Navigate to the bottom of the page by scrolling down.</li>
       <li>Get the jewel by clicking on it.</li>
     </ol>
-  )
+  );
 
   return (
     <Level

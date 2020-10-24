@@ -16,7 +16,7 @@ export default function CartCard(props) {
       </div>
       <button
         className="delete-button"
-        onClick={(e) => props.deleteItem(id, e)}
+        onClick={(e) => props.deleteItem(desc, id, e)}
       >
         <CloseIcon style={{ height: "30px", width: "30px" }} />
       </button>
@@ -26,7 +26,7 @@ export default function CartCard(props) {
 
 // defines the props the component expects
 CartCard.propTypes = {
-    pic: PropTypes.object,          // object for the picture to be rendered on the card
+    pic: PropTypes.string,          // object for the picture to be rendered on the card
     desc: PropTypes.string,         // string for the description of the product
     quantity: PropTypes.number,     // number for the quantity of the the product
     price: PropTypes.number,        // number for the price of the product

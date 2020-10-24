@@ -26,7 +26,7 @@ export default function ShareModal(props) {
         </div>
         <button
           className="share-button"
-          id="level 9 close facebook modal button"
+          id="Changed the content on your Facebook page by clicking the post button."
           onClick={(e) => props.onClick(e)}
         >
           Post to Facebook
