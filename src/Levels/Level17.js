@@ -15,8 +15,8 @@ import {
     nature12
 } from "../components/level4";
 import Level from "../components/common/Level";
-import Jewel from "../components/common/Jewel";
-import FavCard from "../components/level4/FavCard";
+// import Jewel from "../components/common/Jewel";
+// import FavCard from "../components/level4/FavCard";
 import PropTypes from "prop-types";
 import ListOfFavCards from "../components/level4/ListOfFavCards";
 

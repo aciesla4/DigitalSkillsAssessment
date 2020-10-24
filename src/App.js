@@ -17,7 +17,6 @@ import Level13 from "./Levels/Level13";
 import Level14 from "./Levels/Level14";
 import Level15 from "./Levels/Level15";
 import Level16 from "./Levels/Level16";
-import Level17 from "./Levels/Level17";
 import Final from "./components/final/Final";
 import axios from "axios";
 
