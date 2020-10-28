@@ -13,18 +13,18 @@ import gear12 from "../../images/gear12.jpeg";
 
 // file to hold the imports and return the elements needed in Level 7
 const elements = [
-  { id: 0, pic: gear1, desc: "Night Vision Glasses" },
-  { id: 1, pic: gear2, desc: "Laser Shooting Watch" },
-  { id: 2, pic: gear3, desc: "Walkie Talkie" },
-  { id: 3, pic: gear4, desc: "Sweat Absorbing Shirt" },
-  { id: 4, pic: gear5, desc: "20 Pocket Pants" },
-  { id: 5, pic: gear6, desc: "Hidden Compartment Shoes" },
-  { id: 6, pic: gear7, desc: "Sun Blocking Hat" },
-  { id: 7, pic: gear8, desc: "Bulletproof Briefcase" },
-  { id: 8, pic: gear9, desc: "Long Range Magnifier" },
-  { id: 9, pic: gear10, desc: "Satellite Phone" },
-  { id: 10, pic: gear11, desc: "Audio Recording Pen" },
-  { id: 11, pic: gear12, desc: "Voice Magnifier" },
+  { id: 0, pic: gear1, desc: "Night Vision Glasses", quantity: 0 },
+  { id: 1, pic: gear2, desc: "Laser Shooting Watch", quantity: 0 },
+  { id: 2, pic: gear3, desc: "Walkie Talkie", quantity: 0 },
+  { id: 3, pic: gear4, desc: "Sweat Absorbing Shirt", quantity: 0 },
+  { id: 4, pic: gear5, desc: "20 Pocket Pants", quantity: 0 },
+  { id: 5, pic: gear6, desc: "Hidden Compartment Shoes", quantity: 0 },
+  { id: 6, pic: gear7, desc: "Sun Blocking Hat", quantity: 0 },
+  { id: 7, pic: gear8, desc: "Bulletproof Briefcase", quantity: 0 },
+  { id: 8, pic: gear9, desc: "Long Range Magnifier", quantity: 0 },
+  { id: 9, pic: gear10, desc: "Satellite Phone", quantity: 0 },
+  { id: 10, pic: gear11, desc: "Audio Recording Pen", quantity: 0 },
+  { id: 11, pic: gear12, desc: "Voice Magnifier", quantity: 0 },
 ];
 
 export default { elements };

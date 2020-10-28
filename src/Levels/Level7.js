@@ -32,8 +32,11 @@ export default function Level7(props) {
   // handles adding an item to the list of items in the user's cart
   function handleAddItem(element, e) {
     props.logClick(e, 7);
+    element.quantity = element.quantity + 1;
     let update = items;
-    update.push(element);
+    if (!update.includes(element)) {
+      update.push(element);
+    }
     setNumItems(numItems + 1);
     setItems(update);
   }

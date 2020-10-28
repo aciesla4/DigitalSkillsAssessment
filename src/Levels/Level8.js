@@ -28,11 +28,16 @@ export default function Level8(props) {
   const [elements, setElements] = useState(items);
 
   // handles when an item is deleted by setting the local state to true and removing the item from the page
-  function deleteItem(desc, id, e) {
-    console.log(desc, id);
-    e.currentTarget.id = "Changed the items in the cart by removing the " + desc;
+  function deleteItem(element, e) {
+    e.currentTarget.id = "Changed the items in the cart by removing the " + element.desc;
     props.logClick(e, 8);
-    const update = [...elements.filter((element) => element.id !== id)];
+    let update;
+    if (element.quantity >= 2) {
+      update = elements.map(el => el.id === element.id ? {...el, quantity: element.quantity - 1} : el);
+    }
+    else {
+      update = [...elements.filter((el) => el.id !== element.id)];
+    }
     setElements([...update]);
     setDeleted(true);
   }
@@ -74,7 +79,7 @@ export default function Level8(props) {
               id={element.id}
               pic={element.pic}
               desc={element.desc}
-              quantity={1}
+              quantity={element.quantity}
               price={prices.prices[element.id]}
               deleteItem={deleteItem}
             />

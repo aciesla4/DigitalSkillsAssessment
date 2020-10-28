@@ -16,7 +16,7 @@ export default function CartCard(props) {
       </div>
       <button
         className="delete-button"
-        onClick={(e) => props.deleteItem(desc, id, e)}
+        onClick={(e) => props.deleteItem({id, pic, desc, quantity}, e)}
       >
         <CloseIcon style={{ height: "30px", width: "30px" }} />
       </button>
