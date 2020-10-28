@@ -1,5 +1,6 @@
 .drag-container {
     text-align: center;
+    overflow-y: hidden;
 }
 
 .group-header {
@@ -21,6 +22,8 @@
     display: grid;
     grid-template-columns: auto auto auto;
     grid-column-gap: 5px;
+    max-height: 500px;
+    overflow-y: auto;
 }
 
 .draggable {
