@@ -34,7 +34,7 @@ export default function Welcome(props) {
             // makes an HTTP request to the logging server
             axios({
                 method: "post",
-                url: "http://localhost:8080/logging/startTime",
+                url: "https://digital-skills-server.herokuapp.com/time/gameStartTime",
                 data: {
                     startTime: dt,
                 },

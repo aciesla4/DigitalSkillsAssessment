@@ -11,6 +11,7 @@ import { changeLevel, selectLevel } from "../../redux/slices/levelSlice";
 import { setFound, selectJewel } from "../../redux/slices/jewelSlice";
 import $ from "jquery";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 // Base component for each level that hold common code
 export default function Level(props) {
@@ -31,6 +32,19 @@ export default function Level(props) {
       });
     });
   });
+
+  // hook for logging the level's start time
+  useEffect(() => {
+      const dt = new Date().getTime();
+      // makes an HTTP request to the logging server
+      axios({
+          method: "post",
+          url: "https://digital-skills-server.herokuapp.com/time/levelStartTime?level=" + level,
+          data: {
+              startTime: dt,
+          },
+      });
+  }, []);
 
   // handles closing the dialog at the end of each level
   function handleCloseDialog() {

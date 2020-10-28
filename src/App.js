@@ -44,6 +44,10 @@ class App extends React.Component {
       method: 'delete',
       url: "https://digital-skills-server.herokuapp.com/logging"
     })
+    axios({
+      method: 'delete',
+      url: 'https://digital-skills-server.herokuapp.com/time'
+    })
   }
 
   render() {

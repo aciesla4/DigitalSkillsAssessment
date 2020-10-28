@@ -14,13 +14,14 @@ export default function Final(props) {
       // makes an HTTP request to the logging server
       await axios({
           method: "post",
-          url: "http://localhost:8080/logging/endTime",
+          url: "https://digital-skills-server.herokuapp.com/time/gameEndTime",
           data: {
               endTime: dt,
           },
       });
   }
 
+  // converts the toal time to minutes and seconds
   function convertToMin(millis) {
       var minutes = Math.floor(millis / 60000);
       var seconds = ((millis % 60000) / 1000).toFixed(0);
@@ -46,7 +47,7 @@ export default function Final(props) {
     logEndTime()
     axios({
         method: "get",
-        url: "http://localhost:8080/logging/time"
+        url: "https://digital-skills-server.herokuapp.com/time/gameTotalTime"
     }).then(response => {
         console.log(response.data)
         setTime(convertToMin(response.data))

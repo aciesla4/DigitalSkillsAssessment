@@ -55,6 +55,15 @@ export default function Jewel(props) {
   // logs the click made by the user and calls the global state method to save that the jewel is found
   async function handleFound(e) {
     props.logClick(e, level);
+    const dt = new Date().getTime();
+    // makes an HTTP request to the logging server
+    await axios({
+        method: "post",
+        url: "https://digital-skills-server.herokuapp.com/time/levelEndTime?level=" + level,
+        data: {
+            endTime: dt,
+        },
+    });
     dispatch(setFound());
     await getMoves();
   }
