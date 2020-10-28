@@ -44,7 +44,7 @@ export default function Level(props) {
               startTime: dt,
           },
       });
-  }, []);
+  }, [level]);
 
   // handles closing the dialog at the end of each level
   function handleCloseDialog() {

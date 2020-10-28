@@ -28,17 +28,18 @@ export default function EndDialog(props) {
     return (seconds === 60 ? (minutes+1) + ":00" : minutes + ":" + (seconds < 10 ? "0" : "") + seconds);
   }
 
+  const { level, open } = props;
+
   // hook for getting the total time taken
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'https://digital-skills-server.herokuapp.com/time/levelTotalTime?level=' + props.level
+      url: 'https://digital-skills-server.herokuapp.com/time/levelTotalTime?level=' + level
     }).then((response) => {
       console.log(response.data);
       setLevelTime(convertToMin(response.data));
     })
-  }, [props.open])
-
+  }, [open, level])
 
   return (
     <Dialog open={props.open} disableBackdropClick={true}>
