@@ -54,7 +54,7 @@ export default function Level10(props) {
       logClick={props.logClick}
       mission="find the privacy settings."
       hintMessage="Click on the button labeled Privacy."
-      dialogMessage="Your mission is complete! Sometimes it is easier to search for a setting than clicking around to find it. Click the X to return to the home page and receive your next mission."
+      dialogMessage="Your mission is complete! Sometimes it is easier to search for a setting than clicking around to find it. Click the X to receive your next mission."
       correctMoves={correctMoves}
     >
       <div>

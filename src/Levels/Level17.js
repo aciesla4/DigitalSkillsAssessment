@@ -64,7 +64,7 @@ export default function Level17(props) {
             logClick={props.logClick}
             mission=""
             hintMessage=""
-            dialogMessage="Your mission is complete! ... Click the X to return to the home page and receive your next mission."
+            dialogMessage="Your mission is complete! ... Click the X to receive your next mission."
             correctMoves={correctMoves}
         >
             <div className="level4-grid">

@@ -52,7 +52,7 @@ export default function Level7(props) {
       logClick={props.logClick}
       mission="add spy gear to your cart and begin checking out."
       hintMessage="Adding gear to your cart can be down by hovering over an item and clicking the add to cart icon. You can begin checking out by clicking the shopping cart icon in the top right."
-      dialogMessage="Your mission is complete! There are many ways you can add items to your cart. One some sites, clicking the item takes you to another page where you can add it. Click the X to return to the home page and receive your next mission."
+      dialogMessage="Your mission is complete! There are many ways you can add items to your cart. One some sites, clicking the item takes you to another page where you can add it. Click the X to receive your next mission."
       correctMoves={correctMoves}
     >
       <div>

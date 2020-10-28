@@ -114,7 +114,7 @@ class App extends React.Component {
               path="/level16"
               render={(props) => <Level16 {...props} logClick={this.logClick}/>}
           />
-          <Route path="/final" component={Final}/>
+          <Route path="/congrats" component={Final}/>
           <Route path="/" component={Welcome}/>
         </Switch>
       </BrowserRouter>

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "../../css/Welcome.css";
 import SpyLogo from "../../images/spyLogo.jpg";
 import $ from "jquery";
+import axios from "axios";
 
 // Component for the first page that the user sees when opening the app
 export default function Welcome(props) {
@@ -28,7 +29,18 @@ export default function Welcome(props) {
       <button
         id="begin"
         className="begin-button"
-        onClick={(event) => (window.location.href = "/level1")}
+        onClick={(event) => {
+            const dt = new Date().getTime();
+            // makes an HTTP request to the logging server
+            axios({
+                method: "post",
+                url: "http://localhost:8080/logging/startTime",
+                data: {
+                    startTime: dt,
+                },
+            });
+            window.location.href = "/level1"
+        }}
       >
         Click Here to Begin
       </button>

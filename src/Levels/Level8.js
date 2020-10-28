@@ -63,7 +63,7 @@ export default function Level8(props) {
       logClick={props.logClick}
       mission="delete an item from your cart then check out."
       hintMessage="Deleting an item can be done by clicking the X in the right hand corner of the item."
-      dialogMessage="Your mission is complete! Always double check that the items you want are correct in your cart before checking out. Click the X to return to the home page and receive your next mission."
+      dialogMessage="Your mission is complete! Always double check that the items you want are correct in your cart before checking out. Click the X to receive your next mission."
       correctMoves={correctMoves}
     >
       <div>

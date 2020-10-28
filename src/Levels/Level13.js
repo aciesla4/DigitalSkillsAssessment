@@ -31,7 +31,7 @@ export default function Level13(props) {
       logClick={props.logClick}
       mission="chat with Mission Control."
       hintMessage="Click on a response option given by HQ and then type a response in the message field if prompted."
-      dialogMessage="Your mission is complete! Chatting can be done on most websites, whether your chatting with a friend or chatting with a customer service representative. Click the X to return to the home page and receive your next mission."
+      dialogMessage="Your mission is complete! Chatting can be done on most websites, whether your chatting with a friend or chatting with a customer service representative. Click the X to receive your next mission."
       correctMoves={correctMoves}
     >
       <div>

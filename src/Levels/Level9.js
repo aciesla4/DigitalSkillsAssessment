@@ -45,7 +45,7 @@ export default function Level9(props) {
       logClick={props.logClick}
       mission="share your certificate on Facebook."
       hintMessage="The facebook icon is the leftmost icon. Click it, then click post at the bottom of the dialog that pops up."
-      dialogMessage="Your mission is complete! Most websites allow you to post pages to social media. Often you will need to login before continuing. Click the X to return to the home page and receive your next mission."
+      dialogMessage="Your mission is complete! Most websites allow you to post pages to social media. Often you will need to login before continuing. Click the X to receive your next mission."
       correctMoves={correctMoves}
     >
       <div>

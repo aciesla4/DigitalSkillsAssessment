@@ -79,7 +79,7 @@ export default function Level16(props) {
       logClick={props.logClick}
       mission="move the Training Completion Certificate to your files."
       hintMessage="Files can be moved from one place to another by dragging and dropping."
-      dialogMessage="Your mission is complete! Dragging and dropping items can be an easy way to move them from one place to another. Click the X to return to the home page and receive your next mission."
+      dialogMessage="Your mission is complete! Dragging and dropping items can be an easy way to move them from one place to another. Click the X to receive your next mission."
       correctMoves={correctMoves}
     >
       <div className="drag-container">

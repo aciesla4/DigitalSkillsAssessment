@@ -34,7 +34,7 @@ export default function Level15(props) {
       logClick={props.logClick}
       mission="find information about Google Drive."
       hintMessage="Google Drive is a software in the Google Suite."
-      dialogMessage="Your mission is complete! Dropdown menus can be tricky to navigate, but moving the mouse slowly over each option can help. Click the X to return to the home page and receive your next mission."
+      dialogMessage="Your mission is complete! Dropdown menus can be tricky to navigate, but moving the mouse slowly over each option can help. Click the X to receive your next mission."
       correctMoves={correctMoves}
     >
       <div>

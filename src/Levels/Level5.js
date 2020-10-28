@@ -28,7 +28,7 @@ export default function Level5(props) {
       logClick={props.logClick}
       mission="resize the box."
       hintMessage="Resizing can be done by clicking the handle in the lower right of the box, and dragging it to make the box bigger or smaller."
-      dialogMessage="Your mission is complete! Resizing is a common way to make things bigger or smaller. Click the X to return to the home page and receive your next mission."
+      dialogMessage="Your mission is complete! Resizing is a common way to make things bigger or smaller. Click the X to receive your next mission."
       correctMoves={correctMoves}
     >
       <div>

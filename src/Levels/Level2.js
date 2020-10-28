@@ -35,7 +35,7 @@ export default function Level2(props) {
       logClick={props.logClick}
       mission="find the jewel underneath the pop up."
       hintMessage="Pop ups can be closed by clicking the X in the top right corner."
-      dialogMessage="Your mission is complete! Pop ups can always be closed by clicking the X, but some sites also let you click anywhere else on the page to get rid of them. Click the X to return to the home page and receive your next mission."
+      dialogMessage="Your mission is complete! Pop ups can always be closed by clicking the X, but some sites also let you click anywhere else on the page to get rid of them. Click the X to receive your next mission."
       correctMoves={correctMoves}
     >
       <Container>

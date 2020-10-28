@@ -84,7 +84,7 @@ export default function Level11(props) {
       logClick={props.logClick}
       mission="stop saving Notes in your Cloud."
       hintMessage="Click on the button labeled privacy. Then scroll down on the left side to find the button labeled Cloud. Then uncheck the box labeled Notes."
-      dialogMessage="Your mission is complete! Sometimes settings are buried in multiple menus. Click the X to return to the home page and receive your next mission."
+      dialogMessage="Your mission is complete! Sometimes settings are buried in multiple menus. Click the X to receive your next mission."
       correctMoves={correctMoves}
     >
       <div>

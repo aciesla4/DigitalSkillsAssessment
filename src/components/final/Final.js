@@ -1,12 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../../css/Welcome.css";
 import SpyLogo from "../../images/spyLogo.jpg";
 import $ from "jquery";
+import axios from "axios";
 
 // Component for the page the user sees after finishing all the levels
 export default function Final(props) {
   // local state for the score the user receives
-  //const [time, setTime] = useState(0);
+  const [time, setTime] = useState(0);
+
+  async function logEndTime() {
+      const dt = new Date().getTime();
+      // makes an HTTP request to the logging server
+      await axios({
+          method: "post",
+          url: "http://localhost:8080/logging/endTime",
+          data: {
+              endTime: dt,
+          },
+      });
+  }
+
+  function convertToMin(millis) {
+      var minutes = Math.floor(millis / 60000);
+      var seconds = ((millis % 60000) / 1000).toFixed(0);
+      return (seconds == 60 ? (minutes+1) + ":00" : minutes + ":" + (seconds < 10 ? "0" : "") + seconds);
+  }
 
   // hook that allows jquery to be used to animate the buttons appearing and calling the API that generates the score
   useEffect(() => {
@@ -24,10 +43,14 @@ export default function Final(props) {
         .delay(5005)
         .fadeIn(100);
     });
-      // axios.get("http://localhost:8080/logging/score").then((response) => {
-      //     console.log(response.data);
-      //     setTime(response.data);
-      // });
+    logEndTime()
+    axios({
+        method: "get",
+        url: "http://localhost:8080/logging/time"
+    }).then(response => {
+        console.log(response.data)
+        setTime(convertToMin(response.data))
+    })
   });
 
   return (
@@ -37,6 +60,9 @@ export default function Final(props) {
       <br />
       <p id="congrats" className="congrats-text">
         You have successfully completed your missions!
+      </p>
+      <p id="time" className="score-text">
+          Total Time Taken: {time}
       </p>
       <button
           id="learn"
