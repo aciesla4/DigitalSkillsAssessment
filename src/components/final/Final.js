@@ -62,15 +62,15 @@ export default function Final(props) {
       <p id="congrats" className="congrats-text">
         You have successfully completed your missions!
       </p>
-      <p id="time" className="score-text">
+      <p id="score" className="score-text">
           Total Time Taken: {time}
       </p>
       <button
           id="learn"
           className="learn-btn"
-          onClick={() => {window.location.href = "/";}}
+          onClick={() => {window.location.href = "https://forms.gle/d4Qu75My1gkSK7Hw7";}}
       >
-          Click Here to Play Again
+          Click Here to Fill Out the Post Game Survey
       </button>
     </div>
   );
