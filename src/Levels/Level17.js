@@ -16,9 +16,9 @@ import {
 } from "../components/level4";
 import Level from "../components/common/Level";
 // import Jewel from "../components/common/Jewel";
-// import FavCard from "../components/level4/FavCard";
-import PropTypes from "prop-types";
 import ListOfFavCards from "../components/level4/ListOfFavCards";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import PropTypes from "prop-types";
 
 // Component for Level 17 - ??
 export default function Level17(props) {
@@ -45,9 +45,14 @@ export default function Level17(props) {
         { id: 11, pic: nature12, color: "" },
     ]);
 
+    const [favorited, setFavorited] = useState([]);
+
     // handles setting the color of the heart icon to red when a card is clicked
     function updateColor(i, e) {
         props.logClick(e);
+        let update = [...favorited];
+        update.push(i);
+        setFavorited(update);
         const list = elements.map((item, j) => {
             if (j === i) {
                 return {...item, color: "red"};
@@ -57,6 +62,7 @@ export default function Level17(props) {
             }
         })
         setElements(list);
+        console.log(update);
     }
 
     return (
@@ -67,8 +73,22 @@ export default function Level17(props) {
             dialogMessage="Your mission is complete! ... Click the X to receive your next mission."
             correctMoves={correctMoves}
         >
-            <div className="level4-grid">
-                {elements.map((item, i) => <ListOfFavCards item={item} handleClick={updateColor} logClick={props.logClick}/>)}
+            <div>
+                <div className="bar">
+                    <p style={{ textAlign: "left", paddingLeft: "20px" }}>
+                        Hello, Agent.
+                    </p>
+                    <button
+                        className="cart"
+                        id="Navigated to the checkout by clicking the shopping cart button."
+
+                    >
+                        <ShoppingCartIcon style={{ height: "40px", width: "40px" }} />
+                    </button>
+                </div>
+                <div className="product-container">
+                    {elements.map((item, i) => <ListOfFavCards item={item} handleClick={updateColor} logClick={props.logClick}/>)}
+                </div>
             </div>
         </Level>
     );

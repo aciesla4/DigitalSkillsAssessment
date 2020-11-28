@@ -17,6 +17,7 @@ import Level13 from "./Levels/Level13";
 import Level14 from "./Levels/Level14";
 import Level15 from "./Levels/Level15";
 import Level16 from "./Levels/Level16";
+import Level17 from "./Levels/Level17";
 import Final from "./components/final/Final";
 import axios from "axios";
 
@@ -117,6 +118,10 @@ class App extends React.Component {
           <Route
               path="/level16"
               render={(props) => <Level16 {...props} logClick={this.logClick}/>}
+          />
+          <Route
+              path="/level17"
+              render={(props) => <Level17 {...props} logClick={this.logClick}/>}
           />
           <Route path="/congrats" component={Final}/>
           <Route path="/" component={Welcome}/>
