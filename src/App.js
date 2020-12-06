@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Welcome from "./components/welcome/Welcome";
+import ConsentForm from "./components/welcome/ConsentForm";
 import Level1 from "./Levels/Level1";
 import Level2 from "./Levels/Level2";
 import Level3 from "./Levels/Level3";
@@ -55,6 +56,10 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Switch>
+          <Route
+            path='/consent'
+            render={(props) => <ConsentForm {...props}/>}
+          />
           <Route
               path="/level1"
               render={(props) => <Level1 {...props} logClick={this.logClick}/>}

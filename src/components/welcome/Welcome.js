@@ -39,7 +39,7 @@ export default function Welcome(props) {
                     startTime: dt,
                 },
             });
-            window.location.href = "/level1"
+            window.location.href = "/consent"
         }}
       >
         Click Here to Begin
